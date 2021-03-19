@@ -15,7 +15,7 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { DataPassthrough } from '../model/dataPassthrough';
+import { DataPassthroughRequest } from '../model/dataPassthroughRequest';
 import { RemoteResponse } from '../model/remoteResponse';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
@@ -93,10 +93,10 @@ export class PassthroughApi {
     /**
      * Pull data from an endpoint not currently supported by Merge.
      * @param xAccountToken Token identifying the end user.
-     * @param dataPassthrough 
+     * @param dataPassthroughRequest 
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async passthroughCreate (xAccountToken: string, dataPassthrough: DataPassthrough, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteResponse;  }> {
+    public async passthroughCreate (xAccountToken: string, dataPassthroughRequest: DataPassthroughRequest, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteResponse;  }> {
         const localVarPath = this.basePath + '/passthrough';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -114,9 +114,9 @@ export class PassthroughApi {
             throw new Error('Required parameter xAccountToken was null or undefined when calling passthroughCreate.');
         }
 
-        // verify required parameter 'dataPassthrough' is not null or undefined
-        if (dataPassthrough === null || dataPassthrough === undefined) {
-            throw new Error('Required parameter dataPassthrough was null or undefined when calling passthroughCreate.');
+        // verify required parameter 'dataPassthroughRequest' is not null or undefined
+        if (dataPassthroughRequest === null || dataPassthroughRequest === undefined) {
+            throw new Error('Required parameter dataPassthroughRequest was null or undefined when calling passthroughCreate.');
         }
 
         if (includeRemoteData !== undefined) {
@@ -135,7 +135,7 @@ export class PassthroughApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(dataPassthrough, "DataPassthrough")
+            body: ObjectSerializer.serialize(dataPassthroughRequest, "DataPassthroughRequest")
         };
 
         let authenticationPromise = Promise.resolve();

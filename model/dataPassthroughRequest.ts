@@ -16,7 +16,7 @@ import { MethodEnum } from './methodEnum';
 /**
 * # The DataPassthrough Object ### Description The `DataPassthrough` object is used to send information to an otherwise-unsupported third-party endpoint.  ### Usage Example Create a `DataPassthrough` to get team hierarchies from your Rippling integration.
 */
-export class DataPassthrough {
+export class DataPassthroughRequest {
     'method': MethodEnum;
     'path': string;
     'data'?: { [key: string]: any; } | null;
@@ -47,7 +47,7 @@ export class DataPassthrough {
         }    ];
 
     static getAttributeTypeMap() {
-        return DataPassthrough.attributeTypeMap;
+        return DataPassthroughRequest.attributeTypeMap;
     }
 }
 

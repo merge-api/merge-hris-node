@@ -15,7 +15,7 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { EndUserDetails } from '../model/endUserDetails';
+import { EndUserDetailsRequest } from '../model/endUserDetailsRequest';
 import { LinkToken } from '../model/linkToken';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
@@ -92,9 +92,9 @@ export class LinkTokenApi {
 
     /**
      * Creates a link token to be used when linking a new end user.
-     * @param endUserDetails 
+     * @param endUserDetailsRequest 
      */
-    public async linkTokenCreate (endUserDetails: EndUserDetails, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LinkToken;  }> {
+    public async linkTokenCreate (endUserDetailsRequest: EndUserDetailsRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LinkToken;  }> {
         const localVarPath = this.basePath + '/link-token';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -107,9 +107,9 @@ export class LinkTokenApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'endUserDetails' is not null or undefined
-        if (endUserDetails === null || endUserDetails === undefined) {
-            throw new Error('Required parameter endUserDetails was null or undefined when calling linkTokenCreate.');
+        // verify required parameter 'endUserDetailsRequest' is not null or undefined
+        if (endUserDetailsRequest === null || endUserDetailsRequest === undefined) {
+            throw new Error('Required parameter endUserDetailsRequest was null or undefined when calling linkTokenCreate.');
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -123,7 +123,7 @@ export class LinkTokenApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(endUserDetails, "EndUserDetails")
+            body: ObjectSerializer.serialize(endUserDetailsRequest, "EndUserDetailsRequest")
         };
 
         let authenticationPromise = Promise.resolve();
