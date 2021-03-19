@@ -1,0 +1,17 @@
+{
+  "name": "@mergeapi/merge-hris-node",
+  "version": "1.0.0",
+  "description": "Typescript-node Merge SDK",
+  "main": "api.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/merge-api/merge-hris-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/merge-api/merge-hris-node/issues"
+  },
+  "homepage": "https://github.com/merge-api/merge-hris-node#readme"
+}
