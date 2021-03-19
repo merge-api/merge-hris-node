@@ -7,16 +7,7 @@ export * from './benefit';
 export * from './benefitPlanTypeEnum';
 export * from './company';
 export * from './countryEnum';
-export * from './createBenefit';
-export * from './createCompany';
-export * from './createEmployee';
-export * from './createEmployeePayrollRun';
-export * from './createEmployment';
-export * from './createLocation';
-export * from './createPayrollRun';
-export * from './createTeam';
-export * from './createTimeOff';
-export * from './dataPassthrough';
+export * from './dataPassthroughRequest';
 export * from './deduction';
 export * from './earning';
 export * from './employee';
@@ -24,7 +15,7 @@ export * from './employeePayrollRun';
 export * from './employment';
 export * from './employmentStatusEnum';
 export * from './employmentTypeEnum';
-export * from './endUserDetails';
+export * from './endUserDetailsRequest';
 export * from './ethnicityEnum';
 export * from './flsaStatusEnum';
 export * from './genderEnum';
@@ -47,8 +38,6 @@ export * from './payFrequencyEnum';
 export * from './payPeriodEnum';
 export * from './payrollRun';
 export * from './remoteData';
-export * from './remoteKey';
-export * from './remoteKeyForRegeneration';
 export * from './remoteResponse';
 export * from './requestTypeEnum';
 export * from './runStateEnum';
@@ -81,16 +70,7 @@ import { Benefit } from './benefit';
 import { BenefitPlanTypeEnum } from './benefitPlanTypeEnum';
 import { Company } from './company';
 import { CountryEnum } from './countryEnum';
-import { CreateBenefit } from './createBenefit';
-import { CreateCompany } from './createCompany';
-import { CreateEmployee } from './createEmployee';
-import { CreateEmployeePayrollRun } from './createEmployeePayrollRun';
-import { CreateEmployment } from './createEmployment';
-import { CreateLocation } from './createLocation';
-import { CreatePayrollRun } from './createPayrollRun';
-import { CreateTeam } from './createTeam';
-import { CreateTimeOff } from './createTimeOff';
-import { DataPassthrough } from './dataPassthrough';
+import { DataPassthroughRequest } from './dataPassthroughRequest';
 import { Deduction } from './deduction';
 import { Earning } from './earning';
 import { Employee } from './employee';
@@ -98,7 +78,7 @@ import { EmployeePayrollRun } from './employeePayrollRun';
 import { Employment } from './employment';
 import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EmploymentTypeEnum } from './employmentTypeEnum';
-import { EndUserDetails } from './endUserDetails';
+import { EndUserDetailsRequest } from './endUserDetailsRequest';
 import { EthnicityEnum } from './ethnicityEnum';
 import { FlsaStatusEnum } from './flsaStatusEnum';
 import { GenderEnum } from './genderEnum';
@@ -121,8 +101,6 @@ import { PayFrequencyEnum } from './payFrequencyEnum';
 import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
 import { RemoteData } from './remoteData';
-import { RemoteKey } from './remoteKey';
-import { RemoteKeyForRegeneration } from './remoteKeyForRegeneration';
 import { RemoteResponse } from './remoteResponse';
 import { RequestTypeEnum } from './requestTypeEnum';
 import { RunStateEnum } from './runStateEnum';
@@ -153,7 +131,7 @@ let enumsMap: {[index: string]: any} = {
         "CountryEnum": CountryEnum,
         "EmploymentStatusEnum": EmploymentStatusEnum,
         "EmploymentTypeEnum": EmploymentTypeEnum,
-        "EndUserDetails.CategoriesEnum": EndUserDetails.CategoriesEnum,
+        "EndUserDetailsRequest.CategoriesEnum": EndUserDetailsRequest.CategoriesEnum,
         "EthnicityEnum": EthnicityEnum,
         "FlsaStatusEnum": FlsaStatusEnum,
         "GenderEnum": GenderEnum,
@@ -177,22 +155,13 @@ let typeMap: {[index: string]: any} = {
     "AvailableActions": AvailableActions,
     "Benefit": Benefit,
     "Company": Company,
-    "CreateBenefit": CreateBenefit,
-    "CreateCompany": CreateCompany,
-    "CreateEmployee": CreateEmployee,
-    "CreateEmployeePayrollRun": CreateEmployeePayrollRun,
-    "CreateEmployment": CreateEmployment,
-    "CreateLocation": CreateLocation,
-    "CreatePayrollRun": CreatePayrollRun,
-    "CreateTeam": CreateTeam,
-    "CreateTimeOff": CreateTimeOff,
-    "DataPassthrough": DataPassthrough,
+    "DataPassthroughRequest": DataPassthroughRequest,
     "Deduction": Deduction,
     "Earning": Earning,
     "Employee": Employee,
     "EmployeePayrollRun": EmployeePayrollRun,
     "Employment": Employment,
-    "EndUserDetails": EndUserDetails,
+    "EndUserDetailsRequest": EndUserDetailsRequest,
     "LinkToken": LinkToken,
     "Location": Location,
     "ModelOperation": ModelOperation,
@@ -207,8 +176,6 @@ let typeMap: {[index: string]: any} = {
     "PaginatedTimeOffList": PaginatedTimeOffList,
     "PayrollRun": PayrollRun,
     "RemoteData": RemoteData,
-    "RemoteKey": RemoteKey,
-    "RemoteKeyForRegeneration": RemoteKeyForRegeneration,
     "RemoteResponse": RemoteResponse,
     "Tax": Tax,
     "Team": Team,

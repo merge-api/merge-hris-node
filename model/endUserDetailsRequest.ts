@@ -12,11 +12,11 @@
 
 import { RequestFile } from './models';
 
-export class EndUserDetails {
+export class EndUserDetailsRequest {
     'endUserEmailAddress': string;
     'endUserOrganizationName': string;
     'endUserOriginId': string;
-    'categories': Array<EndUserDetails.CategoriesEnum>;
+    'categories': Array<EndUserDetailsRequest.CategoriesEnum>;
 
     static discriminator: string | undefined = undefined;
 
@@ -39,15 +39,15 @@ export class EndUserDetails {
         {
             "name": "categories",
             "baseName": "categories",
-            "type": "Array<EndUserDetails.CategoriesEnum>"
+            "type": "Array<EndUserDetailsRequest.CategoriesEnum>"
         }    ];
 
     static getAttributeTypeMap() {
-        return EndUserDetails.attributeTypeMap;
+        return EndUserDetailsRequest.attributeTypeMap;
     }
 }
 
-export namespace EndUserDetails {
+export namespace EndUserDetailsRequest {
     export enum CategoriesEnum {
         Hris = <any> 'hris',
         Ats = <any> 'ats'
