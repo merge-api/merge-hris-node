@@ -12,6 +12,7 @@ api/linkTokenApi.ts
 api/locationsApi.ts
 api/passthroughApi.ts
 api/payrollRunsApi.ts
+api/regenerateKeyApi.ts
 api/teamsApi.ts
 api/timeOffApi.ts
 git_push.sh
@@ -54,6 +55,8 @@ model/payFrequencyEnum.ts
 model/payPeriodEnum.ts
 model/payrollRun.ts
 model/remoteData.ts
+model/remoteKey.ts
+model/remoteKeyForRegenerationRequest.ts
 model/remoteResponse.ts
 model/requestTypeEnum.ts
 model/runStateEnum.ts

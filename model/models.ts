@@ -38,6 +38,8 @@ export * from './payFrequencyEnum';
 export * from './payPeriodEnum';
 export * from './payrollRun';
 export * from './remoteData';
+export * from './remoteKey';
+export * from './remoteKeyForRegenerationRequest';
 export * from './remoteResponse';
 export * from './requestTypeEnum';
 export * from './runStateEnum';
@@ -101,6 +103,8 @@ import { PayFrequencyEnum } from './payFrequencyEnum';
 import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
 import { RemoteData } from './remoteData';
+import { RemoteKey } from './remoteKey';
+import { RemoteKeyForRegenerationRequest } from './remoteKeyForRegenerationRequest';
 import { RemoteResponse } from './remoteResponse';
 import { RequestTypeEnum } from './requestTypeEnum';
 import { RunStateEnum } from './runStateEnum';
@@ -176,6 +180,8 @@ let typeMap: {[index: string]: any} = {
     "PaginatedTimeOffList": PaginatedTimeOffList,
     "PayrollRun": PayrollRun,
     "RemoteData": RemoteData,
+    "RemoteKey": RemoteKey,
+    "RemoteKeyForRegenerationRequest": RemoteKeyForRegenerationRequest,
     "RemoteResponse": RemoteResponse,
     "Tax": Tax,
     "Team": Team,
