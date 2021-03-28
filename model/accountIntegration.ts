@@ -33,6 +33,7 @@ export class AccountIntegration {
     * The color of this integration used for buttons and text throughout the app and landing pages. <b>Choose a darker, saturated color.</b>
     */
     'color'?: string;
+    'slug'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -61,6 +62,11 @@ export class AccountIntegration {
             "name": "color",
             "baseName": "color",
             "type": "string"
+        },
+        {
+            "name": "slug",
+            "baseName": "slug",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
@@ -71,6 +77,7 @@ export class AccountIntegration {
 export namespace AccountIntegration {
     export enum CategoriesEnum {
         Hris = <any> 'hris',
-        Ats = <any> 'ats'
+        Ats = <any> 'ats',
+        Accounting = <any> 'accounting'
     }
 }

@@ -17,6 +17,7 @@ export class EndUserDetailsRequest {
     'endUserOrganizationName': string;
     'endUserOriginId': string;
     'categories': Array<EndUserDetailsRequest.CategoriesEnum>;
+    'integration'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -40,6 +41,11 @@ export class EndUserDetailsRequest {
             "name": "categories",
             "baseName": "categories",
             "type": "Array<EndUserDetailsRequest.CategoriesEnum>"
+        },
+        {
+            "name": "integration",
+            "baseName": "integration",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

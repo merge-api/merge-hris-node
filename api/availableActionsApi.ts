@@ -92,9 +92,8 @@ export class AvailableActionsApi {
     /**
      * Returns a list of models and actions available for an account.
      * @param xAccountToken Token identifying the end user.
-     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async availableActionsRetrieve (xAccountToken: string, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AvailableActions;  }> {
+    public async availableActionsRetrieve (xAccountToken: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AvailableActions;  }> {
         const localVarPath = this.basePath + '/available-actions';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -110,10 +109,6 @@ export class AvailableActionsApi {
         // verify required parameter 'xAccountToken' is not null or undefined
         if (xAccountToken === null || xAccountToken === undefined) {
             throw new Error('Required parameter xAccountToken was null or undefined when calling availableActionsRetrieve.');
-        }
-
-        if (includeRemoteData !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
         }
 
         localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
