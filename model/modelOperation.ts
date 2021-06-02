@@ -19,6 +19,7 @@ export class ModelOperation {
     'modelName': string;
     'availableOperations': Array<string>;
     'requiredPostParameters': Array<string>;
+    'supportedFields': Array<string>;
 
     static discriminator: string | undefined = undefined;
 
@@ -36,6 +37,11 @@ export class ModelOperation {
         {
             "name": "requiredPostParameters",
             "baseName": "required_post_parameters",
+            "type": "Array<string>"
+        },
+        {
+            "name": "supportedFields",
+            "baseName": "supported_fields",
             "type": "Array<string>"
         }    ];
 

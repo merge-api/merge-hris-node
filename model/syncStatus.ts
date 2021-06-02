@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { SyncStatusStatusEnum } from './syncStatusStatusEnum';
 
 /**
 * # The SyncStatus Object ### Description The `SyncStatus` object is used to represent the syncing state of an account  ### Usage Example View the `SyncStatus` for an account to see how recently its models were synced.
@@ -20,7 +21,7 @@ export class SyncStatus {
     'modelId': string;
     'lastSyncStart': Date;
     'nextSyncStart': Date;
-    'status': string;
+    'status': SyncStatusStatusEnum;
     'isInitialSync': boolean;
 
     static discriminator: string | undefined = undefined;
@@ -49,7 +50,7 @@ export class SyncStatus {
         {
             "name": "status",
             "baseName": "status",
-            "type": "string"
+            "type": "SyncStatusStatusEnum"
         },
         {
             "name": "isInitialSync",

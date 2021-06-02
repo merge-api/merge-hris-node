@@ -11,28 +11,27 @@
  */
 
 import { RequestFile } from './models';
-import { AccountIntegration } from './accountIntegration';
 
-export class AccountToken {
-    'accountToken': string;
-    'integration': AccountIntegration;
+export class RemoteDataRequest {
+    'path': string;
+    'data'?: { [key: string]: any; };
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "accountToken",
-            "baseName": "account_token",
+            "name": "path",
+            "baseName": "path",
             "type": "string"
         },
         {
-            "name": "integration",
-            "baseName": "integration",
-            "type": "AccountIntegration"
+            "name": "data",
+            "baseName": "data",
+            "type": "{ [key: string]: any; }"
         }    ];
 
     static getAttributeTypeMap() {
-        return AccountToken.attributeTypeMap;
+        return RemoteDataRequest.attributeTypeMap;
     }
 }
 

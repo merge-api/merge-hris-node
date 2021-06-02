@@ -53,6 +53,14 @@ export class TimeOff {
     * The type of time off request.
     */
     'requestType'?: RequestTypeEnum | null;
+    /**
+    * The day and time of the start of the time requested off.
+    */
+    'startTime'?: Date | null;
+    /**
+    * The day and time of the end of the time requested off.
+    */
+    'endTime'?: Date | null;
     'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -102,6 +110,16 @@ export class TimeOff {
             "name": "requestType",
             "baseName": "request_type",
             "type": "RequestTypeEnum"
+        },
+        {
+            "name": "startTime",
+            "baseName": "start_time",
+            "type": "Date"
+        },
+        {
+            "name": "endTime",
+            "baseName": "end_time",
+            "type": "Date"
         },
         {
             "name": "remoteData",

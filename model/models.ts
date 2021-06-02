@@ -12,7 +12,9 @@ export * from './deduction';
 export * from './earning';
 export * from './employee';
 export * from './employeePayrollRun';
+export * from './employeeRequest';
 export * from './employment';
+export * from './employmentRequest';
 export * from './employmentStatusEnum';
 export * from './employmentTypeEnum';
 export * from './endUserDetailsRequest';
@@ -39,14 +41,15 @@ export * from './payFrequencyEnum';
 export * from './payPeriodEnum';
 export * from './payrollRun';
 export * from './remoteData';
+export * from './remoteDataRequest';
 export * from './remoteKey';
 export * from './remoteKeyForRegenerationRequest';
 export * from './remoteResponse';
 export * from './requestTypeEnum';
 export * from './runStateEnum';
 export * from './runTypeEnum';
-export * from './stateEnum';
 export * from './syncStatus';
+export * from './syncStatusStatusEnum';
 export * from './tax';
 export * from './team';
 export * from './timeOff';
@@ -79,7 +82,9 @@ import { Deduction } from './deduction';
 import { Earning } from './earning';
 import { Employee } from './employee';
 import { EmployeePayrollRun } from './employeePayrollRun';
+import { EmployeeRequest } from './employeeRequest';
 import { Employment } from './employment';
+import { EmploymentRequest } from './employmentRequest';
 import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EmploymentTypeEnum } from './employmentTypeEnum';
 import { EndUserDetailsRequest } from './endUserDetailsRequest';
@@ -106,14 +111,15 @@ import { PayFrequencyEnum } from './payFrequencyEnum';
 import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
 import { RemoteData } from './remoteData';
+import { RemoteDataRequest } from './remoteDataRequest';
 import { RemoteKey } from './remoteKey';
 import { RemoteKeyForRegenerationRequest } from './remoteKeyForRegenerationRequest';
 import { RemoteResponse } from './remoteResponse';
 import { RequestTypeEnum } from './requestTypeEnum';
 import { RunStateEnum } from './runStateEnum';
 import { RunTypeEnum } from './runTypeEnum';
-import { StateEnum } from './stateEnum';
 import { SyncStatus } from './syncStatus';
+import { SyncStatusStatusEnum } from './syncStatusStatusEnum';
 import { Tax } from './tax';
 import { Team } from './team';
 import { TimeOff } from './timeOff';
@@ -151,7 +157,7 @@ let enumsMap: {[index: string]: any} = {
         "RequestTypeEnum": RequestTypeEnum,
         "RunStateEnum": RunStateEnum,
         "RunTypeEnum": RunTypeEnum,
-        "StateEnum": StateEnum,
+        "SyncStatusStatusEnum": SyncStatusStatusEnum,
         "TimeOffStatusEnum": TimeOffStatusEnum,
         "TypeEnum": TypeEnum,
         "UnitsEnum": UnitsEnum,
@@ -168,7 +174,9 @@ let typeMap: {[index: string]: any} = {
     "Earning": Earning,
     "Employee": Employee,
     "EmployeePayrollRun": EmployeePayrollRun,
+    "EmployeeRequest": EmployeeRequest,
     "Employment": Employment,
+    "EmploymentRequest": EmploymentRequest,
     "EndUserDetailsRequest": EndUserDetailsRequest,
     "GenerateRemoteKeyRequest": GenerateRemoteKeyRequest,
     "LinkToken": LinkToken,
@@ -185,6 +193,7 @@ let typeMap: {[index: string]: any} = {
     "PaginatedTimeOffList": PaginatedTimeOffList,
     "PayrollRun": PayrollRun,
     "RemoteData": RemoteData,
+    "RemoteDataRequest": RemoteDataRequest,
     "RemoteKey": RemoteKey,
     "RemoteKeyForRegenerationRequest": RemoteKeyForRegenerationRequest,
     "RemoteResponse": RemoteResponse,
@@ -239,9 +248,9 @@ export class ObjectSerializer {
             let subType: string = type.replace("Array<", ""); // Array<Type> => Type>
             subType = subType.substring(0, subType.length - 1); // Type> => Type
             let transformedData: any[] = [];
-            for (let index in data) {
-                let date = data[index];
-                transformedData.push(ObjectSerializer.serialize(date, subType));
+            for (let index = 0; index < data.length; index++) {
+                let datum = data[index];
+                transformedData.push(ObjectSerializer.serialize(datum, subType));
             }
             return transformedData;
         } else if (type === "Date") {
@@ -260,7 +269,7 @@ export class ObjectSerializer {
             // get the map for the correct type.
             let attributeTypes = typeMap[type].getAttributeTypeMap();
             let instance: {[index: string]: any} = {};
-            for (let index in attributeTypes) {
+            for (let index = 0; index < attributeTypes.length; index++) {
                 let attributeType = attributeTypes[index];
                 instance[attributeType.baseName] = ObjectSerializer.serialize(data[attributeType.name], attributeType.type);
             }
@@ -279,9 +288,9 @@ export class ObjectSerializer {
             let subType: string = type.replace("Array<", ""); // Array<Type> => Type>
             subType = subType.substring(0, subType.length - 1); // Type> => Type
             let transformedData: any[] = [];
-            for (let index in data) {
-                let date = data[index];
-                transformedData.push(ObjectSerializer.deserialize(date, subType));
+            for (let index = 0; index < data.length; index++) {
+                let datum = data[index];
+                transformedData.push(ObjectSerializer.deserialize(datum, subType));
             }
             return transformedData;
         } else if (type === "Date") {
@@ -296,7 +305,7 @@ export class ObjectSerializer {
             }
             let instance = new typeMap[type]();
             let attributeTypes = typeMap[type].getAttributeTypeMap();
-            for (let index in attributeTypes) {
+            for (let index = 0; index < attributeTypes.length; index++) {
                 let attributeType = attributeTypes[index];
                 instance[attributeType.name] = ObjectSerializer.deserialize(data[attributeType.baseName], attributeType.type);
             }

@@ -13,7 +13,6 @@
 import { RequestFile } from './models';
 import { CountryEnum } from './countryEnum';
 import { RemoteData } from './remoteData';
-import { StateEnum } from './stateEnum';
 
 /**
 * # The Location Object ### Description The `Location` object is used to represent a Location for a company. This is shared across many models and is referenced whenever a location is stored.  ### Usage Example Fetch from the `LIST Locations` endpoint and filter by `ID` to show all office locations.
@@ -41,9 +40,9 @@ export class Location {
     */
     'city'?: string | null;
     /**
-    * The location\'s state.
+    * The location\'s state. Represents a region if outside of the US.
     */
-    'state'?: StateEnum | null;
+    'state'?: string | null;
     /**
     * The location\'s zip code.
     */
@@ -90,7 +89,7 @@ export class Location {
         {
             "name": "state",
             "baseName": "state",
-            "type": "StateEnum"
+            "type": "string"
         },
         {
             "name": "zipCode",
