@@ -38,7 +38,7 @@ export class TimeOff {
     */
     'status'?: TimeOffStatusEnum | null;
     /**
-    * The status of this time off request.
+    * The employee note for this time off request.
     */
     'employeeNote'?: string | null;
     /**

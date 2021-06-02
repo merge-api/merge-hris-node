@@ -19,6 +19,7 @@ export * from './endUserDetailsRequest';
 export * from './ethnicityEnum';
 export * from './flsaStatusEnum';
 export * from './genderEnum';
+export * from './generateRemoteKeyRequest';
 export * from './linkToken';
 export * from './location';
 export * from './maritalStatusEnum';
@@ -45,6 +46,7 @@ export * from './requestTypeEnum';
 export * from './runStateEnum';
 export * from './runTypeEnum';
 export * from './stateEnum';
+export * from './syncStatus';
 export * from './tax';
 export * from './team';
 export * from './timeOff';
@@ -84,6 +86,7 @@ import { EndUserDetailsRequest } from './endUserDetailsRequest';
 import { EthnicityEnum } from './ethnicityEnum';
 import { FlsaStatusEnum } from './flsaStatusEnum';
 import { GenderEnum } from './genderEnum';
+import { GenerateRemoteKeyRequest } from './generateRemoteKeyRequest';
 import { LinkToken } from './linkToken';
 import { Location } from './location';
 import { MaritalStatusEnum } from './maritalStatusEnum';
@@ -110,6 +113,7 @@ import { RequestTypeEnum } from './requestTypeEnum';
 import { RunStateEnum } from './runStateEnum';
 import { RunTypeEnum } from './runTypeEnum';
 import { StateEnum } from './stateEnum';
+import { SyncStatus } from './syncStatus';
 import { Tax } from './tax';
 import { Team } from './team';
 import { TimeOff } from './timeOff';
@@ -166,6 +170,7 @@ let typeMap: {[index: string]: any} = {
     "EmployeePayrollRun": EmployeePayrollRun,
     "Employment": Employment,
     "EndUserDetailsRequest": EndUserDetailsRequest,
+    "GenerateRemoteKeyRequest": GenerateRemoteKeyRequest,
     "LinkToken": LinkToken,
     "Location": Location,
     "ModelOperation": ModelOperation,
@@ -183,6 +188,7 @@ let typeMap: {[index: string]: any} = {
     "RemoteKey": RemoteKey,
     "RemoteKeyForRegenerationRequest": RemoteKeyForRegenerationRequest,
     "RemoteResponse": RemoteResponse,
+    "SyncStatus": SyncStatus,
     "Tax": Tax,
     "Team": Team,
     "TimeOff": TimeOff,

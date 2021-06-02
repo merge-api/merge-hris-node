@@ -8,11 +8,13 @@ api/companiesApi.ts
 api/employeePayrollRunsApi.ts
 api/employeesApi.ts
 api/employmentsApi.ts
+api/generateKeyApi.ts
 api/linkTokenApi.ts
 api/locationsApi.ts
 api/passthroughApi.ts
 api/payrollRunsApi.ts
 api/regenerateKeyApi.ts
+api/syncStatusApi.ts
 api/teamsApi.ts
 api/timeOffApi.ts
 git_push.sh
@@ -35,6 +37,7 @@ model/endUserDetailsRequest.ts
 model/ethnicityEnum.ts
 model/flsaStatusEnum.ts
 model/genderEnum.ts
+model/generateRemoteKeyRequest.ts
 model/linkToken.ts
 model/location.ts
 model/maritalStatusEnum.ts
@@ -62,6 +65,7 @@ model/requestTypeEnum.ts
 model/runStateEnum.ts
 model/runTypeEnum.ts
 model/stateEnum.ts
+model/syncStatus.ts
 model/tax.ts
 model/team.ts
 model/timeOff.ts

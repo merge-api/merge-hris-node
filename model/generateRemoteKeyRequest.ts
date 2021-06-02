@@ -13,9 +13,9 @@
 import { RequestFile } from './models';
 
 /**
-* # The RemoteKeyForRegeneration Object ### Description The `RemoteKeyForRegeneration` object is used to exchange an old remote key for a new one  ### Usage Example Post a `RemoteKeyForRegeneration` to swap out an old remote key for a new one
+* # The GenerateRemoteKey Object ### Description The `GenerateRemoteKey` object is used to represent a request for a new remote key.  ### Usage Example Post a `GenerateRemoteKey` to create a new remote key.
 */
-export class RemoteKeyForRegenerationRequest {
+export class GenerateRemoteKeyRequest {
     'name': string;
 
     static discriminator: string | undefined = undefined;
@@ -28,7 +28,7 @@ export class RemoteKeyForRegenerationRequest {
         }    ];
 
     static getAttributeTypeMap() {
-        return RemoteKeyForRegenerationRequest.attributeTypeMap;
+        return GenerateRemoteKeyRequest.attributeTypeMap;
     }
 }
 

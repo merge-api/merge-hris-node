@@ -26,7 +26,7 @@ export class EmployeePayrollRun {
     */
     'remoteId'?: string | null;
     /**
-    * The employee who\'s payroll is being run.
+    * The employee whose payroll is being run.
     */
     'employee'?: string | null;
     /**

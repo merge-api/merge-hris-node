@@ -64,7 +64,7 @@ export class Employee {
     */
     'workLocation'?: string | null;
     /**
-    * The employeee ID of the employee\'s manager.
+    * The employee ID of the employee\'s manager.
     */
     'manager'?: string | null;
     /**
@@ -107,6 +107,10 @@ export class Employee {
     * The URL of the employee\'s avatar image.
     */
     'avatar'?: string | null;
+    /**
+    * The identification number for the employee.
+    */
+    'employeeNumber'?: string | null;
     'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -225,6 +229,11 @@ export class Employee {
         {
             "name": "avatar",
             "baseName": "avatar",
+            "type": "string"
+        },
+        {
+            "name": "employeeNumber",
+            "baseName": "employee_number",
             "type": "string"
         },
         {
