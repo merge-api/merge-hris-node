@@ -15,13 +15,11 @@ import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EthnicityEnum } from './ethnicityEnum';
 import { GenderEnum } from './genderEnum';
 import { MaritalStatusEnum } from './maritalStatusEnum';
-import { RemoteData } from './remoteData';
 
 /**
 * # The Employee Object ### Description The `Employee` object is used to represent an Employee for a company.  ### Usage Example Fetch from the `LIST Employee` endpoint and filter by `ID` to show all employees.
 */
-export class Employee {
-    'id'?: string;
+export class EmployeeRequest {
     /**
     * The third-party API ID of the matching object.
     */
@@ -58,7 +56,6 @@ export class Employee {
     * The employee\'s mobile phone number.
     */
     'mobilePhoneNumber'?: string | null;
-    'employments'?: Array<string>;
     /**
     * The employee\'s home address.
     */
@@ -111,16 +108,10 @@ export class Employee {
     * The URL of the employee\'s avatar image.
     */
     'avatar'?: string | null;
-    'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "id",
-            "baseName": "id",
-            "type": "string"
-        },
         {
             "name": "remoteId",
             "baseName": "remote_id",
@@ -165,11 +156,6 @@ export class Employee {
             "name": "mobilePhoneNumber",
             "baseName": "mobile_phone_number",
             "type": "string"
-        },
-        {
-            "name": "employments",
-            "baseName": "employments",
-            "type": "Array<string>"
         },
         {
             "name": "homeLocation",
@@ -235,15 +221,10 @@ export class Employee {
             "name": "avatar",
             "baseName": "avatar",
             "type": "string"
-        },
-        {
-            "name": "remoteData",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {
-        return Employee.attributeTypeMap;
+        return EmployeeRequest.attributeTypeMap;
     }
 }
 

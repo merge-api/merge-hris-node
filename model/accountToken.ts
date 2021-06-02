@@ -11,9 +11,11 @@
  */
 
 import { RequestFile } from './models';
+import { AccountIntegration } from './accountIntegration';
 
 export class AccountToken {
     'accountToken': string;
+    'integration': AccountIntegration;
 
     static discriminator: string | undefined = undefined;
 
@@ -22,6 +24,11 @@ export class AccountToken {
             "name": "accountToken",
             "baseName": "account_token",
             "type": "string"
+        },
+        {
+            "name": "integration",
+            "baseName": "integration",
+            "type": "AccountIntegration"
         }    ];
 
     static getAttributeTypeMap() {

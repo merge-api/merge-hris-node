@@ -19,7 +19,7 @@ import { MethodEnum } from './methodEnum';
 export class DataPassthroughRequest {
     'method': MethodEnum;
     'path': string;
-    'baseUrlOverride'?: string;
+    'baseUrlOverride'?: string | null;
     'data'?: { [key: string]: any; } | null;
     'headers'?: { [key: string]: any; } | null;
 

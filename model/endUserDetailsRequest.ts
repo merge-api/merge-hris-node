@@ -16,8 +16,8 @@ export class EndUserDetailsRequest {
     'endUserEmailAddress': string;
     'endUserOrganizationName': string;
     'endUserOriginId': string;
-    'categories': Array<EndUserDetailsRequest.CategoriesEnum>;
-    'integration'?: string;
+    'categories'?: Array<EndUserDetailsRequest.CategoriesEnum>;
+    'integration'?: string | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -56,6 +56,7 @@ export class EndUserDetailsRequest {
 export namespace EndUserDetailsRequest {
     export enum CategoriesEnum {
         Hris = <any> 'hris',
-        Ats = <any> 'ats'
+        Ats = <any> 'ats',
+        Accounting = <any> 'accounting'
     }
 }
