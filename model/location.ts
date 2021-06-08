@@ -15,7 +15,7 @@ import { CountryEnum } from './countryEnum';
 import { RemoteData } from './remoteData';
 
 /**
-* # The Location Object ### Description The `Location` object is used to represent a Location for a company. This is shared across many models and is referenced whenever a location is stored.  ### Usage Example Fetch from the `LIST Locations` endpoint and filter by `ID` to show all office locations.
+* # The Location Object ### Description The `Location` object is used to represent a Location for a Company or Employee address. This is shared across many models and is referenced whenever a location is stored.  ### Usage Example Fetch from the `LIST Locations` endpoint and filter by `ID` to show all office locations.
 */
 export class Location {
     'id'?: string;

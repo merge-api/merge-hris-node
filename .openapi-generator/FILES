@@ -53,6 +53,7 @@ model/paginatedEmployeePayrollRunList.ts
 model/paginatedEmploymentList.ts
 model/paginatedLocationList.ts
 model/paginatedPayrollRunList.ts
+model/paginatedSyncStatusList.ts
 model/paginatedTeamList.ts
 model/paginatedTimeOffList.ts
 model/payCurrencyEnum.ts
