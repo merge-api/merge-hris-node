@@ -34,6 +34,7 @@ export * from './paginatedEmployeePayrollRunList';
 export * from './paginatedEmploymentList';
 export * from './paginatedLocationList';
 export * from './paginatedPayrollRunList';
+export * from './paginatedSyncStatusList';
 export * from './paginatedTeamList';
 export * from './paginatedTimeOffList';
 export * from './payCurrencyEnum';
@@ -104,6 +105,7 @@ import { PaginatedEmployeePayrollRunList } from './paginatedEmployeePayrollRunLi
 import { PaginatedEmploymentList } from './paginatedEmploymentList';
 import { PaginatedLocationList } from './paginatedLocationList';
 import { PaginatedPayrollRunList } from './paginatedPayrollRunList';
+import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
 import { PaginatedTimeOffList } from './paginatedTimeOffList';
 import { PayCurrencyEnum } from './payCurrencyEnum';
@@ -189,6 +191,7 @@ let typeMap: {[index: string]: any} = {
     "PaginatedEmploymentList": PaginatedEmploymentList,
     "PaginatedLocationList": PaginatedLocationList,
     "PaginatedPayrollRunList": PaginatedPayrollRunList,
+    "PaginatedSyncStatusList": PaginatedSyncStatusList,
     "PaginatedTeamList": PaginatedTeamList,
     "PaginatedTimeOffList": PaginatedTimeOffList,
     "PayrollRun": PayrollRun,
