@@ -23,28 +23,28 @@ export class PayrollRun {
     /**
     * The third-party API ID of the matching object.
     */
-    'remoteId'?: string | null;
+    'remote_id'?: string | null;
     /**
     * The state of the payroll run
     */
-    'runState'?: RunStateEnum | null;
+    'run_state'?: RunStateEnum | null;
     /**
     * The type of the payroll run
     */
-    'runType'?: RunTypeEnum | null;
+    'run_type'?: RunTypeEnum | null;
     /**
     * The day and time the payroll run started.
     */
-    'startDate'?: Date | null;
+    'start_date'?: Date | null;
     /**
     * The day and time the payroll run ended.
     */
-    'endDate'?: Date | null;
+    'end_date'?: Date | null;
     /**
     * The day and time the payroll run was checked.
     */
-    'checkDate'?: Date | null;
-    'remoteData'?: Array<RemoteData> | null;
+    'check_date'?: Date | null;
+    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -55,37 +55,37 @@ export class PayrollRun {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "runState",
+            "name": "run_state",
             "baseName": "run_state",
             "type": "RunStateEnum"
         },
         {
-            "name": "runType",
+            "name": "run_type",
             "baseName": "run_type",
             "type": "RunTypeEnum"
         },
         {
-            "name": "startDate",
+            "name": "start_date",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "endDate",
+            "name": "end_date",
             "baseName": "end_date",
             "type": "Date"
         },
         {
-            "name": "checkDate",
+            "name": "check_date",
             "baseName": "check_date",
             "type": "Date"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

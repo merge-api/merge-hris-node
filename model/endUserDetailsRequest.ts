@@ -13,9 +13,9 @@
 import { RequestFile } from './models';
 
 export class EndUserDetailsRequest {
-    'endUserEmailAddress': string;
-    'endUserOrganizationName': string;
-    'endUserOriginId': string;
+    'end_user_email_address': string;
+    'end_user_organization_name': string;
+    'end_user_origin_id': string;
     'categories'?: Array<EndUserDetailsRequest.CategoriesEnum>;
     'integration'?: string | null;
 
@@ -23,17 +23,17 @@ export class EndUserDetailsRequest {
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "endUserEmailAddress",
+            "name": "end_user_email_address",
             "baseName": "end_user_email_address",
             "type": "string"
         },
         {
-            "name": "endUserOrganizationName",
+            "name": "end_user_organization_name",
             "baseName": "end_user_organization_name",
             "type": "string"
         },
         {
-            "name": "endUserOriginId",
+            "name": "end_user_origin_id",
             "baseName": "end_user_origin_id",
             "type": "string"
         },

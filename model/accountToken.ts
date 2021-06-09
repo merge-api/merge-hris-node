@@ -14,14 +14,14 @@ import { RequestFile } from './models';
 import { AccountIntegration } from './accountIntegration';
 
 export class AccountToken {
-    'accountToken': string;
+    'account_token': string;
     'integration': AccountIntegration;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "accountToken",
+            "name": "account_token",
             "baseName": "account_token",
             "type": "string"
         },

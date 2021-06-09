@@ -22,19 +22,19 @@ export class Location {
     /**
     * The third-party API ID of the matching object.
     */
-    'remoteId'?: string | null;
+    'remote_id'?: string | null;
     /**
     * The location\'s phone number.
     */
-    'phoneNumber'?: string | null;
+    'phone_number'?: string | null;
     /**
     * Line 1 of the location\'s street address.
     */
-    'street1'?: string | null;
+    'street_1'?: string | null;
     /**
     * Line 2 of the location\'s street address.
     */
-    'street2'?: string | null;
+    'street_2'?: string | null;
     /**
     * The location\'s city.
     */
@@ -46,12 +46,12 @@ export class Location {
     /**
     * The location\'s zip code.
     */
-    'zipCode'?: string | null;
+    'zip_code'?: string | null;
     /**
     * The location\'s country.
     */
     'country'?: CountryEnum | null;
-    'remoteData'?: Array<RemoteData> | null;
+    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -62,22 +62,22 @@ export class Location {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "phoneNumber",
+            "name": "phone_number",
             "baseName": "phone_number",
             "type": "string"
         },
         {
-            "name": "street1",
+            "name": "street_1",
             "baseName": "street_1",
             "type": "string"
         },
         {
-            "name": "street2",
+            "name": "street_2",
             "baseName": "street_2",
             "type": "string"
         },
@@ -92,7 +92,7 @@ export class Location {
             "type": "string"
         },
         {
-            "name": "zipCode",
+            "name": "zip_code",
             "baseName": "zip_code",
             "type": "string"
         },
@@ -102,7 +102,7 @@ export class Location {
             "type": "CountryEnum"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];
