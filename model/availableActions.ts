@@ -19,8 +19,8 @@ import { ModelOperation } from './modelOperation';
 */
 export class AvailableActions {
     'integration': AccountIntegration;
-    'passthroughAvailable': boolean;
-    'availableModelOperations'?: Array<ModelOperation>;
+    'passthrough_available': boolean;
+    'available_model_operations'?: Array<ModelOperation>;
 
     static discriminator: string | undefined = undefined;
 
@@ -31,12 +31,12 @@ export class AvailableActions {
             "type": "AccountIntegration"
         },
         {
-            "name": "passthroughAvailable",
+            "name": "passthrough_available",
             "baseName": "passthrough_available",
             "type": "boolean"
         },
         {
-            "name": "availableModelOperations",
+            "name": "available_model_operations",
             "baseName": "available_model_operations",
             "type": "Array<ModelOperation>"
         }    ];

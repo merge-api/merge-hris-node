@@ -20,7 +20,7 @@ export class Deduction {
     /**
     * The deduction\'s employee payroll run.
     */
-    'employeePayrollRun'?: string | null;
+    'employee_payroll_run'?: string | null;
     /**
     * The deduction\'s name.
     */
@@ -28,12 +28,12 @@ export class Deduction {
     /**
     * The amount the employee is deducting.
     */
-    'employeeDeduction'?: number | null;
+    'employee_deduction'?: number | null;
     /**
     * The amount the company is deducting.
     */
-    'companyDeduction'?: number | null;
-    'remoteData'?: Array<{ [key: string]: any; }> | null;
+    'company_deduction'?: number | null;
+    'remote_data'?: Array<{ [key: string]: any; }> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -44,7 +44,7 @@ export class Deduction {
             "type": "string"
         },
         {
-            "name": "employeePayrollRun",
+            "name": "employee_payroll_run",
             "baseName": "employee_payroll_run",
             "type": "string"
         },
@@ -54,17 +54,17 @@ export class Deduction {
             "type": "string"
         },
         {
-            "name": "employeeDeduction",
+            "name": "employee_deduction",
             "baseName": "employee_deduction",
             "type": "number"
         },
         {
-            "name": "companyDeduction",
+            "name": "company_deduction",
             "baseName": "company_deduction",
             "type": "number"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<{ [key: string]: any; }>"
         }    ];

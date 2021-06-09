@@ -14,26 +14,26 @@ import { RequestFile } from './models';
 import { RemoteData } from './remoteData';
 
 /**
-* # The Company Object ### Description The `Company` object is used to represent a Company.  ### Usage Example Fetch from the `LIST Companies` endpoint and filter by `ID` to show all companies.
+* # The TimeOffBalance Object ### Description The `TimeOffBalance` object is used to represent a Time Off Balance for an employee.  ### Usage Example Fetch from the `LIST TimeOffBalances` endpoint and filter by `ID` to show all time off balances.
 */
-export class Company {
+export class TimeOffBalance {
     'id'?: string;
     /**
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
     /**
-    * The company\'s legal name.
+    * The employee the balance belongs to.
     */
-    'legal_name'?: string | null;
+    'employee'?: string | null;
     /**
-    * The company\'s display name.
+    * The current PTO balance.
     */
-    'display_name'?: string | null;
+    'balance'?: number | null;
     /**
-    * The company\'s Employer Identification Numbers.
+    * The amount of PTO used.
     */
-    'eins'?: Array<string> | null;
+    'used'?: number | null;
     'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -50,19 +50,19 @@ export class Company {
             "type": "string"
         },
         {
-            "name": "legal_name",
-            "baseName": "legal_name",
+            "name": "employee",
+            "baseName": "employee",
             "type": "string"
         },
         {
-            "name": "display_name",
-            "baseName": "display_name",
-            "type": "string"
+            "name": "balance",
+            "baseName": "balance",
+            "type": "number"
         },
         {
-            "name": "eins",
-            "baseName": "eins",
-            "type": "Array<string>"
+            "name": "used",
+            "baseName": "used",
+            "type": "number"
         },
         {
             "name": "remote_data",
@@ -71,7 +71,7 @@ export class Company {
         }    ];
 
     static getAttributeTypeMap() {
-        return Company.attributeTypeMap;
+        return TimeOffBalance.attributeTypeMap;
     }
 }
 

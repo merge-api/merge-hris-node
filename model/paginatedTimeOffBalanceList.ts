@@ -11,27 +11,34 @@
  */
 
 import { RequestFile } from './models';
+import { TimeOffBalance } from './timeOffBalance';
 
-export class LinkToken {
-    'link_token': string;
-    'integration_name': string;
+export class PaginatedTimeOffBalanceList {
+    'next'?: string | null;
+    'previous'?: string | null;
+    'results'?: Array<TimeOffBalance>;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "link_token",
-            "baseName": "link_token",
+            "name": "next",
+            "baseName": "next",
             "type": "string"
         },
         {
-            "name": "integration_name",
-            "baseName": "integration_name",
+            "name": "previous",
+            "baseName": "previous",
             "type": "string"
+        },
+        {
+            "name": "results",
+            "baseName": "results",
+            "type": "Array<TimeOffBalance>"
         }    ];
 
     static getAttributeTypeMap() {
-        return LinkToken.attributeTypeMap;
+        return PaginatedTimeOffBalanceList.attributeTypeMap;
     }
 }
 

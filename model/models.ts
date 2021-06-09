@@ -36,6 +36,7 @@ export * from './paginatedLocationList';
 export * from './paginatedPayrollRunList';
 export * from './paginatedSyncStatusList';
 export * from './paginatedTeamList';
+export * from './paginatedTimeOffBalanceList';
 export * from './paginatedTimeOffList';
 export * from './payCurrencyEnum';
 export * from './payFrequencyEnum';
@@ -54,6 +55,7 @@ export * from './syncStatusStatusEnum';
 export * from './tax';
 export * from './team';
 export * from './timeOff';
+export * from './timeOffBalance';
 export * from './timeOffStatusEnum';
 export * from './typeEnum';
 export * from './unitsEnum';
@@ -107,6 +109,7 @@ import { PaginatedLocationList } from './paginatedLocationList';
 import { PaginatedPayrollRunList } from './paginatedPayrollRunList';
 import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
+import { PaginatedTimeOffBalanceList } from './paginatedTimeOffBalanceList';
 import { PaginatedTimeOffList } from './paginatedTimeOffList';
 import { PayCurrencyEnum } from './payCurrencyEnum';
 import { PayFrequencyEnum } from './payFrequencyEnum';
@@ -125,6 +128,7 @@ import { SyncStatusStatusEnum } from './syncStatusStatusEnum';
 import { Tax } from './tax';
 import { Team } from './team';
 import { TimeOff } from './timeOff';
+import { TimeOffBalance } from './timeOffBalance';
 import { TimeOffStatusEnum } from './timeOffStatusEnum';
 import { TypeEnum } from './typeEnum';
 import { UnitsEnum } from './unitsEnum';
@@ -193,6 +197,7 @@ let typeMap: {[index: string]: any} = {
     "PaginatedPayrollRunList": PaginatedPayrollRunList,
     "PaginatedSyncStatusList": PaginatedSyncStatusList,
     "PaginatedTeamList": PaginatedTeamList,
+    "PaginatedTimeOffBalanceList": PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": PaginatedTimeOffList,
     "PayrollRun": PayrollRun,
     "RemoteData": RemoteData,
@@ -204,6 +209,7 @@ let typeMap: {[index: string]: any} = {
     "Tax": Tax,
     "Team": Team,
     "TimeOff": TimeOff,
+    "TimeOffBalance": TimeOffBalance,
 }
 
 export class ObjectSerializer {

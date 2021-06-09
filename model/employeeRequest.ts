@@ -23,11 +23,11 @@ export class EmployeeRequest {
     /**
     * The third-party API ID of the matching object.
     */
-    'remoteId'?: string | null;
+    'remote_id'?: string | null;
     /**
     * The employee\'s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
     */
-    'employeeNumber'?: string | null;
+    'employee_number'?: string | null;
     /**
     * The ID of the employee\'s company.
     */
@@ -35,35 +35,35 @@ export class EmployeeRequest {
     /**
     * The employee\'s first name.
     */
-    'firstName'?: string | null;
+    'first_name'?: string | null;
     /**
     * The employee\'s last name.
     */
-    'lastName'?: string | null;
+    'last_name'?: string | null;
     /**
     * The employee\'s full name, to use for display purposes.
     */
-    'displayFullName'?: string | null;
+    'display_full_name'?: string | null;
     /**
     * The employee\'s work email.
     */
-    'workEmail'?: string | null;
+    'work_email'?: string | null;
     /**
     * The employee\'s personal email.
     */
-    'personalEmail'?: string | null;
+    'personal_email'?: string | null;
     /**
     * The employee\'s mobile phone number.
     */
-    'mobilePhoneNumber'?: string | null;
+    'mobile_phone_number'?: string | null;
     /**
     * The employee\'s home address.
     */
-    'homeLocation'?: string | null;
+    'home_location'?: string | null;
     /**
     * The employee\'s work address.
     */
-    'workLocation'?: string | null;
+    'work_location'?: string | null;
     /**
     * The employee ID of the employee\'s manager.
     */
@@ -87,23 +87,23 @@ export class EmployeeRequest {
     /**
     * The employee\'s marital status.
     */
-    'maritalStatus'?: MaritalStatusEnum | null;
+    'marital_status'?: MaritalStatusEnum | null;
     /**
     * The employee\'s date of birth.
     */
-    'dateOfBirth'?: Date | null;
+    'date_of_birth'?: Date | null;
     /**
     * The employee\'s hire date. If an employee has multiple hire dates from previous employments, this represents the most recent hire date.
     */
-    'hireDate'?: Date | null;
+    'hire_date'?: Date | null;
     /**
     * The employment status of the employee.
     */
-    'employmentStatus'?: EmploymentStatusEnum | null;
+    'employment_status'?: EmploymentStatusEnum | null;
     /**
     * The employee\'s termination date.
     */
-    'terminationDate'?: Date | null;
+    'termination_date'?: Date | null;
     /**
     * The URL of the employee\'s avatar image.
     */
@@ -113,12 +113,12 @@ export class EmployeeRequest {
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "employeeNumber",
+            "name": "employee_number",
             "baseName": "employee_number",
             "type": "string"
         },
@@ -128,42 +128,42 @@ export class EmployeeRequest {
             "type": "string"
         },
         {
-            "name": "firstName",
+            "name": "first_name",
             "baseName": "first_name",
             "type": "string"
         },
         {
-            "name": "lastName",
+            "name": "last_name",
             "baseName": "last_name",
             "type": "string"
         },
         {
-            "name": "displayFullName",
+            "name": "display_full_name",
             "baseName": "display_full_name",
             "type": "string"
         },
         {
-            "name": "workEmail",
+            "name": "work_email",
             "baseName": "work_email",
             "type": "string"
         },
         {
-            "name": "personalEmail",
+            "name": "personal_email",
             "baseName": "personal_email",
             "type": "string"
         },
         {
-            "name": "mobilePhoneNumber",
+            "name": "mobile_phone_number",
             "baseName": "mobile_phone_number",
             "type": "string"
         },
         {
-            "name": "homeLocation",
+            "name": "home_location",
             "baseName": "home_location",
             "type": "string"
         },
         {
-            "name": "workLocation",
+            "name": "work_location",
             "baseName": "work_location",
             "type": "string"
         },
@@ -193,27 +193,27 @@ export class EmployeeRequest {
             "type": "EthnicityEnum"
         },
         {
-            "name": "maritalStatus",
+            "name": "marital_status",
             "baseName": "marital_status",
             "type": "MaritalStatusEnum"
         },
         {
-            "name": "dateOfBirth",
+            "name": "date_of_birth",
             "baseName": "date_of_birth",
             "type": "Date"
         },
         {
-            "name": "hireDate",
+            "name": "hire_date",
             "baseName": "hire_date",
             "type": "Date"
         },
         {
-            "name": "employmentStatus",
+            "name": "employment_status",
             "baseName": "employment_status",
             "type": "EmploymentStatusEnum"
         },
         {
-            "name": "terminationDate",
+            "name": "termination_date",
             "baseName": "termination_date",
             "type": "Date"
         },

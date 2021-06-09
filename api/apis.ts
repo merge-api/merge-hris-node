@@ -30,6 +30,8 @@ export * from './teamsApi';
 import { TeamsApi } from './teamsApi';
 export * from './timeOffApi';
 import { TimeOffApi } from './timeOffApi';
+export * from './timeOffBalanceApi';
+import { TimeOffBalanceApi } from './timeOffBalanceApi';
 import * as http from 'http';
 
 export class HttpError extends Error {
@@ -41,4 +43,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AccountTokenApi, AvailableActionsApi, BenefitsApi, CompaniesApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, GenerateKeyApi, LinkTokenApi, LocationsApi, PassthroughApi, PayrollRunsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi];
+export const APIS = [AccountTokenApi, AvailableActionsApi, BenefitsApi, CompaniesApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, GenerateKeyApi, LinkTokenApi, LocationsApi, PassthroughApi, PayrollRunsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalanceApi];
