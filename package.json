@@ -19,7 +19,7 @@
     "rewire": "^3.0.2"
   },
   "devDependencies": {
-    "@types/node": "8.10.34",
+    "@types/node": "^15.12.2",
     "typescript": "^4.3.3"
   }
 }
