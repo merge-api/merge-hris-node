@@ -58,6 +58,9 @@ export class Employee {
     * The employee\'s mobile phone number.
     */
     'mobile_phone_number'?: string | null;
+    /**
+    * Array of `Employment` IDs for this Employee.
+    */
     'employments'?: Array<string>;
     /**
     * The employee\'s home address.
@@ -99,6 +102,10 @@ export class Employee {
     * The employee\'s hire date. If an employee has multiple hire dates from previous employments, this represents the most recent hire date.
     */
     'hire_date'?: Date | null;
+    /**
+    * The employee\'s start date.
+    */
+    'start_date'?: Date | null;
     /**
     * The employment status of the employee.
     */
@@ -219,6 +226,11 @@ export class Employee {
         {
             "name": "hire_date",
             "baseName": "hire_date",
+            "type": "Date"
+        },
+        {
+            "name": "start_date",
+            "baseName": "start_date",
             "type": "Date"
         },
         {
