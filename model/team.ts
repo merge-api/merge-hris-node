@@ -26,6 +26,10 @@ export class Team {
     * The team\'s name.
     */
     'name'?: string | null;
+    /**
+    * The team\'s parent team.
+    */
+    'parent_team'?: string | null;
     'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -44,6 +48,11 @@ export class Team {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string"
+        },
+        {
+            "name": "parent_team",
+            "baseName": "parent_team",
             "type": "string"
         },
         {

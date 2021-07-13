@@ -97,6 +97,10 @@ export class EmployeeRequest {
     */
     'hire_date'?: Date | null;
     /**
+    * The employee\'s start date.
+    */
+    'start_date'?: Date | null;
+    /**
     * The employment status of the employee.
     */
     'employment_status'?: EmploymentStatusEnum | null;
@@ -205,6 +209,11 @@ export class EmployeeRequest {
         {
             "name": "hire_date",
             "baseName": "hire_date",
+            "type": "Date"
+        },
+        {
+            "name": "start_date",
+            "baseName": "start_date",
             "type": "Date"
         },
         {

@@ -5,6 +5,7 @@ export * from './accountToken';
 export * from './availableActions';
 export * from './benefit';
 export * from './benefitPlanTypeEnum';
+export * from './benefitRequest';
 export * from './company';
 export * from './countryEnum';
 export * from './dataPassthroughRequest';
@@ -22,6 +23,8 @@ export * from './ethnicityEnum';
 export * from './flsaStatusEnum';
 export * from './genderEnum';
 export * from './generateRemoteKeyRequest';
+export * from './issue';
+export * from './issueStatusEnum';
 export * from './linkToken';
 export * from './location';
 export * from './maritalStatusEnum';
@@ -32,6 +35,7 @@ export * from './paginatedCompanyList';
 export * from './paginatedEmployeeList';
 export * from './paginatedEmployeePayrollRunList';
 export * from './paginatedEmploymentList';
+export * from './paginatedIssueList';
 export * from './paginatedLocationList';
 export * from './paginatedPayrollRunList';
 export * from './paginatedSyncStatusList';
@@ -78,6 +82,7 @@ import { AccountToken } from './accountToken';
 import { AvailableActions } from './availableActions';
 import { Benefit } from './benefit';
 import { BenefitPlanTypeEnum } from './benefitPlanTypeEnum';
+import { BenefitRequest } from './benefitRequest';
 import { Company } from './company';
 import { CountryEnum } from './countryEnum';
 import { DataPassthroughRequest } from './dataPassthroughRequest';
@@ -95,6 +100,8 @@ import { EthnicityEnum } from './ethnicityEnum';
 import { FlsaStatusEnum } from './flsaStatusEnum';
 import { GenderEnum } from './genderEnum';
 import { GenerateRemoteKeyRequest } from './generateRemoteKeyRequest';
+import { Issue } from './issue';
+import { IssueStatusEnum } from './issueStatusEnum';
 import { LinkToken } from './linkToken';
 import { Location } from './location';
 import { MaritalStatusEnum } from './maritalStatusEnum';
@@ -105,6 +112,7 @@ import { PaginatedCompanyList } from './paginatedCompanyList';
 import { PaginatedEmployeeList } from './paginatedEmployeeList';
 import { PaginatedEmployeePayrollRunList } from './paginatedEmployeePayrollRunList';
 import { PaginatedEmploymentList } from './paginatedEmploymentList';
+import { PaginatedIssueList } from './paginatedIssueList';
 import { PaginatedLocationList } from './paginatedLocationList';
 import { PaginatedPayrollRunList } from './paginatedPayrollRunList';
 import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
@@ -155,6 +163,7 @@ let enumsMap: {[index: string]: any} = {
         "EthnicityEnum": EthnicityEnum,
         "FlsaStatusEnum": FlsaStatusEnum,
         "GenderEnum": GenderEnum,
+        "IssueStatusEnum": IssueStatusEnum,
         "MaritalStatusEnum": MaritalStatusEnum,
         "MethodEnum": MethodEnum,
         "PayCurrencyEnum": PayCurrencyEnum,
@@ -174,6 +183,7 @@ let typeMap: {[index: string]: any} = {
     "AccountToken": AccountToken,
     "AvailableActions": AvailableActions,
     "Benefit": Benefit,
+    "BenefitRequest": BenefitRequest,
     "Company": Company,
     "DataPassthroughRequest": DataPassthroughRequest,
     "Deduction": Deduction,
@@ -185,6 +195,7 @@ let typeMap: {[index: string]: any} = {
     "EmploymentRequest": EmploymentRequest,
     "EndUserDetailsRequest": EndUserDetailsRequest,
     "GenerateRemoteKeyRequest": GenerateRemoteKeyRequest,
+    "Issue": Issue,
     "LinkToken": LinkToken,
     "Location": Location,
     "ModelOperation": ModelOperation,
@@ -193,6 +204,7 @@ let typeMap: {[index: string]: any} = {
     "PaginatedEmployeeList": PaginatedEmployeeList,
     "PaginatedEmployeePayrollRunList": PaginatedEmployeePayrollRunList,
     "PaginatedEmploymentList": PaginatedEmploymentList,
+    "PaginatedIssueList": PaginatedIssueList,
     "PaginatedLocationList": PaginatedLocationList,
     "PaginatedPayrollRunList": PaginatedPayrollRunList,
     "PaginatedSyncStatusList": PaginatedSyncStatusList,
