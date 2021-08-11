@@ -22,6 +22,10 @@ export class Deduction {
     */
     'employee_payroll_run'?: string | null;
     /**
+    * The persistent deduction that caused this payroll deduction.
+    */
+    'persistent_deduction'?: string | null;
+    /**
     * The deduction\'s name.
     */
     'name'?: string | null;
@@ -46,6 +50,11 @@ export class Deduction {
         {
             "name": "employee_payroll_run",
             "baseName": "employee_payroll_run",
+            "type": "string"
+        },
+        {
+            "name": "persistent_deduction",
+            "baseName": "persistent_deduction",
             "type": "string"
         },
         {
