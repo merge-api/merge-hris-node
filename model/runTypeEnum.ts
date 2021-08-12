@@ -13,19 +13,9 @@
 import { RequestFile } from './models';
 
 export enum RunTypeEnum {
-    Init = <any> 'INIT',
     Regular = <any> 'REGULAR',
     OffCycle = <any> 'OFF_CYCLE',
     Correction = <any> 'CORRECTION',
     Termination = <any> 'TERMINATION',
-    Reconciliation = <any> 'RECONCILIATION',
-    NewHire = <any> 'NEW_HIRE',
-    Pop = <any> 'POP',
-    Transition = <any> 'TRANSITION',
-    CorrectionDisplay = <any> 'CORRECTION_DISPLAY',
-    ExcessHours = <any> 'EXCESS_HOURS',
-    SignOnBonus = <any> 'SIGN_ON_BONUS',
-    SCorp = <any> 'S_CORP',
-    FringeBenefits = <any> 'FRINGE_BENEFITS',
-    ContractorLatePayments = <any> 'CONTRACTOR_LATE_PAYMENTS'
+    SignOnBonus = <any> 'SIGN_ON_BONUS'
 }

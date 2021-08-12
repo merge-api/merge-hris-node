@@ -38,6 +38,7 @@ export * from './paginatedEmploymentList';
 export * from './paginatedIssueList';
 export * from './paginatedLocationList';
 export * from './paginatedPayrollRunList';
+export * from './paginatedPersistentDeductionList';
 export * from './paginatedSyncStatusList';
 export * from './paginatedTeamList';
 export * from './paginatedTimeOffBalanceList';
@@ -46,6 +47,8 @@ export * from './payCurrencyEnum';
 export * from './payFrequencyEnum';
 export * from './payPeriodEnum';
 export * from './payrollRun';
+export * from './persistentDeduction';
+export * from './persistentDeductionRequest';
 export * from './remoteData';
 export * from './remoteDataRequest';
 export * from './remoteKey';
@@ -60,6 +63,7 @@ export * from './tax';
 export * from './team';
 export * from './timeOff';
 export * from './timeOffBalance';
+export * from './timeOffRequest';
 export * from './timeOffStatusEnum';
 export * from './typeEnum';
 export * from './unitsEnum';
@@ -115,6 +119,7 @@ import { PaginatedEmploymentList } from './paginatedEmploymentList';
 import { PaginatedIssueList } from './paginatedIssueList';
 import { PaginatedLocationList } from './paginatedLocationList';
 import { PaginatedPayrollRunList } from './paginatedPayrollRunList';
+import { PaginatedPersistentDeductionList } from './paginatedPersistentDeductionList';
 import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
 import { PaginatedTimeOffBalanceList } from './paginatedTimeOffBalanceList';
@@ -123,6 +128,8 @@ import { PayCurrencyEnum } from './payCurrencyEnum';
 import { PayFrequencyEnum } from './payFrequencyEnum';
 import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
+import { PersistentDeduction } from './persistentDeduction';
+import { PersistentDeductionRequest } from './persistentDeductionRequest';
 import { RemoteData } from './remoteData';
 import { RemoteDataRequest } from './remoteDataRequest';
 import { RemoteKey } from './remoteKey';
@@ -137,6 +144,7 @@ import { Tax } from './tax';
 import { Team } from './team';
 import { TimeOff } from './timeOff';
 import { TimeOffBalance } from './timeOffBalance';
+import { TimeOffRequest } from './timeOffRequest';
 import { TimeOffStatusEnum } from './timeOffStatusEnum';
 import { TypeEnum } from './typeEnum';
 import { UnitsEnum } from './unitsEnum';
@@ -207,11 +215,14 @@ let typeMap: {[index: string]: any} = {
     "PaginatedIssueList": PaginatedIssueList,
     "PaginatedLocationList": PaginatedLocationList,
     "PaginatedPayrollRunList": PaginatedPayrollRunList,
+    "PaginatedPersistentDeductionList": PaginatedPersistentDeductionList,
     "PaginatedSyncStatusList": PaginatedSyncStatusList,
     "PaginatedTeamList": PaginatedTeamList,
     "PaginatedTimeOffBalanceList": PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": PaginatedTimeOffList,
     "PayrollRun": PayrollRun,
+    "PersistentDeduction": PersistentDeduction,
+    "PersistentDeductionRequest": PersistentDeductionRequest,
     "RemoteData": RemoteData,
     "RemoteDataRequest": RemoteDataRequest,
     "RemoteKey": RemoteKey,
@@ -222,6 +233,7 @@ let typeMap: {[index: string]: any} = {
     "Team": Team,
     "TimeOff": TimeOff,
     "TimeOffBalance": TimeOffBalance,
+    "TimeOffRequest": TimeOffRequest,
 }
 
 export class ObjectSerializer {
