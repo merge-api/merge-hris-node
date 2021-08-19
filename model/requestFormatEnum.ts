@@ -12,11 +12,7 @@
 
 import { RequestFile } from './models';
 
-export enum RequestTypeEnum {
-    Vacation = <any> 'VACATION',
-    Sick = <any> 'SICK',
-    Personal = <any> 'PERSONAL',
-    JuryDuty = <any> 'JURY_DUTY',
-    Volunteer = <any> 'VOLUNTEER',
-    Bereavement = <any> 'BEREAVEMENT'
+export enum RequestFormatEnum {
+    Json = <any> 'JSON',
+    Xml = <any> 'XML'
 }

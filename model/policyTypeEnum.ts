@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export enum RequestTypeEnum {
+export enum PolicyTypeEnum {
     Vacation = <any> 'VACATION',
     Sick = <any> 'SICK',
     Personal = <any> 'PERSONAL',

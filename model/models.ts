@@ -49,11 +49,13 @@ export * from './payPeriodEnum';
 export * from './payrollRun';
 export * from './persistentDeduction';
 export * from './persistentDeductionRequest';
+export * from './policyTypeEnum';
 export * from './remoteData';
 export * from './remoteDataRequest';
 export * from './remoteKey';
 export * from './remoteKeyForRegenerationRequest';
 export * from './remoteResponse';
+export * from './requestFormatEnum';
 export * from './requestTypeEnum';
 export * from './runStateEnum';
 export * from './runTypeEnum';
@@ -130,11 +132,13 @@ import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
 import { PersistentDeduction } from './persistentDeduction';
 import { PersistentDeductionRequest } from './persistentDeductionRequest';
+import { PolicyTypeEnum } from './policyTypeEnum';
 import { RemoteData } from './remoteData';
 import { RemoteDataRequest } from './remoteDataRequest';
 import { RemoteKey } from './remoteKey';
 import { RemoteKeyForRegenerationRequest } from './remoteKeyForRegenerationRequest';
 import { RemoteResponse } from './remoteResponse';
+import { RequestFormatEnum } from './requestFormatEnum';
 import { RequestTypeEnum } from './requestTypeEnum';
 import { RunStateEnum } from './runStateEnum';
 import { RunTypeEnum } from './runTypeEnum';
@@ -177,6 +181,8 @@ let enumsMap: {[index: string]: any} = {
         "PayCurrencyEnum": PayCurrencyEnum,
         "PayFrequencyEnum": PayFrequencyEnum,
         "PayPeriodEnum": PayPeriodEnum,
+        "PolicyTypeEnum": PolicyTypeEnum,
+        "RequestFormatEnum": RequestFormatEnum,
         "RequestTypeEnum": RequestTypeEnum,
         "RunStateEnum": RunStateEnum,
         "RunTypeEnum": RunTypeEnum,
