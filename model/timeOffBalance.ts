@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { PolicyTypeEnum } from './policyTypeEnum';
 import { RemoteData } from './remoteData';
 
 /**
@@ -27,13 +28,17 @@ export class TimeOffBalance {
     */
     'employee'?: string | null;
     /**
-    * The current PTO balance.
+    * The current PTO balance in terms of hours.
     */
     'balance'?: number | null;
     /**
-    * The amount of PTO used.
+    * The amount of PTO used in terms of hours.
     */
     'used'?: number | null;
+    /**
+    * The policy type of this time off balance.
+    */
+    'policy_type'?: PolicyTypeEnum | null;
     'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -63,6 +68,11 @@ export class TimeOffBalance {
             "name": "used",
             "baseName": "used",
             "type": "number"
+        },
+        {
+            "name": "policy_type",
+            "baseName": "policy_type",
+            "type": "PolicyTypeEnum"
         },
         {
             "name": "remote_data",

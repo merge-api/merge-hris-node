@@ -72,11 +72,13 @@ model/payPeriodEnum.ts
 model/payrollRun.ts
 model/persistentDeduction.ts
 model/persistentDeductionRequest.ts
+model/policyTypeEnum.ts
 model/remoteData.ts
 model/remoteDataRequest.ts
 model/remoteKey.ts
 model/remoteKeyForRegenerationRequest.ts
 model/remoteResponse.ts
+model/requestFormatEnum.ts
 model/requestTypeEnum.ts
 model/runStateEnum.ts
 model/runTypeEnum.ts
