@@ -6,6 +6,8 @@ export * from './benefitsApi';
 import { BenefitsApi } from './benefitsApi';
 export * from './companiesApi';
 import { CompaniesApi } from './companiesApi';
+export * from './deductionsApi';
+import { DeductionsApi } from './deductionsApi';
 export * from './deleteAccountApi';
 import { DeleteAccountApi } from './deleteAccountApi';
 export * from './employeePayrollRunsApi';
@@ -49,4 +51,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AccountTokenApi, AvailableActionsApi, BenefitsApi, CompaniesApi, DeleteAccountApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, GenerateKeyApi, IssuesApi, LinkTokenApi, LocationsApi, PassthroughApi, PayrollRunsApi, PersistentDeductionsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalanceApi];
+export const APIS = [AccountTokenApi, AvailableActionsApi, BenefitsApi, CompaniesApi, DeductionsApi, DeleteAccountApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, GenerateKeyApi, IssuesApi, LinkTokenApi, LocationsApi, PassthroughApi, PayrollRunsApi, PersistentDeductionsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalanceApi];
