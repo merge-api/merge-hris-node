@@ -10,6 +10,7 @@ export * from './company';
 export * from './countryEnum';
 export * from './dataPassthroughRequest';
 export * from './deduction';
+export * from './deductionRequest';
 export * from './earning';
 export * from './employee';
 export * from './employeePayrollRun';
@@ -32,6 +33,7 @@ export * from './methodEnum';
 export * from './modelOperation';
 export * from './paginatedBenefitList';
 export * from './paginatedCompanyList';
+export * from './paginatedDeductionList';
 export * from './paginatedEmployeeList';
 export * from './paginatedEmployeePayrollRunList';
 export * from './paginatedEmploymentList';
@@ -93,6 +95,7 @@ import { Company } from './company';
 import { CountryEnum } from './countryEnum';
 import { DataPassthroughRequest } from './dataPassthroughRequest';
 import { Deduction } from './deduction';
+import { DeductionRequest } from './deductionRequest';
 import { Earning } from './earning';
 import { Employee } from './employee';
 import { EmployeePayrollRun } from './employeePayrollRun';
@@ -115,6 +118,7 @@ import { MethodEnum } from './methodEnum';
 import { ModelOperation } from './modelOperation';
 import { PaginatedBenefitList } from './paginatedBenefitList';
 import { PaginatedCompanyList } from './paginatedCompanyList';
+import { PaginatedDeductionList } from './paginatedDeductionList';
 import { PaginatedEmployeeList } from './paginatedEmployeeList';
 import { PaginatedEmployeePayrollRunList } from './paginatedEmployeePayrollRunList';
 import { PaginatedEmploymentList } from './paginatedEmploymentList';
@@ -201,6 +205,7 @@ let typeMap: {[index: string]: any} = {
     "Company": Company,
     "DataPassthroughRequest": DataPassthroughRequest,
     "Deduction": Deduction,
+    "DeductionRequest": DeductionRequest,
     "Earning": Earning,
     "Employee": Employee,
     "EmployeePayrollRun": EmployeePayrollRun,
@@ -215,6 +220,7 @@ let typeMap: {[index: string]: any} = {
     "ModelOperation": ModelOperation,
     "PaginatedBenefitList": PaginatedBenefitList,
     "PaginatedCompanyList": PaginatedCompanyList,
+    "PaginatedDeductionList": PaginatedDeductionList,
     "PaginatedEmployeeList": PaginatedEmployeeList,
     "PaginatedEmployeePayrollRunList": PaginatedEmployeePayrollRunList,
     "PaginatedEmploymentList": PaginatedEmploymentList,

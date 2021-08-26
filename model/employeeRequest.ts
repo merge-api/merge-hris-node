@@ -93,11 +93,11 @@ export class EmployeeRequest {
     */
     'date_of_birth'?: Date | null;
     /**
-    * The employee\'s hire date. If an employee has multiple hire dates from previous employments, this represents the most recent hire date.
+    * The date that the employee was hired, usually the day that an offer letter is signed. If an employee has multiple hire dates from previous employments, this represents the most recent hire date. Note: If you\'re looking for the employee\'s start date, refer to the start_date field.
     */
     'hire_date'?: Date | null;
     /**
-    * The employee\'s start date.
+    * The date that the employee started working. If an employee has multiple start dates from previous employments, this represents the most recent start date.
     */
     'start_date'?: Date | null;
     /**
