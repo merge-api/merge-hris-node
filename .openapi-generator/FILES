@@ -16,7 +16,6 @@ api/linkTokenApi.ts
 api/locationsApi.ts
 api/passthroughApi.ts
 api/payrollRunsApi.ts
-api/persistentDeductionsApi.ts
 api/regenerateKeyApi.ts
 api/syncStatusApi.ts
 api/teamsApi.ts
@@ -64,7 +63,6 @@ model/paginatedEmploymentList.ts
 model/paginatedIssueList.ts
 model/paginatedLocationList.ts
 model/paginatedPayrollRunList.ts
-model/paginatedPersistentDeductionList.ts
 model/paginatedSyncStatusList.ts
 model/paginatedTeamList.ts
 model/paginatedTimeOffBalanceList.ts
@@ -73,8 +71,6 @@ model/payCurrencyEnum.ts
 model/payFrequencyEnum.ts
 model/payPeriodEnum.ts
 model/payrollRun.ts
-model/persistentDeduction.ts
-model/persistentDeductionRequest.ts
 model/policyTypeEnum.ts
 model/remoteData.ts
 model/remoteDataRequest.ts

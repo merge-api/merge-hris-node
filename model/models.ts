@@ -40,7 +40,6 @@ export * from './paginatedEmploymentList';
 export * from './paginatedIssueList';
 export * from './paginatedLocationList';
 export * from './paginatedPayrollRunList';
-export * from './paginatedPersistentDeductionList';
 export * from './paginatedSyncStatusList';
 export * from './paginatedTeamList';
 export * from './paginatedTimeOffBalanceList';
@@ -49,8 +48,6 @@ export * from './payCurrencyEnum';
 export * from './payFrequencyEnum';
 export * from './payPeriodEnum';
 export * from './payrollRun';
-export * from './persistentDeduction';
-export * from './persistentDeductionRequest';
 export * from './policyTypeEnum';
 export * from './remoteData';
 export * from './remoteDataRequest';
@@ -125,7 +122,6 @@ import { PaginatedEmploymentList } from './paginatedEmploymentList';
 import { PaginatedIssueList } from './paginatedIssueList';
 import { PaginatedLocationList } from './paginatedLocationList';
 import { PaginatedPayrollRunList } from './paginatedPayrollRunList';
-import { PaginatedPersistentDeductionList } from './paginatedPersistentDeductionList';
 import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
 import { PaginatedTimeOffBalanceList } from './paginatedTimeOffBalanceList';
@@ -134,8 +130,6 @@ import { PayCurrencyEnum } from './payCurrencyEnum';
 import { PayFrequencyEnum } from './payFrequencyEnum';
 import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
-import { PersistentDeduction } from './persistentDeduction';
-import { PersistentDeductionRequest } from './persistentDeductionRequest';
 import { PolicyTypeEnum } from './policyTypeEnum';
 import { RemoteData } from './remoteData';
 import { RemoteDataRequest } from './remoteDataRequest';
@@ -227,14 +221,11 @@ let typeMap: {[index: string]: any} = {
     "PaginatedIssueList": PaginatedIssueList,
     "PaginatedLocationList": PaginatedLocationList,
     "PaginatedPayrollRunList": PaginatedPayrollRunList,
-    "PaginatedPersistentDeductionList": PaginatedPersistentDeductionList,
     "PaginatedSyncStatusList": PaginatedSyncStatusList,
     "PaginatedTeamList": PaginatedTeamList,
     "PaginatedTimeOffBalanceList": PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": PaginatedTimeOffList,
     "PayrollRun": PayrollRun,
-    "PersistentDeduction": PersistentDeduction,
-    "PersistentDeductionRequest": PersistentDeductionRequest,
     "RemoteData": RemoteData,
     "RemoteDataRequest": RemoteDataRequest,
     "RemoteKey": RemoteKey,

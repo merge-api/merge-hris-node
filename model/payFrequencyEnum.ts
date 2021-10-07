@@ -20,6 +20,5 @@ export enum PayFrequencyEnum {
     Semiannually = <any> 'SEMIANNUALLY',
     Annually = <any> 'ANNUALLY',
     ThirteenMonthly = <any> 'THIRTEEN-MONTHLY',
-    ProRata = <any> 'PRO_RATA',
-    Null = <any> 'NULL'
+    ProRata = <any> 'PRO_RATA'
 }
