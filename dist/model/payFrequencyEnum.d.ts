@@ -6,6 +6,5 @@ export declare enum PayFrequencyEnum {
     Semiannually,
     Annually,
     ThirteenMonthly,
-    ProRata,
-    Null
+    ProRata
 }

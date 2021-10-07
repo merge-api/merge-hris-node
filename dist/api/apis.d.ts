@@ -29,8 +29,6 @@ export * from './passthroughApi';
 import { PassthroughApi } from './passthroughApi';
 export * from './payrollRunsApi';
 import { PayrollRunsApi } from './payrollRunsApi';
-export * from './persistentDeductionsApi';
-import { PersistentDeductionsApi } from './persistentDeductionsApi';
 export * from './regenerateKeyApi';
 import { RegenerateKeyApi } from './regenerateKeyApi';
 export * from './syncStatusApi';
@@ -49,4 +47,4 @@ export declare class HttpError extends Error {
     constructor(response: http.IncomingMessage, body: any, statusCode?: number | undefined);
 }
 export { RequestFile } from '../model/models';
-export declare const APIS: (typeof AccountTokenApi | typeof AvailableActionsApi | typeof BenefitsApi | typeof CompaniesApi | typeof DeductionsApi | typeof DeleteAccountApi | typeof EmployeePayrollRunsApi | typeof EmployeesApi | typeof EmploymentsApi | typeof GenerateKeyApi | typeof IssuesApi | typeof LinkTokenApi | typeof LocationsApi | typeof PassthroughApi | typeof PayrollRunsApi | typeof PersistentDeductionsApi | typeof RegenerateKeyApi | typeof SyncStatusApi | typeof TeamsApi | typeof TimeOffApi | typeof TimeOffBalanceApi)[];
+export declare const APIS: (typeof AccountTokenApi | typeof AvailableActionsApi | typeof BenefitsApi | typeof CompaniesApi | typeof DeductionsApi | typeof DeleteAccountApi | typeof EmployeePayrollRunsApi | typeof EmployeesApi | typeof EmploymentsApi | typeof GenerateKeyApi | typeof IssuesApi | typeof LinkTokenApi | typeof LocationsApi | typeof PassthroughApi | typeof PayrollRunsApi | typeof RegenerateKeyApi | typeof SyncStatusApi | typeof TeamsApi | typeof TimeOffApi | typeof TimeOffBalanceApi)[];

@@ -183,7 +183,7 @@ var TimeOffApi = (function () {
             });
         });
     };
-    TimeOffApi.prototype.timeOffList = function (xAccountToken, approverId, createdAfter, createdBefore, cursor, employeeId, expand, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, status, options) {
+    TimeOffApi.prototype.timeOffList = function (xAccountToken, approverId, createdAfter, createdBefore, cursor, employeeId, expand, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, requestType, status, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
@@ -235,6 +235,9 @@ var TimeOffApi = (function () {
                 }
                 if (remoteId !== undefined) {
                     localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
+                }
+                if (requestType !== undefined) {
+                    localVarQueryParameters['request_type'] = models_1.ObjectSerializer.serialize(requestType, "'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null'");
                 }
                 if (status !== undefined) {
                     localVarQueryParameters['status'] = models_1.ObjectSerializer.serialize(status, "'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null'");

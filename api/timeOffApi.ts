@@ -183,9 +183,10 @@ export class TimeOffApi {
      * @param modifiedBefore If provided, will only return objects modified before this datetime.
      * @param pageSize Number of results to return per page.
      * @param remoteId The API provider\&#39;s ID for the given object.
+     * @param requestType If provided, will only return TimeOff with this request type. Options: (\&#39;VACATION\&#39;, \&#39;SICK\&#39;, \&#39;PERSONAL\&#39;, \&#39;JURY_DUTY\&#39;, \&#39;VOLUNTEER\&#39;, \&#39;BEREAVEMENT\&#39;)
      * @param status If provided, will only return TimeOff with this status. Options: (\&#39;REQUESTED\&#39;, \&#39;APPROVED\&#39;, \&#39;DECLINED\&#39;, \&#39;CANCELLED\&#39;, \&#39;DELETED\&#39;)
      */
-    public async timeOffList (xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, status?: 'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTimeOffList;  }> {
+    public async timeOffList (xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null', status?: 'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTimeOffList;  }> {
         const localVarPath = this.basePath + '/time-off';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -245,6 +246,10 @@ export class TimeOffApi {
 
         if (remoteId !== undefined) {
             localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
+        }
+
+        if (requestType !== undefined) {
+            localVarQueryParameters['request_type'] = ObjectSerializer.serialize(requestType, "'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null'");
         }
 
         if (status !== undefined) {

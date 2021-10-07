@@ -25,7 +25,7 @@ export declare class TimeOffBalanceApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TimeOffBalanceApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    timeOffBalanceList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options?: {
+    timeOffBalanceList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, policyType?: 'VACATION' | 'SICK' | 'PERSONAL' | 'JURY_DUTY' | 'VOLUNTEER' | 'BEREAVEMENT' | '' | 'null', remoteId?: string, options?: {
         headers: {
             [name: string]: string;
         };

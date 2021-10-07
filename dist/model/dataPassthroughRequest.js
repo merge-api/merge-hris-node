@@ -27,12 +27,17 @@ var DataPassthroughRequest = (function () {
         {
             "name": "data",
             "baseName": "data",
-            "type": "{ [key: string]: any; }"
+            "type": "string"
         },
         {
             "name": "headers",
             "baseName": "headers",
             "type": "{ [key: string]: any; }"
+        },
+        {
+            "name": "request_format",
+            "baseName": "request_format",
+            "type": "RequestFormatEnum"
         }
     ];
     return DataPassthroughRequest;

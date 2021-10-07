@@ -11,6 +11,5 @@ var PayFrequencyEnum;
     PayFrequencyEnum[PayFrequencyEnum["Annually"] = 'ANNUALLY'] = "Annually";
     PayFrequencyEnum[PayFrequencyEnum["ThirteenMonthly"] = 'THIRTEEN-MONTHLY'] = "ThirteenMonthly";
     PayFrequencyEnum[PayFrequencyEnum["ProRata"] = 'PRO_RATA'] = "ProRata";
-    PayFrequencyEnum[PayFrequencyEnum["Null"] = 'NULL'] = "Null";
 })(PayFrequencyEnum = exports.PayFrequencyEnum || (exports.PayFrequencyEnum = {}));
 //# sourceMappingURL=payFrequencyEnum.js.map
