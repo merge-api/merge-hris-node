@@ -51,7 +51,6 @@ __exportStar(require("./paginatedEmploymentList"), exports);
 __exportStar(require("./paginatedIssueList"), exports);
 __exportStar(require("./paginatedLocationList"), exports);
 __exportStar(require("./paginatedPayrollRunList"), exports);
-__exportStar(require("./paginatedPersistentDeductionList"), exports);
 __exportStar(require("./paginatedSyncStatusList"), exports);
 __exportStar(require("./paginatedTeamList"), exports);
 __exportStar(require("./paginatedTimeOffBalanceList"), exports);
@@ -60,8 +59,6 @@ __exportStar(require("./payCurrencyEnum"), exports);
 __exportStar(require("./payFrequencyEnum"), exports);
 __exportStar(require("./payPeriodEnum"), exports);
 __exportStar(require("./payrollRun"), exports);
-__exportStar(require("./persistentDeduction"), exports);
-__exportStar(require("./persistentDeductionRequest"), exports);
 __exportStar(require("./policyTypeEnum"), exports);
 __exportStar(require("./remoteData"), exports);
 __exportStar(require("./remoteDataRequest"), exports);
@@ -122,7 +119,6 @@ var paginatedEmploymentList_1 = require("./paginatedEmploymentList");
 var paginatedIssueList_1 = require("./paginatedIssueList");
 var paginatedLocationList_1 = require("./paginatedLocationList");
 var paginatedPayrollRunList_1 = require("./paginatedPayrollRunList");
-var paginatedPersistentDeductionList_1 = require("./paginatedPersistentDeductionList");
 var paginatedSyncStatusList_1 = require("./paginatedSyncStatusList");
 var paginatedTeamList_1 = require("./paginatedTeamList");
 var paginatedTimeOffBalanceList_1 = require("./paginatedTimeOffBalanceList");
@@ -131,8 +127,6 @@ var payCurrencyEnum_1 = require("./payCurrencyEnum");
 var payFrequencyEnum_1 = require("./payFrequencyEnum");
 var payPeriodEnum_1 = require("./payPeriodEnum");
 var payrollRun_1 = require("./payrollRun");
-var persistentDeduction_1 = require("./persistentDeduction");
-var persistentDeductionRequest_1 = require("./persistentDeductionRequest");
 var policyTypeEnum_1 = require("./policyTypeEnum");
 var remoteData_1 = require("./remoteData");
 var remoteDataRequest_1 = require("./remoteDataRequest");
@@ -220,14 +214,11 @@ var typeMap = {
     "PaginatedIssueList": paginatedIssueList_1.PaginatedIssueList,
     "PaginatedLocationList": paginatedLocationList_1.PaginatedLocationList,
     "PaginatedPayrollRunList": paginatedPayrollRunList_1.PaginatedPayrollRunList,
-    "PaginatedPersistentDeductionList": paginatedPersistentDeductionList_1.PaginatedPersistentDeductionList,
     "PaginatedSyncStatusList": paginatedSyncStatusList_1.PaginatedSyncStatusList,
     "PaginatedTeamList": paginatedTeamList_1.PaginatedTeamList,
     "PaginatedTimeOffBalanceList": paginatedTimeOffBalanceList_1.PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": paginatedTimeOffList_1.PaginatedTimeOffList,
     "PayrollRun": payrollRun_1.PayrollRun,
-    "PersistentDeduction": persistentDeduction_1.PersistentDeduction,
-    "PersistentDeductionRequest": persistentDeductionRequest_1.PersistentDeductionRequest,
     "RemoteData": remoteData_1.RemoteData,
     "RemoteDataRequest": remoteDataRequest_1.RemoteDataRequest,
     "RemoteKey": remoteKey_1.RemoteKey,

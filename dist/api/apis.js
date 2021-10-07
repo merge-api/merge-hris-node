@@ -56,8 +56,6 @@ __exportStar(require("./passthroughApi"), exports);
 var passthroughApi_1 = require("./passthroughApi");
 __exportStar(require("./payrollRunsApi"), exports);
 var payrollRunsApi_1 = require("./payrollRunsApi");
-__exportStar(require("./persistentDeductionsApi"), exports);
-var persistentDeductionsApi_1 = require("./persistentDeductionsApi");
 __exportStar(require("./regenerateKeyApi"), exports);
 var regenerateKeyApi_1 = require("./regenerateKeyApi");
 __exportStar(require("./syncStatusApi"), exports);
@@ -81,5 +79,5 @@ var HttpError = (function (_super) {
     return HttpError;
 }(Error));
 exports.HttpError = HttpError;
-exports.APIS = [accountTokenApi_1.AccountTokenApi, availableActionsApi_1.AvailableActionsApi, benefitsApi_1.BenefitsApi, companiesApi_1.CompaniesApi, deductionsApi_1.DeductionsApi, deleteAccountApi_1.DeleteAccountApi, employeePayrollRunsApi_1.EmployeePayrollRunsApi, employeesApi_1.EmployeesApi, employmentsApi_1.EmploymentsApi, generateKeyApi_1.GenerateKeyApi, issuesApi_1.IssuesApi, linkTokenApi_1.LinkTokenApi, locationsApi_1.LocationsApi, passthroughApi_1.PassthroughApi, payrollRunsApi_1.PayrollRunsApi, persistentDeductionsApi_1.PersistentDeductionsApi, regenerateKeyApi_1.RegenerateKeyApi, syncStatusApi_1.SyncStatusApi, teamsApi_1.TeamsApi, timeOffApi_1.TimeOffApi, timeOffBalanceApi_1.TimeOffBalanceApi];
+exports.APIS = [accountTokenApi_1.AccountTokenApi, availableActionsApi_1.AvailableActionsApi, benefitsApi_1.BenefitsApi, companiesApi_1.CompaniesApi, deductionsApi_1.DeductionsApi, deleteAccountApi_1.DeleteAccountApi, employeePayrollRunsApi_1.EmployeePayrollRunsApi, employeesApi_1.EmployeesApi, employmentsApi_1.EmploymentsApi, generateKeyApi_1.GenerateKeyApi, issuesApi_1.IssuesApi, linkTokenApi_1.LinkTokenApi, locationsApi_1.LocationsApi, passthroughApi_1.PassthroughApi, payrollRunsApi_1.PayrollRunsApi, regenerateKeyApi_1.RegenerateKeyApi, syncStatusApi_1.SyncStatusApi, teamsApi_1.TeamsApi, timeOffApi_1.TimeOffApi, timeOffBalanceApi_1.TimeOffBalanceApi];
 //# sourceMappingURL=apis.js.map

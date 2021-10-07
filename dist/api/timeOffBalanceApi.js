@@ -106,7 +106,7 @@ var TimeOffBalanceApi = (function () {
     TimeOffBalanceApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    TimeOffBalanceApi.prototype.timeOffBalanceList = function (xAccountToken, createdAfter, createdBefore, cursor, employeeId, expand, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, options) {
+    TimeOffBalanceApi.prototype.timeOffBalanceList = function (xAccountToken, createdAfter, createdBefore, cursor, employeeId, expand, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, policyType, remoteId, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -152,6 +152,9 @@ var TimeOffBalanceApi = (function () {
                 }
                 if (pageSize !== undefined) {
                     localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
+                }
+                if (policyType !== undefined) {
+                    localVarQueryParameters['policy_type'] = models_1.ObjectSerializer.serialize(policyType, "'VACATION' | 'SICK' | 'PERSONAL' | 'JURY_DUTY' | 'VOLUNTEER' | 'BEREAVEMENT' | '' | 'null'");
                 }
                 if (remoteId !== undefined) {
                     localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
