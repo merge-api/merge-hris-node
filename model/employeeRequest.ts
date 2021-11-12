@@ -112,6 +112,10 @@ export class EmployeeRequest {
     * The URL of the employee\'s avatar image.
     */
     'avatar'?: string | null;
+    /**
+    * Custom fields configured for a given model.
+    */
+    'custom_fields'?: { [key: string]: any; } | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -230,6 +234,11 @@ export class EmployeeRequest {
             "name": "avatar",
             "baseName": "avatar",
             "type": "string"
+        },
+        {
+            "name": "custom_fields",
+            "baseName": "custom_fields",
+            "type": "{ [key: string]: any; }"
         }    ];
 
     static getAttributeTypeMap() {

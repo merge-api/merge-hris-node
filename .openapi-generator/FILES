@@ -1,5 +1,6 @@
 .gitignore
 api.ts
+api/accountDetailsApi.ts
 api/accountTokenApi.ts
 api/apis.ts
 api/availableActionsApi.ts
@@ -13,6 +14,7 @@ api/employmentsApi.ts
 api/generateKeyApi.ts
 api/issuesApi.ts
 api/linkTokenApi.ts
+api/linkedAccountsApi.ts
 api/locationsApi.ts
 api/passthroughApi.ts
 api/payrollRunsApi.ts
@@ -22,12 +24,18 @@ api/teamsApi.ts
 api/timeOffApi.ts
 api/timeOffBalanceApi.ts
 git_push.sh
+model/accountDetails.ts
+model/accountDetailsAndActions.ts
+model/accountDetailsAndActionsIntegration.ts
+model/accountDetailsAndActionsStatusEnum.ts
 model/accountIntegration.ts
 model/accountToken.ts
 model/availableActions.ts
 model/benefit.ts
 model/benefitPlanTypeEnum.ts
 model/benefitRequest.ts
+model/categoriesEnum.ts
+model/categoryEnum.ts
 model/company.ts
 model/countryEnum.ts
 model/dataPassthroughRequest.ts
@@ -38,7 +46,6 @@ model/employee.ts
 model/employeePayrollRun.ts
 model/employeeRequest.ts
 model/employment.ts
-model/employmentRequest.ts
 model/employmentStatusEnum.ts
 model/employmentTypeEnum.ts
 model/endUserDetailsRequest.ts
@@ -54,6 +61,7 @@ model/maritalStatusEnum.ts
 model/methodEnum.ts
 model/modelOperation.ts
 model/models.ts
+model/paginatedAccountDetailsAndActionsList.ts
 model/paginatedBenefitList.ts
 model/paginatedCompanyList.ts
 model/paginatedDeductionList.ts

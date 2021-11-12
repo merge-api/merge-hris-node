@@ -24,6 +24,10 @@ export class Location {
     */
     'remote_id'?: string | null;
     /**
+    * The location\'s name.
+    */
+    'name'?: string | null;
+    /**
     * The location\'s phone number.
     */
     'phone_number'?: string | null;
@@ -64,6 +68,11 @@ export class Location {
         {
             "name": "remote_id",
             "baseName": "remote_id",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "baseName": "name",
             "type": "string"
         },
         {

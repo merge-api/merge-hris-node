@@ -28,6 +28,10 @@ export class Employment {
     */
     'remote_id'?: string | null;
     /**
+    * The employee holding this position.
+    */
+    'employee'?: string | null;
+    /**
     * The position\'s title.
     */
     'job_title'?: string | null;
@@ -72,6 +76,11 @@ export class Employment {
         {
             "name": "remote_id",
             "baseName": "remote_id",
+            "type": "string"
+        },
+        {
+            "name": "employee",
+            "baseName": "employee",
             "type": "string"
         },
         {
