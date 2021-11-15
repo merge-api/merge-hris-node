@@ -119,6 +119,10 @@ export class Employee {
     */
     'avatar'?: string | null;
     'remote_data'?: Array<RemoteData> | null;
+    /**
+    * Custom fields configured for a given model.
+    */
+    'custom_fields'?: { [key: string]: any; } | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -252,6 +256,11 @@ export class Employee {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
+        },
+        {
+            "name": "custom_fields",
+            "baseName": "custom_fields",
+            "type": "{ [key: string]: any; }"
         }    ];
 
     static getAttributeTypeMap() {

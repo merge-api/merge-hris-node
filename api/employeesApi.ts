@@ -183,11 +183,13 @@ export class EmployeesApi {
      * @param modifiedAfter If provided, will only return objects modified after this datetime.
      * @param modifiedBefore If provided, will only return objects modified before this datetime.
      * @param pageSize Number of results to return per page.
+     * @param personalEmail If provided, will only return Employees with this personal email
      * @param remoteId The API provider\&#39;s ID for the given object.
      * @param teamId If provided, will only return employees for this team.
+     * @param workEmail If provided, will only return Employees with this work email
      * @param workLocationId If provided, will only return employees for this location.
      */
-    public async employeesList (xAccountToken: string, companyId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'company' | 'employments' | 'employments,company' | 'employments,home_location' | 'employments,home_location,company' | 'employments,home_location,manager' | 'employments,home_location,manager,company' | 'employments,home_location,manager,team' | 'employments,home_location,manager,team,company' | 'employments,home_location,team' | 'employments,home_location,team,company' | 'employments,home_location,work_location' | 'employments,home_location,work_location,company' | 'employments,home_location,work_location,manager' | 'employments,home_location,work_location,manager,company' | 'employments,home_location,work_location,manager,team' | 'employments,home_location,work_location,manager,team,company' | 'employments,home_location,work_location,team' | 'employments,home_location,work_location,team,company' | 'employments,manager' | 'employments,manager,company' | 'employments,manager,team' | 'employments,manager,team,company' | 'employments,team' | 'employments,team,company' | 'employments,work_location' | 'employments,work_location,company' | 'employments,work_location,manager' | 'employments,work_location,manager,company' | 'employments,work_location,manager,team' | 'employments,work_location,manager,team,company' | 'employments,work_location,team' | 'employments,work_location,team,company' | 'home_location' | 'home_location,company' | 'home_location,manager' | 'home_location,manager,company' | 'home_location,manager,team' | 'home_location,manager,team,company' | 'home_location,team' | 'home_location,team,company' | 'home_location,work_location' | 'home_location,work_location,company' | 'home_location,work_location,manager' | 'home_location,work_location,manager,company' | 'home_location,work_location,manager,team' | 'home_location,work_location,manager,team,company' | 'home_location,work_location,team' | 'home_location,work_location,team,company' | 'manager' | 'manager,company' | 'manager,team' | 'manager,team,company' | 'team' | 'team,company' | 'work_location' | 'work_location,company' | 'work_location,manager' | 'work_location,manager,company' | 'work_location,manager,team' | 'work_location,manager,team,company' | 'work_location,team' | 'work_location,team,company', includeRemoteData?: boolean, includeSensitiveFields?: boolean, managerId?: string, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, teamId?: string, workLocationId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmployeeList;  }> {
+    public async employeesList (xAccountToken: string, companyId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'company' | 'employments' | 'employments,company' | 'employments,home_location' | 'employments,home_location,company' | 'employments,home_location,manager' | 'employments,home_location,manager,company' | 'employments,home_location,manager,team' | 'employments,home_location,manager,team,company' | 'employments,home_location,team' | 'employments,home_location,team,company' | 'employments,home_location,work_location' | 'employments,home_location,work_location,company' | 'employments,home_location,work_location,manager' | 'employments,home_location,work_location,manager,company' | 'employments,home_location,work_location,manager,team' | 'employments,home_location,work_location,manager,team,company' | 'employments,home_location,work_location,team' | 'employments,home_location,work_location,team,company' | 'employments,manager' | 'employments,manager,company' | 'employments,manager,team' | 'employments,manager,team,company' | 'employments,team' | 'employments,team,company' | 'employments,work_location' | 'employments,work_location,company' | 'employments,work_location,manager' | 'employments,work_location,manager,company' | 'employments,work_location,manager,team' | 'employments,work_location,manager,team,company' | 'employments,work_location,team' | 'employments,work_location,team,company' | 'home_location' | 'home_location,company' | 'home_location,manager' | 'home_location,manager,company' | 'home_location,manager,team' | 'home_location,manager,team,company' | 'home_location,team' | 'home_location,team,company' | 'home_location,work_location' | 'home_location,work_location,company' | 'home_location,work_location,manager' | 'home_location,work_location,manager,company' | 'home_location,work_location,manager,team' | 'home_location,work_location,manager,team,company' | 'home_location,work_location,team' | 'home_location,work_location,team,company' | 'manager' | 'manager,company' | 'manager,team' | 'manager,team,company' | 'team' | 'team,company' | 'work_location' | 'work_location,company' | 'work_location,manager' | 'work_location,manager,company' | 'work_location,manager,team' | 'work_location,manager,team,company' | 'work_location,team' | 'work_location,team,company', includeRemoteData?: boolean, includeSensitiveFields?: boolean, managerId?: string, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, personalEmail?: string, remoteId?: string, teamId?: string, workEmail?: string, workLocationId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmployeeList;  }> {
         const localVarPath = this.basePath + '/employees';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -249,12 +251,20 @@ export class EmployeesApi {
             localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
         }
 
+        if (personalEmail !== undefined) {
+            localVarQueryParameters['personal_email'] = ObjectSerializer.serialize(personalEmail, "string");
+        }
+
         if (remoteId !== undefined) {
             localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
         }
 
         if (teamId !== undefined) {
             localVarQueryParameters['team_id'] = ObjectSerializer.serialize(teamId, "string");
+        }
+
+        if (workEmail !== undefined) {
+            localVarQueryParameters['work_email'] = ObjectSerializer.serialize(workEmail, "string");
         }
 
         if (workLocationId !== undefined) {
