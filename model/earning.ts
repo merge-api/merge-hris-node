@@ -11,13 +11,15 @@
  */
 
 import { RequestFile } from './models';
+import { BlankEnum } from './blankEnum';
+import { NullEnum } from './nullEnum';
 import { TypeEnum } from './typeEnum';
 
 /**
 * # The Earning Object ### Description The `Earning` object is used to represent an earning for a given employee\'s payroll run. One run could include several earnings.  ### Usage Example Fetch from the `LIST Earnings` endpoint and filter by `ID` to show all earnings.
 */
 export class Earning {
-    'id'?: string;
+    'id': string;
     /**
     * The earning\'s employee payroll run.
     */
@@ -29,7 +31,7 @@ export class Earning {
     /**
     * The type of earning.
     */
-    'type'?: TypeEnum | null;
+    'type'?: TypeEnum | BlankEnum | NullEnum | null;
     'remote_data'?: Array<{ [key: string]: any; }> | null;
 
     static discriminator: string | undefined = undefined;
@@ -53,7 +55,7 @@ export class Earning {
         {
             "name": "type",
             "baseName": "type",
-            "type": "TypeEnum"
+            "type": "TypeEnum | BlankEnum | NullEnum"
         },
         {
             "name": "remote_data",

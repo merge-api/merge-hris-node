@@ -11,6 +11,8 @@
  */
 
 import { RequestFile } from './models';
+import { BlankEnum } from './blankEnum';
+import { NullEnum } from './nullEnum';
 import { RemoteData } from './remoteData';
 import { RunStateEnum } from './runStateEnum';
 import { RunTypeEnum } from './runTypeEnum';
@@ -19,7 +21,7 @@ import { RunTypeEnum } from './runTypeEnum';
 * # The PayrollRun Object ### Description The `PayrollRun` object is used to represent a payroll run.  ### Usage Example Fetch from the `LIST PayrollRuns` endpoint and filter by `ID` to show all payroll runs.
 */
 export class PayrollRun {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
@@ -27,11 +29,11 @@ export class PayrollRun {
     /**
     * The state of the payroll run
     */
-    'run_state'?: RunStateEnum | null;
+    'run_state'?: RunStateEnum | BlankEnum | NullEnum | null;
     /**
     * The type of the payroll run
     */
-    'run_type'?: RunTypeEnum | null;
+    'run_type'?: RunTypeEnum | BlankEnum | NullEnum | null;
     /**
     * The day and time the payroll run started.
     */
@@ -44,7 +46,7 @@ export class PayrollRun {
     * The day and time the payroll run was checked.
     */
     'check_date'?: Date | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remote_data': Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -62,12 +64,12 @@ export class PayrollRun {
         {
             "name": "run_state",
             "baseName": "run_state",
-            "type": "RunStateEnum"
+            "type": "RunStateEnum | BlankEnum | NullEnum"
         },
         {
             "name": "run_type",
             "baseName": "run_type",
-            "type": "RunTypeEnum"
+            "type": "RunTypeEnum | BlankEnum | NullEnum"
         },
         {
             "name": "start_date",

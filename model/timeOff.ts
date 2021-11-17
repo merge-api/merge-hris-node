@@ -11,6 +11,8 @@
  */
 
 import { RequestFile } from './models';
+import { BlankEnum } from './blankEnum';
+import { NullEnum } from './nullEnum';
 import { RemoteData } from './remoteData';
 import { RequestTypeEnum } from './requestTypeEnum';
 import { TimeOffStatusEnum } from './timeOffStatusEnum';
@@ -20,7 +22,7 @@ import { UnitsEnum } from './unitsEnum';
 * # The TimeOff Object ### Description The `TimeOff` object is used to represent a Time Off Request filed by an employee.  ### Usage Example Fetch from the `LIST TimeOffs` endpoint and filter by `ID` to show all time off requests.
 */
 export class TimeOff {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
@@ -36,7 +38,7 @@ export class TimeOff {
     /**
     * The status of this time off request.
     */
-    'status'?: TimeOffStatusEnum | null;
+    'status'?: TimeOffStatusEnum | BlankEnum | NullEnum | null;
     /**
     * The employee note for this time off request.
     */
@@ -44,7 +46,7 @@ export class TimeOff {
     /**
     * The unit of time requested.
     */
-    'units'?: UnitsEnum | null;
+    'units'?: UnitsEnum | BlankEnum | NullEnum | null;
     /**
     * The number of time off units requested.
     */
@@ -52,7 +54,7 @@ export class TimeOff {
     /**
     * The type of time off request.
     */
-    'request_type'?: RequestTypeEnum | null;
+    'request_type'?: RequestTypeEnum | BlankEnum | NullEnum | null;
     /**
     * The day and time of the start of the time requested off.
     */
@@ -61,7 +63,7 @@ export class TimeOff {
     * The day and time of the end of the time requested off.
     */
     'end_time'?: Date | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remote_data': Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -89,7 +91,7 @@ export class TimeOff {
         {
             "name": "status",
             "baseName": "status",
-            "type": "TimeOffStatusEnum"
+            "type": "TimeOffStatusEnum | BlankEnum | NullEnum"
         },
         {
             "name": "employee_note",
@@ -99,7 +101,7 @@ export class TimeOff {
         {
             "name": "units",
             "baseName": "units",
-            "type": "UnitsEnum"
+            "type": "UnitsEnum | BlankEnum | NullEnum"
         },
         {
             "name": "amount",
@@ -109,7 +111,7 @@ export class TimeOff {
         {
             "name": "request_type",
             "baseName": "request_type",
-            "type": "RequestTypeEnum"
+            "type": "RequestTypeEnum | BlankEnum | NullEnum"
         },
         {
             "name": "start_time",

@@ -92,11 +92,11 @@ export class SyncStatusApi {
 
     /**
      * Get syncing status.
-     * @param xAccountToken Token identifying the end user.
+     * @param x_account_token Token identifying the end user.
      * @param cursor The pagination cursor value.
-     * @param pageSize Number of results to return per page.
+     * @param page_size Number of results to return per page.
      */
-    public async syncStatusList (xAccountToken: string, cursor?: number, pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedSyncStatusList;  }> {
+    public async syncStatusList (x_account_token: string, cursor?: number, page_size?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedSyncStatusList;  }> {
         const localVarPath = this.basePath + '/sync-status';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -109,20 +109,20 @@ export class SyncStatusApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling syncStatusList.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling syncStatusList.');
         }
 
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "number");
         }
 
-        if (pageSize !== undefined) {
-            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
+        if (page_size !== undefined) {
+            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(page_size, "number");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -172,10 +172,10 @@ export class SyncStatusApi {
         });
     }
     /**
-     * Force resync of all models.
-     * @param xAccountToken Token identifying the end user.
+     * Force re-sync of all models. This is only available for organizations on Merge\'s Grow and Expand plans.
+     * @param x_account_token Token identifying the end user.
      */
-    public async syncStatusResyncCreate (xAccountToken: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SyncStatus;  }> {
+    public async syncStatusResyncCreate (x_account_token: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SyncStatus;  }> {
         const localVarPath = this.basePath + '/sync-status/resync';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -188,12 +188,12 @@ export class SyncStatusApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling syncStatusResyncCreate.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling syncStatusResyncCreate.');
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;

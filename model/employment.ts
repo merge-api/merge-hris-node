@@ -11,8 +11,10 @@
  */
 
 import { RequestFile } from './models';
+import { BlankEnum } from './blankEnum';
 import { EmploymentTypeEnum } from './employmentTypeEnum';
 import { FlsaStatusEnum } from './flsaStatusEnum';
+import { NullEnum } from './nullEnum';
 import { PayCurrencyEnum } from './payCurrencyEnum';
 import { PayFrequencyEnum } from './payFrequencyEnum';
 import { PayPeriodEnum } from './payPeriodEnum';
@@ -22,11 +24,15 @@ import { RemoteData } from './remoteData';
 * # The Employment Object ### Description The `Employment` object is used to represent an employment position at a company. These are associated with the employee filling the role.  ### Usage Example Fetch from the `LIST Employments` endpoint and filter by `ID` to show all employees.
 */
 export class Employment {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
+    /**
+    * The employee holding this position.
+    */
+    'employee'?: string | null;
     /**
     * The position\'s title.
     */
@@ -38,19 +44,19 @@ export class Employment {
     /**
     * The time period this pay rate encompasses.
     */
-    'pay_period'?: PayPeriodEnum | null;
+    'pay_period'?: PayPeriodEnum | BlankEnum | NullEnum | null;
     /**
     * The position\'s pay frequency.
     */
-    'pay_frequency'?: PayFrequencyEnum | null;
+    'pay_frequency'?: PayFrequencyEnum | BlankEnum | NullEnum | null;
     /**
     * The position\'s currency code.
     */
-    'pay_currency'?: PayCurrencyEnum | null;
+    'pay_currency'?: PayCurrencyEnum | BlankEnum | NullEnum | null;
     /**
     * The position\'s FLSA status.
     */
-    'flsa_status'?: FlsaStatusEnum | null;
+    'flsa_status'?: FlsaStatusEnum | BlankEnum | NullEnum | null;
     /**
     * The position\'s effective date.
     */
@@ -58,8 +64,8 @@ export class Employment {
     /**
     * The position\'s type of employment.
     */
-    'employment_type'?: EmploymentTypeEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'employment_type'?: EmploymentTypeEnum | BlankEnum | NullEnum | null;
+    'remote_data': Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -75,6 +81,11 @@ export class Employment {
             "type": "string"
         },
         {
+            "name": "employee",
+            "baseName": "employee",
+            "type": "string"
+        },
+        {
             "name": "job_title",
             "baseName": "job_title",
             "type": "string"
@@ -87,22 +98,22 @@ export class Employment {
         {
             "name": "pay_period",
             "baseName": "pay_period",
-            "type": "PayPeriodEnum"
+            "type": "PayPeriodEnum | BlankEnum | NullEnum"
         },
         {
             "name": "pay_frequency",
             "baseName": "pay_frequency",
-            "type": "PayFrequencyEnum"
+            "type": "PayFrequencyEnum | BlankEnum | NullEnum"
         },
         {
             "name": "pay_currency",
             "baseName": "pay_currency",
-            "type": "PayCurrencyEnum"
+            "type": "PayCurrencyEnum | BlankEnum | NullEnum"
         },
         {
             "name": "flsa_status",
             "baseName": "flsa_status",
-            "type": "FlsaStatusEnum"
+            "type": "FlsaStatusEnum | BlankEnum | NullEnum"
         },
         {
             "name": "effective_date",
@@ -112,7 +123,7 @@ export class Employment {
         {
             "name": "employment_type",
             "baseName": "employment_type",
-            "type": "EmploymentTypeEnum"
+            "type": "EmploymentTypeEnum | BlankEnum | NullEnum"
         },
         {
             "name": "remote_data",

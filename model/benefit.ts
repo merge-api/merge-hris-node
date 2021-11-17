@@ -12,13 +12,15 @@
 
 import { RequestFile } from './models';
 import { BenefitPlanTypeEnum } from './benefitPlanTypeEnum';
+import { BlankEnum } from './blankEnum';
+import { NullEnum } from './nullEnum';
 import { RemoteData } from './remoteData';
 
 /**
 * # The Benefit Object ### Description The `Benefit` object is used to represent a Benefit for an employee.  ### Usage Example Fetch from the `LIST Benefits` endpoint and filter by `ID` to show all benefits.
 */
 export class Benefit {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
@@ -34,7 +36,7 @@ export class Benefit {
     /**
     * The type of benefit plan
     */
-    'benefit_plan_type'?: BenefitPlanTypeEnum | null;
+    'benefit_plan_type'?: BenefitPlanTypeEnum | BlankEnum | NullEnum | null;
     /**
     * The employee\'s contribution.
     */
@@ -43,7 +45,7 @@ export class Benefit {
     * The company\'s contribution.
     */
     'company_contribution'?: number | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remote_data': Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -71,7 +73,7 @@ export class Benefit {
         {
             "name": "benefit_plan_type",
             "baseName": "benefit_plan_type",
-            "type": "BenefitPlanTypeEnum"
+            "type": "BenefitPlanTypeEnum | BlankEnum | NullEnum"
         },
         {
             "name": "employee_contribution",

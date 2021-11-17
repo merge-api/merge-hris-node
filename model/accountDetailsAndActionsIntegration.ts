@@ -12,29 +12,17 @@
 
 import { RequestFile } from './models';
 import { CategoriesEnum } from './categoriesEnum';
+import { ModelOperation } from './modelOperation';
 
-export class AccountIntegration {
-    /**
-    * Company name.
-    */
+export class AccountDetailsAndActionsIntegration {
     'name': string;
-    /**
-    * Category or categories this integration belongs to. Multiple categories should be comma separated.<br/><br>Example: For [ats, hris], enter <i>ats,hris</i>
-    */
-    'categories'?: Array<CategoriesEnum>;
-    /**
-    * Company logo in rectangular shape. <b>Upload an image with a clear background.</b>
-    */
-    'image'?: string | null;
-    /**
-    * Company logo in square shape. <b>Upload an image with a white background.</b>
-    */
-    'square_image'?: string | null;
-    /**
-    * The color of this integration used for buttons and text throughout the app and landing pages. <b>Choose a darker, saturated color.</b>
-    */
-    'color'?: string;
+    'categories': CategoriesEnum;
+    'image'?: string;
+    'square_image'?: string;
+    'color': string;
     'slug': string;
+    'passthrough_available': boolean;
+    'available_model_operations'?: Array<ModelOperation>;
 
     static discriminator: string | undefined = undefined;
 
@@ -47,7 +35,7 @@ export class AccountIntegration {
         {
             "name": "categories",
             "baseName": "categories",
-            "type": "Array<CategoriesEnum>"
+            "type": "CategoriesEnum"
         },
         {
             "name": "image",
@@ -68,10 +56,20 @@ export class AccountIntegration {
             "name": "slug",
             "baseName": "slug",
             "type": "string"
+        },
+        {
+            "name": "passthrough_available",
+            "baseName": "passthrough_available",
+            "type": "boolean"
+        },
+        {
+            "name": "available_model_operations",
+            "baseName": "available_model_operations",
+            "type": "Array<ModelOperation>"
         }    ];
 
     static getAttributeTypeMap() {
-        return AccountIntegration.attributeTypeMap;
+        return AccountDetailsAndActionsIntegration.attributeTypeMap;
     }
 }
 

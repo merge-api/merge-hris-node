@@ -20,7 +20,7 @@ import { Tax } from './tax';
 * # The EmployeePayrollRun Object ### Description The `EmployeePayrollRun` object is used to represent a payroll run for a specific employee.  ### Usage Example Fetch from the `LIST EmployeePayrollRun` endpoint and filter by `ID` to show all employee payroll runs.
 */
 export class EmployeePayrollRun {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
@@ -53,10 +53,10 @@ export class EmployeePayrollRun {
     * The day and time the payroll run was checked.
     */
     'check_date'?: Date | null;
-    'earnings'?: Array<Earning>;
-    'deductions'?: Array<Deduction>;
-    'taxes'?: Array<Tax>;
-    'remote_data'?: Array<RemoteData> | null;
+    'earnings': Array<Earning>;
+    'deductions': Array<Deduction>;
+    'taxes': Array<Tax>;
+    'remote_data': Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 

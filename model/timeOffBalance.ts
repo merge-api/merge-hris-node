@@ -11,6 +11,8 @@
  */
 
 import { RequestFile } from './models';
+import { BlankEnum } from './blankEnum';
+import { NullEnum } from './nullEnum';
 import { PolicyTypeEnum } from './policyTypeEnum';
 import { RemoteData } from './remoteData';
 
@@ -18,7 +20,7 @@ import { RemoteData } from './remoteData';
 * # The TimeOffBalance Object ### Description The `TimeOffBalance` object is used to represent a Time Off Balance for an employee.  ### Usage Example Fetch from the `LIST TimeOffBalances` endpoint and filter by `ID` to show all time off balances.
 */
 export class TimeOffBalance {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
@@ -38,8 +40,8 @@ export class TimeOffBalance {
     /**
     * The policy type of this time off balance.
     */
-    'policy_type'?: PolicyTypeEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'policy_type'?: PolicyTypeEnum | BlankEnum | NullEnum | null;
+    'remote_data': Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -72,7 +74,7 @@ export class TimeOffBalance {
         {
             "name": "policy_type",
             "baseName": "policy_type",
-            "type": "PolicyTypeEnum"
+            "type": "PolicyTypeEnum | BlankEnum | NullEnum"
         },
         {
             "name": "remote_data",

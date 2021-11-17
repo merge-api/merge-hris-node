@@ -16,15 +16,11 @@ import { RequestFile } from './models';
 * # The Deduction Object ### Description The `Deduction` object is used to represent a deduction for a given employee\'s payroll run. One run could include several deductions.  ### Usage Example Fetch from the `LIST Deductions` endpoint and filter by `ID` to show all deductions.
 */
 export class Deduction {
-    'id'?: string;
+    'id': string;
     /**
     * The deduction\'s employee payroll run.
     */
     'employee_payroll_run'?: string | null;
-    /**
-    * The persistent deduction that caused this payroll deduction.
-    */
-    'persistent_deduction'?: string | null;
     /**
     * The deduction\'s name.
     */
@@ -50,11 +46,6 @@ export class Deduction {
         {
             "name": "employee_payroll_run",
             "baseName": "employee_payroll_run",
-            "type": "string"
-        },
-        {
-            "name": "persistent_deduction",
-            "baseName": "persistent_deduction",
             "type": "string"
         },
         {

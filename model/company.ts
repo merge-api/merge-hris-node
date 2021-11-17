@@ -17,7 +17,7 @@ import { RemoteData } from './remoteData';
 * # The Company Object ### Description The `Company` object is used to represent a Company.  ### Usage Example Fetch from the `LIST Companies` endpoint and filter by `ID` to show all companies.
 */
 export class Company {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
@@ -34,7 +34,7 @@ export class Company {
     * The company\'s Employer Identification Numbers.
     */
     'eins'?: Array<string> | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remote_data': Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 

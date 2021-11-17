@@ -16,7 +16,6 @@ import http from 'http';
 
 /* tslint:disable:no-unused-locals */
 import { Deduction } from '../model/deduction';
-import { DeductionRequest } from '../model/deductionRequest';
 import { PaginatedDeductionList } from '../model/paginatedDeductionList';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
@@ -93,11 +92,11 @@ export class DeductionsApi {
 
     /**
      * Creates a `Deduction` object with the given values.
-     * @param xAccountToken Token identifying the end user.
-     * @param runAsync Whether or not third-party updates should be run asynchronously.
-     * @param deductionRequest 
+     * @param x_account_token Token identifying the end user.
+     * @param run_async Whether or not third-party updates should be run asynchronously.
+     * @param deduction 
      */
-    public async deductionsCreate (xAccountToken: string, runAsync?: boolean, deductionRequest?: DeductionRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Deduction;  }> {
+    public async deductionsCreate (x_account_token: string, run_async?: boolean, deduction?: Deduction, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Deduction;  }> {
         const localVarPath = this.basePath + '/deductions';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -110,16 +109,16 @@ export class DeductionsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling deductionsCreate.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling deductionsCreate.');
         }
 
-        if (runAsync !== undefined) {
-            localVarQueryParameters['run_async'] = ObjectSerializer.serialize(runAsync, "boolean");
+        if (run_async !== undefined) {
+            localVarQueryParameters['run_async'] = ObjectSerializer.serialize(run_async, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -131,7 +130,7 @@ export class DeductionsApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(deductionRequest, "DeductionRequest")
+            body: ObjectSerializer.serialize(deduction, "Deduction")
         };
 
         let authenticationPromise = Promise.resolve();
@@ -171,18 +170,18 @@ export class DeductionsApi {
     }
     /**
      * Returns a list of `Deduction` objects.
-     * @param xAccountToken Token identifying the end user.
-     * @param createdAfter If provided, will only return objects created after this datetime.
-     * @param createdBefore If provided, will only return objects created before this datetime.
+     * @param x_account_token Token identifying the end user.
+     * @param created_after If provided, will only return objects created after this datetime.
+     * @param created_before If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
-     * @param employeePayrollRunId If provided, will only return deductions for this employee payroll run.
-     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param modifiedAfter If provided, will only return objects modified after this datetime.
-     * @param modifiedBefore If provided, will only return objects modified before this datetime.
-     * @param pageSize Number of results to return per page.
-     * @param remoteId The API provider\&#39;s ID for the given object.
+     * @param employee_payroll_run_id If provided, will only return deductions for this employee payroll run.
+     * @param include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param modified_after If provided, will only return objects modified after this datetime.
+     * @param modified_before If provided, will only return objects modified before this datetime.
+     * @param page_size Number of results to return per page.
+     * @param remote_id The API provider\&#39;s ID for the given object.
      */
-    public async deductionsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeePayrollRunId?: string, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedDeductionList;  }> {
+    public async deductionsList (x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, employee_payroll_run_id?: string, include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, remote_id?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedDeductionList;  }> {
         const localVarPath = this.basePath + '/deductions';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -195,48 +194,48 @@ export class DeductionsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling deductionsList.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling deductionsList.');
         }
 
-        if (createdAfter !== undefined) {
-            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(createdAfter, "Date");
+        if (created_after !== undefined) {
+            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(created_after, "Date");
         }
 
-        if (createdBefore !== undefined) {
-            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(createdBefore, "Date");
+        if (created_before !== undefined) {
+            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(created_before, "Date");
         }
 
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
-        if (employeePayrollRunId !== undefined) {
-            localVarQueryParameters['employee_payroll_run_id'] = ObjectSerializer.serialize(employeePayrollRunId, "string");
+        if (employee_payroll_run_id !== undefined) {
+            localVarQueryParameters['employee_payroll_run_id'] = ObjectSerializer.serialize(employee_payroll_run_id, "string");
         }
 
-        if (includeRemoteData !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
+        if (include_remote_data !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(include_remote_data, "boolean");
         }
 
-        if (modifiedAfter !== undefined) {
-            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modifiedAfter, "Date");
+        if (modified_after !== undefined) {
+            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modified_after, "Date");
         }
 
-        if (modifiedBefore !== undefined) {
-            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modifiedBefore, "Date");
+        if (modified_before !== undefined) {
+            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modified_before, "Date");
         }
 
-        if (pageSize !== undefined) {
-            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
+        if (page_size !== undefined) {
+            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(page_size, "number");
         }
 
-        if (remoteId !== undefined) {
-            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
+        if (remote_id !== undefined) {
+            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remote_id, "string");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -287,11 +286,11 @@ export class DeductionsApi {
     }
     /**
      * Returns a `Deduction` object with the given `id`.
-     * @param xAccountToken Token identifying the end user.
+     * @param x_account_token Token identifying the end user.
      * @param id 
-     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async deductionsRetrieve (xAccountToken: string, id: string, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Deduction;  }> {
+    public async deductionsRetrieve (x_account_token: string, id: string, include_remote_data?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Deduction;  }> {
         const localVarPath = this.basePath + '/deductions/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -305,9 +304,9 @@ export class DeductionsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling deductionsRetrieve.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling deductionsRetrieve.');
         }
 
         // verify required parameter 'id' is not null or undefined
@@ -315,11 +314,11 @@ export class DeductionsApi {
             throw new Error('Required parameter id was null or undefined when calling deductionsRetrieve.');
         }
 
-        if (includeRemoteData !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
+        if (include_remote_data !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(include_remote_data, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;

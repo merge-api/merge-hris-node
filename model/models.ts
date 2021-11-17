@@ -1,29 +1,32 @@
 import localVarRequest from 'request';
 
+export * from './accountDetails';
+export * from './accountDetailsAndActions';
+export * from './accountDetailsAndActionsIntegration';
+export * from './accountDetailsAndActionsStatusEnum';
 export * from './accountIntegration';
 export * from './accountToken';
 export * from './availableActions';
 export * from './benefit';
 export * from './benefitPlanTypeEnum';
-export * from './benefitRequest';
+export * from './blankEnum';
+export * from './categoriesEnum';
+export * from './categoryEnum';
 export * from './company';
 export * from './countryEnum';
-export * from './dataPassthroughRequest';
+export * from './dataPassthrough';
 export * from './deduction';
-export * from './deductionRequest';
 export * from './earning';
 export * from './employee';
 export * from './employeePayrollRun';
-export * from './employeeRequest';
 export * from './employment';
-export * from './employmentRequest';
 export * from './employmentStatusEnum';
 export * from './employmentTypeEnum';
-export * from './endUserDetailsRequest';
+export * from './endUserDetails';
 export * from './ethnicityEnum';
 export * from './flsaStatusEnum';
 export * from './genderEnum';
-export * from './generateRemoteKeyRequest';
+export * from './generateRemoteKey';
 export * from './issue';
 export * from './issueStatusEnum';
 export * from './linkToken';
@@ -31,6 +34,8 @@ export * from './location';
 export * from './maritalStatusEnum';
 export * from './methodEnum';
 export * from './modelOperation';
+export * from './nullEnum';
+export * from './paginatedAccountDetailsAndActionsList';
 export * from './paginatedBenefitList';
 export * from './paginatedCompanyList';
 export * from './paginatedDeductionList';
@@ -50,9 +55,8 @@ export * from './payPeriodEnum';
 export * from './payrollRun';
 export * from './policyTypeEnum';
 export * from './remoteData';
-export * from './remoteDataRequest';
 export * from './remoteKey';
-export * from './remoteKeyForRegenerationRequest';
+export * from './remoteKeyForRegeneration';
 export * from './remoteResponse';
 export * from './requestFormatEnum';
 export * from './requestTypeEnum';
@@ -64,7 +68,6 @@ export * from './tax';
 export * from './team';
 export * from './timeOff';
 export * from './timeOffBalance';
-export * from './timeOffRequest';
 export * from './timeOffStatusEnum';
 export * from './typeEnum';
 export * from './unitsEnum';
@@ -82,30 +85,33 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
+import { AccountDetails } from './accountDetails';
+import { AccountDetailsAndActions } from './accountDetailsAndActions';
+import { AccountDetailsAndActionsIntegration } from './accountDetailsAndActionsIntegration';
+import { AccountDetailsAndActionsStatusEnum } from './accountDetailsAndActionsStatusEnum';
 import { AccountIntegration } from './accountIntegration';
 import { AccountToken } from './accountToken';
 import { AvailableActions } from './availableActions';
 import { Benefit } from './benefit';
 import { BenefitPlanTypeEnum } from './benefitPlanTypeEnum';
-import { BenefitRequest } from './benefitRequest';
+import { BlankEnum } from './blankEnum';
+import { CategoriesEnum } from './categoriesEnum';
+import { CategoryEnum } from './categoryEnum';
 import { Company } from './company';
 import { CountryEnum } from './countryEnum';
-import { DataPassthroughRequest } from './dataPassthroughRequest';
+import { DataPassthrough } from './dataPassthrough';
 import { Deduction } from './deduction';
-import { DeductionRequest } from './deductionRequest';
 import { Earning } from './earning';
 import { Employee } from './employee';
 import { EmployeePayrollRun } from './employeePayrollRun';
-import { EmployeeRequest } from './employeeRequest';
 import { Employment } from './employment';
-import { EmploymentRequest } from './employmentRequest';
 import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EmploymentTypeEnum } from './employmentTypeEnum';
-import { EndUserDetailsRequest } from './endUserDetailsRequest';
+import { EndUserDetails } from './endUserDetails';
 import { EthnicityEnum } from './ethnicityEnum';
 import { FlsaStatusEnum } from './flsaStatusEnum';
 import { GenderEnum } from './genderEnum';
-import { GenerateRemoteKeyRequest } from './generateRemoteKeyRequest';
+import { GenerateRemoteKey } from './generateRemoteKey';
 import { Issue } from './issue';
 import { IssueStatusEnum } from './issueStatusEnum';
 import { LinkToken } from './linkToken';
@@ -113,6 +119,8 @@ import { Location } from './location';
 import { MaritalStatusEnum } from './maritalStatusEnum';
 import { MethodEnum } from './methodEnum';
 import { ModelOperation } from './modelOperation';
+import { NullEnum } from './nullEnum';
+import { PaginatedAccountDetailsAndActionsList } from './paginatedAccountDetailsAndActionsList';
 import { PaginatedBenefitList } from './paginatedBenefitList';
 import { PaginatedCompanyList } from './paginatedCompanyList';
 import { PaginatedDeductionList } from './paginatedDeductionList';
@@ -132,9 +140,8 @@ import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
 import { PolicyTypeEnum } from './policyTypeEnum';
 import { RemoteData } from './remoteData';
-import { RemoteDataRequest } from './remoteDataRequest';
 import { RemoteKey } from './remoteKey';
-import { RemoteKeyForRegenerationRequest } from './remoteKeyForRegenerationRequest';
+import { RemoteKeyForRegeneration } from './remoteKeyForRegeneration';
 import { RemoteResponse } from './remoteResponse';
 import { RequestFormatEnum } from './requestFormatEnum';
 import { RequestTypeEnum } from './requestTypeEnum';
@@ -146,7 +153,6 @@ import { Tax } from './tax';
 import { Team } from './team';
 import { TimeOff } from './timeOff';
 import { TimeOffBalance } from './timeOffBalance';
-import { TimeOffRequest } from './timeOffRequest';
 import { TimeOffStatusEnum } from './timeOffStatusEnum';
 import { TypeEnum } from './typeEnum';
 import { UnitsEnum } from './unitsEnum';
@@ -164,18 +170,21 @@ let primitives = [
                  ];
 
 let enumsMap: {[index: string]: any} = {
-        "AccountIntegration.CategoriesEnum": AccountIntegration.CategoriesEnum,
+        "AccountDetailsAndActionsStatusEnum": AccountDetailsAndActionsStatusEnum,
         "BenefitPlanTypeEnum": BenefitPlanTypeEnum,
+        "BlankEnum": BlankEnum,
+        "CategoriesEnum": CategoriesEnum,
+        "CategoryEnum": CategoryEnum,
         "CountryEnum": CountryEnum,
         "EmploymentStatusEnum": EmploymentStatusEnum,
         "EmploymentTypeEnum": EmploymentTypeEnum,
-        "EndUserDetailsRequest.CategoriesEnum": EndUserDetailsRequest.CategoriesEnum,
         "EthnicityEnum": EthnicityEnum,
         "FlsaStatusEnum": FlsaStatusEnum,
         "GenderEnum": GenderEnum,
         "IssueStatusEnum": IssueStatusEnum,
         "MaritalStatusEnum": MaritalStatusEnum,
         "MethodEnum": MethodEnum,
+        "NullEnum": NullEnum,
         "PayCurrencyEnum": PayCurrencyEnum,
         "PayFrequencyEnum": PayFrequencyEnum,
         "PayPeriodEnum": PayPeriodEnum,
@@ -191,27 +200,27 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
+    "AccountDetails": AccountDetails,
+    "AccountDetailsAndActions": AccountDetailsAndActions,
+    "AccountDetailsAndActionsIntegration": AccountDetailsAndActionsIntegration,
     "AccountIntegration": AccountIntegration,
     "AccountToken": AccountToken,
     "AvailableActions": AvailableActions,
     "Benefit": Benefit,
-    "BenefitRequest": BenefitRequest,
     "Company": Company,
-    "DataPassthroughRequest": DataPassthroughRequest,
+    "DataPassthrough": DataPassthrough,
     "Deduction": Deduction,
-    "DeductionRequest": DeductionRequest,
     "Earning": Earning,
     "Employee": Employee,
     "EmployeePayrollRun": EmployeePayrollRun,
-    "EmployeeRequest": EmployeeRequest,
     "Employment": Employment,
-    "EmploymentRequest": EmploymentRequest,
-    "EndUserDetailsRequest": EndUserDetailsRequest,
-    "GenerateRemoteKeyRequest": GenerateRemoteKeyRequest,
+    "EndUserDetails": EndUserDetails,
+    "GenerateRemoteKey": GenerateRemoteKey,
     "Issue": Issue,
     "LinkToken": LinkToken,
     "Location": Location,
     "ModelOperation": ModelOperation,
+    "PaginatedAccountDetailsAndActionsList": PaginatedAccountDetailsAndActionsList,
     "PaginatedBenefitList": PaginatedBenefitList,
     "PaginatedCompanyList": PaginatedCompanyList,
     "PaginatedDeductionList": PaginatedDeductionList,
@@ -227,16 +236,14 @@ let typeMap: {[index: string]: any} = {
     "PaginatedTimeOffList": PaginatedTimeOffList,
     "PayrollRun": PayrollRun,
     "RemoteData": RemoteData,
-    "RemoteDataRequest": RemoteDataRequest,
     "RemoteKey": RemoteKey,
-    "RemoteKeyForRegenerationRequest": RemoteKeyForRegenerationRequest,
+    "RemoteKeyForRegeneration": RemoteKeyForRegeneration,
     "RemoteResponse": RemoteResponse,
     "SyncStatus": SyncStatus,
     "Tax": Tax,
     "Team": Team,
     "TimeOff": TimeOff,
     "TimeOffBalance": TimeOffBalance,
-    "TimeOffRequest": TimeOffRequest,
 }
 
 export class ObjectSerializer {

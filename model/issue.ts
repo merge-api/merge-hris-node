@@ -14,13 +14,13 @@ import { RequestFile } from './models';
 import { IssueStatusEnum } from './issueStatusEnum';
 
 export class Issue {
-    'id'?: string;
+    'id': string;
     'status'?: IssueStatusEnum;
     'error_description': string;
-    'end_user'?: { [key: string]: any; };
+    'end_user': { [key: string]: any; };
     'first_incident_time'?: Date | null;
     'last_incident_time'?: Date | null;
-    'is_muted'?: boolean;
+    'is_muted': boolean;
 
     static discriminator: string | undefined = undefined;
 

@@ -11,18 +11,24 @@
  */
 
 import { RequestFile } from './models';
+import { BlankEnum } from './blankEnum';
 import { CountryEnum } from './countryEnum';
+import { NullEnum } from './nullEnum';
 import { RemoteData } from './remoteData';
 
 /**
 * # The Location Object ### Description The `Location` object is used to represent a Location for a Company or Employee address. This is shared across many models and is referenced whenever a location is stored.  ### Usage Example Fetch from the `LIST Locations` endpoint and filter by `ID` to show all office locations.
 */
 export class Location {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
+    /**
+    * The location\'s name.
+    */
+    'name'?: string | null;
     /**
     * The location\'s phone number.
     */
@@ -50,8 +56,8 @@ export class Location {
     /**
     * The location\'s country.
     */
-    'country'?: CountryEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'country'?: CountryEnum | BlankEnum | NullEnum | null;
+    'remote_data': Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -64,6 +70,11 @@ export class Location {
         {
             "name": "remote_id",
             "baseName": "remote_id",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "baseName": "name",
             "type": "string"
         },
         {
@@ -99,7 +110,7 @@ export class Location {
         {
             "name": "country",
             "baseName": "country",
-            "type": "CountryEnum"
+            "type": "CountryEnum | BlankEnum | NullEnum"
         },
         {
             "name": "remote_data",

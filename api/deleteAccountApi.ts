@@ -90,20 +90,20 @@ export class DeleteAccountApi {
 
     /**
      * Delete a linked account.
-     * @param xAccountToken Token identifying the end user.
+     * @param x_account_token Token identifying the end user.
      */
-    public async deleteAccountCreate (xAccountToken: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+    public async deleteAccountCreate (x_account_token: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
         const localVarPath = this.basePath + '/delete-account';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling deleteAccountCreate.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling deleteAccountCreate.');
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;

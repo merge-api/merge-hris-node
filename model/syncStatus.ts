@@ -21,7 +21,7 @@ export class SyncStatus {
     'model_id': string;
     'last_sync_start': Date;
     'next_sync_start': Date;
-    'status': SyncStatusStatusEnum;
+    'status': SyncStatusStatusEnum | null;
     'is_initial_sync': boolean;
 
     static discriminator: string | undefined = undefined;

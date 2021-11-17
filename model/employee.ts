@@ -11,17 +11,19 @@
  */
 
 import { RequestFile } from './models';
+import { BlankEnum } from './blankEnum';
 import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EthnicityEnum } from './ethnicityEnum';
 import { GenderEnum } from './genderEnum';
 import { MaritalStatusEnum } from './maritalStatusEnum';
+import { NullEnum } from './nullEnum';
 import { RemoteData } from './remoteData';
 
 /**
 * # The Employee Object ### Description The `Employee` object is used to represent an Employee for a company.  ### Usage Example Fetch from the `LIST Employee` endpoint and filter by `ID` to show all employees.
 */
 export class Employee {
-    'id'?: string;
+    'id': string;
     /**
     * The third-party API ID of the matching object.
     */
@@ -61,7 +63,7 @@ export class Employee {
     /**
     * Array of `Employment` IDs for this Employee.
     */
-    'employments'?: Array<string>;
+    'employments': Array<string>;
     /**
     * The employee\'s home address.
     */
@@ -85,15 +87,15 @@ export class Employee {
     /**
     * The employee\'s gender.
     */
-    'gender'?: GenderEnum | null;
+    'gender'?: GenderEnum | BlankEnum | NullEnum | null;
     /**
     * The employee\'s ethnicity.
     */
-    'ethnicity'?: EthnicityEnum | null;
+    'ethnicity'?: EthnicityEnum | BlankEnum | NullEnum | null;
     /**
     * The employee\'s marital status.
     */
-    'marital_status'?: MaritalStatusEnum | null;
+    'marital_status'?: MaritalStatusEnum | BlankEnum | NullEnum | null;
     /**
     * The employee\'s date of birth.
     */
@@ -109,7 +111,7 @@ export class Employee {
     /**
     * The employment status of the employee.
     */
-    'employment_status'?: EmploymentStatusEnum | null;
+    'employment_status'?: EmploymentStatusEnum | BlankEnum | NullEnum | null;
     /**
     * The employee\'s termination date.
     */
@@ -118,7 +120,11 @@ export class Employee {
     * The URL of the employee\'s avatar image.
     */
     'avatar'?: string | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remote_data': Array<RemoteData> | null;
+    /**
+    * Custom fields configured for a given model.
+    */
+    'custom_fields'?: { [key: string]: any; } | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -206,17 +212,17 @@ export class Employee {
         {
             "name": "gender",
             "baseName": "gender",
-            "type": "GenderEnum"
+            "type": "GenderEnum | BlankEnum | NullEnum"
         },
         {
             "name": "ethnicity",
             "baseName": "ethnicity",
-            "type": "EthnicityEnum"
+            "type": "EthnicityEnum | BlankEnum | NullEnum"
         },
         {
             "name": "marital_status",
             "baseName": "marital_status",
-            "type": "MaritalStatusEnum"
+            "type": "MaritalStatusEnum | BlankEnum | NullEnum"
         },
         {
             "name": "date_of_birth",
@@ -236,7 +242,7 @@ export class Employee {
         {
             "name": "employment_status",
             "baseName": "employment_status",
-            "type": "EmploymentStatusEnum"
+            "type": "EmploymentStatusEnum | BlankEnum | NullEnum"
         },
         {
             "name": "termination_date",
@@ -252,6 +258,11 @@ export class Employee {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
+        },
+        {
+            "name": "custom_fields",
+            "baseName": "custom_fields",
+            "type": "{ [key: string]: any; }"
         }    ];
 
     static getAttributeTypeMap() {
