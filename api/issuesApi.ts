@@ -92,17 +92,13 @@ export class IssuesApi {
 
     /**
      * Gets issues.
-     * @param accountToken account_token
      * @param cursor The pagination cursor value.
      * @param endDate If included, will only include issues whose most recent action occurred before this time
-     * @param endUserOrganizationName end_user_organization_name
      * @param includeMuted If True, will include muted issues
-     * @param integrationName integration_name
      * @param pageSize Number of results to return per page.
      * @param startDate If included, will only include issues whose most recent action occurred after this time
-     * @param status status
      */
-    public async issuesList (accountToken?: string, cursor?: number, endDate?: string, endUserOrganizationName?: string, includeMuted?: string, integrationName?: string, pageSize?: number, startDate?: string, status?: 'ONGOING' | 'RESOLVED', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedIssueList;  }> {
+    public async issuesList (cursor?: number, endDate?: string, includeMuted?: string, pageSize?: number, startDate?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedIssueList;  }> {
         const localVarPath = this.basePath + '/issues';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -115,10 +111,6 @@ export class IssuesApi {
         }
         let localVarFormParams: any = {};
 
-        if (accountToken !== undefined) {
-            localVarQueryParameters['account_token'] = ObjectSerializer.serialize(accountToken, "string");
-        }
-
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "number");
         }
@@ -127,16 +119,8 @@ export class IssuesApi {
             localVarQueryParameters['end_date'] = ObjectSerializer.serialize(endDate, "string");
         }
 
-        if (endUserOrganizationName !== undefined) {
-            localVarQueryParameters['end_user_organization_name'] = ObjectSerializer.serialize(endUserOrganizationName, "string");
-        }
-
         if (includeMuted !== undefined) {
             localVarQueryParameters['include_muted'] = ObjectSerializer.serialize(includeMuted, "string");
-        }
-
-        if (integrationName !== undefined) {
-            localVarQueryParameters['integration_name'] = ObjectSerializer.serialize(integrationName, "string");
         }
 
         if (pageSize !== undefined) {
@@ -145,10 +129,6 @@ export class IssuesApi {
 
         if (startDate !== undefined) {
             localVarQueryParameters['start_date'] = ObjectSerializer.serialize(startDate, "string");
-        }
-
-        if (status !== undefined) {
-            localVarQueryParameters['status'] = ObjectSerializer.serialize(status, "'ONGOING' | 'RESOLVED'");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);

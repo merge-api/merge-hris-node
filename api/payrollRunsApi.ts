@@ -93,21 +93,11 @@ export class PayrollRunsApi {
     /**
      * Returns a list of `PayrollRun` objects.
      * @param xAccountToken Token identifying the end user.
-     * @param createdAfter If provided, will only return objects created after this datetime.
-     * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
-     * @param endedAfter If provided, will only return payroll runs ended after this datetime.
-     * @param endedBefore If provided, will only return payroll runs ended before this datetime.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param modifiedAfter If provided, will only return objects modified after this datetime.
-     * @param modifiedBefore If provided, will only return objects modified before this datetime.
      * @param pageSize Number of results to return per page.
-     * @param remoteId The API provider\&#39;s ID for the given object.
-     * @param runType If provided, will only return PayrollRun\&#39;s with this status. Options: (\&#39;REGULAR\&#39;, \&#39;OFF_CYCLE\&#39;, \&#39;CORRECTION\&#39;, \&#39;TERMINATION\&#39;, \&#39;SIGN_ON_BONUS\&#39;)
-     * @param startedAfter If provided, will only return payroll runs started after this datetime.
-     * @param startedBefore If provided, will only return payroll runs started before this datetime.
      */
-    public async payrollRunsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: 'REGULAR' | 'OFF_CYCLE' | 'CORRECTION' | 'TERMINATION' | 'SIGN_ON_BONUS' | '' | 'null', startedAfter?: Date, startedBefore?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedPayrollRunList;  }> {
+    public async payrollRunsList (xAccountToken: string, cursor?: string, includeRemoteData?: boolean, pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedPayrollRunList;  }> {
         const localVarPath = this.basePath + '/payroll-runs';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -125,56 +115,16 @@ export class PayrollRunsApi {
             throw new Error('Required parameter xAccountToken was null or undefined when calling payrollRunsList.');
         }
 
-        if (createdAfter !== undefined) {
-            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(createdAfter, "Date");
-        }
-
-        if (createdBefore !== undefined) {
-            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(createdBefore, "Date");
-        }
-
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
-        }
-
-        if (endedAfter !== undefined) {
-            localVarQueryParameters['ended_after'] = ObjectSerializer.serialize(endedAfter, "Date");
-        }
-
-        if (endedBefore !== undefined) {
-            localVarQueryParameters['ended_before'] = ObjectSerializer.serialize(endedBefore, "Date");
         }
 
         if (includeRemoteData !== undefined) {
             localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
         }
 
-        if (modifiedAfter !== undefined) {
-            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modifiedAfter, "Date");
-        }
-
-        if (modifiedBefore !== undefined) {
-            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modifiedBefore, "Date");
-        }
-
         if (pageSize !== undefined) {
             localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
-        }
-
-        if (remoteId !== undefined) {
-            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
-        }
-
-        if (runType !== undefined) {
-            localVarQueryParameters['run_type'] = ObjectSerializer.serialize(runType, "'REGULAR' | 'OFF_CYCLE' | 'CORRECTION' | 'TERMINATION' | 'SIGN_ON_BONUS' | '' | 'null'");
-        }
-
-        if (startedAfter !== undefined) {
-            localVarQueryParameters['started_after'] = ObjectSerializer.serialize(startedAfter, "Date");
-        }
-
-        if (startedBefore !== undefined) {
-            localVarQueryParameters['started_before'] = ObjectSerializer.serialize(startedBefore, "Date");
         }
 
         localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");

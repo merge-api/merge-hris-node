@@ -93,18 +93,13 @@ export class EmploymentsApi {
     /**
      * Returns a list of `Employment` objects.
      * @param xAccountToken Token identifying the end user.
-     * @param createdAfter If provided, will only return objects created after this datetime.
-     * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
      * @param employeeId If provided, will only return employments for this employee.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param modifiedAfter If provided, will only return objects modified after this datetime.
-     * @param modifiedBefore If provided, will only return objects modified before this datetime.
      * @param orderBy Overrides the default ordering for this endpoint.
      * @param pageSize Number of results to return per page.
-     * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async employmentsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-effective_date' | 'effective_date', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmploymentList;  }> {
+    public async employmentsList (xAccountToken: string, cursor?: string, employeeId?: string, includeRemoteData?: boolean, orderBy?: '-effective_date' | 'effective_date', pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmploymentList;  }> {
         const localVarPath = this.basePath + '/employments';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -122,14 +117,6 @@ export class EmploymentsApi {
             throw new Error('Required parameter xAccountToken was null or undefined when calling employmentsList.');
         }
 
-        if (createdAfter !== undefined) {
-            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(createdAfter, "Date");
-        }
-
-        if (createdBefore !== undefined) {
-            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(createdBefore, "Date");
-        }
-
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
@@ -142,24 +129,12 @@ export class EmploymentsApi {
             localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
         }
 
-        if (modifiedAfter !== undefined) {
-            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modifiedAfter, "Date");
-        }
-
-        if (modifiedBefore !== undefined) {
-            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modifiedBefore, "Date");
-        }
-
         if (orderBy !== undefined) {
             localVarQueryParameters['order_by'] = ObjectSerializer.serialize(orderBy, "'-effective_date' | 'effective_date'");
         }
 
         if (pageSize !== undefined) {
             localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
-        }
-
-        if (remoteId !== undefined) {
-            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
         }
 
         localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
