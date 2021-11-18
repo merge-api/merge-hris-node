@@ -91,15 +91,15 @@ export class LinkedAccountsApi {
 
     /**
      * List linked accounts for your organization.
-     * @param category category
+     * @param category 
      * @param cursor The pagination cursor value.
-     * @param endUserEmailAddress end_user_email_address
-     * @param endUserOrganizationName end_user_organization_name
-     * @param endUserOriginId end_user_origin_id
+     * @param endUserEmailAddress 
+     * @param endUserOrganizationName 
+     * @param endUserOriginId 
      * @param endUserOriginIds Comma-separated list of EndUser origin IDs, making it possible to specify multiple EndUsers at once
-     * @param id id
+     * @param id 
      * @param ids Comma-separated list of LinkedAccount IDs, making it possible to specify multiple LinkedAccounts at once
-     * @param integrationName integration_name
+     * @param integrationName 
      * @param isTestAccount If included, will only include test linked accounts. If not included, will only include non-test linked accounts
      * @param pageSize Number of results to return per page.
      * @param status Filter by status. Options: &#x60;COMPLETE&#x60;, &#x60;INCOMPLETE&#x60;, &#x60;RELINK_NEEDED&#x60;

@@ -177,14 +177,12 @@ let primitives = [
 
 let enumsMap: {[index: string]: any} = {
         "AccountDetailsAndActionsStatusEnum": AccountDetailsAndActionsStatusEnum,
-        "AccountIntegration.CategoriesEnum": AccountIntegration.CategoriesEnum,
         "BenefitPlanTypeEnum": BenefitPlanTypeEnum,
         "CategoriesEnum": CategoriesEnum,
         "CategoryEnum": CategoryEnum,
         "CountryEnum": CountryEnum,
         "EmploymentStatusEnum": EmploymentStatusEnum,
         "EmploymentTypeEnum": EmploymentTypeEnum,
-        "EndUserDetailsRequest.CategoriesEnum": EndUserDetailsRequest.CategoriesEnum,
         "EthnicityEnum": EthnicityEnum,
         "FlsaStatusEnum": FlsaStatusEnum,
         "GenderEnum": GenderEnum,

@@ -20,8 +20,8 @@ import { CategoryEnum } from './categoryEnum';
 */
 export class AccountDetailsAndActions {
     'id': string;
-    'category'?: CategoryEnum;
-    'status': AccountDetailsAndActionsStatusEnum;
+    'category'?: CategoryEnum | null;
+    'status': AccountDetailsAndActionsStatusEnum | null;
     'end_user_origin_id'?: string;
     'end_user_organization_name': string;
     'end_user_email_address': string;

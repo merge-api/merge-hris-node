@@ -11,12 +11,13 @@
  */
 
 import { RequestFile } from './models';
+import { CategoriesEnum } from './categoriesEnum';
 
 export class EndUserDetailsRequest {
     'end_user_email_address': string;
     'end_user_organization_name': string;
     'end_user_origin_id': string;
-    'categories'?: Array<EndUserDetailsRequest.CategoriesEnum>;
+    'categories'?: Array<CategoriesEnum>;
     'integration'?: string | null;
 
     static discriminator: string | undefined = undefined;
@@ -40,7 +41,7 @@ export class EndUserDetailsRequest {
         {
             "name": "categories",
             "baseName": "categories",
-            "type": "Array<EndUserDetailsRequest.CategoriesEnum>"
+            "type": "Array<CategoriesEnum>"
         },
         {
             "name": "integration",
@@ -53,10 +54,3 @@ export class EndUserDetailsRequest {
     }
 }
 
-export namespace EndUserDetailsRequest {
-    export enum CategoriesEnum {
-        Hris = <any> 'hris',
-        Ats = <any> 'ats',
-        Accounting = <any> 'accounting'
-    }
-}

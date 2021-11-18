@@ -107,7 +107,7 @@ export class PayrollRunsApi {
      * @param startedAfter If provided, will only return payroll runs started after this datetime.
      * @param startedBefore If provided, will only return payroll runs started before this datetime.
      */
-    public async payrollRunsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: 'REGULAR' | 'OFF_CYCLE' | 'CORRECTION' | 'TERMINATION' | 'SIGN_ON_BONUS' | '' | 'null', startedAfter?: Date, startedBefore?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedPayrollRunList;  }> {
+    public async payrollRunsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: '' | 'CORRECTION' | 'null' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION', startedAfter?: Date, startedBefore?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedPayrollRunList;  }> {
         const localVarPath = this.basePath + '/payroll-runs';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -166,7 +166,7 @@ export class PayrollRunsApi {
         }
 
         if (runType !== undefined) {
-            localVarQueryParameters['run_type'] = ObjectSerializer.serialize(runType, "'REGULAR' | 'OFF_CYCLE' | 'CORRECTION' | 'TERMINATION' | 'SIGN_ON_BONUS' | '' | 'null'");
+            localVarQueryParameters['run_type'] = ObjectSerializer.serialize(runType, "'' | 'CORRECTION' | 'null' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION'");
         }
 
         if (startedAfter !== undefined) {
