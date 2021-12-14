@@ -92,9 +92,9 @@ export class GenerateKeyApi {
 
     /**
      * Create a remote key.
-     * @param generateRemoteKeyRequest 
+     * @param generate_remote_key_request 
      */
-    public async generateKeyCreate (generateRemoteKeyRequest: GenerateRemoteKeyRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteKey;  }> {
+    public async generateKeyCreate (generate_remote_key_request: GenerateRemoteKeyRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteKey;  }> {
         const localVarPath = this.basePath + '/generate-key';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -107,9 +107,9 @@ export class GenerateKeyApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'generateRemoteKeyRequest' is not null or undefined
-        if (generateRemoteKeyRequest === null || generateRemoteKeyRequest === undefined) {
-            throw new Error('Required parameter generateRemoteKeyRequest was null or undefined when calling generateKeyCreate.');
+        // verify required parameter 'generate_remote_key_request' is not null or undefined
+        if (generate_remote_key_request === null || generate_remote_key_request === undefined) {
+            throw new Error('Required parameter generate_remote_key_request was null or undefined when calling generateKeyCreate.');
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -123,7 +123,7 @@ export class GenerateKeyApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(generateRemoteKeyRequest, "GenerateRemoteKeyRequest")
+            body: ObjectSerializer.serialize(generate_remote_key_request, "GenerateRemoteKeyRequest")
         };
 
         let authenticationPromise = Promise.resolve();

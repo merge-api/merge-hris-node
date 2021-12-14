@@ -4,6 +4,7 @@ api/accountDetailsApi.ts
 api/accountTokenApi.ts
 api/apis.ts
 api/availableActionsApi.ts
+api/bankInfoApi.ts
 api/benefitsApi.ts
 api/companiesApi.ts
 api/deductionsApi.ts
@@ -17,6 +18,7 @@ api/linkTokenApi.ts
 api/linkedAccountsApi.ts
 api/locationsApi.ts
 api/passthroughApi.ts
+api/payGroupApi.ts
 api/payrollRunsApi.ts
 api/regenerateKeyApi.ts
 api/syncStatusApi.ts
@@ -30,21 +32,20 @@ model/accountDetailsAndActionsIntegration.ts
 model/accountDetailsAndActionsStatusEnum.ts
 model/accountIntegration.ts
 model/accountToken.ts
+model/accountTypeEnum.ts
 model/availableActions.ts
+model/bankInfo.ts
 model/benefit.ts
 model/benefitPlanTypeEnum.ts
-model/benefitRequest.ts
 model/categoriesEnum.ts
 model/categoryEnum.ts
 model/company.ts
 model/countryEnum.ts
 model/dataPassthroughRequest.ts
 model/deduction.ts
-model/deductionRequest.ts
 model/earning.ts
 model/employee.ts
 model/employeePayrollRun.ts
-model/employeeRequest.ts
 model/employment.ts
 model/employmentStatusEnum.ts
 model/employmentTypeEnum.ts
@@ -62,6 +63,7 @@ model/methodEnum.ts
 model/modelOperation.ts
 model/models.ts
 model/paginatedAccountDetailsAndActionsList.ts
+model/paginatedBankInfoList.ts
 model/paginatedBenefitList.ts
 model/paginatedCompanyList.ts
 model/paginatedDeductionList.ts
@@ -70,6 +72,7 @@ model/paginatedEmployeePayrollRunList.ts
 model/paginatedEmploymentList.ts
 model/paginatedIssueList.ts
 model/paginatedLocationList.ts
+model/paginatedPayGroupList.ts
 model/paginatedPayrollRunList.ts
 model/paginatedSyncStatusList.ts
 model/paginatedTeamList.ts
@@ -77,6 +80,7 @@ model/paginatedTimeOffBalanceList.ts
 model/paginatedTimeOffList.ts
 model/payCurrencyEnum.ts
 model/payFrequencyEnum.ts
+model/payGroup.ts
 model/payPeriodEnum.ts
 model/payrollRun.ts
 model/policyTypeEnum.ts
@@ -95,9 +99,12 @@ model/tax.ts
 model/team.ts
 model/timeOff.ts
 model/timeOffBalance.ts
+model/timeOffEndpointRequest.ts
 model/timeOffRequest.ts
+model/timeOffResponse.ts
 model/timeOffStatusEnum.ts
 model/typeEnum.ts
 model/unitsEnum.ts
+model/validationProblem.ts
 package.json
 tsconfig.json

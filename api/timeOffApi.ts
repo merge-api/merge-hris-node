@@ -94,11 +94,11 @@ export class TimeOffApi {
 
     /**
      * Creates a `TimeOff` object with the given values.
-     * @param xAccountToken Token identifying the end user.
-     * @param timeOffEndpointRequest 
-     * @param runAsync Whether or not third-party updates should be run asynchronously.
+     * @param x_account_token Token identifying the end user.
+     * @param time_off_endpoint_request 
+     * @param run_async Whether or not third-party updates should be run asynchronously.
      */
-    public async timeOffCreate (xAccountToken: string, timeOffEndpointRequest: TimeOffEndpointRequest, runAsync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOffResponse;  }> {
+    public async timeOffCreate (x_account_token: string, time_off_endpoint_request: TimeOffEndpointRequest, run_async?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOffResponse;  }> {
         const localVarPath = this.basePath + '/time-off';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -111,21 +111,21 @@ export class TimeOffApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffCreate.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling timeOffCreate.');
         }
 
-        // verify required parameter 'timeOffEndpointRequest' is not null or undefined
-        if (timeOffEndpointRequest === null || timeOffEndpointRequest === undefined) {
-            throw new Error('Required parameter timeOffEndpointRequest was null or undefined when calling timeOffCreate.');
+        // verify required parameter 'time_off_endpoint_request' is not null or undefined
+        if (time_off_endpoint_request === null || time_off_endpoint_request === undefined) {
+            throw new Error('Required parameter time_off_endpoint_request was null or undefined when calling timeOffCreate.');
         }
 
-        if (runAsync !== undefined) {
-            localVarQueryParameters['run_async'] = ObjectSerializer.serialize(runAsync, "boolean");
+        if (run_async !== undefined) {
+            localVarQueryParameters['run_async'] = ObjectSerializer.serialize(run_async, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -137,7 +137,7 @@ export class TimeOffApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(timeOffEndpointRequest, "TimeOffEndpointRequest")
+            body: ObjectSerializer.serialize(time_off_endpoint_request, "TimeOffEndpointRequest")
         };
 
         let authenticationPromise = Promise.resolve();
@@ -177,22 +177,22 @@ export class TimeOffApi {
     }
     /**
      * Returns a list of `TimeOff` objects.
-     * @param xAccountToken Token identifying the end user.
-     * @param approverId If provided, will only return time off for this approver.
-     * @param createdAfter If provided, will only return objects created after this datetime.
-     * @param createdBefore If provided, will only return objects created before this datetime.
+     * @param x_account_token Token identifying the end user.
+     * @param approver_id If provided, will only return time off for this approver.
+     * @param created_after If provided, will only return objects created after this datetime.
+     * @param created_before If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
-     * @param employeeId If provided, will only return time off for this employee.
+     * @param employee_id If provided, will only return time off for this employee.
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param modifiedAfter If provided, will only return objects modified after this datetime.
-     * @param modifiedBefore If provided, will only return objects modified before this datetime.
-     * @param pageSize Number of results to return per page.
-     * @param remoteId The API provider\&#39;s ID for the given object.
-     * @param requestType If provided, will only return TimeOff with this request type. Options: (\&#39;VACATION\&#39;, \&#39;SICK\&#39;, \&#39;PERSONAL\&#39;, \&#39;JURY_DUTY\&#39;, \&#39;VOLUNTEER\&#39;, \&#39;BEREAVEMENT\&#39;)
+     * @param include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param modified_after If provided, will only return objects modified after this datetime.
+     * @param modified_before If provided, will only return objects modified before this datetime.
+     * @param page_size Number of results to return per page.
+     * @param remote_id The API provider\&#39;s ID for the given object.
+     * @param request_type If provided, will only return TimeOff with this request type. Options: (\&#39;VACATION\&#39;, \&#39;SICK\&#39;, \&#39;PERSONAL\&#39;, \&#39;JURY_DUTY\&#39;, \&#39;VOLUNTEER\&#39;, \&#39;BEREAVEMENT\&#39;)
      * @param status If provided, will only return TimeOff with this status. Options: (\&#39;REQUESTED\&#39;, \&#39;APPROVED\&#39;, \&#39;DECLINED\&#39;, \&#39;CANCELLED\&#39;, \&#39;DELETED\&#39;)
      */
-    public async timeOffList (xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTimeOffList;  }> {
+    public async timeOffList (x_account_token: string, approver_id?: string, created_after?: Date, created_before?: Date, cursor?: string, employee_id?: string, expand?: 'approver' | 'employee' | 'employee,approver', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, remote_id?: string, request_type?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTimeOffList;  }> {
         const localVarPath = this.basePath + '/time-off';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -205,64 +205,64 @@ export class TimeOffApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffList.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling timeOffList.');
         }
 
-        if (approverId !== undefined) {
-            localVarQueryParameters['approver_id'] = ObjectSerializer.serialize(approverId, "string");
+        if (approver_id !== undefined) {
+            localVarQueryParameters['approver_id'] = ObjectSerializer.serialize(approver_id, "string");
         }
 
-        if (createdAfter !== undefined) {
-            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(createdAfter, "Date");
+        if (created_after !== undefined) {
+            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(created_after, "Date");
         }
 
-        if (createdBefore !== undefined) {
-            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(createdBefore, "Date");
+        if (created_before !== undefined) {
+            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(created_before, "Date");
         }
 
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
-        if (employeeId !== undefined) {
-            localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employeeId, "string");
+        if (employee_id !== undefined) {
+            localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employee_id, "string");
         }
 
         if (expand !== undefined) {
             localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'approver' | 'employee' | 'employee,approver'");
         }
 
-        if (includeRemoteData !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
+        if (include_remote_data !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(include_remote_data, "boolean");
         }
 
-        if (modifiedAfter !== undefined) {
-            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modifiedAfter, "Date");
+        if (modified_after !== undefined) {
+            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modified_after, "Date");
         }
 
-        if (modifiedBefore !== undefined) {
-            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modifiedBefore, "Date");
+        if (modified_before !== undefined) {
+            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modified_before, "Date");
         }
 
-        if (pageSize !== undefined) {
-            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
+        if (page_size !== undefined) {
+            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(page_size, "number");
         }
 
-        if (remoteId !== undefined) {
-            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
+        if (remote_id !== undefined) {
+            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remote_id, "string");
         }
 
-        if (requestType !== undefined) {
-            localVarQueryParameters['request_type'] = ObjectSerializer.serialize(requestType, "'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER'");
+        if (request_type !== undefined) {
+            localVarQueryParameters['request_type'] = ObjectSerializer.serialize(request_type, "'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER'");
         }
 
         if (status !== undefined) {
             localVarQueryParameters['status'] = ObjectSerializer.serialize(status, "'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED'");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -313,12 +313,12 @@ export class TimeOffApi {
     }
     /**
      * Returns a `TimeOff` object with the given `id`.
-     * @param xAccountToken Token identifying the end user.
+     * @param x_account_token Token identifying the end user.
      * @param id 
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async timeOffRetrieve (xAccountToken: string, id: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOff;  }> {
+    public async timeOffRetrieve (x_account_token: string, id: string, expand?: 'approver' | 'employee' | 'employee,approver', include_remote_data?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOff;  }> {
         const localVarPath = this.basePath + '/time-off/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -332,9 +332,9 @@ export class TimeOffApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffRetrieve.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling timeOffRetrieve.');
         }
 
         // verify required parameter 'id' is not null or undefined
@@ -346,11 +346,11 @@ export class TimeOffApi {
             localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'approver' | 'employee' | 'employee,approver'");
         }
 
-        if (includeRemoteData !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
+        if (include_remote_data !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(include_remote_data, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;

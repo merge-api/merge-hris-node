@@ -92,9 +92,9 @@ export class LinkTokenApi {
 
     /**
      * Creates a link token to be used when linking a new end user.
-     * @param endUserDetailsRequest 
+     * @param end_user_details_request 
      */
-    public async linkTokenCreate (endUserDetailsRequest: EndUserDetailsRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LinkToken;  }> {
+    public async linkTokenCreate (end_user_details_request: EndUserDetailsRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LinkToken;  }> {
         const localVarPath = this.basePath + '/link-token';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -107,9 +107,9 @@ export class LinkTokenApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'endUserDetailsRequest' is not null or undefined
-        if (endUserDetailsRequest === null || endUserDetailsRequest === undefined) {
-            throw new Error('Required parameter endUserDetailsRequest was null or undefined when calling linkTokenCreate.');
+        // verify required parameter 'end_user_details_request' is not null or undefined
+        if (end_user_details_request === null || end_user_details_request === undefined) {
+            throw new Error('Required parameter end_user_details_request was null or undefined when calling linkTokenCreate.');
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -123,7 +123,7 @@ export class LinkTokenApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(endUserDetailsRequest, "EndUserDetailsRequest")
+            body: ObjectSerializer.serialize(end_user_details_request, "EndUserDetailsRequest")
         };
 
         let authenticationPromise = Promise.resolve();

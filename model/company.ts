@@ -21,20 +21,20 @@ export class Company {
     /**
     * The third-party API ID of the matching object.
     */
-    'remoteId'?: string | null;
+    'remote_id'?: string | null;
     /**
     * The company\'s legal name.
     */
-    'legalName'?: string | null;
+    'legal_name'?: string | null;
     /**
     * The company\'s display name.
     */
-    'displayName'?: string | null;
+    'display_name'?: string | null;
     /**
     * The company\'s Employer Identification Numbers.
     */
     'eins'?: Array<string> | null;
-    'remoteData'?: Array<RemoteData> | null;
+    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -45,17 +45,17 @@ export class Company {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "legalName",
+            "name": "legal_name",
             "baseName": "legal_name",
             "type": "string"
         },
         {
-            "name": "displayName",
+            "name": "display_name",
             "baseName": "display_name",
             "type": "string"
         },
@@ -65,7 +65,7 @@ export class Company {
             "type": "Array<string>"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];
