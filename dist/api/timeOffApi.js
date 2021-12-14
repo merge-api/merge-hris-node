@@ -1,10 +1,9 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -39,7 +38,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeOffApi = exports.TimeOffApiApiKeys = void 0;
 var request_1 = __importDefault(require("request"));
 var models_1 = require("../model/models");
 var models_2 = require("../model/models");
@@ -74,7 +72,7 @@ var TimeOffApi = (function () {
         set: function (value) {
             this._useQuerystring = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TimeOffApi.prototype, "basePath", {
@@ -84,7 +82,7 @@ var TimeOffApi = (function () {
         set: function (basePath) {
             this._basePath = basePath;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TimeOffApi.prototype, "defaultHeaders", {
@@ -94,7 +92,7 @@ var TimeOffApi = (function () {
         set: function (defaultHeaders) {
             this._defaultHeaders = defaultHeaders;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     TimeOffApi.prototype.setDefaultAuthentication = function (auth) {
@@ -106,7 +104,7 @@ var TimeOffApi = (function () {
     TimeOffApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    TimeOffApi.prototype.timeOffCreate = function (xAccountToken, runAsync, timeOffRequest, options) {
+    TimeOffApi.prototype.timeOffCreate = function (xAccountToken, timeOffEndpointRequest, runAsync, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -126,6 +124,9 @@ var TimeOffApi = (function () {
                 if (xAccountToken === null || xAccountToken === undefined) {
                     throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffCreate.');
                 }
+                if (timeOffEndpointRequest === null || timeOffEndpointRequest === undefined) {
+                    throw new Error('Required parameter timeOffEndpointRequest was null or undefined when calling timeOffCreate.');
+                }
                 if (runAsync !== undefined) {
                     localVarQueryParameters['run_async'] = models_1.ObjectSerializer.serialize(runAsync, "boolean");
                 }
@@ -139,7 +140,7 @@ var TimeOffApi = (function () {
                     uri: localVarPath,
                     useQuerystring: this._useQuerystring,
                     json: true,
-                    body: models_1.ObjectSerializer.serialize(timeOffRequest, "TimeOffRequest")
+                    body: models_1.ObjectSerializer.serialize(timeOffEndpointRequest, "TimeOffEndpointRequest")
                 };
                 authenticationPromise = Promise.resolve();
                 if (this.authentications.tokenAuth.apiKey) {
@@ -169,7 +170,7 @@ var TimeOffApi = (function () {
                                     reject(error);
                                 }
                                 else {
-                                    body = models_1.ObjectSerializer.deserialize(body, "TimeOff");
+                                    body = models_1.ObjectSerializer.deserialize(body, "TimeOffResponse");
                                     if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                         resolve({ response: response, body: body });
                                     }
@@ -237,10 +238,10 @@ var TimeOffApi = (function () {
                     localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
                 }
                 if (requestType !== undefined) {
-                    localVarQueryParameters['request_type'] = models_1.ObjectSerializer.serialize(requestType, "'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null'");
+                    localVarQueryParameters['request_type'] = models_1.ObjectSerializer.serialize(requestType, "'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER'");
                 }
                 if (status !== undefined) {
-                    localVarQueryParameters['status'] = models_1.ObjectSerializer.serialize(status, "'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null'");
+                    localVarQueryParameters['status'] = models_1.ObjectSerializer.serialize(status, "'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED'");
                 }
                 localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);

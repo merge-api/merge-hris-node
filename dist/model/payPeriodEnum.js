@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PayPeriodEnum = void 0;
 var PayPeriodEnum;
 (function (PayPeriodEnum) {
     PayPeriodEnum[PayPeriodEnum["Hour"] = 'HOUR'] = "Hour";

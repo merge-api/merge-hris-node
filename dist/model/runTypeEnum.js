@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RunTypeEnum = void 0;
 var RunTypeEnum;
 (function (RunTypeEnum) {
     RunTypeEnum[RunTypeEnum["Regular"] = 'REGULAR'] = "Regular";

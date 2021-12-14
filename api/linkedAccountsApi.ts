@@ -91,20 +91,20 @@ export class LinkedAccountsApi {
 
     /**
      * List linked accounts for your organization.
-     * @param category category
+     * @param category 
      * @param cursor The pagination cursor value.
-     * @param endUserEmailAddress end_user_email_address
-     * @param endUserOrganizationName end_user_organization_name
-     * @param endUserOriginId end_user_origin_id
+     * @param endUserEmailAddress 
+     * @param endUserOrganizationName 
+     * @param endUserOriginId 
      * @param endUserOriginIds Comma-separated list of EndUser origin IDs, making it possible to specify multiple EndUsers at once
-     * @param id id
+     * @param id 
      * @param ids Comma-separated list of LinkedAccount IDs, making it possible to specify multiple LinkedAccounts at once
-     * @param integrationName integration_name
+     * @param integrationName 
      * @param isTestAccount If included, will only include test linked accounts. If not included, will only include non-test linked accounts
      * @param pageSize Number of results to return per page.
      * @param status Filter by status. Options: &#x60;COMPLETE&#x60;, &#x60;INCOMPLETE&#x60;, &#x60;RELINK_NEEDED&#x60;
      */
-    public async linkedAccountsList (category?: 'accounting' | 'ats' | 'hris', cursor?: number, endUserEmailAddress?: string, endUserOrganizationName?: string, endUserOriginId?: string, endUserOriginIds?: string, id?: string, ids?: string, integrationName?: string, isTestAccount?: string, pageSize?: number, status?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedAccountDetailsAndActionsList;  }> {
+    public async linkedAccountsList (category?: 'accounting' | 'ats' | 'hris', cursor?: string, endUserEmailAddress?: string, endUserOrganizationName?: string, endUserOriginId?: string, endUserOriginIds?: string, id?: string, ids?: string, integrationName?: string, isTestAccount?: string, pageSize?: number, status?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedAccountDetailsAndActionsList;  }> {
         const localVarPath = this.basePath + '/linked-accounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -122,7 +122,7 @@ export class LinkedAccountsApi {
         }
 
         if (cursor !== undefined) {
-            localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "number");
+            localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
         if (endUserEmailAddress !== undefined) {

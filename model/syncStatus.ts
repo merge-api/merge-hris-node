@@ -17,33 +17,33 @@ import { SyncStatusStatusEnum } from './syncStatusStatusEnum';
 * # The SyncStatus Object ### Description The `SyncStatus` object is used to represent the syncing state of an account  ### Usage Example View the `SyncStatus` for an account to see how recently its models were synced.
 */
 export class SyncStatus {
-    'model_name': string;
-    'model_id': string;
-    'last_sync_start': Date;
-    'next_sync_start': Date;
-    'status': SyncStatusStatusEnum;
-    'is_initial_sync': boolean;
+    'modelName': string;
+    'modelId': string;
+    'lastSyncStart': Date;
+    'nextSyncStart': Date;
+    'status': SyncStatusStatusEnum | null;
+    'isInitialSync': boolean;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "model_name",
+            "name": "modelName",
             "baseName": "model_name",
             "type": "string"
         },
         {
-            "name": "model_id",
+            "name": "modelId",
             "baseName": "model_id",
             "type": "string"
         },
         {
-            "name": "last_sync_start",
+            "name": "lastSyncStart",
             "baseName": "last_sync_start",
             "type": "Date"
         },
         {
-            "name": "next_sync_start",
+            "name": "nextSyncStart",
             "baseName": "next_sync_start",
             "type": "Date"
         },
@@ -53,7 +53,7 @@ export class SyncStatus {
             "type": "SyncStatusStatusEnum"
         },
         {
-            "name": "is_initial_sync",
+            "name": "isInitialSync",
             "baseName": "is_initial_sync",
             "type": "boolean"
         }    ];

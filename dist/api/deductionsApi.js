@@ -1,10 +1,9 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -39,7 +38,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeductionsApi = exports.DeductionsApiApiKeys = void 0;
 var request_1 = __importDefault(require("request"));
 var models_1 = require("../model/models");
 var models_2 = require("../model/models");
@@ -74,7 +72,7 @@ var DeductionsApi = (function () {
         set: function (value) {
             this._useQuerystring = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DeductionsApi.prototype, "basePath", {
@@ -84,7 +82,7 @@ var DeductionsApi = (function () {
         set: function (basePath) {
             this._basePath = basePath;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DeductionsApi.prototype, "defaultHeaders", {
@@ -94,7 +92,7 @@ var DeductionsApi = (function () {
         set: function (defaultHeaders) {
             this._defaultHeaders = defaultHeaders;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DeductionsApi.prototype.setDefaultAuthentication = function (auth) {
@@ -106,87 +104,10 @@ var DeductionsApi = (function () {
     DeductionsApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    DeductionsApi.prototype.deductionsCreate = function (xAccountToken, runAsync, deductionRequest, options) {
-        if (options === void 0) { options = { headers: {} }; }
-        return __awaiter(this, void 0, void 0, function () {
-            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
-            var _this = this;
-            return __generator(this, function (_b) {
-                localVarPath = this.basePath + '/deductions';
-                localVarQueryParameters = {};
-                localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-                produces = ['application/json'];
-                if (produces.indexOf('application/json') >= 0) {
-                    localVarHeaderParams.Accept = 'application/json';
-                }
-                else {
-                    localVarHeaderParams.Accept = produces.join(',');
-                }
-                localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling deductionsCreate.');
-                }
-                if (runAsync !== undefined) {
-                    localVarQueryParameters['run_async'] = models_1.ObjectSerializer.serialize(runAsync, "boolean");
-                }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
-                Object.assign(localVarHeaderParams, options.headers);
-                localVarUseFormData = false;
-                localVarRequestOptions = {
-                    method: 'POST',
-                    qs: localVarQueryParameters,
-                    headers: localVarHeaderParams,
-                    uri: localVarPath,
-                    useQuerystring: this._useQuerystring,
-                    json: true,
-                    body: models_1.ObjectSerializer.serialize(deductionRequest, "DeductionRequest")
-                };
-                authenticationPromise = Promise.resolve();
-                if (this.authentications.tokenAuth.apiKey) {
-                    authenticationPromise = authenticationPromise.then(function () { return _this.authentications.tokenAuth.applyToRequest(localVarRequestOptions); });
-                }
-                authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
-                interceptorPromise = authenticationPromise;
-                _loop_1 = function (interceptor) {
-                    interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
-                };
-                for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
-                    interceptor = _a[_i];
-                    _loop_1(interceptor);
-                }
-                return [2, interceptorPromise.then(function () {
-                        if (Object.keys(localVarFormParams).length) {
-                            if (localVarUseFormData) {
-                                localVarRequestOptions.formData = localVarFormParams;
-                            }
-                            else {
-                                localVarRequestOptions.form = localVarFormParams;
-                            }
-                        }
-                        return new Promise(function (resolve, reject) {
-                            request_1.default(localVarRequestOptions, function (error, response, body) {
-                                if (error) {
-                                    reject(error);
-                                }
-                                else {
-                                    body = models_1.ObjectSerializer.deserialize(body, "Deduction");
-                                    if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                        resolve({ response: response, body: body });
-                                    }
-                                    else {
-                                        reject(new apis_1.HttpError(response, body, response.statusCode));
-                                    }
-                                }
-                            });
-                        });
-                    })];
-            });
-        });
-    };
     DeductionsApi.prototype.deductionsList = function (xAccountToken, createdAfter, createdBefore, cursor, employeePayrollRunId, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
-            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
+            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
             var _this = this;
             return __generator(this, function (_b) {
                 localVarPath = this.basePath + '/deductions';
@@ -247,12 +168,12 @@ var DeductionsApi = (function () {
                 }
                 authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
                 interceptorPromise = authenticationPromise;
-                _loop_2 = function (interceptor) {
+                _loop_1 = function (interceptor) {
                     interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
                 };
                 for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
                     interceptor = _a[_i];
-                    _loop_2(interceptor);
+                    _loop_1(interceptor);
                 }
                 return [2, interceptorPromise.then(function () {
                         if (Object.keys(localVarFormParams).length) {
@@ -286,7 +207,7 @@ var DeductionsApi = (function () {
     DeductionsApi.prototype.deductionsRetrieve = function (xAccountToken, id, includeRemoteData, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
-            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_3, _i, _a, interceptor;
+            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
             var _this = this;
             return __generator(this, function (_b) {
                 localVarPath = this.basePath + '/deductions/{id}'
@@ -327,12 +248,12 @@ var DeductionsApi = (function () {
                 }
                 authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
                 interceptorPromise = authenticationPromise;
-                _loop_3 = function (interceptor) {
+                _loop_2 = function (interceptor) {
                     interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
                 };
                 for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
                     interceptor = _a[_i];
-                    _loop_3(interceptor);
+                    _loop_2(interceptor);
                 }
                 return [2, interceptorPromise.then(function () {
                         if (Object.keys(localVarFormParams).length) {

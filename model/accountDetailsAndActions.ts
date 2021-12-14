@@ -20,11 +20,12 @@ import { CategoryEnum } from './categoryEnum';
 */
 export class AccountDetailsAndActions {
     'id': string;
-    'category'?: CategoryEnum;
-    'status': AccountDetailsAndActionsStatusEnum;
-    'end_user_origin_id'?: string;
-    'end_user_organization_name': string;
-    'end_user_email_address': string;
+    'category'?: CategoryEnum | null;
+    'status': AccountDetailsAndActionsStatusEnum | null;
+    'statusDetail'?: string;
+    'endUserOriginId'?: string;
+    'endUserOrganizationName': string;
+    'endUserEmailAddress': string;
     'integration'?: AccountDetailsAndActionsIntegration;
 
     static discriminator: string | undefined = undefined;
@@ -46,17 +47,22 @@ export class AccountDetailsAndActions {
             "type": "AccountDetailsAndActionsStatusEnum"
         },
         {
-            "name": "end_user_origin_id",
+            "name": "statusDetail",
+            "baseName": "status_detail",
+            "type": "string"
+        },
+        {
+            "name": "endUserOriginId",
             "baseName": "end_user_origin_id",
             "type": "string"
         },
         {
-            "name": "end_user_organization_name",
+            "name": "endUserOrganizationName",
             "baseName": "end_user_organization_name",
             "type": "string"
         },
         {
-            "name": "end_user_email_address",
+            "name": "endUserEmailAddress",
             "baseName": "end_user_email_address",
             "type": "string"
         },

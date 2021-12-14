@@ -25,11 +25,11 @@ export class Employee {
     /**
     * The third-party API ID of the matching object.
     */
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     /**
     * The employee\'s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
     */
-    'employee_number'?: string | null;
+    'employeeNumber'?: string | null;
     /**
     * The ID of the employee\'s company.
     */
@@ -37,27 +37,27 @@ export class Employee {
     /**
     * The employee\'s first name.
     */
-    'first_name'?: string | null;
+    'firstName'?: string | null;
     /**
     * The employee\'s last name.
     */
-    'last_name'?: string | null;
+    'lastName'?: string | null;
     /**
     * The employee\'s full name, to use for display purposes.
     */
-    'display_full_name'?: string | null;
+    'displayFullName'?: string | null;
     /**
     * The employee\'s work email.
     */
-    'work_email'?: string | null;
+    'workEmail'?: string | null;
     /**
     * The employee\'s personal email.
     */
-    'personal_email'?: string | null;
+    'personalEmail'?: string | null;
     /**
     * The employee\'s mobile phone number.
     */
-    'mobile_phone_number'?: string | null;
+    'mobilePhoneNumber'?: string | null;
     /**
     * Array of `Employment` IDs for this Employee.
     */
@@ -65,11 +65,11 @@ export class Employee {
     /**
     * The employee\'s home address.
     */
-    'home_location'?: string | null;
+    'homeLocation'?: string | null;
     /**
     * The employee\'s work address.
     */
-    'work_location'?: string | null;
+    'workLocation'?: string | null;
     /**
     * The employee ID of the employee\'s manager.
     */
@@ -78,6 +78,10 @@ export class Employee {
     * The employee\'s team.
     */
     'team'?: string | null;
+    /**
+    * The employee\'s pay group
+    */
+    'payGroup'?: string | null;
     /**
     * The employee\'s social security number.
     */
@@ -93,36 +97,36 @@ export class Employee {
     /**
     * The employee\'s marital status.
     */
-    'marital_status'?: MaritalStatusEnum | null;
+    'maritalStatus'?: MaritalStatusEnum | null;
     /**
     * The employee\'s date of birth.
     */
-    'date_of_birth'?: Date | null;
+    'dateOfBirth'?: Date | null;
     /**
     * The date that the employee was hired, usually the day that an offer letter is signed. If an employee has multiple hire dates from previous employments, this represents the most recent hire date. Note: If you\'re looking for the employee\'s start date, refer to the start_date field.
     */
-    'hire_date'?: Date | null;
+    'hireDate'?: Date | null;
     /**
     * The date that the employee started working. If an employee has multiple start dates from previous employments, this represents the most recent start date.
     */
-    'start_date'?: Date | null;
+    'startDate'?: Date | null;
     /**
     * The employment status of the employee.
     */
-    'employment_status'?: EmploymentStatusEnum | null;
+    'employmentStatus'?: EmploymentStatusEnum | null;
     /**
     * The employee\'s termination date.
     */
-    'termination_date'?: Date | null;
+    'terminationDate'?: Date | null;
     /**
     * The URL of the employee\'s avatar image.
     */
     'avatar'?: string | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remoteData'?: Array<RemoteData> | null;
     /**
     * Custom fields configured for a given model.
     */
-    'custom_fields'?: { [key: string]: any; } | null;
+    'customFields'?: { [key: string]: any; } | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -133,12 +137,12 @@ export class Employee {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "employee_number",
+            "name": "employeeNumber",
             "baseName": "employee_number",
             "type": "string"
         },
@@ -148,32 +152,32 @@ export class Employee {
             "type": "string"
         },
         {
-            "name": "first_name",
+            "name": "firstName",
             "baseName": "first_name",
             "type": "string"
         },
         {
-            "name": "last_name",
+            "name": "lastName",
             "baseName": "last_name",
             "type": "string"
         },
         {
-            "name": "display_full_name",
+            "name": "displayFullName",
             "baseName": "display_full_name",
             "type": "string"
         },
         {
-            "name": "work_email",
+            "name": "workEmail",
             "baseName": "work_email",
             "type": "string"
         },
         {
-            "name": "personal_email",
+            "name": "personalEmail",
             "baseName": "personal_email",
             "type": "string"
         },
         {
-            "name": "mobile_phone_number",
+            "name": "mobilePhoneNumber",
             "baseName": "mobile_phone_number",
             "type": "string"
         },
@@ -183,12 +187,12 @@ export class Employee {
             "type": "Array<string>"
         },
         {
-            "name": "home_location",
+            "name": "homeLocation",
             "baseName": "home_location",
             "type": "string"
         },
         {
-            "name": "work_location",
+            "name": "workLocation",
             "baseName": "work_location",
             "type": "string"
         },
@@ -200,6 +204,11 @@ export class Employee {
         {
             "name": "team",
             "baseName": "team",
+            "type": "string"
+        },
+        {
+            "name": "payGroup",
+            "baseName": "pay_group",
             "type": "string"
         },
         {
@@ -218,32 +227,32 @@ export class Employee {
             "type": "EthnicityEnum"
         },
         {
-            "name": "marital_status",
+            "name": "maritalStatus",
             "baseName": "marital_status",
             "type": "MaritalStatusEnum"
         },
         {
-            "name": "date_of_birth",
+            "name": "dateOfBirth",
             "baseName": "date_of_birth",
             "type": "Date"
         },
         {
-            "name": "hire_date",
+            "name": "hireDate",
             "baseName": "hire_date",
             "type": "Date"
         },
         {
-            "name": "start_date",
+            "name": "startDate",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "employment_status",
+            "name": "employmentStatus",
             "baseName": "employment_status",
             "type": "EmploymentStatusEnum"
         },
         {
-            "name": "termination_date",
+            "name": "terminationDate",
             "baseName": "termination_date",
             "type": "Date"
         },
@@ -253,12 +262,12 @@ export class Employee {
             "type": "string"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         },
         {
-            "name": "custom_fields",
+            "name": "customFields",
             "baseName": "custom_fields",
             "type": "{ [key: string]: any; }"
         }    ];

@@ -12,20 +12,18 @@ export declare class SyncStatusApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        default: Authentication;
-        tokenAuth: ApiKeyAuth;
+        'default': Authentication;
+        'tokenAuth': ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    set defaultHeaders(defaultHeaders: any);
-    get defaultHeaders(): any;
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
+    defaultHeaders: any;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: SyncStatusApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    syncStatusList(xAccountToken: string, cursor?: number, pageSize?: number, options?: {
+    syncStatusList(xAccountToken: string, cursor?: string, pageSize?: number, options?: {
         headers: {
             [name: string]: string;
         };

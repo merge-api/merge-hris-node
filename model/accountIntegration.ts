@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { CategoriesEnum } from './categoriesEnum';
 
 export class AccountIntegration {
     /**
@@ -20,7 +21,7 @@ export class AccountIntegration {
     /**
     * Category or categories this integration belongs to. Multiple categories should be comma separated.<br/><br>Example: For [ats, hris], enter <i>ats,hris</i>
     */
-    'categories'?: Array<AccountIntegration.CategoriesEnum>;
+    'categories'?: Array<CategoriesEnum>;
     /**
     * Company logo in rectangular shape. <b>Upload an image with a clear background.</b>
     */
@@ -28,7 +29,7 @@ export class AccountIntegration {
     /**
     * Company logo in square shape. <b>Upload an image with a white background.</b>
     */
-    'square_image'?: string | null;
+    'squareImage'?: string | null;
     /**
     * The color of this integration used for buttons and text throughout the app and landing pages. <b>Choose a darker, saturated color.</b>
     */
@@ -46,7 +47,7 @@ export class AccountIntegration {
         {
             "name": "categories",
             "baseName": "categories",
-            "type": "Array<AccountIntegration.CategoriesEnum>"
+            "type": "Array<CategoriesEnum>"
         },
         {
             "name": "image",
@@ -54,7 +55,7 @@ export class AccountIntegration {
             "type": "string"
         },
         {
-            "name": "square_image",
+            "name": "squareImage",
             "baseName": "square_image",
             "type": "string"
         },
@@ -74,10 +75,3 @@ export class AccountIntegration {
     }
 }
 
-export namespace AccountIntegration {
-    export enum CategoriesEnum {
-        Hris = <any> 'hris',
-        Ats = <any> 'ats',
-        Accounting = <any> 'accounting'
-    }
-}

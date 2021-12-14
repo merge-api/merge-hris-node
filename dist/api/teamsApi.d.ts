@@ -12,20 +12,18 @@ export declare class TeamsApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        default: Authentication;
-        tokenAuth: ApiKeyAuth;
+        'default': Authentication;
+        'tokenAuth': ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    set defaultHeaders(defaultHeaders: any);
-    get defaultHeaders(): any;
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
+    defaultHeaders: any;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TeamsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    teamsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options?: {
+    teamsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'parent_team', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options?: {
         headers: {
             [name: string]: string;
         };
@@ -33,7 +31,7 @@ export declare class TeamsApi {
         response: http.IncomingMessage;
         body: PaginatedTeamList;
     }>;
-    teamsRetrieve(xAccountToken: string, id: string, includeRemoteData?: boolean, options?: {
+    teamsRetrieve(xAccountToken: string, id: string, expand?: 'parent_team', includeRemoteData?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

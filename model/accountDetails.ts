@@ -17,9 +17,9 @@ export class AccountDetails {
     'id'?: string;
     'integration'?: string;
     'category'?: CategoryEnum | null;
-    'end_user_origin_id'?: string;
-    'end_user_organization_name'?: string;
-    'end_user_email_address'?: string;
+    'endUserOriginId'?: string;
+    'endUserOrganizationName'?: string;
+    'endUserEmailAddress'?: string;
     'status'?: string;
 
     static discriminator: string | undefined = undefined;
@@ -41,17 +41,17 @@ export class AccountDetails {
             "type": "CategoryEnum"
         },
         {
-            "name": "end_user_origin_id",
+            "name": "endUserOriginId",
             "baseName": "end_user_origin_id",
             "type": "string"
         },
         {
-            "name": "end_user_organization_name",
+            "name": "endUserOrganizationName",
             "baseName": "end_user_organization_name",
             "type": "string"
         },
         {
-            "name": "end_user_email_address",
+            "name": "endUserEmailAddress",
             "baseName": "end_user_email_address",
             "type": "string"
         },

@@ -21,7 +21,7 @@ export class Earning {
     /**
     * The earning\'s employee payroll run.
     */
-    'employee_payroll_run'?: string | null;
+    'employeePayrollRun'?: string | null;
     /**
     * The amount earned.
     */
@@ -30,7 +30,7 @@ export class Earning {
     * The type of earning.
     */
     'type'?: TypeEnum | null;
-    'remote_data'?: Array<{ [key: string]: any; }> | null;
+    'remoteData'?: Array<{ [key: string]: any; }> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -41,7 +41,7 @@ export class Earning {
             "type": "string"
         },
         {
-            "name": "employee_payroll_run",
+            "name": "employeePayrollRun",
             "baseName": "employee_payroll_run",
             "type": "string"
         },
@@ -56,7 +56,7 @@ export class Earning {
             "type": "TypeEnum"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<{ [key: string]: any; }>"
         }    ];

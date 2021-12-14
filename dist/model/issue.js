@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Issue = void 0;
 var Issue = (function () {
     function Issue() {
     }
@@ -20,27 +19,27 @@ var Issue = (function () {
             "type": "IssueStatusEnum"
         },
         {
-            "name": "error_description",
+            "name": "errorDescription",
             "baseName": "error_description",
             "type": "string"
         },
         {
-            "name": "end_user",
+            "name": "endUser",
             "baseName": "end_user",
             "type": "{ [key: string]: any; }"
         },
         {
-            "name": "first_incident_time",
+            "name": "firstIncidentTime",
             "baseName": "first_incident_time",
             "type": "Date"
         },
         {
-            "name": "last_incident_time",
+            "name": "lastIncidentTime",
             "baseName": "last_incident_time",
             "type": "Date"
         },
         {
-            "name": "is_muted",
+            "name": "isMuted",
             "baseName": "is_muted",
             "type": "boolean"
         }

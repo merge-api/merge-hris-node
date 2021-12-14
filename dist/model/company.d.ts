@@ -1,11 +1,11 @@
 import { RemoteData } from './remoteData';
 export declare class Company {
     'id'?: string;
-    'remote_id'?: string | null;
-    'legal_name'?: string | null;
-    'display_name'?: string | null;
+    'remoteId'?: string | null;
+    'legalName'?: string | null;
+    'displayName'?: string | null;
     'eins'?: Array<string> | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remoteData'?: Array<RemoteData> | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

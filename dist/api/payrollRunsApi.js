@@ -1,10 +1,9 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -39,7 +38,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PayrollRunsApi = exports.PayrollRunsApiApiKeys = void 0;
 var request_1 = __importDefault(require("request"));
 var models_1 = require("../model/models");
 var models_2 = require("../model/models");
@@ -74,7 +72,7 @@ var PayrollRunsApi = (function () {
         set: function (value) {
             this._useQuerystring = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(PayrollRunsApi.prototype, "basePath", {
@@ -84,7 +82,7 @@ var PayrollRunsApi = (function () {
         set: function (basePath) {
             this._basePath = basePath;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(PayrollRunsApi.prototype, "defaultHeaders", {
@@ -94,7 +92,7 @@ var PayrollRunsApi = (function () {
         set: function (defaultHeaders) {
             this._defaultHeaders = defaultHeaders;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     PayrollRunsApi.prototype.setDefaultAuthentication = function (auth) {
@@ -157,7 +155,7 @@ var PayrollRunsApi = (function () {
                     localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
                 }
                 if (runType !== undefined) {
-                    localVarQueryParameters['run_type'] = models_1.ObjectSerializer.serialize(runType, "'REGULAR' | 'OFF_CYCLE' | 'CORRECTION' | 'TERMINATION' | 'SIGN_ON_BONUS' | '' | 'null'");
+                    localVarQueryParameters['run_type'] = models_1.ObjectSerializer.serialize(runType, "'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION'");
                 }
                 if (startedAfter !== undefined) {
                     localVarQueryParameters['started_after'] = models_1.ObjectSerializer.serialize(startedAfter, "Date");

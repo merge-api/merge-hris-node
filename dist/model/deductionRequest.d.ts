@@ -1,6 +1,5 @@
 export declare class DeductionRequest {
     'employee_payroll_run'?: string | null;
-    'persistent_deduction'?: string | null;
     'name'?: string | null;
     'employee_deduction'?: number | null;
     'company_deduction'?: number | null;

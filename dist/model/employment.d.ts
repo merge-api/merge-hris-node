@@ -6,16 +6,17 @@ import { PayPeriodEnum } from './payPeriodEnum';
 import { RemoteData } from './remoteData';
 export declare class Employment {
     'id'?: string;
-    'remote_id'?: string | null;
-    'job_title'?: string | null;
-    'pay_rate'?: number | null;
-    'pay_period'?: PayPeriodEnum | null;
-    'pay_frequency'?: PayFrequencyEnum | null;
-    'pay_currency'?: PayCurrencyEnum | null;
-    'flsa_status'?: FlsaStatusEnum | null;
-    'effective_date'?: Date | null;
-    'employment_type'?: EmploymentTypeEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remoteId'?: string | null;
+    'employee'?: string | null;
+    'jobTitle'?: string | null;
+    'payRate'?: number | null;
+    'payPeriod'?: PayPeriodEnum | null;
+    'payFrequency'?: PayFrequencyEnum | null;
+    'payCurrency'?: PayCurrencyEnum | null;
+    'flsaStatus'?: FlsaStatusEnum | null;
+    'effectiveDate'?: Date | null;
+    'employmentType'?: EmploymentTypeEnum | null;
+    'remoteData'?: Array<RemoteData> | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

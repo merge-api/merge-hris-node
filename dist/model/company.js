@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Company = void 0;
 var Company = (function () {
     function Company() {
     }
@@ -15,17 +14,17 @@ var Company = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "legal_name",
+            "name": "legalName",
             "baseName": "legal_name",
             "type": "string"
         },
         {
-            "name": "display_name",
+            "name": "displayName",
             "baseName": "display_name",
             "type": "string"
         },
@@ -35,7 +34,7 @@ var Company = (function () {
             "type": "Array<string>"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

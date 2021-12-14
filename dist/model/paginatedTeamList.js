@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PaginatedTeamList = void 0;
 var PaginatedTeamList = (function () {
     function PaginatedTeamList() {
     }

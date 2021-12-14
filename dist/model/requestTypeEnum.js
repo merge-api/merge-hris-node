@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RequestTypeEnum = void 0;
 var RequestTypeEnum;
 (function (RequestTypeEnum) {
     RequestTypeEnum[RequestTypeEnum["Vacation"] = 'VACATION'] = "Vacation";

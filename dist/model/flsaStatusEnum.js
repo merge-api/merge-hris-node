@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FlsaStatusEnum = void 0;
 var FlsaStatusEnum;
 (function (FlsaStatusEnum) {
     FlsaStatusEnum[FlsaStatusEnum["Exempt"] = 'EXEMPT'] = "Exempt";

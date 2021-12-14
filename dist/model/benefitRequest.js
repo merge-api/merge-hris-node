@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BenefitRequest = void 0;
 var BenefitRequest = (function () {
     function BenefitRequest() {
     }
