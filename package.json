@@ -1,7 +1,7 @@
 {
-    "name": "merge_hris_client",
-    "version": "1.0.0",
-    "description": "NodeJS client for merge_hris_client",
+    "name": "@mergeapi/merge-hris-node",
+    "version": "1.2.0",
+    "description": "NodeJS client for @mergeapi/merge-hris-node",
     "repository": "GIT_USER_ID/GIT_REPO_ID",
     "main": "dist/api.js",
     "types": "dist/api.d.ts",
