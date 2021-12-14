@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { EndUserDetailsRequest } from '../model/endUserDetailsRequest';
 import { LinkToken } from '../model/linkToken';
@@ -25,7 +24,7 @@ export declare class LinkTokenApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: LinkTokenApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    linkTokenCreate(endUserDetailsRequest: EndUserDetailsRequest, options?: {
+    linkTokenCreate(end_user_details_request: EndUserDetailsRequest, options?: {
         headers: {
             [name: string]: string;
         };

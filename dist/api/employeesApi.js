@@ -106,7 +106,7 @@ var EmployeesApi = (function () {
     EmployeesApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    EmployeesApi.prototype.employeesCreate = function (xAccountToken, runAsync, employeeRequest, options) {
+    EmployeesApi.prototype.employeesList = function (x_account_token, company_id, created_after, created_before, cursor, expand, include_remote_data, include_sensitive_fields, manager_id, modified_after, modified_before, page_size, pay_group_id, personal_email, remote_id, team_id, work_email, work_location_id, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -123,129 +123,61 @@ var EmployeesApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling employeesCreate.');
+                if (x_account_token === null || x_account_token === undefined) {
+                    throw new Error('Required parameter x_account_token was null or undefined when calling employeesList.');
                 }
-                if (runAsync !== undefined) {
-                    localVarQueryParameters['run_async'] = models_1.ObjectSerializer.serialize(runAsync, "boolean");
+                if (company_id !== undefined) {
+                    localVarQueryParameters['company_id'] = models_1.ObjectSerializer.serialize(company_id, "string");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
-                Object.assign(localVarHeaderParams, options.headers);
-                localVarUseFormData = false;
-                localVarRequestOptions = {
-                    method: 'POST',
-                    qs: localVarQueryParameters,
-                    headers: localVarHeaderParams,
-                    uri: localVarPath,
-                    useQuerystring: this._useQuerystring,
-                    json: true,
-                    body: models_1.ObjectSerializer.serialize(employeeRequest, "EmployeeRequest")
-                };
-                authenticationPromise = Promise.resolve();
-                if (this.authentications.tokenAuth.apiKey) {
-                    authenticationPromise = authenticationPromise.then(function () { return _this.authentications.tokenAuth.applyToRequest(localVarRequestOptions); });
+                if (created_after !== undefined) {
+                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(created_after, "Date");
                 }
-                authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
-                interceptorPromise = authenticationPromise;
-                _loop_1 = function (interceptor) {
-                    interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
-                };
-                for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
-                    interceptor = _a[_i];
-                    _loop_1(interceptor);
-                }
-                return [2, interceptorPromise.then(function () {
-                        if (Object.keys(localVarFormParams).length) {
-                            if (localVarUseFormData) {
-                                localVarRequestOptions.formData = localVarFormParams;
-                            }
-                            else {
-                                localVarRequestOptions.form = localVarFormParams;
-                            }
-                        }
-                        return new Promise(function (resolve, reject) {
-                            request_1.default(localVarRequestOptions, function (error, response, body) {
-                                if (error) {
-                                    reject(error);
-                                }
-                                else {
-                                    body = models_1.ObjectSerializer.deserialize(body, "Employee");
-                                    if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                        resolve({ response: response, body: body });
-                                    }
-                                    else {
-                                        reject(new apis_1.HttpError(response, body, response.statusCode));
-                                    }
-                                }
-                            });
-                        });
-                    })];
-            });
-        });
-    };
-    EmployeesApi.prototype.employeesList = function (xAccountToken, companyId, createdAfter, createdBefore, cursor, expand, includeRemoteData, includeSensitiveFields, managerId, modifiedAfter, modifiedBefore, pageSize, remoteId, teamId, workLocationId, options) {
-        if (options === void 0) { options = { headers: {} }; }
-        return __awaiter(this, void 0, void 0, function () {
-            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
-            var _this = this;
-            return __generator(this, function (_b) {
-                localVarPath = this.basePath + '/employees';
-                localVarQueryParameters = {};
-                localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-                produces = ['application/json'];
-                if (produces.indexOf('application/json') >= 0) {
-                    localVarHeaderParams.Accept = 'application/json';
-                }
-                else {
-                    localVarHeaderParams.Accept = produces.join(',');
-                }
-                localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling employeesList.');
-                }
-                if (companyId !== undefined) {
-                    localVarQueryParameters['company_id'] = models_1.ObjectSerializer.serialize(companyId, "string");
-                }
-                if (createdAfter !== undefined) {
-                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(createdAfter, "Date");
-                }
-                if (createdBefore !== undefined) {
-                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(createdBefore, "Date");
+                if (created_before !== undefined) {
+                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(created_before, "Date");
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
                 }
                 if (expand !== undefined) {
-                    localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'company' | 'employments' | 'employments,company' | 'employments,home_location' | 'employments,home_location,company' | 'employments,home_location,manager' | 'employments,home_location,manager,company' | 'employments,home_location,manager,team' | 'employments,home_location,manager,team,company' | 'employments,home_location,team' | 'employments,home_location,team,company' | 'employments,home_location,work_location' | 'employments,home_location,work_location,company' | 'employments,home_location,work_location,manager' | 'employments,home_location,work_location,manager,company' | 'employments,home_location,work_location,manager,team' | 'employments,home_location,work_location,manager,team,company' | 'employments,home_location,work_location,team' | 'employments,home_location,work_location,team,company' | 'employments,manager' | 'employments,manager,company' | 'employments,manager,team' | 'employments,manager,team,company' | 'employments,team' | 'employments,team,company' | 'employments,work_location' | 'employments,work_location,company' | 'employments,work_location,manager' | 'employments,work_location,manager,company' | 'employments,work_location,manager,team' | 'employments,work_location,manager,team,company' | 'employments,work_location,team' | 'employments,work_location,team,company' | 'home_location' | 'home_location,company' | 'home_location,manager' | 'home_location,manager,company' | 'home_location,manager,team' | 'home_location,manager,team,company' | 'home_location,team' | 'home_location,team,company' | 'home_location,work_location' | 'home_location,work_location,company' | 'home_location,work_location,manager' | 'home_location,work_location,manager,company' | 'home_location,work_location,manager,team' | 'home_location,work_location,manager,team,company' | 'home_location,work_location,team' | 'home_location,work_location,team,company' | 'manager' | 'manager,company' | 'manager,team' | 'manager,team,company' | 'team' | 'team,company' | 'work_location' | 'work_location,company' | 'work_location,manager' | 'work_location,manager,company' | 'work_location,manager,team' | 'work_location,manager,team,company' | 'work_location,team' | 'work_location,team,company'");
+                    localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'company' | 'company,pay_group' | 'employments' | 'employments,company' | 'employments,company,pay_group' | 'employments,home_location' | 'employments,home_location,company' | 'employments,home_location,company,pay_group' | 'employments,home_location,manager' | 'employments,home_location,manager,company' | 'employments,home_location,manager,company,pay_group' | 'employments,home_location,manager,pay_group' | 'employments,home_location,manager,team' | 'employments,home_location,manager,team,company' | 'employments,home_location,manager,team,company,pay_group' | 'employments,home_location,manager,team,pay_group' | 'employments,home_location,pay_group' | 'employments,home_location,team' | 'employments,home_location,team,company' | 'employments,home_location,team,company,pay_group' | 'employments,home_location,team,pay_group' | 'employments,home_location,work_location' | 'employments,home_location,work_location,company' | 'employments,home_location,work_location,company,pay_group' | 'employments,home_location,work_location,manager' | 'employments,home_location,work_location,manager,company' | 'employments,home_location,work_location,manager,company,pay_group' | 'employments,home_location,work_location,manager,pay_group' | 'employments,home_location,work_location,manager,team' | 'employments,home_location,work_location,manager,team,company' | 'employments,home_location,work_location,manager,team,company,pay_group' | 'employments,home_location,work_location,manager,team,pay_group' | 'employments,home_location,work_location,pay_group' | 'employments,home_location,work_location,team' | 'employments,home_location,work_location,team,company' | 'employments,home_location,work_location,team,company,pay_group' | 'employments,home_location,work_location,team,pay_group' | 'employments,manager' | 'employments,manager,company' | 'employments,manager,company,pay_group' | 'employments,manager,pay_group' | 'employments,manager,team' | 'employments,manager,team,company' | 'employments,manager,team,company,pay_group' | 'employments,manager,team,pay_group' | 'employments,pay_group' | 'employments,team' | 'employments,team,company' | 'employments,team,company,pay_group' | 'employments,team,pay_group' | 'employments,work_location' | 'employments,work_location,company' | 'employments,work_location,company,pay_group' | 'employments,work_location,manager' | 'employments,work_location,manager,company' | 'employments,work_location,manager,company,pay_group' | 'employments,work_location,manager,pay_group' | 'employments,work_location,manager,team' | 'employments,work_location,manager,team,company' | 'employments,work_location,manager,team,company,pay_group' | 'employments,work_location,manager,team,pay_group' | 'employments,work_location,pay_group' | 'employments,work_location,team' | 'employments,work_location,team,company' | 'employments,work_location,team,company,pay_group' | 'employments,work_location,team,pay_group' | 'home_location' | 'home_location,company' | 'home_location,company,pay_group' | 'home_location,manager' | 'home_location,manager,company' | 'home_location,manager,company,pay_group' | 'home_location,manager,pay_group' | 'home_location,manager,team' | 'home_location,manager,team,company' | 'home_location,manager,team,company,pay_group' | 'home_location,manager,team,pay_group' | 'home_location,pay_group' | 'home_location,team' | 'home_location,team,company' | 'home_location,team,company,pay_group' | 'home_location,team,pay_group' | 'home_location,work_location' | 'home_location,work_location,company' | 'home_location,work_location,company,pay_group' | 'home_location,work_location,manager' | 'home_location,work_location,manager,company' | 'home_location,work_location,manager,company,pay_group' | 'home_location,work_location,manager,pay_group' | 'home_location,work_location,manager,team' | 'home_location,work_location,manager,team,company' | 'home_location,work_location,manager,team,company,pay_group' | 'home_location,work_location,manager,team,pay_group' | 'home_location,work_location,pay_group' | 'home_location,work_location,team' | 'home_location,work_location,team,company' | 'home_location,work_location,team,company,pay_group' | 'home_location,work_location,team,pay_group' | 'manager' | 'manager,company' | 'manager,company,pay_group' | 'manager,pay_group' | 'manager,team' | 'manager,team,company' | 'manager,team,company,pay_group' | 'manager,team,pay_group' | 'pay_group' | 'team' | 'team,company' | 'team,company,pay_group' | 'team,pay_group' | 'work_location' | 'work_location,company' | 'work_location,company,pay_group' | 'work_location,manager' | 'work_location,manager,company' | 'work_location,manager,company,pay_group' | 'work_location,manager,pay_group' | 'work_location,manager,team' | 'work_location,manager,team,company' | 'work_location,manager,team,company,pay_group' | 'work_location,manager,team,pay_group' | 'work_location,pay_group' | 'work_location,team' | 'work_location,team,company' | 'work_location,team,company,pay_group' | 'work_location,team,pay_group'");
                 }
-                if (includeRemoteData !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
+                if (include_remote_data !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
                 }
-                if (includeSensitiveFields !== undefined) {
-                    localVarQueryParameters['include_sensitive_fields'] = models_1.ObjectSerializer.serialize(includeSensitiveFields, "boolean");
+                if (include_sensitive_fields !== undefined) {
+                    localVarQueryParameters['include_sensitive_fields'] = models_1.ObjectSerializer.serialize(include_sensitive_fields, "boolean");
                 }
-                if (managerId !== undefined) {
-                    localVarQueryParameters['manager_id'] = models_1.ObjectSerializer.serialize(managerId, "string");
+                if (manager_id !== undefined) {
+                    localVarQueryParameters['manager_id'] = models_1.ObjectSerializer.serialize(manager_id, "string");
                 }
-                if (modifiedAfter !== undefined) {
-                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modifiedAfter, "Date");
+                if (modified_after !== undefined) {
+                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modified_after, "Date");
                 }
-                if (modifiedBefore !== undefined) {
-                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modifiedBefore, "Date");
+                if (modified_before !== undefined) {
+                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modified_before, "Date");
                 }
-                if (pageSize !== undefined) {
-                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
+                if (page_size !== undefined) {
+                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(page_size, "number");
                 }
-                if (remoteId !== undefined) {
-                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
+                if (pay_group_id !== undefined) {
+                    localVarQueryParameters['pay_group_id'] = models_1.ObjectSerializer.serialize(pay_group_id, "string");
                 }
-                if (teamId !== undefined) {
-                    localVarQueryParameters['team_id'] = models_1.ObjectSerializer.serialize(teamId, "string");
+                if (personal_email !== undefined) {
+                    localVarQueryParameters['personal_email'] = models_1.ObjectSerializer.serialize(personal_email, "string");
                 }
-                if (workLocationId !== undefined) {
-                    localVarQueryParameters['work_location_id'] = models_1.ObjectSerializer.serialize(workLocationId, "string");
+                if (remote_id !== undefined) {
+                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remote_id, "string");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                if (team_id !== undefined) {
+                    localVarQueryParameters['team_id'] = models_1.ObjectSerializer.serialize(team_id, "string");
+                }
+                if (work_email !== undefined) {
+                    localVarQueryParameters['work_email'] = models_1.ObjectSerializer.serialize(work_email, "string");
+                }
+                if (work_location_id !== undefined) {
+                    localVarQueryParameters['work_location_id'] = models_1.ObjectSerializer.serialize(work_location_id, "string");
+                }
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -262,12 +194,12 @@ var EmployeesApi = (function () {
                 }
                 authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
                 interceptorPromise = authenticationPromise;
-                _loop_2 = function (interceptor) {
+                _loop_1 = function (interceptor) {
                     interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
                 };
                 for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
                     interceptor = _a[_i];
-                    _loop_2(interceptor);
+                    _loop_1(interceptor);
                 }
                 return [2, interceptorPromise.then(function () {
                         if (Object.keys(localVarFormParams).length) {
@@ -298,10 +230,10 @@ var EmployeesApi = (function () {
             });
         });
     };
-    EmployeesApi.prototype.employeesRetrieve = function (xAccountToken, id, expand, includeRemoteData, includeSensitiveFields, options) {
+    EmployeesApi.prototype.employeesRetrieve = function (x_account_token, id, expand, include_remote_data, include_sensitive_fields, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
-            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_3, _i, _a, interceptor;
+            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
             var _this = this;
             return __generator(this, function (_b) {
                 localVarPath = this.basePath + '/employees/{id}'
@@ -316,22 +248,22 @@ var EmployeesApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling employeesRetrieve.');
+                if (x_account_token === null || x_account_token === undefined) {
+                    throw new Error('Required parameter x_account_token was null or undefined when calling employeesRetrieve.');
                 }
                 if (id === null || id === undefined) {
                     throw new Error('Required parameter id was null or undefined when calling employeesRetrieve.');
                 }
                 if (expand !== undefined) {
-                    localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'company' | 'employments' | 'employments,company' | 'employments,home_location' | 'employments,home_location,company' | 'employments,home_location,manager' | 'employments,home_location,manager,company' | 'employments,home_location,manager,team' | 'employments,home_location,manager,team,company' | 'employments,home_location,team' | 'employments,home_location,team,company' | 'employments,home_location,work_location' | 'employments,home_location,work_location,company' | 'employments,home_location,work_location,manager' | 'employments,home_location,work_location,manager,company' | 'employments,home_location,work_location,manager,team' | 'employments,home_location,work_location,manager,team,company' | 'employments,home_location,work_location,team' | 'employments,home_location,work_location,team,company' | 'employments,manager' | 'employments,manager,company' | 'employments,manager,team' | 'employments,manager,team,company' | 'employments,team' | 'employments,team,company' | 'employments,work_location' | 'employments,work_location,company' | 'employments,work_location,manager' | 'employments,work_location,manager,company' | 'employments,work_location,manager,team' | 'employments,work_location,manager,team,company' | 'employments,work_location,team' | 'employments,work_location,team,company' | 'home_location' | 'home_location,company' | 'home_location,manager' | 'home_location,manager,company' | 'home_location,manager,team' | 'home_location,manager,team,company' | 'home_location,team' | 'home_location,team,company' | 'home_location,work_location' | 'home_location,work_location,company' | 'home_location,work_location,manager' | 'home_location,work_location,manager,company' | 'home_location,work_location,manager,team' | 'home_location,work_location,manager,team,company' | 'home_location,work_location,team' | 'home_location,work_location,team,company' | 'manager' | 'manager,company' | 'manager,team' | 'manager,team,company' | 'team' | 'team,company' | 'work_location' | 'work_location,company' | 'work_location,manager' | 'work_location,manager,company' | 'work_location,manager,team' | 'work_location,manager,team,company' | 'work_location,team' | 'work_location,team,company'");
+                    localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'company' | 'company,pay_group' | 'employments' | 'employments,company' | 'employments,company,pay_group' | 'employments,home_location' | 'employments,home_location,company' | 'employments,home_location,company,pay_group' | 'employments,home_location,manager' | 'employments,home_location,manager,company' | 'employments,home_location,manager,company,pay_group' | 'employments,home_location,manager,pay_group' | 'employments,home_location,manager,team' | 'employments,home_location,manager,team,company' | 'employments,home_location,manager,team,company,pay_group' | 'employments,home_location,manager,team,pay_group' | 'employments,home_location,pay_group' | 'employments,home_location,team' | 'employments,home_location,team,company' | 'employments,home_location,team,company,pay_group' | 'employments,home_location,team,pay_group' | 'employments,home_location,work_location' | 'employments,home_location,work_location,company' | 'employments,home_location,work_location,company,pay_group' | 'employments,home_location,work_location,manager' | 'employments,home_location,work_location,manager,company' | 'employments,home_location,work_location,manager,company,pay_group' | 'employments,home_location,work_location,manager,pay_group' | 'employments,home_location,work_location,manager,team' | 'employments,home_location,work_location,manager,team,company' | 'employments,home_location,work_location,manager,team,company,pay_group' | 'employments,home_location,work_location,manager,team,pay_group' | 'employments,home_location,work_location,pay_group' | 'employments,home_location,work_location,team' | 'employments,home_location,work_location,team,company' | 'employments,home_location,work_location,team,company,pay_group' | 'employments,home_location,work_location,team,pay_group' | 'employments,manager' | 'employments,manager,company' | 'employments,manager,company,pay_group' | 'employments,manager,pay_group' | 'employments,manager,team' | 'employments,manager,team,company' | 'employments,manager,team,company,pay_group' | 'employments,manager,team,pay_group' | 'employments,pay_group' | 'employments,team' | 'employments,team,company' | 'employments,team,company,pay_group' | 'employments,team,pay_group' | 'employments,work_location' | 'employments,work_location,company' | 'employments,work_location,company,pay_group' | 'employments,work_location,manager' | 'employments,work_location,manager,company' | 'employments,work_location,manager,company,pay_group' | 'employments,work_location,manager,pay_group' | 'employments,work_location,manager,team' | 'employments,work_location,manager,team,company' | 'employments,work_location,manager,team,company,pay_group' | 'employments,work_location,manager,team,pay_group' | 'employments,work_location,pay_group' | 'employments,work_location,team' | 'employments,work_location,team,company' | 'employments,work_location,team,company,pay_group' | 'employments,work_location,team,pay_group' | 'home_location' | 'home_location,company' | 'home_location,company,pay_group' | 'home_location,manager' | 'home_location,manager,company' | 'home_location,manager,company,pay_group' | 'home_location,manager,pay_group' | 'home_location,manager,team' | 'home_location,manager,team,company' | 'home_location,manager,team,company,pay_group' | 'home_location,manager,team,pay_group' | 'home_location,pay_group' | 'home_location,team' | 'home_location,team,company' | 'home_location,team,company,pay_group' | 'home_location,team,pay_group' | 'home_location,work_location' | 'home_location,work_location,company' | 'home_location,work_location,company,pay_group' | 'home_location,work_location,manager' | 'home_location,work_location,manager,company' | 'home_location,work_location,manager,company,pay_group' | 'home_location,work_location,manager,pay_group' | 'home_location,work_location,manager,team' | 'home_location,work_location,manager,team,company' | 'home_location,work_location,manager,team,company,pay_group' | 'home_location,work_location,manager,team,pay_group' | 'home_location,work_location,pay_group' | 'home_location,work_location,team' | 'home_location,work_location,team,company' | 'home_location,work_location,team,company,pay_group' | 'home_location,work_location,team,pay_group' | 'manager' | 'manager,company' | 'manager,company,pay_group' | 'manager,pay_group' | 'manager,team' | 'manager,team,company' | 'manager,team,company,pay_group' | 'manager,team,pay_group' | 'pay_group' | 'team' | 'team,company' | 'team,company,pay_group' | 'team,pay_group' | 'work_location' | 'work_location,company' | 'work_location,company,pay_group' | 'work_location,manager' | 'work_location,manager,company' | 'work_location,manager,company,pay_group' | 'work_location,manager,pay_group' | 'work_location,manager,team' | 'work_location,manager,team,company' | 'work_location,manager,team,company,pay_group' | 'work_location,manager,team,pay_group' | 'work_location,pay_group' | 'work_location,team' | 'work_location,team,company' | 'work_location,team,company,pay_group' | 'work_location,team,pay_group'");
                 }
-                if (includeRemoteData !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
+                if (include_remote_data !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
                 }
-                if (includeSensitiveFields !== undefined) {
-                    localVarQueryParameters['include_sensitive_fields'] = models_1.ObjectSerializer.serialize(includeSensitiveFields, "boolean");
+                if (include_sensitive_fields !== undefined) {
+                    localVarQueryParameters['include_sensitive_fields'] = models_1.ObjectSerializer.serialize(include_sensitive_fields, "boolean");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -348,12 +280,12 @@ var EmployeesApi = (function () {
                 }
                 authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
                 interceptorPromise = authenticationPromise;
-                _loop_3 = function (interceptor) {
+                _loop_2 = function (interceptor) {
                     interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
                 };
                 for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
                     interceptor = _a[_i];
-                    _loop_3(interceptor);
+                    _loop_2(interceptor);
                 }
                 return [2, interceptorPromise.then(function () {
                         if (Object.keys(localVarFormParams).length) {

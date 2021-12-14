@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { GenerateRemoteKeyRequest } from '../model/generateRemoteKeyRequest';
 import { RemoteKey } from '../model/remoteKey';
@@ -25,7 +24,7 @@ export declare class GenerateKeyApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: GenerateKeyApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    generateKeyCreate(generateRemoteKeyRequest: GenerateRemoteKeyRequest, options?: {
+    generateKeyCreate(generate_remote_key_request: GenerateRemoteKeyRequest, options?: {
         headers: {
             [name: string]: string;
         };

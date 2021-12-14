@@ -20,6 +20,11 @@ var Employment = (function () {
             "type": "string"
         },
         {
+            "name": "employee",
+            "baseName": "employee",
+            "type": "string"
+        },
+        {
             "name": "job_title",
             "baseName": "job_title",
             "type": "string"

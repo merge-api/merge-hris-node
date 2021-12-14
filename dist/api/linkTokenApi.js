@@ -106,7 +106,7 @@ var LinkTokenApi = (function () {
     LinkTokenApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    LinkTokenApi.prototype.linkTokenCreate = function (endUserDetailsRequest, options) {
+    LinkTokenApi.prototype.linkTokenCreate = function (end_user_details_request, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -123,8 +123,8 @@ var LinkTokenApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (endUserDetailsRequest === null || endUserDetailsRequest === undefined) {
-                    throw new Error('Required parameter endUserDetailsRequest was null or undefined when calling linkTokenCreate.');
+                if (end_user_details_request === null || end_user_details_request === undefined) {
+                    throw new Error('Required parameter end_user_details_request was null or undefined when calling linkTokenCreate.');
                 }
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
@@ -135,7 +135,7 @@ var LinkTokenApi = (function () {
                     uri: localVarPath,
                     useQuerystring: this._useQuerystring,
                     json: true,
-                    body: models_1.ObjectSerializer.serialize(endUserDetailsRequest, "EndUserDetailsRequest")
+                    body: models_1.ObjectSerializer.serialize(end_user_details_request, "EndUserDetailsRequest")
                 };
                 authenticationPromise = Promise.resolve();
                 if (this.authentications.tokenAuth.apiKey) {

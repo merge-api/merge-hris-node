@@ -106,7 +106,7 @@ var GenerateKeyApi = (function () {
     GenerateKeyApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    GenerateKeyApi.prototype.generateKeyCreate = function (generateRemoteKeyRequest, options) {
+    GenerateKeyApi.prototype.generateKeyCreate = function (generate_remote_key_request, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -123,8 +123,8 @@ var GenerateKeyApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (generateRemoteKeyRequest === null || generateRemoteKeyRequest === undefined) {
-                    throw new Error('Required parameter generateRemoteKeyRequest was null or undefined when calling generateKeyCreate.');
+                if (generate_remote_key_request === null || generate_remote_key_request === undefined) {
+                    throw new Error('Required parameter generate_remote_key_request was null or undefined when calling generateKeyCreate.');
                 }
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
@@ -135,7 +135,7 @@ var GenerateKeyApi = (function () {
                     uri: localVarPath,
                     useQuerystring: this._useQuerystring,
                     json: true,
-                    body: models_1.ObjectSerializer.serialize(generateRemoteKeyRequest, "GenerateRemoteKeyRequest")
+                    body: models_1.ObjectSerializer.serialize(generate_remote_key_request, "GenerateRemoteKeyRequest")
                 };
                 authenticationPromise = Promise.resolve();
                 if (this.authentications.tokenAuth.apiKey) {

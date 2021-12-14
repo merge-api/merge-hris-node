@@ -20,6 +20,11 @@ var Location = (function () {
             "type": "string"
         },
         {
+            "name": "name",
+            "baseName": "name",
+            "type": "string"
+        },
+        {
             "name": "phone_number",
             "baseName": "phone_number",
             "type": "string"

@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { PaginatedSyncStatusList } from '../model/paginatedSyncStatusList';
 import { SyncStatus } from '../model/syncStatus';
@@ -25,7 +24,7 @@ export declare class SyncStatusApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: SyncStatusApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    syncStatusList(xAccountToken: string, cursor?: number, pageSize?: number, options?: {
+    syncStatusList(x_account_token: string, cursor?: string, page_size?: number, options?: {
         headers: {
             [name: string]: string;
         };
@@ -33,7 +32,7 @@ export declare class SyncStatusApi {
         response: http.IncomingMessage;
         body: PaginatedSyncStatusList;
     }>;
-    syncStatusResyncCreate(xAccountToken: string, options?: {
+    syncStatusResyncCreate(x_account_token: string, options?: {
         headers: {
             [name: string]: string;
         };

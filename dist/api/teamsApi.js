@@ -106,7 +106,7 @@ var TeamsApi = (function () {
     TeamsApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    TeamsApi.prototype.teamsList = function (xAccountToken, createdAfter, createdBefore, cursor, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, parentTeamId, remoteId, options) {
+    TeamsApi.prototype.teamsList = function (x_account_token, created_after, created_before, cursor, expand, include_remote_data, modified_after, modified_before, page_size, parent_team_id, remote_id, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -123,37 +123,40 @@ var TeamsApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling teamsList.');
+                if (x_account_token === null || x_account_token === undefined) {
+                    throw new Error('Required parameter x_account_token was null or undefined when calling teamsList.');
                 }
-                if (createdAfter !== undefined) {
-                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(createdAfter, "Date");
+                if (created_after !== undefined) {
+                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(created_after, "Date");
                 }
-                if (createdBefore !== undefined) {
-                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(createdBefore, "Date");
+                if (created_before !== undefined) {
+                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(created_before, "Date");
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
                 }
-                if (includeRemoteData !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
+                if (expand !== undefined) {
+                    localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'parent_team'");
                 }
-                if (modifiedAfter !== undefined) {
-                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modifiedAfter, "Date");
+                if (include_remote_data !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
                 }
-                if (modifiedBefore !== undefined) {
-                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modifiedBefore, "Date");
+                if (modified_after !== undefined) {
+                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modified_after, "Date");
                 }
-                if (pageSize !== undefined) {
-                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
+                if (modified_before !== undefined) {
+                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modified_before, "Date");
                 }
-                if (parentTeamId !== undefined) {
-                    localVarQueryParameters['parent_team_id'] = models_1.ObjectSerializer.serialize(parentTeamId, "string");
+                if (page_size !== undefined) {
+                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(page_size, "number");
                 }
-                if (remoteId !== undefined) {
-                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
+                if (parent_team_id !== undefined) {
+                    localVarQueryParameters['parent_team_id'] = models_1.ObjectSerializer.serialize(parent_team_id, "string");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                if (remote_id !== undefined) {
+                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remote_id, "string");
+                }
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -206,7 +209,7 @@ var TeamsApi = (function () {
             });
         });
     };
-    TeamsApi.prototype.teamsRetrieve = function (xAccountToken, id, includeRemoteData, options) {
+    TeamsApi.prototype.teamsRetrieve = function (x_account_token, id, expand, include_remote_data, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
@@ -224,16 +227,19 @@ var TeamsApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling teamsRetrieve.');
+                if (x_account_token === null || x_account_token === undefined) {
+                    throw new Error('Required parameter x_account_token was null or undefined when calling teamsRetrieve.');
                 }
                 if (id === null || id === undefined) {
                     throw new Error('Required parameter id was null or undefined when calling teamsRetrieve.');
                 }
-                if (includeRemoteData !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
+                if (expand !== undefined) {
+                    localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'parent_team'");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                if (include_remote_data !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
+                }
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {

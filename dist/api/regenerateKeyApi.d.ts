@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { RemoteKey } from '../model/remoteKey';
 import { RemoteKeyForRegenerationRequest } from '../model/remoteKeyForRegenerationRequest';
@@ -25,7 +24,7 @@ export declare class RegenerateKeyApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: RegenerateKeyApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    regenerateKeyCreate(remoteKeyForRegenerationRequest: RemoteKeyForRegenerationRequest, options?: {
+    regenerateKeyCreate(remote_key_for_regeneration_request: RemoteKeyForRegenerationRequest, options?: {
         headers: {
             [name: string]: string;
         };

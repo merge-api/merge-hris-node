@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { AvailableActions } from '../model/availableActions';
 import { Authentication, Interceptor } from '../model/models';
@@ -24,7 +23,7 @@ export declare class AvailableActionsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: AvailableActionsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    availableActionsRetrieve(xAccountToken: string, options?: {
+    availableActionsRetrieve(x_account_token: string, options?: {
         headers: {
             [name: string]: string;
         };

@@ -106,7 +106,7 @@ var DeleteAccountApi = (function () {
     DeleteAccountApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    DeleteAccountApi.prototype.deleteAccountCreate = function (xAccountToken, options) {
+    DeleteAccountApi.prototype.deleteAccountCreate = function (x_account_token, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -116,10 +116,10 @@ var DeleteAccountApi = (function () {
                 localVarQueryParameters = {};
                 localVarHeaderParams = Object.assign({}, this._defaultHeaders);
                 localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling deleteAccountCreate.');
+                if (x_account_token === null || x_account_token === undefined) {
+                    throw new Error('Required parameter x_account_token was null or undefined when calling deleteAccountCreate.');
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {

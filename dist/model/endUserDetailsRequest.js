@@ -27,7 +27,7 @@ var EndUserDetailsRequest = (function () {
         {
             "name": "categories",
             "baseName": "categories",
-            "type": "Array<EndUserDetailsRequest.CategoriesEnum>"
+            "type": "Array<CategoriesEnum>"
         },
         {
             "name": "integration",
@@ -37,14 +37,5 @@ var EndUserDetailsRequest = (function () {
     ];
     return EndUserDetailsRequest;
 }());
-exports.EndUserDetailsRequest = EndUserDetailsRequest;
-(function (EndUserDetailsRequest) {
-    var CategoriesEnum;
-    (function (CategoriesEnum) {
-        CategoriesEnum[CategoriesEnum["Hris"] = 'hris'] = "Hris";
-        CategoriesEnum[CategoriesEnum["Ats"] = 'ats'] = "Ats";
-        CategoriesEnum[CategoriesEnum["Accounting"] = 'accounting'] = "Accounting";
-    })(CategoriesEnum = EndUserDetailsRequest.CategoriesEnum || (EndUserDetailsRequest.CategoriesEnum = {}));
-})(EndUserDetailsRequest = exports.EndUserDetailsRequest || (exports.EndUserDetailsRequest = {}));
 exports.EndUserDetailsRequest = EndUserDetailsRequest;
 //# sourceMappingURL=endUserDetailsRequest.js.map

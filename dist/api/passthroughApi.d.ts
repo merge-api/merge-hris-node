@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { DataPassthroughRequest } from '../model/dataPassthroughRequest';
 import { RemoteResponse } from '../model/remoteResponse';
@@ -25,7 +24,7 @@ export declare class PassthroughApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: PassthroughApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    passthroughCreate(xAccountToken: string, dataPassthroughRequest: DataPassthroughRequest, options?: {
+    passthroughCreate(x_account_token: string, data_passthrough_request: DataPassthroughRequest, options?: {
         headers: {
             [name: string]: string;
         };

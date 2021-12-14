@@ -106,7 +106,7 @@ var TimeOffApi = (function () {
     TimeOffApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    TimeOffApi.prototype.timeOffCreate = function (xAccountToken, runAsync, timeOffRequest, options) {
+    TimeOffApi.prototype.timeOffCreate = function (x_account_token, time_off_endpoint_request, run_async, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -123,13 +123,16 @@ var TimeOffApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffCreate.');
+                if (x_account_token === null || x_account_token === undefined) {
+                    throw new Error('Required parameter x_account_token was null or undefined when calling timeOffCreate.');
                 }
-                if (runAsync !== undefined) {
-                    localVarQueryParameters['run_async'] = models_1.ObjectSerializer.serialize(runAsync, "boolean");
+                if (time_off_endpoint_request === null || time_off_endpoint_request === undefined) {
+                    throw new Error('Required parameter time_off_endpoint_request was null or undefined when calling timeOffCreate.');
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                if (run_async !== undefined) {
+                    localVarQueryParameters['run_async'] = models_1.ObjectSerializer.serialize(run_async, "boolean");
+                }
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -139,7 +142,7 @@ var TimeOffApi = (function () {
                     uri: localVarPath,
                     useQuerystring: this._useQuerystring,
                     json: true,
-                    body: models_1.ObjectSerializer.serialize(timeOffRequest, "TimeOffRequest")
+                    body: models_1.ObjectSerializer.serialize(time_off_endpoint_request, "TimeOffEndpointRequest")
                 };
                 authenticationPromise = Promise.resolve();
                 if (this.authentications.tokenAuth.apiKey) {
@@ -169,7 +172,7 @@ var TimeOffApi = (function () {
                                     reject(error);
                                 }
                                 else {
-                                    body = models_1.ObjectSerializer.deserialize(body, "TimeOff");
+                                    body = models_1.ObjectSerializer.deserialize(body, "TimeOffResponse");
                                     if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                         resolve({ response: response, body: body });
                                     }
@@ -183,7 +186,7 @@ var TimeOffApi = (function () {
             });
         });
     };
-    TimeOffApi.prototype.timeOffList = function (xAccountToken, approverId, createdAfter, createdBefore, cursor, employeeId, expand, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, requestType, status, options) {
+    TimeOffApi.prototype.timeOffList = function (x_account_token, approver_id, created_after, created_before, cursor, employee_id, expand, include_remote_data, modified_after, modified_before, page_size, remote_id, request_type, status, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
@@ -200,49 +203,49 @@ var TimeOffApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffList.');
+                if (x_account_token === null || x_account_token === undefined) {
+                    throw new Error('Required parameter x_account_token was null or undefined when calling timeOffList.');
                 }
-                if (approverId !== undefined) {
-                    localVarQueryParameters['approver_id'] = models_1.ObjectSerializer.serialize(approverId, "string");
+                if (approver_id !== undefined) {
+                    localVarQueryParameters['approver_id'] = models_1.ObjectSerializer.serialize(approver_id, "string");
                 }
-                if (createdAfter !== undefined) {
-                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(createdAfter, "Date");
+                if (created_after !== undefined) {
+                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(created_after, "Date");
                 }
-                if (createdBefore !== undefined) {
-                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(createdBefore, "Date");
+                if (created_before !== undefined) {
+                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(created_before, "Date");
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
                 }
-                if (employeeId !== undefined) {
-                    localVarQueryParameters['employee_id'] = models_1.ObjectSerializer.serialize(employeeId, "string");
+                if (employee_id !== undefined) {
+                    localVarQueryParameters['employee_id'] = models_1.ObjectSerializer.serialize(employee_id, "string");
                 }
                 if (expand !== undefined) {
                     localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'approver' | 'employee' | 'employee,approver'");
                 }
-                if (includeRemoteData !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
+                if (include_remote_data !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
                 }
-                if (modifiedAfter !== undefined) {
-                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modifiedAfter, "Date");
+                if (modified_after !== undefined) {
+                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modified_after, "Date");
                 }
-                if (modifiedBefore !== undefined) {
-                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modifiedBefore, "Date");
+                if (modified_before !== undefined) {
+                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modified_before, "Date");
                 }
-                if (pageSize !== undefined) {
-                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
+                if (page_size !== undefined) {
+                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(page_size, "number");
                 }
-                if (remoteId !== undefined) {
-                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
+                if (remote_id !== undefined) {
+                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remote_id, "string");
                 }
-                if (requestType !== undefined) {
-                    localVarQueryParameters['request_type'] = models_1.ObjectSerializer.serialize(requestType, "'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null'");
+                if (request_type !== undefined) {
+                    localVarQueryParameters['request_type'] = models_1.ObjectSerializer.serialize(request_type, "'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER'");
                 }
                 if (status !== undefined) {
-                    localVarQueryParameters['status'] = models_1.ObjectSerializer.serialize(status, "'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null'");
+                    localVarQueryParameters['status'] = models_1.ObjectSerializer.serialize(status, "'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED'");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -295,7 +298,7 @@ var TimeOffApi = (function () {
             });
         });
     };
-    TimeOffApi.prototype.timeOffRetrieve = function (xAccountToken, id, expand, includeRemoteData, options) {
+    TimeOffApi.prototype.timeOffRetrieve = function (x_account_token, id, expand, include_remote_data, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_3, _i, _a, interceptor;
@@ -313,8 +316,8 @@ var TimeOffApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffRetrieve.');
+                if (x_account_token === null || x_account_token === undefined) {
+                    throw new Error('Required parameter x_account_token was null or undefined when calling timeOffRetrieve.');
                 }
                 if (id === null || id === undefined) {
                     throw new Error('Required parameter id was null or undefined when calling timeOffRetrieve.');
@@ -322,10 +325,10 @@ var TimeOffApi = (function () {
                 if (expand !== undefined) {
                     localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'approver' | 'employee' | 'employee,approver'");
                 }
-                if (includeRemoteData !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
+                if (include_remote_data !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {

@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { PaginatedPayrollRunList } from '../model/paginatedPayrollRunList';
 import { PayrollRun } from '../model/payrollRun';
@@ -25,7 +24,7 @@ export declare class PayrollRunsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: PayrollRunsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    payrollRunsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: 'REGULAR' | 'OFF_CYCLE' | 'CORRECTION' | 'TERMINATION' | 'SIGN_ON_BONUS' | '' | 'null', startedAfter?: Date, startedBefore?: Date, options?: {
+    payrollRunsList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, ended_after?: Date, ended_before?: Date, include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, remote_id?: string, run_type?: 'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION', started_after?: Date, started_before?: Date, options?: {
         headers: {
             [name: string]: string;
         };
@@ -33,7 +32,7 @@ export declare class PayrollRunsApi {
         response: http.IncomingMessage;
         body: PaginatedPayrollRunList;
     }>;
-    payrollRunsRetrieve(xAccountToken: string, id: string, includeRemoteData?: boolean, options?: {
+    payrollRunsRetrieve(x_account_token: string, id: string, include_remote_data?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { Authentication, Interceptor } from '../model/models';
 import { ApiKeyAuth } from '../model/models';
@@ -23,7 +22,7 @@ export declare class DeleteAccountApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: DeleteAccountApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    deleteAccountCreate(xAccountToken: string, options?: {
+    deleteAccountCreate(x_account_token: string, options?: {
         headers: {
             [name: string]: string;
         };

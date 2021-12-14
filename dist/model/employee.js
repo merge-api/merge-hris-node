@@ -85,6 +85,11 @@ var Employee = (function () {
             "type": "string"
         },
         {
+            "name": "pay_group",
+            "baseName": "pay_group",
+            "type": "string"
+        },
+        {
             "name": "ssn",
             "baseName": "ssn",
             "type": "string"
@@ -138,6 +143,11 @@ var Employee = (function () {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
+        },
+        {
+            "name": "custom_fields",
+            "baseName": "custom_fields",
+            "type": "{ [key: string]: any; }"
         }
     ];
     return Employee;

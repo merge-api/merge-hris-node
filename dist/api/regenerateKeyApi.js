@@ -106,7 +106,7 @@ var RegenerateKeyApi = (function () {
     RegenerateKeyApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    RegenerateKeyApi.prototype.regenerateKeyCreate = function (remoteKeyForRegenerationRequest, options) {
+    RegenerateKeyApi.prototype.regenerateKeyCreate = function (remote_key_for_regeneration_request, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -123,8 +123,8 @@ var RegenerateKeyApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (remoteKeyForRegenerationRequest === null || remoteKeyForRegenerationRequest === undefined) {
-                    throw new Error('Required parameter remoteKeyForRegenerationRequest was null or undefined when calling regenerateKeyCreate.');
+                if (remote_key_for_regeneration_request === null || remote_key_for_regeneration_request === undefined) {
+                    throw new Error('Required parameter remote_key_for_regeneration_request was null or undefined when calling regenerateKeyCreate.');
                 }
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
@@ -135,7 +135,7 @@ var RegenerateKeyApi = (function () {
                     uri: localVarPath,
                     useQuerystring: this._useQuerystring,
                     json: true,
-                    body: models_1.ObjectSerializer.serialize(remoteKeyForRegenerationRequest, "RemoteKeyForRegenerationRequest")
+                    body: models_1.ObjectSerializer.serialize(remote_key_for_regeneration_request, "RemoteKeyForRegenerationRequest")
                 };
                 authenticationPromise = Promise.resolve();
                 if (this.authentications.tokenAuth.apiKey) {

@@ -1,7 +1,5 @@
-/// <reference types="node" />
 import http from 'http';
 import { Employment } from '../model/employment';
-import { EmploymentRequest } from '../model/employmentRequest';
 import { PaginatedEmploymentList } from '../model/paginatedEmploymentList';
 import { Authentication, Interceptor } from '../model/models';
 import { ApiKeyAuth } from '../model/models';
@@ -26,15 +24,7 @@ export declare class EmploymentsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: EmploymentsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    employmentsCreate(xAccountToken: string, runAsync?: boolean, employmentRequest?: EmploymentRequest, options?: {
-        headers: {
-            [name: string]: string;
-        };
-    }): Promise<{
-        response: http.IncomingMessage;
-        body: Employment;
-    }>;
-    employmentsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options?: {
+    employmentsList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, employee_id?: string, expand?: 'employee', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, order_by?: '-effective_date' | 'effective_date', page_size?: number, remote_id?: string, options?: {
         headers: {
             [name: string]: string;
         };
@@ -42,7 +32,7 @@ export declare class EmploymentsApi {
         response: http.IncomingMessage;
         body: PaginatedEmploymentList;
     }>;
-    employmentsRetrieve(xAccountToken: string, id: string, includeRemoteData?: boolean, options?: {
+    employmentsRetrieve(x_account_token: string, id: string, expand?: 'employee', include_remote_data?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

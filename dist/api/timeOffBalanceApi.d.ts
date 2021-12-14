@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { PaginatedTimeOffBalanceList } from '../model/paginatedTimeOffBalanceList';
 import { TimeOffBalance } from '../model/timeOffBalance';
@@ -25,7 +24,7 @@ export declare class TimeOffBalanceApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TimeOffBalanceApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    timeOffBalanceList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, policyType?: 'VACATION' | 'SICK' | 'PERSONAL' | 'JURY_DUTY' | 'VOLUNTEER' | 'BEREAVEMENT' | '' | 'null', remoteId?: string, options?: {
+    timeOffBalanceList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, employee_id?: string, expand?: 'employee', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, policy_type?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', remote_id?: string, options?: {
         headers: {
             [name: string]: string;
         };
@@ -33,7 +32,7 @@ export declare class TimeOffBalanceApi {
         response: http.IncomingMessage;
         body: PaginatedTimeOffBalanceList;
     }>;
-    timeOffBalanceRetrieve(xAccountToken: string, id: string, expand?: 'employee', includeRemoteData?: boolean, options?: {
+    timeOffBalanceRetrieve(x_account_token: string, id: string, expand?: 'employee', include_remote_data?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

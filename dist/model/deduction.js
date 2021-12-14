@@ -20,11 +20,6 @@ var Deduction = (function () {
             "type": "string"
         },
         {
-            "name": "persistent_deduction",
-            "baseName": "persistent_deduction",
-            "type": "string"
-        },
-        {
             "name": "name",
             "baseName": "name",
             "type": "string"

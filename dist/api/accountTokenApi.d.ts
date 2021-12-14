@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { AccountToken } from '../model/accountToken';
 import { Authentication, Interceptor } from '../model/models';
@@ -24,7 +23,7 @@ export declare class AccountTokenApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: AccountTokenApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    accountTokenRetrieve(publicToken: string, options?: {
+    accountTokenRetrieve(public_token: string, options?: {
         headers: {
             [name: string]: string;
         };

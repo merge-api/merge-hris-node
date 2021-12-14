@@ -19,6 +19,7 @@ export declare class Employee {
     'work_location'?: string | null;
     'manager'?: string | null;
     'team'?: string | null;
+    'pay_group'?: string | null;
     'ssn'?: string | null;
     'gender'?: GenderEnum | null;
     'ethnicity'?: EthnicityEnum | null;
@@ -30,6 +31,9 @@ export declare class Employee {
     'termination_date'?: Date | null;
     'avatar'?: string | null;
     'remote_data'?: Array<RemoteData> | null;
+    'custom_fields'?: {
+        [key: string]: any;
+    } | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

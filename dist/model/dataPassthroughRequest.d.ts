@@ -1,7 +1,7 @@
 import { MethodEnum } from './methodEnum';
 import { RequestFormatEnum } from './requestFormatEnum';
 export declare class DataPassthroughRequest {
-    'method': MethodEnum;
+    'method': MethodEnum | null;
     'path': string;
     'base_url_override'?: string | null;
     'data'?: string | null;

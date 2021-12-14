@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { Company } from '../model/company';
 import { PaginatedCompanyList } from '../model/paginatedCompanyList';
@@ -25,7 +24,7 @@ export declare class CompaniesApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: CompaniesApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    companiesList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options?: {
+    companiesList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, remote_id?: string, options?: {
         headers: {
             [name: string]: string;
         };
@@ -33,7 +32,7 @@ export declare class CompaniesApi {
         response: http.IncomingMessage;
         body: PaginatedCompanyList;
     }>;
-    companiesRetrieve(xAccountToken: string, id: string, includeRemoteData?: boolean, options?: {
+    companiesRetrieve(x_account_token: string, id: string, include_remote_data?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

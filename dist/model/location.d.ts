@@ -3,6 +3,7 @@ import { RemoteData } from './remoteData';
 export declare class Location {
     'id'?: string;
     'remote_id'?: string | null;
+    'name'?: string | null;
     'phone_number'?: string | null;
     'street_1'?: string | null;
     'street_2'?: string | null;

@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http from 'http';
 import { EmployeePayrollRun } from '../model/employeePayrollRun';
 import { PaginatedEmployeePayrollRunList } from '../model/paginatedEmployeePayrollRunList';
@@ -25,7 +24,7 @@ export declare class EmployeePayrollRunsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: EmployeePayrollRunsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    employeePayrollRunsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, endedAfter?: Date, endedBefore?: Date, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, payrollRunId?: string, remoteId?: string, startedAfter?: Date, startedBefore?: Date, options?: {
+    employeePayrollRunsList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, employee_id?: string, ended_after?: Date, ended_before?: Date, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, payroll_run_id?: string, remote_id?: string, started_after?: Date, started_before?: Date, options?: {
         headers: {
             [name: string]: string;
         };
@@ -33,7 +32,7 @@ export declare class EmployeePayrollRunsApi {
         response: http.IncomingMessage;
         body: PaginatedEmployeePayrollRunList;
     }>;
-    employeePayrollRunsRetrieve(xAccountToken: string, id: string, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', includeRemoteData?: boolean, options?: {
+    employeePayrollRunsRetrieve(x_account_token: string, id: string, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', include_remote_data?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

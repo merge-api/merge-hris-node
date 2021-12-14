@@ -7,6 +7,7 @@ import { RemoteData } from './remoteData';
 export declare class Employment {
     'id'?: string;
     'remote_id'?: string | null;
+    'employee'?: string | null;
     'job_title'?: string | null;
     'pay_rate'?: number | null;
     'pay_period'?: PayPeriodEnum | null;
