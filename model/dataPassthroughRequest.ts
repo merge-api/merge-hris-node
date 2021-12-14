@@ -20,10 +20,10 @@ import { RequestFormatEnum } from './requestFormatEnum';
 export class DataPassthroughRequest {
     'method': MethodEnum | null;
     'path': string;
-    'baseUrlOverride'?: string | null;
+    'base_url_override'?: string | null;
     'data'?: string | null;
     'headers'?: { [key: string]: any; } | null;
-    'requestFormat'?: RequestFormatEnum | null;
+    'request_format'?: RequestFormatEnum | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -39,7 +39,7 @@ export class DataPassthroughRequest {
             "type": "string"
         },
         {
-            "name": "baseUrlOverride",
+            "name": "base_url_override",
             "baseName": "base_url_override",
             "type": "string"
         },
@@ -54,7 +54,7 @@ export class DataPassthroughRequest {
             "type": "{ [key: string]: any; }"
         },
         {
-            "name": "requestFormat",
+            "name": "request_format",
             "baseName": "request_format",
             "type": "RequestFormatEnum"
         }    ];

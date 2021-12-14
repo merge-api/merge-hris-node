@@ -92,20 +92,20 @@ export class EmploymentsApi {
 
     /**
      * Returns a list of `Employment` objects.
-     * @param x_account_token Token identifying the end user.
-     * @param created_after If provided, will only return objects created after this datetime.
-     * @param created_before If provided, will only return objects created before this datetime.
+     * @param xAccountToken Token identifying the end user.
+     * @param createdAfter If provided, will only return objects created after this datetime.
+     * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
-     * @param employee_id If provided, will only return employments for this employee.
+     * @param employeeId If provided, will only return employments for this employee.
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param modified_after If provided, will only return objects modified after this datetime.
-     * @param modified_before If provided, will only return objects modified before this datetime.
-     * @param order_by Overrides the default ordering for this endpoint.
-     * @param page_size Number of results to return per page.
-     * @param remote_id The API provider\&#39;s ID for the given object.
+     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param modifiedAfter If provided, will only return objects modified after this datetime.
+     * @param modifiedBefore If provided, will only return objects modified before this datetime.
+     * @param orderBy Overrides the default ordering for this endpoint.
+     * @param pageSize Number of results to return per page.
+     * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async employmentsList (x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, employee_id?: string, expand?: 'employee', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, order_by?: '-effective_date' | 'effective_date', page_size?: number, remote_id?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmploymentList;  }> {
+    public async employmentsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-effective_date' | 'effective_date', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmploymentList;  }> {
         const localVarPath = this.basePath + '/employments';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -118,56 +118,56 @@ export class EmploymentsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'x_account_token' is not null or undefined
-        if (x_account_token === null || x_account_token === undefined) {
-            throw new Error('Required parameter x_account_token was null or undefined when calling employmentsList.');
+        // verify required parameter 'xAccountToken' is not null or undefined
+        if (xAccountToken === null || xAccountToken === undefined) {
+            throw new Error('Required parameter xAccountToken was null or undefined when calling employmentsList.');
         }
 
-        if (created_after !== undefined) {
-            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(created_after, "Date");
+        if (createdAfter !== undefined) {
+            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(createdAfter, "Date");
         }
 
-        if (created_before !== undefined) {
-            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(created_before, "Date");
+        if (createdBefore !== undefined) {
+            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(createdBefore, "Date");
         }
 
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
-        if (employee_id !== undefined) {
-            localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employee_id, "string");
+        if (employeeId !== undefined) {
+            localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employeeId, "string");
         }
 
         if (expand !== undefined) {
             localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee'");
         }
 
-        if (include_remote_data !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(include_remote_data, "boolean");
+        if (includeRemoteData !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
         }
 
-        if (modified_after !== undefined) {
-            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modified_after, "Date");
+        if (modifiedAfter !== undefined) {
+            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modifiedAfter, "Date");
         }
 
-        if (modified_before !== undefined) {
-            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modified_before, "Date");
+        if (modifiedBefore !== undefined) {
+            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modifiedBefore, "Date");
         }
 
-        if (order_by !== undefined) {
-            localVarQueryParameters['order_by'] = ObjectSerializer.serialize(order_by, "'-effective_date' | 'effective_date'");
+        if (orderBy !== undefined) {
+            localVarQueryParameters['order_by'] = ObjectSerializer.serialize(orderBy, "'-effective_date' | 'effective_date'");
         }
 
-        if (page_size !== undefined) {
-            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(page_size, "number");
+        if (pageSize !== undefined) {
+            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
         }
 
-        if (remote_id !== undefined) {
-            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remote_id, "string");
+        if (remoteId !== undefined) {
+            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -218,12 +218,12 @@ export class EmploymentsApi {
     }
     /**
      * Returns an `Employment` object with the given `id`.
-     * @param x_account_token Token identifying the end user.
+     * @param xAccountToken Token identifying the end user.
      * @param id 
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async employmentsRetrieve (x_account_token: string, id: string, expand?: 'employee', include_remote_data?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employment;  }> {
+    public async employmentsRetrieve (xAccountToken: string, id: string, expand?: 'employee', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employment;  }> {
         const localVarPath = this.basePath + '/employments/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -237,9 +237,9 @@ export class EmploymentsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'x_account_token' is not null or undefined
-        if (x_account_token === null || x_account_token === undefined) {
-            throw new Error('Required parameter x_account_token was null or undefined when calling employmentsRetrieve.');
+        // verify required parameter 'xAccountToken' is not null or undefined
+        if (xAccountToken === null || xAccountToken === undefined) {
+            throw new Error('Required parameter xAccountToken was null or undefined when calling employmentsRetrieve.');
         }
 
         // verify required parameter 'id' is not null or undefined
@@ -251,11 +251,11 @@ export class EmploymentsApi {
             localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee'");
         }
 
-        if (include_remote_data !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(include_remote_data, "boolean");
+        if (includeRemoteData !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;

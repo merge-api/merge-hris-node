@@ -22,7 +22,7 @@ export class BankInfo {
     /**
     * The third-party API ID of the matching object.
     */
-    'remoteId'?: string | null;
+    'remote_id'?: string | null;
     /**
     * The employee with this bank account.
     */
@@ -30,24 +30,24 @@ export class BankInfo {
     /**
     * The account number.
     */
-    'accountNumber'?: string | null;
+    'account_number'?: string | null;
     /**
     * The routing number.
     */
-    'routingNumber'?: string | null;
+    'routing_number'?: string | null;
     /**
     * The bank name.
     */
-    'bankName'?: string | null;
+    'bank_name'?: string | null;
     /**
     * The bank account type
     */
-    'accountType'?: AccountTypeEnum | null;
+    'account_type'?: AccountTypeEnum | null;
     /**
     * When the matching bank object was created in the third party system.
     */
-    'remoteCreatedAt'?: Date | null;
-    'remoteData'?: Array<RemoteData> | null;
+    'remote_created_at'?: Date | null;
+    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -58,7 +58,7 @@ export class BankInfo {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -68,32 +68,32 @@ export class BankInfo {
             "type": "string"
         },
         {
-            "name": "accountNumber",
+            "name": "account_number",
             "baseName": "account_number",
             "type": "string"
         },
         {
-            "name": "routingNumber",
+            "name": "routing_number",
             "baseName": "routing_number",
             "type": "string"
         },
         {
-            "name": "bankName",
+            "name": "bank_name",
             "baseName": "bank_name",
             "type": "string"
         },
         {
-            "name": "accountType",
+            "name": "account_type",
             "baseName": "account_type",
             "type": "AccountTypeEnum"
         },
         {
-            "name": "remoteCreatedAt",
+            "name": "remote_created_at",
             "baseName": "remote_created_at",
             "type": "Date"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

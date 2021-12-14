@@ -1,1 +1,1 @@
-{"npmName": "@mergeapi/merge-hris-node", "npmVersion": "1.2.0", "modelPropertyNaming": "camelCase", "paramNaming": "snake_case"}
+{"npmName": "@mergeapi/merge-hris-node", "npmVersion": "1.2.0", "modelPropertyNaming": "snake_case", "paramNaming": "camelCase"}

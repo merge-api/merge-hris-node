@@ -22,7 +22,7 @@ export class Benefit {
     /**
     * The third-party API ID of the matching object.
     */
-    'remoteId'?: string | null;
+    'remote_id'?: string | null;
     /**
     * The employee on the plan.
     */
@@ -30,20 +30,20 @@ export class Benefit {
     /**
     * The name of the benefit provider.
     */
-    'providerName'?: string | null;
+    'provider_name'?: string | null;
     /**
     * The type of benefit plan
     */
-    'benefitPlanType'?: BenefitPlanTypeEnum | null;
+    'benefit_plan_type'?: BenefitPlanTypeEnum | null;
     /**
     * The employee\'s contribution.
     */
-    'employeeContribution'?: number | null;
+    'employee_contribution'?: number | null;
     /**
     * The company\'s contribution.
     */
-    'companyContribution'?: number | null;
-    'remoteData'?: Array<RemoteData> | null;
+    'company_contribution'?: number | null;
+    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -54,7 +54,7 @@ export class Benefit {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -64,27 +64,27 @@ export class Benefit {
             "type": "string"
         },
         {
-            "name": "providerName",
+            "name": "provider_name",
             "baseName": "provider_name",
             "type": "string"
         },
         {
-            "name": "benefitPlanType",
+            "name": "benefit_plan_type",
             "baseName": "benefit_plan_type",
             "type": "BenefitPlanTypeEnum"
         },
         {
-            "name": "employeeContribution",
+            "name": "employee_contribution",
             "baseName": "employee_contribution",
             "type": "number"
         },
         {
-            "name": "companyContribution",
+            "name": "company_contribution",
             "baseName": "company_contribution",
             "type": "number"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

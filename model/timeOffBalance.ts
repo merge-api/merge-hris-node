@@ -22,7 +22,7 @@ export class TimeOffBalance {
     /**
     * The third-party API ID of the matching object.
     */
-    'remoteId'?: string | null;
+    'remote_id'?: string | null;
     /**
     * The employee the balance belongs to.
     */
@@ -38,8 +38,8 @@ export class TimeOffBalance {
     /**
     * The policy type of this time off balance.
     */
-    'policyType'?: PolicyTypeEnum | null;
-    'remoteData'?: Array<RemoteData> | null;
+    'policy_type'?: PolicyTypeEnum | null;
+    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -50,7 +50,7 @@ export class TimeOffBalance {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -70,12 +70,12 @@ export class TimeOffBalance {
             "type": "number"
         },
         {
-            "name": "policyType",
+            "name": "policy_type",
             "baseName": "policy_type",
             "type": "PolicyTypeEnum"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

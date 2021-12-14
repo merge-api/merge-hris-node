@@ -92,9 +92,9 @@ export class RegenerateKeyApi {
 
     /**
      * Exchange remote keys.
-     * @param remote_key_for_regeneration_request 
+     * @param remoteKeyForRegenerationRequest 
      */
-    public async regenerateKeyCreate (remote_key_for_regeneration_request: RemoteKeyForRegenerationRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteKey;  }> {
+    public async regenerateKeyCreate (remoteKeyForRegenerationRequest: RemoteKeyForRegenerationRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteKey;  }> {
         const localVarPath = this.basePath + '/regenerate-key';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -107,9 +107,9 @@ export class RegenerateKeyApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'remote_key_for_regeneration_request' is not null or undefined
-        if (remote_key_for_regeneration_request === null || remote_key_for_regeneration_request === undefined) {
-            throw new Error('Required parameter remote_key_for_regeneration_request was null or undefined when calling regenerateKeyCreate.');
+        // verify required parameter 'remoteKeyForRegenerationRequest' is not null or undefined
+        if (remoteKeyForRegenerationRequest === null || remoteKeyForRegenerationRequest === undefined) {
+            throw new Error('Required parameter remoteKeyForRegenerationRequest was null or undefined when calling regenerateKeyCreate.');
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -123,7 +123,7 @@ export class RegenerateKeyApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(remote_key_for_regeneration_request, "RemoteKeyForRegenerationRequest")
+            body: ObjectSerializer.serialize(remoteKeyForRegenerationRequest, "RemoteKeyForRegenerationRequest")
         };
 
         let authenticationPromise = Promise.resolve();

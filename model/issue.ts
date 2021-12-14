@@ -16,11 +16,11 @@ import { IssueStatusEnum } from './issueStatusEnum';
 export class Issue {
     'id'?: string;
     'status'?: IssueStatusEnum;
-    'errorDescription': string;
-    'endUser'?: { [key: string]: any; };
-    'firstIncidentTime'?: Date | null;
-    'lastIncidentTime'?: Date | null;
-    'isMuted'?: boolean;
+    'error_description': string;
+    'end_user'?: { [key: string]: any; };
+    'first_incident_time'?: Date | null;
+    'last_incident_time'?: Date | null;
+    'is_muted'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -36,27 +36,27 @@ export class Issue {
             "type": "IssueStatusEnum"
         },
         {
-            "name": "errorDescription",
+            "name": "error_description",
             "baseName": "error_description",
             "type": "string"
         },
         {
-            "name": "endUser",
+            "name": "end_user",
             "baseName": "end_user",
             "type": "{ [key: string]: any; }"
         },
         {
-            "name": "firstIncidentTime",
+            "name": "first_incident_time",
             "baseName": "first_incident_time",
             "type": "Date"
         },
         {
-            "name": "lastIncidentTime",
+            "name": "last_incident_time",
             "baseName": "last_incident_time",
             "type": "Date"
         },
         {
-            "name": "isMuted",
+            "name": "is_muted",
             "baseName": "is_muted",
             "type": "boolean"
         }    ];

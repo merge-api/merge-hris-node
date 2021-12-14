@@ -93,18 +93,18 @@ export class LinkedAccountsApi {
      * List linked accounts for your organization.
      * @param category 
      * @param cursor The pagination cursor value.
-     * @param end_user_email_address 
-     * @param end_user_organization_name 
-     * @param end_user_origin_id 
-     * @param end_user_origin_ids Comma-separated list of EndUser origin IDs, making it possible to specify multiple EndUsers at once
+     * @param endUserEmailAddress 
+     * @param endUserOrganizationName 
+     * @param endUserOriginId 
+     * @param endUserOriginIds Comma-separated list of EndUser origin IDs, making it possible to specify multiple EndUsers at once
      * @param id 
      * @param ids Comma-separated list of LinkedAccount IDs, making it possible to specify multiple LinkedAccounts at once
-     * @param integration_name 
-     * @param is_test_account If included, will only include test linked accounts. If not included, will only include non-test linked accounts
-     * @param page_size Number of results to return per page.
+     * @param integrationName 
+     * @param isTestAccount If included, will only include test linked accounts. If not included, will only include non-test linked accounts
+     * @param pageSize Number of results to return per page.
      * @param status Filter by status. Options: &#x60;COMPLETE&#x60;, &#x60;INCOMPLETE&#x60;, &#x60;RELINK_NEEDED&#x60;
      */
-    public async linkedAccountsList (category?: 'accounting' | 'ats' | 'hris', cursor?: string, end_user_email_address?: string, end_user_organization_name?: string, end_user_origin_id?: string, end_user_origin_ids?: string, id?: string, ids?: string, integration_name?: string, is_test_account?: string, page_size?: number, status?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedAccountDetailsAndActionsList;  }> {
+    public async linkedAccountsList (category?: 'accounting' | 'ats' | 'hris', cursor?: string, endUserEmailAddress?: string, endUserOrganizationName?: string, endUserOriginId?: string, endUserOriginIds?: string, id?: string, ids?: string, integrationName?: string, isTestAccount?: string, pageSize?: number, status?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedAccountDetailsAndActionsList;  }> {
         const localVarPath = this.basePath + '/linked-accounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -125,20 +125,20 @@ export class LinkedAccountsApi {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
-        if (end_user_email_address !== undefined) {
-            localVarQueryParameters['end_user_email_address'] = ObjectSerializer.serialize(end_user_email_address, "string");
+        if (endUserEmailAddress !== undefined) {
+            localVarQueryParameters['end_user_email_address'] = ObjectSerializer.serialize(endUserEmailAddress, "string");
         }
 
-        if (end_user_organization_name !== undefined) {
-            localVarQueryParameters['end_user_organization_name'] = ObjectSerializer.serialize(end_user_organization_name, "string");
+        if (endUserOrganizationName !== undefined) {
+            localVarQueryParameters['end_user_organization_name'] = ObjectSerializer.serialize(endUserOrganizationName, "string");
         }
 
-        if (end_user_origin_id !== undefined) {
-            localVarQueryParameters['end_user_origin_id'] = ObjectSerializer.serialize(end_user_origin_id, "string");
+        if (endUserOriginId !== undefined) {
+            localVarQueryParameters['end_user_origin_id'] = ObjectSerializer.serialize(endUserOriginId, "string");
         }
 
-        if (end_user_origin_ids !== undefined) {
-            localVarQueryParameters['end_user_origin_ids'] = ObjectSerializer.serialize(end_user_origin_ids, "string");
+        if (endUserOriginIds !== undefined) {
+            localVarQueryParameters['end_user_origin_ids'] = ObjectSerializer.serialize(endUserOriginIds, "string");
         }
 
         if (id !== undefined) {
@@ -149,16 +149,16 @@ export class LinkedAccountsApi {
             localVarQueryParameters['ids'] = ObjectSerializer.serialize(ids, "string");
         }
 
-        if (integration_name !== undefined) {
-            localVarQueryParameters['integration_name'] = ObjectSerializer.serialize(integration_name, "string");
+        if (integrationName !== undefined) {
+            localVarQueryParameters['integration_name'] = ObjectSerializer.serialize(integrationName, "string");
         }
 
-        if (is_test_account !== undefined) {
-            localVarQueryParameters['is_test_account'] = ObjectSerializer.serialize(is_test_account, "string");
+        if (isTestAccount !== undefined) {
+            localVarQueryParameters['is_test_account'] = ObjectSerializer.serialize(isTestAccount, "string");
         }
 
-        if (page_size !== undefined) {
-            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(page_size, "number");
+        if (pageSize !== undefined) {
+            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
         }
 
         if (status !== undefined) {

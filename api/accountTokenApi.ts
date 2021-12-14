@@ -91,11 +91,11 @@ export class AccountTokenApi {
 
     /**
      * Returns the account token for the end user with the provided public token.
-     * @param public_token 
+     * @param publicToken 
      */
-    public async accountTokenRetrieve (public_token: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AccountToken;  }> {
+    public async accountTokenRetrieve (publicToken: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AccountToken;  }> {
         const localVarPath = this.basePath + '/account-token/{public_token}'
-            .replace('{' + 'public_token' + '}', encodeURIComponent(String(public_token)));
+            .replace('{' + 'public_token' + '}', encodeURIComponent(String(publicToken)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -107,9 +107,9 @@ export class AccountTokenApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'public_token' is not null or undefined
-        if (public_token === null || public_token === undefined) {
-            throw new Error('Required parameter public_token was null or undefined when calling accountTokenRetrieve.');
+        // verify required parameter 'publicToken' is not null or undefined
+        if (publicToken === null || publicToken === undefined) {
+            throw new Error('Required parameter publicToken was null or undefined when calling accountTokenRetrieve.');
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
