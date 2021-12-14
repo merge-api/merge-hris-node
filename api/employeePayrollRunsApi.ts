@@ -92,24 +92,24 @@ export class EmployeePayrollRunsApi {
 
     /**
      * Returns a list of `EmployeePayrollRun` objects.
-     * @param xAccountToken Token identifying the end user.
-     * @param createdAfter If provided, will only return objects created after this datetime.
-     * @param createdBefore If provided, will only return objects created before this datetime.
+     * @param x_account_token Token identifying the end user.
+     * @param created_after If provided, will only return objects created after this datetime.
+     * @param created_before If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
-     * @param employeeId If provided, will only return employee payroll runs for this employee.
-     * @param endedAfter If provided, will only return employee payroll runs ended after this datetime.
-     * @param endedBefore If provided, will only return employee payroll runs ended before this datetime.
+     * @param employee_id If provided, will only return employee payroll runs for this employee.
+     * @param ended_after If provided, will only return employee payroll runs ended after this datetime.
+     * @param ended_before If provided, will only return employee payroll runs ended before this datetime.
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param modifiedAfter If provided, will only return objects modified after this datetime.
-     * @param modifiedBefore If provided, will only return objects modified before this datetime.
-     * @param pageSize Number of results to return per page.
-     * @param payrollRunId If provided, will only return employee payroll runs for this employee.
-     * @param remoteId The API provider\&#39;s ID for the given object.
-     * @param startedAfter If provided, will only return employee payroll runs started after this datetime.
-     * @param startedBefore If provided, will only return employee payroll runs started before this datetime.
+     * @param include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param modified_after If provided, will only return objects modified after this datetime.
+     * @param modified_before If provided, will only return objects modified before this datetime.
+     * @param page_size Number of results to return per page.
+     * @param payroll_run_id If provided, will only return employee payroll runs for this employee.
+     * @param remote_id The API provider\&#39;s ID for the given object.
+     * @param started_after If provided, will only return employee payroll runs started after this datetime.
+     * @param started_before If provided, will only return employee payroll runs started before this datetime.
      */
-    public async employeePayrollRunsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, endedAfter?: Date, endedBefore?: Date, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, payrollRunId?: string, remoteId?: string, startedAfter?: Date, startedBefore?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmployeePayrollRunList;  }> {
+    public async employeePayrollRunsList (x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, employee_id?: string, ended_after?: Date, ended_before?: Date, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, payroll_run_id?: string, remote_id?: string, started_after?: Date, started_before?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmployeePayrollRunList;  }> {
         const localVarPath = this.basePath + '/employee-payroll-runs';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -122,72 +122,72 @@ export class EmployeePayrollRunsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling employeePayrollRunsList.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling employeePayrollRunsList.');
         }
 
-        if (createdAfter !== undefined) {
-            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(createdAfter, "Date");
+        if (created_after !== undefined) {
+            localVarQueryParameters['created_after'] = ObjectSerializer.serialize(created_after, "Date");
         }
 
-        if (createdBefore !== undefined) {
-            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(createdBefore, "Date");
+        if (created_before !== undefined) {
+            localVarQueryParameters['created_before'] = ObjectSerializer.serialize(created_before, "Date");
         }
 
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
-        if (employeeId !== undefined) {
-            localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employeeId, "string");
+        if (employee_id !== undefined) {
+            localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employee_id, "string");
         }
 
-        if (endedAfter !== undefined) {
-            localVarQueryParameters['ended_after'] = ObjectSerializer.serialize(endedAfter, "Date");
+        if (ended_after !== undefined) {
+            localVarQueryParameters['ended_after'] = ObjectSerializer.serialize(ended_after, "Date");
         }
 
-        if (endedBefore !== undefined) {
-            localVarQueryParameters['ended_before'] = ObjectSerializer.serialize(endedBefore, "Date");
+        if (ended_before !== undefined) {
+            localVarQueryParameters['ended_before'] = ObjectSerializer.serialize(ended_before, "Date");
         }
 
         if (expand !== undefined) {
             localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee' | 'employee,payroll_run' | 'payroll_run'");
         }
 
-        if (includeRemoteData !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
+        if (include_remote_data !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(include_remote_data, "boolean");
         }
 
-        if (modifiedAfter !== undefined) {
-            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modifiedAfter, "Date");
+        if (modified_after !== undefined) {
+            localVarQueryParameters['modified_after'] = ObjectSerializer.serialize(modified_after, "Date");
         }
 
-        if (modifiedBefore !== undefined) {
-            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modifiedBefore, "Date");
+        if (modified_before !== undefined) {
+            localVarQueryParameters['modified_before'] = ObjectSerializer.serialize(modified_before, "Date");
         }
 
-        if (pageSize !== undefined) {
-            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
+        if (page_size !== undefined) {
+            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(page_size, "number");
         }
 
-        if (payrollRunId !== undefined) {
-            localVarQueryParameters['payroll_run_id'] = ObjectSerializer.serialize(payrollRunId, "string");
+        if (payroll_run_id !== undefined) {
+            localVarQueryParameters['payroll_run_id'] = ObjectSerializer.serialize(payroll_run_id, "string");
         }
 
-        if (remoteId !== undefined) {
-            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
+        if (remote_id !== undefined) {
+            localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remote_id, "string");
         }
 
-        if (startedAfter !== undefined) {
-            localVarQueryParameters['started_after'] = ObjectSerializer.serialize(startedAfter, "Date");
+        if (started_after !== undefined) {
+            localVarQueryParameters['started_after'] = ObjectSerializer.serialize(started_after, "Date");
         }
 
-        if (startedBefore !== undefined) {
-            localVarQueryParameters['started_before'] = ObjectSerializer.serialize(startedBefore, "Date");
+        if (started_before !== undefined) {
+            localVarQueryParameters['started_before'] = ObjectSerializer.serialize(started_before, "Date");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -238,12 +238,12 @@ export class EmployeePayrollRunsApi {
     }
     /**
      * Returns an `EmployeePayrollRun` object with the given `id`.
-     * @param xAccountToken Token identifying the end user.
+     * @param x_account_token Token identifying the end user.
      * @param id 
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async employeePayrollRunsRetrieve (xAccountToken: string, id: string, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: EmployeePayrollRun;  }> {
+    public async employeePayrollRunsRetrieve (x_account_token: string, id: string, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', include_remote_data?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: EmployeePayrollRun;  }> {
         const localVarPath = this.basePath + '/employee-payroll-runs/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -257,9 +257,9 @@ export class EmployeePayrollRunsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling employeePayrollRunsRetrieve.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling employeePayrollRunsRetrieve.');
         }
 
         // verify required parameter 'id' is not null or undefined
@@ -271,11 +271,11 @@ export class EmployeePayrollRunsApi {
             localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee' | 'employee,payroll_run' | 'payroll_run'");
         }
 
-        if (includeRemoteData !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
+        if (include_remote_data !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(include_remote_data, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;

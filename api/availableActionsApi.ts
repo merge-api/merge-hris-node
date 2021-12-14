@@ -91,9 +91,9 @@ export class AvailableActionsApi {
 
     /**
      * Returns a list of models and actions available for an account.
-     * @param xAccountToken Token identifying the end user.
+     * @param x_account_token Token identifying the end user.
      */
-    public async availableActionsRetrieve (xAccountToken: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AvailableActions;  }> {
+    public async availableActionsRetrieve (x_account_token: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AvailableActions;  }> {
         const localVarPath = this.basePath + '/available-actions';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -106,12 +106,12 @@ export class AvailableActionsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling availableActionsRetrieve.');
+        // verify required parameter 'x_account_token' is not null or undefined
+        if (x_account_token === null || x_account_token === undefined) {
+            throw new Error('Required parameter x_account_token was null or undefined when calling availableActionsRetrieve.');
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
