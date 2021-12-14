@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MethodEnum = void 0;
 var MethodEnum;
 (function (MethodEnum) {
     MethodEnum[MethodEnum["Get"] = 'GET'] = "Get";

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Deduction = void 0;
 var Deduction = (function () {
     function Deduction() {
     }

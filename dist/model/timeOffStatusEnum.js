@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeOffStatusEnum = void 0;
 var TimeOffStatusEnum;
 (function (TimeOffStatusEnum) {
     TimeOffStatusEnum[TimeOffStatusEnum["Requested"] = 'REQUESTED'] = "Requested";

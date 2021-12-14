@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import http from 'http';
 import { AccountToken } from '../model/accountToken';
 import { Authentication, Interceptor } from '../model/models';
@@ -10,16 +11,14 @@ export declare class AccountTokenApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        default: Authentication;
-        tokenAuth: ApiKeyAuth;
+        'default': Authentication;
+        'tokenAuth': ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    set defaultHeaders(defaultHeaders: any);
-    get defaultHeaders(): any;
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
+    defaultHeaders: any;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: AccountTokenApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;

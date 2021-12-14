@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModelOperation = void 0;
 var ModelOperation = (function () {
     function ModelOperation() {
     }

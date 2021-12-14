@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountToken = void 0;
 var AccountToken = (function () {
     function AccountToken() {
     }

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkToken = void 0;
 var LinkToken = (function () {
     function LinkToken() {
     }

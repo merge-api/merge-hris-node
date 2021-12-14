@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Employment = void 0;
 var Employment = (function () {
     function Employment() {
     }

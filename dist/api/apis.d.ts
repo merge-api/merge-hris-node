@@ -1,3 +1,4 @@
+/// <reference types="node" />
 export * from './accountDetailsApi';
 import { AccountDetailsApi } from './accountDetailsApi';
 export * from './accountTokenApi';

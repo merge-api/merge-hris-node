@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PayrollRun = void 0;
 var PayrollRun = (function () {
     function PayrollRun() {
     }

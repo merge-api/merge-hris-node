@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Team = void 0;
 var Team = (function () {
     function Team() {
     }

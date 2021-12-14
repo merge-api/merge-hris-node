@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SyncStatus = void 0;
 var SyncStatus = (function () {
     function SyncStatus() {
     }

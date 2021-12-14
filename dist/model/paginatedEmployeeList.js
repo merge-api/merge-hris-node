@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PaginatedEmployeeList = void 0;
 var PaginatedEmployeeList = (function () {
     function PaginatedEmployeeList() {
     }
