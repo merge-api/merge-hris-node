@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Location = void 0;
 var Location = (function () {
     function Location() {
     }
@@ -15,22 +14,27 @@ var Location = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "phone_number",
+            "name": "name",
+            "baseName": "name",
+            "type": "string"
+        },
+        {
+            "name": "phoneNumber",
             "baseName": "phone_number",
             "type": "string"
         },
         {
-            "name": "street_1",
+            "name": "street1",
             "baseName": "street_1",
             "type": "string"
         },
         {
-            "name": "street_2",
+            "name": "street2",
             "baseName": "street_2",
             "type": "string"
         },
@@ -45,7 +49,7 @@ var Location = (function () {
             "type": "string"
         },
         {
-            "name": "zip_code",
+            "name": "zipCode",
             "baseName": "zip_code",
             "type": "string"
         },
@@ -55,7 +59,7 @@ var Location = (function () {
             "type": "CountryEnum"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

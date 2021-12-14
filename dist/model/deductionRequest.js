@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeductionRequest = void 0;
 var DeductionRequest = (function () {
     function DeductionRequest() {
     }
@@ -12,11 +11,6 @@ var DeductionRequest = (function () {
         {
             "name": "employee_payroll_run",
             "baseName": "employee_payroll_run",
-            "type": "string"
-        },
-        {
-            "name": "persistent_deduction",
-            "baseName": "persistent_deduction",
             "type": "string"
         },
         {

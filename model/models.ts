@@ -6,21 +6,20 @@ export * from './accountDetailsAndActionsIntegration';
 export * from './accountDetailsAndActionsStatusEnum';
 export * from './accountIntegration';
 export * from './accountToken';
+export * from './accountTypeEnum';
 export * from './availableActions';
+export * from './bankInfo';
 export * from './benefit';
 export * from './benefitPlanTypeEnum';
-export * from './benefitRequest';
 export * from './categoriesEnum';
 export * from './categoryEnum';
 export * from './company';
 export * from './countryEnum';
 export * from './dataPassthroughRequest';
 export * from './deduction';
-export * from './deductionRequest';
 export * from './earning';
 export * from './employee';
 export * from './employeePayrollRun';
-export * from './employeeRequest';
 export * from './employment';
 export * from './employmentStatusEnum';
 export * from './employmentTypeEnum';
@@ -37,6 +36,7 @@ export * from './maritalStatusEnum';
 export * from './methodEnum';
 export * from './modelOperation';
 export * from './paginatedAccountDetailsAndActionsList';
+export * from './paginatedBankInfoList';
 export * from './paginatedBenefitList';
 export * from './paginatedCompanyList';
 export * from './paginatedDeductionList';
@@ -45,6 +45,7 @@ export * from './paginatedEmployeePayrollRunList';
 export * from './paginatedEmploymentList';
 export * from './paginatedIssueList';
 export * from './paginatedLocationList';
+export * from './paginatedPayGroupList';
 export * from './paginatedPayrollRunList';
 export * from './paginatedSyncStatusList';
 export * from './paginatedTeamList';
@@ -52,6 +53,7 @@ export * from './paginatedTimeOffBalanceList';
 export * from './paginatedTimeOffList';
 export * from './payCurrencyEnum';
 export * from './payFrequencyEnum';
+export * from './payGroup';
 export * from './payPeriodEnum';
 export * from './payrollRun';
 export * from './policyTypeEnum';
@@ -70,10 +72,13 @@ export * from './tax';
 export * from './team';
 export * from './timeOff';
 export * from './timeOffBalance';
+export * from './timeOffEndpointRequest';
 export * from './timeOffRequest';
+export * from './timeOffResponse';
 export * from './timeOffStatusEnum';
 export * from './typeEnum';
 export * from './unitsEnum';
+export * from './validationProblem';
 
 import * as fs from 'fs';
 
@@ -94,21 +99,20 @@ import { AccountDetailsAndActionsIntegration } from './accountDetailsAndActionsI
 import { AccountDetailsAndActionsStatusEnum } from './accountDetailsAndActionsStatusEnum';
 import { AccountIntegration } from './accountIntegration';
 import { AccountToken } from './accountToken';
+import { AccountTypeEnum } from './accountTypeEnum';
 import { AvailableActions } from './availableActions';
+import { BankInfo } from './bankInfo';
 import { Benefit } from './benefit';
 import { BenefitPlanTypeEnum } from './benefitPlanTypeEnum';
-import { BenefitRequest } from './benefitRequest';
 import { CategoriesEnum } from './categoriesEnum';
 import { CategoryEnum } from './categoryEnum';
 import { Company } from './company';
 import { CountryEnum } from './countryEnum';
 import { DataPassthroughRequest } from './dataPassthroughRequest';
 import { Deduction } from './deduction';
-import { DeductionRequest } from './deductionRequest';
 import { Earning } from './earning';
 import { Employee } from './employee';
 import { EmployeePayrollRun } from './employeePayrollRun';
-import { EmployeeRequest } from './employeeRequest';
 import { Employment } from './employment';
 import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EmploymentTypeEnum } from './employmentTypeEnum';
@@ -125,6 +129,7 @@ import { MaritalStatusEnum } from './maritalStatusEnum';
 import { MethodEnum } from './methodEnum';
 import { ModelOperation } from './modelOperation';
 import { PaginatedAccountDetailsAndActionsList } from './paginatedAccountDetailsAndActionsList';
+import { PaginatedBankInfoList } from './paginatedBankInfoList';
 import { PaginatedBenefitList } from './paginatedBenefitList';
 import { PaginatedCompanyList } from './paginatedCompanyList';
 import { PaginatedDeductionList } from './paginatedDeductionList';
@@ -133,6 +138,7 @@ import { PaginatedEmployeePayrollRunList } from './paginatedEmployeePayrollRunLi
 import { PaginatedEmploymentList } from './paginatedEmploymentList';
 import { PaginatedIssueList } from './paginatedIssueList';
 import { PaginatedLocationList } from './paginatedLocationList';
+import { PaginatedPayGroupList } from './paginatedPayGroupList';
 import { PaginatedPayrollRunList } from './paginatedPayrollRunList';
 import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
@@ -140,6 +146,7 @@ import { PaginatedTimeOffBalanceList } from './paginatedTimeOffBalanceList';
 import { PaginatedTimeOffList } from './paginatedTimeOffList';
 import { PayCurrencyEnum } from './payCurrencyEnum';
 import { PayFrequencyEnum } from './payFrequencyEnum';
+import { PayGroup } from './payGroup';
 import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
 import { PolicyTypeEnum } from './policyTypeEnum';
@@ -158,10 +165,13 @@ import { Tax } from './tax';
 import { Team } from './team';
 import { TimeOff } from './timeOff';
 import { TimeOffBalance } from './timeOffBalance';
+import { TimeOffEndpointRequest } from './timeOffEndpointRequest';
 import { TimeOffRequest } from './timeOffRequest';
+import { TimeOffResponse } from './timeOffResponse';
 import { TimeOffStatusEnum } from './timeOffStatusEnum';
 import { TypeEnum } from './typeEnum';
 import { UnitsEnum } from './unitsEnum';
+import { ValidationProblem } from './validationProblem';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -177,14 +187,13 @@ let primitives = [
 
 let enumsMap: {[index: string]: any} = {
         "AccountDetailsAndActionsStatusEnum": AccountDetailsAndActionsStatusEnum,
-        "AccountIntegration.CategoriesEnum": AccountIntegration.CategoriesEnum,
+        "AccountTypeEnum": AccountTypeEnum,
         "BenefitPlanTypeEnum": BenefitPlanTypeEnum,
         "CategoriesEnum": CategoriesEnum,
         "CategoryEnum": CategoryEnum,
         "CountryEnum": CountryEnum,
         "EmploymentStatusEnum": EmploymentStatusEnum,
         "EmploymentTypeEnum": EmploymentTypeEnum,
-        "EndUserDetailsRequest.CategoriesEnum": EndUserDetailsRequest.CategoriesEnum,
         "EthnicityEnum": EthnicityEnum,
         "FlsaStatusEnum": FlsaStatusEnum,
         "GenderEnum": GenderEnum,
@@ -212,16 +221,14 @@ let typeMap: {[index: string]: any} = {
     "AccountIntegration": AccountIntegration,
     "AccountToken": AccountToken,
     "AvailableActions": AvailableActions,
+    "BankInfo": BankInfo,
     "Benefit": Benefit,
-    "BenefitRequest": BenefitRequest,
     "Company": Company,
     "DataPassthroughRequest": DataPassthroughRequest,
     "Deduction": Deduction,
-    "DeductionRequest": DeductionRequest,
     "Earning": Earning,
     "Employee": Employee,
     "EmployeePayrollRun": EmployeePayrollRun,
-    "EmployeeRequest": EmployeeRequest,
     "Employment": Employment,
     "EndUserDetailsRequest": EndUserDetailsRequest,
     "GenerateRemoteKeyRequest": GenerateRemoteKeyRequest,
@@ -230,6 +237,7 @@ let typeMap: {[index: string]: any} = {
     "Location": Location,
     "ModelOperation": ModelOperation,
     "PaginatedAccountDetailsAndActionsList": PaginatedAccountDetailsAndActionsList,
+    "PaginatedBankInfoList": PaginatedBankInfoList,
     "PaginatedBenefitList": PaginatedBenefitList,
     "PaginatedCompanyList": PaginatedCompanyList,
     "PaginatedDeductionList": PaginatedDeductionList,
@@ -238,11 +246,13 @@ let typeMap: {[index: string]: any} = {
     "PaginatedEmploymentList": PaginatedEmploymentList,
     "PaginatedIssueList": PaginatedIssueList,
     "PaginatedLocationList": PaginatedLocationList,
+    "PaginatedPayGroupList": PaginatedPayGroupList,
     "PaginatedPayrollRunList": PaginatedPayrollRunList,
     "PaginatedSyncStatusList": PaginatedSyncStatusList,
     "PaginatedTeamList": PaginatedTeamList,
     "PaginatedTimeOffBalanceList": PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": PaginatedTimeOffList,
+    "PayGroup": PayGroup,
     "PayrollRun": PayrollRun,
     "RemoteData": RemoteData,
     "RemoteDataRequest": RemoteDataRequest,
@@ -254,7 +264,10 @@ let typeMap: {[index: string]: any} = {
     "Team": Team,
     "TimeOff": TimeOff,
     "TimeOffBalance": TimeOffBalance,
+    "TimeOffEndpointRequest": TimeOffEndpointRequest,
     "TimeOffRequest": TimeOffRequest,
+    "TimeOffResponse": TimeOffResponse,
+    "ValidationProblem": ValidationProblem,
 }
 
 export class ObjectSerializer {

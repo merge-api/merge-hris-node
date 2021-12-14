@@ -1,101 +1,108 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VoidAuth = exports.OAuth = exports.ApiKeyAuth = exports.HttpBearerAuth = exports.HttpBasicAuth = exports.ObjectSerializer = void 0;
-__exportStar(require("./accountIntegration"), exports);
-__exportStar(require("./accountToken"), exports);
-__exportStar(require("./availableActions"), exports);
-__exportStar(require("./benefit"), exports);
-__exportStar(require("./benefitPlanTypeEnum"), exports);
-__exportStar(require("./benefitRequest"), exports);
-__exportStar(require("./company"), exports);
-__exportStar(require("./countryEnum"), exports);
-__exportStar(require("./dataPassthroughRequest"), exports);
-__exportStar(require("./deduction"), exports);
-__exportStar(require("./deductionRequest"), exports);
-__exportStar(require("./earning"), exports);
-__exportStar(require("./employee"), exports);
-__exportStar(require("./employeePayrollRun"), exports);
-__exportStar(require("./employeeRequest"), exports);
-__exportStar(require("./employment"), exports);
-__exportStar(require("./employmentRequest"), exports);
-__exportStar(require("./employmentStatusEnum"), exports);
-__exportStar(require("./employmentTypeEnum"), exports);
-__exportStar(require("./endUserDetailsRequest"), exports);
-__exportStar(require("./ethnicityEnum"), exports);
-__exportStar(require("./flsaStatusEnum"), exports);
-__exportStar(require("./genderEnum"), exports);
-__exportStar(require("./generateRemoteKeyRequest"), exports);
-__exportStar(require("./issue"), exports);
-__exportStar(require("./issueStatusEnum"), exports);
-__exportStar(require("./linkToken"), exports);
-__exportStar(require("./location"), exports);
-__exportStar(require("./maritalStatusEnum"), exports);
-__exportStar(require("./methodEnum"), exports);
-__exportStar(require("./modelOperation"), exports);
-__exportStar(require("./paginatedBenefitList"), exports);
-__exportStar(require("./paginatedCompanyList"), exports);
-__exportStar(require("./paginatedDeductionList"), exports);
-__exportStar(require("./paginatedEmployeeList"), exports);
-__exportStar(require("./paginatedEmployeePayrollRunList"), exports);
-__exportStar(require("./paginatedEmploymentList"), exports);
-__exportStar(require("./paginatedIssueList"), exports);
-__exportStar(require("./paginatedLocationList"), exports);
-__exportStar(require("./paginatedPayrollRunList"), exports);
-__exportStar(require("./paginatedSyncStatusList"), exports);
-__exportStar(require("./paginatedTeamList"), exports);
-__exportStar(require("./paginatedTimeOffBalanceList"), exports);
-__exportStar(require("./paginatedTimeOffList"), exports);
-__exportStar(require("./payCurrencyEnum"), exports);
-__exportStar(require("./payFrequencyEnum"), exports);
-__exportStar(require("./payPeriodEnum"), exports);
-__exportStar(require("./payrollRun"), exports);
-__exportStar(require("./policyTypeEnum"), exports);
-__exportStar(require("./remoteData"), exports);
-__exportStar(require("./remoteDataRequest"), exports);
-__exportStar(require("./remoteKey"), exports);
-__exportStar(require("./remoteKeyForRegenerationRequest"), exports);
-__exportStar(require("./remoteResponse"), exports);
-__exportStar(require("./requestFormatEnum"), exports);
-__exportStar(require("./requestTypeEnum"), exports);
-__exportStar(require("./runStateEnum"), exports);
-__exportStar(require("./runTypeEnum"), exports);
-__exportStar(require("./syncStatus"), exports);
-__exportStar(require("./syncStatusStatusEnum"), exports);
-__exportStar(require("./tax"), exports);
-__exportStar(require("./team"), exports);
-__exportStar(require("./timeOff"), exports);
-__exportStar(require("./timeOffBalance"), exports);
-__exportStar(require("./timeOffRequest"), exports);
-__exportStar(require("./timeOffStatusEnum"), exports);
-__exportStar(require("./typeEnum"), exports);
-__exportStar(require("./unitsEnum"), exports);
+__export(require("./accountDetails"));
+__export(require("./accountDetailsAndActions"));
+__export(require("./accountDetailsAndActionsIntegration"));
+__export(require("./accountDetailsAndActionsStatusEnum"));
+__export(require("./accountIntegration"));
+__export(require("./accountToken"));
+__export(require("./accountTypeEnum"));
+__export(require("./availableActions"));
+__export(require("./bankInfo"));
+__export(require("./benefit"));
+__export(require("./benefitPlanTypeEnum"));
+__export(require("./categoriesEnum"));
+__export(require("./categoryEnum"));
+__export(require("./company"));
+__export(require("./countryEnum"));
+__export(require("./dataPassthroughRequest"));
+__export(require("./deduction"));
+__export(require("./earning"));
+__export(require("./employee"));
+__export(require("./employeePayrollRun"));
+__export(require("./employment"));
+__export(require("./employmentStatusEnum"));
+__export(require("./employmentTypeEnum"));
+__export(require("./endUserDetailsRequest"));
+__export(require("./ethnicityEnum"));
+__export(require("./flsaStatusEnum"));
+__export(require("./genderEnum"));
+__export(require("./generateRemoteKeyRequest"));
+__export(require("./issue"));
+__export(require("./issueStatusEnum"));
+__export(require("./linkToken"));
+__export(require("./location"));
+__export(require("./maritalStatusEnum"));
+__export(require("./methodEnum"));
+__export(require("./modelOperation"));
+__export(require("./paginatedAccountDetailsAndActionsList"));
+__export(require("./paginatedBankInfoList"));
+__export(require("./paginatedBenefitList"));
+__export(require("./paginatedCompanyList"));
+__export(require("./paginatedDeductionList"));
+__export(require("./paginatedEmployeeList"));
+__export(require("./paginatedEmployeePayrollRunList"));
+__export(require("./paginatedEmploymentList"));
+__export(require("./paginatedIssueList"));
+__export(require("./paginatedLocationList"));
+__export(require("./paginatedPayGroupList"));
+__export(require("./paginatedPayrollRunList"));
+__export(require("./paginatedSyncStatusList"));
+__export(require("./paginatedTeamList"));
+__export(require("./paginatedTimeOffBalanceList"));
+__export(require("./paginatedTimeOffList"));
+__export(require("./payCurrencyEnum"));
+__export(require("./payFrequencyEnum"));
+__export(require("./payGroup"));
+__export(require("./payPeriodEnum"));
+__export(require("./payrollRun"));
+__export(require("./policyTypeEnum"));
+__export(require("./remoteData"));
+__export(require("./remoteDataRequest"));
+__export(require("./remoteKey"));
+__export(require("./remoteKeyForRegenerationRequest"));
+__export(require("./remoteResponse"));
+__export(require("./requestFormatEnum"));
+__export(require("./requestTypeEnum"));
+__export(require("./runStateEnum"));
+__export(require("./runTypeEnum"));
+__export(require("./syncStatus"));
+__export(require("./syncStatusStatusEnum"));
+__export(require("./tax"));
+__export(require("./team"));
+__export(require("./timeOff"));
+__export(require("./timeOffBalance"));
+__export(require("./timeOffEndpointRequest"));
+__export(require("./timeOffRequest"));
+__export(require("./timeOffResponse"));
+__export(require("./timeOffStatusEnum"));
+__export(require("./typeEnum"));
+__export(require("./unitsEnum"));
+__export(require("./validationProblem"));
+var accountDetails_1 = require("./accountDetails");
+var accountDetailsAndActions_1 = require("./accountDetailsAndActions");
+var accountDetailsAndActionsIntegration_1 = require("./accountDetailsAndActionsIntegration");
+var accountDetailsAndActionsStatusEnum_1 = require("./accountDetailsAndActionsStatusEnum");
 var accountIntegration_1 = require("./accountIntegration");
 var accountToken_1 = require("./accountToken");
+var accountTypeEnum_1 = require("./accountTypeEnum");
 var availableActions_1 = require("./availableActions");
+var bankInfo_1 = require("./bankInfo");
 var benefit_1 = require("./benefit");
 var benefitPlanTypeEnum_1 = require("./benefitPlanTypeEnum");
-var benefitRequest_1 = require("./benefitRequest");
+var categoriesEnum_1 = require("./categoriesEnum");
+var categoryEnum_1 = require("./categoryEnum");
 var company_1 = require("./company");
 var countryEnum_1 = require("./countryEnum");
 var dataPassthroughRequest_1 = require("./dataPassthroughRequest");
 var deduction_1 = require("./deduction");
-var deductionRequest_1 = require("./deductionRequest");
 var earning_1 = require("./earning");
 var employee_1 = require("./employee");
 var employeePayrollRun_1 = require("./employeePayrollRun");
-var employeeRequest_1 = require("./employeeRequest");
 var employment_1 = require("./employment");
-var employmentRequest_1 = require("./employmentRequest");
 var employmentStatusEnum_1 = require("./employmentStatusEnum");
 var employmentTypeEnum_1 = require("./employmentTypeEnum");
 var endUserDetailsRequest_1 = require("./endUserDetailsRequest");
@@ -110,6 +117,8 @@ var location_1 = require("./location");
 var maritalStatusEnum_1 = require("./maritalStatusEnum");
 var methodEnum_1 = require("./methodEnum");
 var modelOperation_1 = require("./modelOperation");
+var paginatedAccountDetailsAndActionsList_1 = require("./paginatedAccountDetailsAndActionsList");
+var paginatedBankInfoList_1 = require("./paginatedBankInfoList");
 var paginatedBenefitList_1 = require("./paginatedBenefitList");
 var paginatedCompanyList_1 = require("./paginatedCompanyList");
 var paginatedDeductionList_1 = require("./paginatedDeductionList");
@@ -118,6 +127,7 @@ var paginatedEmployeePayrollRunList_1 = require("./paginatedEmployeePayrollRunLi
 var paginatedEmploymentList_1 = require("./paginatedEmploymentList");
 var paginatedIssueList_1 = require("./paginatedIssueList");
 var paginatedLocationList_1 = require("./paginatedLocationList");
+var paginatedPayGroupList_1 = require("./paginatedPayGroupList");
 var paginatedPayrollRunList_1 = require("./paginatedPayrollRunList");
 var paginatedSyncStatusList_1 = require("./paginatedSyncStatusList");
 var paginatedTeamList_1 = require("./paginatedTeamList");
@@ -125,6 +135,7 @@ var paginatedTimeOffBalanceList_1 = require("./paginatedTimeOffBalanceList");
 var paginatedTimeOffList_1 = require("./paginatedTimeOffList");
 var payCurrencyEnum_1 = require("./payCurrencyEnum");
 var payFrequencyEnum_1 = require("./payFrequencyEnum");
+var payGroup_1 = require("./payGroup");
 var payPeriodEnum_1 = require("./payPeriodEnum");
 var payrollRun_1 = require("./payrollRun");
 var policyTypeEnum_1 = require("./policyTypeEnum");
@@ -143,10 +154,13 @@ var tax_1 = require("./tax");
 var team_1 = require("./team");
 var timeOff_1 = require("./timeOff");
 var timeOffBalance_1 = require("./timeOffBalance");
+var timeOffEndpointRequest_1 = require("./timeOffEndpointRequest");
 var timeOffRequest_1 = require("./timeOffRequest");
+var timeOffResponse_1 = require("./timeOffResponse");
 var timeOffStatusEnum_1 = require("./timeOffStatusEnum");
 var typeEnum_1 = require("./typeEnum");
 var unitsEnum_1 = require("./unitsEnum");
+var validationProblem_1 = require("./validationProblem");
 var primitives = [
     "string",
     "boolean",
@@ -158,12 +172,14 @@ var primitives = [
     "any"
 ];
 var enumsMap = {
-    "AccountIntegration.CategoriesEnum": accountIntegration_1.AccountIntegration.CategoriesEnum,
+    "AccountDetailsAndActionsStatusEnum": accountDetailsAndActionsStatusEnum_1.AccountDetailsAndActionsStatusEnum,
+    "AccountTypeEnum": accountTypeEnum_1.AccountTypeEnum,
     "BenefitPlanTypeEnum": benefitPlanTypeEnum_1.BenefitPlanTypeEnum,
+    "CategoriesEnum": categoriesEnum_1.CategoriesEnum,
+    "CategoryEnum": categoryEnum_1.CategoryEnum,
     "CountryEnum": countryEnum_1.CountryEnum,
     "EmploymentStatusEnum": employmentStatusEnum_1.EmploymentStatusEnum,
     "EmploymentTypeEnum": employmentTypeEnum_1.EmploymentTypeEnum,
-    "EndUserDetailsRequest.CategoriesEnum": endUserDetailsRequest_1.EndUserDetailsRequest.CategoriesEnum,
     "EthnicityEnum": ethnicityEnum_1.EthnicityEnum,
     "FlsaStatusEnum": flsaStatusEnum_1.FlsaStatusEnum,
     "GenderEnum": genderEnum_1.GenderEnum,
@@ -184,27 +200,29 @@ var enumsMap = {
     "UnitsEnum": unitsEnum_1.UnitsEnum,
 };
 var typeMap = {
+    "AccountDetails": accountDetails_1.AccountDetails,
+    "AccountDetailsAndActions": accountDetailsAndActions_1.AccountDetailsAndActions,
+    "AccountDetailsAndActionsIntegration": accountDetailsAndActionsIntegration_1.AccountDetailsAndActionsIntegration,
     "AccountIntegration": accountIntegration_1.AccountIntegration,
     "AccountToken": accountToken_1.AccountToken,
     "AvailableActions": availableActions_1.AvailableActions,
+    "BankInfo": bankInfo_1.BankInfo,
     "Benefit": benefit_1.Benefit,
-    "BenefitRequest": benefitRequest_1.BenefitRequest,
     "Company": company_1.Company,
     "DataPassthroughRequest": dataPassthroughRequest_1.DataPassthroughRequest,
     "Deduction": deduction_1.Deduction,
-    "DeductionRequest": deductionRequest_1.DeductionRequest,
     "Earning": earning_1.Earning,
     "Employee": employee_1.Employee,
     "EmployeePayrollRun": employeePayrollRun_1.EmployeePayrollRun,
-    "EmployeeRequest": employeeRequest_1.EmployeeRequest,
     "Employment": employment_1.Employment,
-    "EmploymentRequest": employmentRequest_1.EmploymentRequest,
     "EndUserDetailsRequest": endUserDetailsRequest_1.EndUserDetailsRequest,
     "GenerateRemoteKeyRequest": generateRemoteKeyRequest_1.GenerateRemoteKeyRequest,
     "Issue": issue_1.Issue,
     "LinkToken": linkToken_1.LinkToken,
     "Location": location_1.Location,
     "ModelOperation": modelOperation_1.ModelOperation,
+    "PaginatedAccountDetailsAndActionsList": paginatedAccountDetailsAndActionsList_1.PaginatedAccountDetailsAndActionsList,
+    "PaginatedBankInfoList": paginatedBankInfoList_1.PaginatedBankInfoList,
     "PaginatedBenefitList": paginatedBenefitList_1.PaginatedBenefitList,
     "PaginatedCompanyList": paginatedCompanyList_1.PaginatedCompanyList,
     "PaginatedDeductionList": paginatedDeductionList_1.PaginatedDeductionList,
@@ -213,11 +231,13 @@ var typeMap = {
     "PaginatedEmploymentList": paginatedEmploymentList_1.PaginatedEmploymentList,
     "PaginatedIssueList": paginatedIssueList_1.PaginatedIssueList,
     "PaginatedLocationList": paginatedLocationList_1.PaginatedLocationList,
+    "PaginatedPayGroupList": paginatedPayGroupList_1.PaginatedPayGroupList,
     "PaginatedPayrollRunList": paginatedPayrollRunList_1.PaginatedPayrollRunList,
     "PaginatedSyncStatusList": paginatedSyncStatusList_1.PaginatedSyncStatusList,
     "PaginatedTeamList": paginatedTeamList_1.PaginatedTeamList,
     "PaginatedTimeOffBalanceList": paginatedTimeOffBalanceList_1.PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": paginatedTimeOffList_1.PaginatedTimeOffList,
+    "PayGroup": payGroup_1.PayGroup,
     "PayrollRun": payrollRun_1.PayrollRun,
     "RemoteData": remoteData_1.RemoteData,
     "RemoteDataRequest": remoteDataRequest_1.RemoteDataRequest,
@@ -229,7 +249,10 @@ var typeMap = {
     "Team": team_1.Team,
     "TimeOff": timeOff_1.TimeOff,
     "TimeOffBalance": timeOffBalance_1.TimeOffBalance,
+    "TimeOffEndpointRequest": timeOffEndpointRequest_1.TimeOffEndpointRequest,
     "TimeOffRequest": timeOffRequest_1.TimeOffRequest,
+    "TimeOffResponse": timeOffResponse_1.TimeOffResponse,
+    "ValidationProblem": validationProblem_1.ValidationProblem,
 };
 var ObjectSerializer = (function () {
     function ObjectSerializer() {

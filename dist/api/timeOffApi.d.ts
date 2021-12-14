@@ -2,7 +2,8 @@
 import http from 'http';
 import { PaginatedTimeOffList } from '../model/paginatedTimeOffList';
 import { TimeOff } from '../model/timeOff';
-import { TimeOffRequest } from '../model/timeOffRequest';
+import { TimeOffEndpointRequest } from '../model/timeOffEndpointRequest';
+import { TimeOffResponse } from '../model/timeOffResponse';
 import { Authentication, Interceptor } from '../model/models';
 import { ApiKeyAuth } from '../model/models';
 export declare enum TimeOffApiApiKeys {
@@ -13,28 +14,26 @@ export declare class TimeOffApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        default: Authentication;
-        tokenAuth: ApiKeyAuth;
+        'default': Authentication;
+        'tokenAuth': ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    set defaultHeaders(defaultHeaders: any);
-    get defaultHeaders(): any;
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
+    defaultHeaders: any;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TimeOffApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    timeOffCreate(xAccountToken: string, runAsync?: boolean, timeOffRequest?: TimeOffRequest, options?: {
+    timeOffCreate(xAccountToken: string, timeOffEndpointRequest: TimeOffEndpointRequest, runAsync?: boolean, options?: {
         headers: {
             [name: string]: string;
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: TimeOff;
+        body: TimeOffResponse;
     }>;
-    timeOffList(xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null', status?: 'REQUESTED' | 'APPROVED' | 'DECLINED' | 'CANCELLED' | 'DELETED' | '' | 'null', options?: {
+    timeOffList(xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options?: {
         headers: {
             [name: string]: string;
         };

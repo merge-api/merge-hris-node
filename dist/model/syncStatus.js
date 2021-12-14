@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SyncStatus = void 0;
 var SyncStatus = (function () {
     function SyncStatus() {
     }
@@ -10,22 +9,22 @@ var SyncStatus = (function () {
     SyncStatus.discriminator = undefined;
     SyncStatus.attributeTypeMap = [
         {
-            "name": "model_name",
+            "name": "modelName",
             "baseName": "model_name",
             "type": "string"
         },
         {
-            "name": "model_id",
+            "name": "modelId",
             "baseName": "model_id",
             "type": "string"
         },
         {
-            "name": "last_sync_start",
+            "name": "lastSyncStart",
             "baseName": "last_sync_start",
             "type": "Date"
         },
         {
-            "name": "next_sync_start",
+            "name": "nextSyncStart",
             "baseName": "next_sync_start",
             "type": "Date"
         },
@@ -35,7 +34,7 @@ var SyncStatus = (function () {
             "type": "SyncStatusStatusEnum"
         },
         {
-            "name": "is_initial_sync",
+            "name": "isInitialSync",
             "baseName": "is_initial_sync",
             "type": "boolean"
         }

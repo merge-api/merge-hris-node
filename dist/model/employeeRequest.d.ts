@@ -26,6 +26,9 @@ export declare class EmployeeRequest {
     'employment_status'?: EmploymentStatusEnum | null;
     'termination_date'?: Date | null;
     'avatar'?: string | null;
+    'custom_fields'?: {
+        [key: string]: any;
+    } | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

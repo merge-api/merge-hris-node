@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StateEnum = void 0;
 var StateEnum;
 (function (StateEnum) {
     StateEnum[StateEnum["Al"] = 'AL'] = "Al";

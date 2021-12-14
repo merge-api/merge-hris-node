@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmployeeRequest = void 0;
 var EmployeeRequest = (function () {
     function EmployeeRequest() {
     }
@@ -123,6 +122,11 @@ var EmployeeRequest = (function () {
             "name": "avatar",
             "baseName": "avatar",
             "type": "string"
+        },
+        {
+            "name": "custom_fields",
+            "baseName": "custom_fields",
+            "type": "{ [key: string]: any; }"
         }
     ];
     return EmployeeRequest;

@@ -15,5 +15,6 @@ import { RequestFile } from './models';
 export enum SyncStatusStatusEnum {
     Syncing = <any> 'SYNCING',
     Done = <any> 'DONE',
-    Failed = <any> 'FAILED'
+    Failed = <any> 'FAILED',
+    Disabled = <any> 'DISABLED'
 }

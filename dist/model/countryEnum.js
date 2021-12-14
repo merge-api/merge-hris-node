@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CountryEnum = void 0;
 var CountryEnum;
 (function (CountryEnum) {
     CountryEnum[CountryEnum["Af"] = 'AF'] = "Af";

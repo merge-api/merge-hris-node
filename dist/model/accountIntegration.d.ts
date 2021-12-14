@@ -1,8 +1,9 @@
+import { CategoriesEnum } from './categoriesEnum';
 export declare class AccountIntegration {
     'name': string;
-    'categories'?: Array<AccountIntegration.CategoriesEnum>;
+    'categories'?: Array<CategoriesEnum>;
     'image'?: string | null;
-    'square_image'?: string | null;
+    'squareImage'?: string | null;
     'color'?: string;
     'slug'?: string;
     static discriminator: string | undefined;
@@ -16,11 +17,4 @@ export declare class AccountIntegration {
         baseName: string;
         type: string;
     }[];
-}
-export declare namespace AccountIntegration {
-    enum CategoriesEnum {
-        Hris,
-        Ats,
-        Accounting
-    }
 }

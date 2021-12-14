@@ -79,6 +79,10 @@ export class Employee {
     */
     'team'?: string | null;
     /**
+    * The employee\'s pay group
+    */
+    'pay_group'?: string | null;
+    /**
     * The employee\'s social security number.
     */
     'ssn'?: string | null;
@@ -200,6 +204,11 @@ export class Employee {
         {
             "name": "team",
             "baseName": "team",
+            "type": "string"
+        },
+        {
+            "name": "pay_group",
+            "baseName": "pay_group",
             "type": "string"
         },
         {

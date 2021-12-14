@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountToken = void 0;
 var AccountToken = (function () {
     function AccountToken() {
     }
@@ -10,7 +9,7 @@ var AccountToken = (function () {
     AccountToken.discriminator = undefined;
     AccountToken.attributeTypeMap = [
         {
-            "name": "account_token",
+            "name": "accountToken",
             "baseName": "account_token",
             "type": "string"
         },

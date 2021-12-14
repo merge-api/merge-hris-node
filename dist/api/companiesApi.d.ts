@@ -12,16 +12,14 @@ export declare class CompaniesApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        default: Authentication;
-        tokenAuth: ApiKeyAuth;
+        'default': Authentication;
+        'tokenAuth': ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    set defaultHeaders(defaultHeaders: any);
-    get defaultHeaders(): any;
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
+    defaultHeaders: any;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: CompaniesApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;

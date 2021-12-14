@@ -92,17 +92,17 @@ export class IssuesApi {
 
     /**
      * Gets issues.
-     * @param accountToken account_token
+     * @param accountToken 
      * @param cursor The pagination cursor value.
      * @param endDate If included, will only include issues whose most recent action occurred before this time
-     * @param endUserOrganizationName end_user_organization_name
+     * @param endUserOrganizationName 
      * @param includeMuted If True, will include muted issues
-     * @param integrationName integration_name
+     * @param integrationName 
      * @param pageSize Number of results to return per page.
      * @param startDate If included, will only include issues whose most recent action occurred after this time
-     * @param status status
+     * @param status 
      */
-    public async issuesList (accountToken?: string, cursor?: number, endDate?: string, endUserOrganizationName?: string, includeMuted?: string, integrationName?: string, pageSize?: number, startDate?: string, status?: 'ONGOING' | 'RESOLVED', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedIssueList;  }> {
+    public async issuesList (accountToken?: string, cursor?: string, endDate?: string, endUserOrganizationName?: string, includeMuted?: string, integrationName?: string, pageSize?: number, startDate?: string, status?: 'ONGOING' | 'RESOLVED', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedIssueList;  }> {
         const localVarPath = this.basePath + '/issues';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -120,7 +120,7 @@ export class IssuesApi {
         }
 
         if (cursor !== undefined) {
-            localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "number");
+            localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
         if (endDate !== undefined) {

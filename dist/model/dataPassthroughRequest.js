@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DataPassthroughRequest = void 0;
 var DataPassthroughRequest = (function () {
     function DataPassthroughRequest() {
     }
@@ -20,7 +19,7 @@ var DataPassthroughRequest = (function () {
             "type": "string"
         },
         {
-            "name": "base_url_override",
+            "name": "baseUrlOverride",
             "baseName": "base_url_override",
             "type": "string"
         },
@@ -35,7 +34,7 @@ var DataPassthroughRequest = (function () {
             "type": "{ [key: string]: any; }"
         },
         {
-            "name": "request_format",
+            "name": "requestFormat",
             "baseName": "request_format",
             "type": "RequestFormatEnum"
         }

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateRemoteKeyRequest = void 0;
 var GenerateRemoteKeyRequest = (function () {
     function GenerateRemoteKeyRequest() {
     }

@@ -4,6 +4,8 @@ export * from './accountTokenApi';
 import { AccountTokenApi } from './accountTokenApi';
 export * from './availableActionsApi';
 import { AvailableActionsApi } from './availableActionsApi';
+export * from './bankInfoApi';
+import { BankInfoApi } from './bankInfoApi';
 export * from './benefitsApi';
 import { BenefitsApi } from './benefitsApi';
 export * from './companiesApi';
@@ -30,6 +32,8 @@ export * from './locationsApi';
 import { LocationsApi } from './locationsApi';
 export * from './passthroughApi';
 import { PassthroughApi } from './passthroughApi';
+export * from './payGroupApi';
+import { PayGroupApi } from './payGroupApi';
 export * from './payrollRunsApi';
 import { PayrollRunsApi } from './payrollRunsApi';
 export * from './regenerateKeyApi';
@@ -53,4 +57,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AccountDetailsApi, AccountTokenApi, AvailableActionsApi, BenefitsApi, CompaniesApi, DeductionsApi, DeleteAccountApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, GenerateKeyApi, IssuesApi, LinkTokenApi, LinkedAccountsApi, LocationsApi, PassthroughApi, PayrollRunsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalanceApi];
+export const APIS = [AccountDetailsApi, AccountTokenApi, AvailableActionsApi, BankInfoApi, BenefitsApi, CompaniesApi, DeductionsApi, DeleteAccountApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, GenerateKeyApi, IssuesApi, LinkTokenApi, LinkedAccountsApi, LocationsApi, PassthroughApi, PayGroupApi, PayrollRunsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalanceApi];

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PaginatedTimeOffList = void 0;
 var PaginatedTimeOffList = (function () {
     function PaginatedTimeOffList() {
     }

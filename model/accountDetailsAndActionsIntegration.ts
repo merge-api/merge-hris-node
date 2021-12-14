@@ -16,7 +16,7 @@ import { ModelOperation } from './modelOperation';
 
 export class AccountDetailsAndActionsIntegration {
     'name': string;
-    'categories': CategoriesEnum;
+    'categories': Array<CategoriesEnum>;
     'image'?: string;
     'square_image'?: string;
     'color': string;
@@ -35,7 +35,7 @@ export class AccountDetailsAndActionsIntegration {
         {
             "name": "categories",
             "baseName": "categories",
-            "type": "CategoriesEnum"
+            "type": "Array<CategoriesEnum>"
         },
         {
             "name": "image",
