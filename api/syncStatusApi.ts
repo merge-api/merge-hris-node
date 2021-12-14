@@ -96,7 +96,7 @@ export class SyncStatusApi {
      * @param cursor The pagination cursor value.
      * @param pageSize Number of results to return per page.
      */
-    public async syncStatusList (xAccountToken: string, cursor?: number, pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedSyncStatusList;  }> {
+    public async syncStatusList (xAccountToken: string, cursor?: string, pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedSyncStatusList;  }> {
         const localVarPath = this.basePath + '/sync-status';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -115,7 +115,7 @@ export class SyncStatusApi {
         }
 
         if (cursor !== undefined) {
-            localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "number");
+            localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
         if (pageSize !== undefined) {

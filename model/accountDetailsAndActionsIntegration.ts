@@ -16,13 +16,13 @@ import { ModelOperation } from './modelOperation';
 
 export class AccountDetailsAndActionsIntegration {
     'name': string;
-    'categories': CategoriesEnum;
+    'categories': Array<CategoriesEnum>;
     'image'?: string;
-    'square_image'?: string;
+    'squareImage'?: string;
     'color': string;
     'slug': string;
-    'passthrough_available': boolean;
-    'available_model_operations'?: Array<ModelOperation>;
+    'passthroughAvailable': boolean;
+    'availableModelOperations'?: Array<ModelOperation>;
 
     static discriminator: string | undefined = undefined;
 
@@ -35,7 +35,7 @@ export class AccountDetailsAndActionsIntegration {
         {
             "name": "categories",
             "baseName": "categories",
-            "type": "CategoriesEnum"
+            "type": "Array<CategoriesEnum>"
         },
         {
             "name": "image",
@@ -43,7 +43,7 @@ export class AccountDetailsAndActionsIntegration {
             "type": "string"
         },
         {
-            "name": "square_image",
+            "name": "squareImage",
             "baseName": "square_image",
             "type": "string"
         },
@@ -58,12 +58,12 @@ export class AccountDetailsAndActionsIntegration {
             "type": "string"
         },
         {
-            "name": "passthrough_available",
+            "name": "passthroughAvailable",
             "baseName": "passthrough_available",
             "type": "boolean"
         },
         {
-            "name": "available_model_operations",
+            "name": "availableModelOperations",
             "baseName": "available_model_operations",
             "type": "Array<ModelOperation>"
         }    ];

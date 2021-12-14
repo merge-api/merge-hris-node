@@ -21,7 +21,7 @@ export class Team {
     /**
     * The third-party API ID of the matching object.
     */
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     /**
     * The team\'s name.
     */
@@ -29,8 +29,8 @@ export class Team {
     /**
     * The team\'s parent team.
     */
-    'parent_team'?: string | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'parentTeam'?: string | null;
+    'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -41,7 +41,7 @@ export class Team {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -51,12 +51,12 @@ export class Team {
             "type": "string"
         },
         {
-            "name": "parent_team",
+            "name": "parentTeam",
             "baseName": "parent_team",
             "type": "string"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

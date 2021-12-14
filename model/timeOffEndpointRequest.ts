@@ -11,28 +11,22 @@
  */
 
 import { RequestFile } from './models';
-import { AccountIntegration } from './accountIntegration';
+import { TimeOffRequest } from './timeOffRequest';
 
-export class AccountToken {
-    'accountToken': string;
-    'integration': AccountIntegration;
+export class TimeOffEndpointRequest {
+    'model': TimeOffRequest;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "accountToken",
-            "baseName": "account_token",
-            "type": "string"
-        },
-        {
-            "name": "integration",
-            "baseName": "integration",
-            "type": "AccountIntegration"
+            "name": "model",
+            "baseName": "model",
+            "type": "TimeOffRequest"
         }    ];
 
     static getAttributeTypeMap() {
-        return AccountToken.attributeTypeMap;
+        return TimeOffEndpointRequest.attributeTypeMap;
     }
 }
 

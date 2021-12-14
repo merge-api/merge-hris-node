@@ -11,28 +11,39 @@
  */
 
 import { RequestFile } from './models';
-import { AccountIntegration } from './accountIntegration';
 
-export class AccountToken {
-    'accountToken': string;
-    'integration': AccountIntegration;
+export class ValidationProblem {
+    'source'?: string;
+    'title': string;
+    'detail': string;
+    'problemType': string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "accountToken",
-            "baseName": "account_token",
+            "name": "source",
+            "baseName": "source",
             "type": "string"
         },
         {
-            "name": "integration",
-            "baseName": "integration",
-            "type": "AccountIntegration"
+            "name": "title",
+            "baseName": "title",
+            "type": "string"
+        },
+        {
+            "name": "detail",
+            "baseName": "detail",
+            "type": "string"
+        },
+        {
+            "name": "problemType",
+            "baseName": "problem_type",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return AccountToken.attributeTypeMap;
+        return ValidationProblem.attributeTypeMap;
     }
 }
 

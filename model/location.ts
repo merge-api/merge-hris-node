@@ -22,7 +22,7 @@ export class Location {
     /**
     * The third-party API ID of the matching object.
     */
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     /**
     * The location\'s name.
     */
@@ -30,15 +30,15 @@ export class Location {
     /**
     * The location\'s phone number.
     */
-    'phone_number'?: string | null;
+    'phoneNumber'?: string | null;
     /**
     * Line 1 of the location\'s street address.
     */
-    'street_1'?: string | null;
+    'street1'?: string | null;
     /**
     * Line 2 of the location\'s street address.
     */
-    'street_2'?: string | null;
+    'street2'?: string | null;
     /**
     * The location\'s city.
     */
@@ -50,12 +50,12 @@ export class Location {
     /**
     * The location\'s zip code.
     */
-    'zip_code'?: string | null;
+    'zipCode'?: string | null;
     /**
     * The location\'s country.
     */
     'country'?: CountryEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -66,7 +66,7 @@ export class Location {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -76,17 +76,17 @@ export class Location {
             "type": "string"
         },
         {
-            "name": "phone_number",
+            "name": "phoneNumber",
             "baseName": "phone_number",
             "type": "string"
         },
         {
-            "name": "street_1",
+            "name": "street1",
             "baseName": "street_1",
             "type": "string"
         },
         {
-            "name": "street_2",
+            "name": "street2",
             "baseName": "street_2",
             "type": "string"
         },
@@ -101,7 +101,7 @@ export class Location {
             "type": "string"
         },
         {
-            "name": "zip_code",
+            "name": "zipCode",
             "baseName": "zip_code",
             "type": "string"
         },
@@ -111,7 +111,7 @@ export class Location {
             "type": "CountryEnum"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

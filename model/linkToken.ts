@@ -13,19 +13,19 @@
 import { RequestFile } from './models';
 
 export class LinkToken {
-    'link_token': string;
-    'integration_name': string;
+    'linkToken': string;
+    'integrationName': string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "link_token",
+            "name": "linkToken",
             "baseName": "link_token",
             "type": "string"
         },
         {
-            "name": "integration_name",
+            "name": "integrationName",
             "baseName": "integration_name",
             "type": "string"
         }    ];

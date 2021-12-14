@@ -11,34 +11,42 @@
  */
 
 import { RequestFile } from './models';
-import { PolicyTypeEnum } from './policyTypeEnum';
+import { AccountTypeEnum } from './accountTypeEnum';
 import { RemoteData } from './remoteData';
 
 /**
-* # The TimeOffBalance Object ### Description The `TimeOffBalance` object is used to represent a Time Off Balance for an employee.  ### Usage Example Fetch from the `LIST TimeOffBalances` endpoint and filter by `ID` to show all time off balances.
+* # The BankInfo Object ### Description The `BankInfo` object is used to represent the Bank Account information for an Employee. This is often referenced with an Employee object.  ### Usage Example Fetch from the `LIST BankInfo` endpoint and filter by `ID` to show all bank information.
 */
-export class TimeOffBalance {
+export class BankInfo {
     'id'?: string;
     /**
     * The third-party API ID of the matching object.
     */
     'remoteId'?: string | null;
     /**
-    * The employee the balance belongs to.
+    * The employee with this bank account.
     */
     'employee'?: string | null;
     /**
-    * The current PTO balance in terms of hours.
+    * The account number.
     */
-    'balance'?: number | null;
+    'accountNumber'?: string | null;
     /**
-    * The amount of PTO used in terms of hours.
+    * The routing number.
     */
-    'used'?: number | null;
+    'routingNumber'?: string | null;
     /**
-    * The policy type of this time off balance.
+    * The bank name.
     */
-    'policyType'?: PolicyTypeEnum | null;
+    'bankName'?: string | null;
+    /**
+    * The bank account type
+    */
+    'accountType'?: AccountTypeEnum | null;
+    /**
+    * When the matching bank object was created in the third party system.
+    */
+    'remoteCreatedAt'?: Date | null;
     'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -60,19 +68,29 @@ export class TimeOffBalance {
             "type": "string"
         },
         {
-            "name": "balance",
-            "baseName": "balance",
-            "type": "number"
+            "name": "accountNumber",
+            "baseName": "account_number",
+            "type": "string"
         },
         {
-            "name": "used",
-            "baseName": "used",
-            "type": "number"
+            "name": "routingNumber",
+            "baseName": "routing_number",
+            "type": "string"
         },
         {
-            "name": "policyType",
-            "baseName": "policy_type",
-            "type": "PolicyTypeEnum"
+            "name": "bankName",
+            "baseName": "bank_name",
+            "type": "string"
+        },
+        {
+            "name": "accountType",
+            "baseName": "account_type",
+            "type": "AccountTypeEnum"
+        },
+        {
+            "name": "remoteCreatedAt",
+            "baseName": "remote_created_at",
+            "type": "Date"
         },
         {
             "name": "remoteData",
@@ -81,7 +99,7 @@ export class TimeOffBalance {
         }    ];
 
     static getAttributeTypeMap() {
-        return TimeOffBalance.attributeTypeMap;
+        return BankInfo.attributeTypeMap;
     }
 }
 

@@ -11,34 +11,35 @@
  */
 
 import { RequestFile } from './models';
-import { PersistentDeduction } from './persistentDeduction';
+import { TimeOff } from './timeOff';
+import { ValidationProblem } from './validationProblem';
 
-export class PaginatedPersistentDeductionList {
-    'next'?: string | null;
-    'previous'?: string | null;
-    'results'?: Array<PersistentDeduction>;
+export class TimeOffResponse {
+    'errors': Array<ValidationProblem>;
+    'warnings': Array<ValidationProblem>;
+    'model': TimeOff;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "next",
-            "baseName": "next",
-            "type": "string"
+            "name": "errors",
+            "baseName": "errors",
+            "type": "Array<ValidationProblem>"
         },
         {
-            "name": "previous",
-            "baseName": "previous",
-            "type": "string"
+            "name": "warnings",
+            "baseName": "warnings",
+            "type": "Array<ValidationProblem>"
         },
         {
-            "name": "results",
-            "baseName": "results",
-            "type": "Array<PersistentDeduction>"
+            "name": "model",
+            "baseName": "model",
+            "type": "TimeOff"
         }    ];
 
     static getAttributeTypeMap() {
-        return PaginatedPersistentDeductionList.attributeTypeMap;
+        return TimeOffResponse.attributeTypeMap;
     }
 }
 

@@ -11,34 +11,21 @@
  */
 
 import { RequestFile } from './models';
-import { PolicyTypeEnum } from './policyTypeEnum';
 import { RemoteData } from './remoteData';
 
 /**
-* # The TimeOffBalance Object ### Description The `TimeOffBalance` object is used to represent a Time Off Balance for an employee.  ### Usage Example Fetch from the `LIST TimeOffBalances` endpoint and filter by `ID` to show all time off balances.
+* # The PayGroup Object ### Description The `PayGroup` object is used to represent Pay Group information that employees belong to. This is often referenced with an Employee object.  ### Usage Example Fetch from the `LIST PayGroup` endpoint and filter by `ID` to show all pay group information.
 */
-export class TimeOffBalance {
+export class PayGroup {
     'id'?: string;
     /**
     * The third-party API ID of the matching object.
     */
     'remoteId'?: string | null;
     /**
-    * The employee the balance belongs to.
+    * The pay group name.
     */
-    'employee'?: string | null;
-    /**
-    * The current PTO balance in terms of hours.
-    */
-    'balance'?: number | null;
-    /**
-    * The amount of PTO used in terms of hours.
-    */
-    'used'?: number | null;
-    /**
-    * The policy type of this time off balance.
-    */
-    'policyType'?: PolicyTypeEnum | null;
+    'payGroupName'?: string | null;
     'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -55,24 +42,9 @@ export class TimeOffBalance {
             "type": "string"
         },
         {
-            "name": "employee",
-            "baseName": "employee",
+            "name": "payGroupName",
+            "baseName": "pay_group_name",
             "type": "string"
-        },
-        {
-            "name": "balance",
-            "baseName": "balance",
-            "type": "number"
-        },
-        {
-            "name": "used",
-            "baseName": "used",
-            "type": "number"
-        },
-        {
-            "name": "policyType",
-            "baseName": "policy_type",
-            "type": "PolicyTypeEnum"
         },
         {
             "name": "remoteData",
@@ -81,7 +53,7 @@ export class TimeOffBalance {
         }    ];
 
     static getAttributeTypeMap() {
-        return TimeOffBalance.attributeTypeMap;
+        return PayGroup.attributeTypeMap;
     }
 }
 

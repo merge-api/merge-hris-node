@@ -1,4 +1,3 @@
-"use strict";
 /**
  * Merge HRIS API
  * The unified API for building rich integrations with multiple HR Information System platforms.
@@ -10,16 +9,18 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-exports.__esModule = true;
-exports.PaginatedBenefitList = void 0;
-var PaginatedBenefitList = /** @class */ (function () {
-    function PaginatedBenefitList() {
-    }
-    PaginatedBenefitList.getAttributeTypeMap = function () {
-        return PaginatedBenefitList.attributeTypeMap;
-    };
-    PaginatedBenefitList.discriminator = undefined;
-    PaginatedBenefitList.attributeTypeMap = [
+
+import { RequestFile } from './models';
+import { PayGroup } from './payGroup';
+
+export class PaginatedPayGroupList {
+    'next'?: string | null;
+    'previous'?: string | null;
+    'results'?: Array<PayGroup>;
+
+    static discriminator: string | undefined = undefined;
+
+    static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "next",
             "baseName": "next",
@@ -33,9 +34,11 @@ var PaginatedBenefitList = /** @class */ (function () {
         {
             "name": "results",
             "baseName": "results",
-            "type": "Array<Benefit>"
-        }
-    ];
-    return PaginatedBenefitList;
-}());
-exports.PaginatedBenefitList = PaginatedBenefitList;
+            "type": "Array<PayGroup>"
+        }    ];
+
+    static getAttributeTypeMap() {
+        return PaginatedPayGroupList.attributeTypeMap;
+    }
+}
+

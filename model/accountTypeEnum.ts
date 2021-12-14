@@ -1,4 +1,3 @@
-"use strict";
 /**
  * Merge HRIS API
  * The unified API for building rich integrations with multiple HR Information System platforms.
@@ -10,10 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-exports.__esModule = true;
-exports.UnitsEnum = void 0;
-var UnitsEnum;
-(function (UnitsEnum) {
-    UnitsEnum[UnitsEnum["Hours"] = 'HOURS'] = "Hours";
-    UnitsEnum[UnitsEnum["Days"] = 'DAYS'] = "Days";
-})(UnitsEnum = exports.UnitsEnum || (exports.UnitsEnum = {}));
+
+import { RequestFile } from './models';
+
+export enum AccountTypeEnum {
+    Savings = <any> 'SAVINGS',
+    Checking = <any> 'CHECKING'
+}
