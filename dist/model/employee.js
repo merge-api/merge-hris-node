@@ -14,12 +14,12 @@ var Employee = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "employee_number",
+            "name": "employeeNumber",
             "baseName": "employee_number",
             "type": "string"
         },
@@ -29,32 +29,32 @@ var Employee = (function () {
             "type": "string"
         },
         {
-            "name": "first_name",
+            "name": "firstName",
             "baseName": "first_name",
             "type": "string"
         },
         {
-            "name": "last_name",
+            "name": "lastName",
             "baseName": "last_name",
             "type": "string"
         },
         {
-            "name": "display_full_name",
+            "name": "displayFullName",
             "baseName": "display_full_name",
             "type": "string"
         },
         {
-            "name": "work_email",
+            "name": "workEmail",
             "baseName": "work_email",
             "type": "string"
         },
         {
-            "name": "personal_email",
+            "name": "personalEmail",
             "baseName": "personal_email",
             "type": "string"
         },
         {
-            "name": "mobile_phone_number",
+            "name": "mobilePhoneNumber",
             "baseName": "mobile_phone_number",
             "type": "string"
         },
@@ -64,12 +64,12 @@ var Employee = (function () {
             "type": "Array<string>"
         },
         {
-            "name": "home_location",
+            "name": "homeLocation",
             "baseName": "home_location",
             "type": "string"
         },
         {
-            "name": "work_location",
+            "name": "workLocation",
             "baseName": "work_location",
             "type": "string"
         },
@@ -84,7 +84,7 @@ var Employee = (function () {
             "type": "string"
         },
         {
-            "name": "pay_group",
+            "name": "payGroup",
             "baseName": "pay_group",
             "type": "string"
         },
@@ -104,32 +104,32 @@ var Employee = (function () {
             "type": "EthnicityEnum"
         },
         {
-            "name": "marital_status",
+            "name": "maritalStatus",
             "baseName": "marital_status",
             "type": "MaritalStatusEnum"
         },
         {
-            "name": "date_of_birth",
+            "name": "dateOfBirth",
             "baseName": "date_of_birth",
             "type": "Date"
         },
         {
-            "name": "hire_date",
+            "name": "hireDate",
             "baseName": "hire_date",
             "type": "Date"
         },
         {
-            "name": "start_date",
+            "name": "startDate",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "employment_status",
+            "name": "employmentStatus",
             "baseName": "employment_status",
             "type": "EmploymentStatusEnum"
         },
         {
-            "name": "termination_date",
+            "name": "terminationDate",
             "baseName": "termination_date",
             "type": "Date"
         },
@@ -139,12 +139,12 @@ var Employee = (function () {
             "type": "string"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         },
         {
-            "name": "custom_fields",
+            "name": "customFields",
             "baseName": "custom_fields",
             "type": "{ [key: string]: any; }"
         }

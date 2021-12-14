@@ -104,7 +104,7 @@ var PassthroughApi = (function () {
     PassthroughApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    PassthroughApi.prototype.passthroughCreate = function (x_account_token, data_passthrough_request, options) {
+    PassthroughApi.prototype.passthroughCreate = function (xAccountToken, dataPassthroughRequest, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -121,13 +121,13 @@ var PassthroughApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (x_account_token === null || x_account_token === undefined) {
-                    throw new Error('Required parameter x_account_token was null or undefined when calling passthroughCreate.');
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling passthroughCreate.');
                 }
-                if (data_passthrough_request === null || data_passthrough_request === undefined) {
-                    throw new Error('Required parameter data_passthrough_request was null or undefined when calling passthroughCreate.');
+                if (dataPassthroughRequest === null || dataPassthroughRequest === undefined) {
+                    throw new Error('Required parameter dataPassthroughRequest was null or undefined when calling passthroughCreate.');
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -137,7 +137,7 @@ var PassthroughApi = (function () {
                     uri: localVarPath,
                     useQuerystring: this._useQuerystring,
                     json: true,
-                    body: models_1.ObjectSerializer.serialize(data_passthrough_request, "DataPassthroughRequest")
+                    body: models_1.ObjectSerializer.serialize(dataPassthroughRequest, "DataPassthroughRequest")
                 };
                 authenticationPromise = Promise.resolve();
                 if (this.authentications.tokenAuth.apiKey) {

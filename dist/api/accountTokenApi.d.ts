@@ -22,7 +22,7 @@ export declare class AccountTokenApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: AccountTokenApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    accountTokenRetrieve(public_token: string, options?: {
+    accountTokenRetrieve(publicToken: string, options?: {
         headers: {
             [name: string]: string;
         };

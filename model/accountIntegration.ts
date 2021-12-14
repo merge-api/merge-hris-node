@@ -29,7 +29,7 @@ export class AccountIntegration {
     /**
     * Company logo in square shape. <b>Upload an image with a white background.</b>
     */
-    'square_image'?: string | null;
+    'squareImage'?: string | null;
     /**
     * The color of this integration used for buttons and text throughout the app and landing pages. <b>Choose a darker, saturated color.</b>
     */
@@ -55,7 +55,7 @@ export class AccountIntegration {
             "type": "string"
         },
         {
-            "name": "square_image",
+            "name": "squareImage",
             "baseName": "square_image",
             "type": "string"
         },

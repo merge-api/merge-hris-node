@@ -104,7 +104,7 @@ var IssuesApi = (function () {
     IssuesApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    IssuesApi.prototype.issuesList = function (account_token, cursor, end_date, end_user_organization_name, include_muted, integration_name, page_size, start_date, status, options) {
+    IssuesApi.prototype.issuesList = function (accountToken, cursor, endDate, endUserOrganizationName, includeMuted, integrationName, pageSize, startDate, status, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -121,29 +121,29 @@ var IssuesApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (account_token !== undefined) {
-                    localVarQueryParameters['account_token'] = models_1.ObjectSerializer.serialize(account_token, "string");
+                if (accountToken !== undefined) {
+                    localVarQueryParameters['account_token'] = models_1.ObjectSerializer.serialize(accountToken, "string");
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
                 }
-                if (end_date !== undefined) {
-                    localVarQueryParameters['end_date'] = models_1.ObjectSerializer.serialize(end_date, "string");
+                if (endDate !== undefined) {
+                    localVarQueryParameters['end_date'] = models_1.ObjectSerializer.serialize(endDate, "string");
                 }
-                if (end_user_organization_name !== undefined) {
-                    localVarQueryParameters['end_user_organization_name'] = models_1.ObjectSerializer.serialize(end_user_organization_name, "string");
+                if (endUserOrganizationName !== undefined) {
+                    localVarQueryParameters['end_user_organization_name'] = models_1.ObjectSerializer.serialize(endUserOrganizationName, "string");
                 }
-                if (include_muted !== undefined) {
-                    localVarQueryParameters['include_muted'] = models_1.ObjectSerializer.serialize(include_muted, "string");
+                if (includeMuted !== undefined) {
+                    localVarQueryParameters['include_muted'] = models_1.ObjectSerializer.serialize(includeMuted, "string");
                 }
-                if (integration_name !== undefined) {
-                    localVarQueryParameters['integration_name'] = models_1.ObjectSerializer.serialize(integration_name, "string");
+                if (integrationName !== undefined) {
+                    localVarQueryParameters['integration_name'] = models_1.ObjectSerializer.serialize(integrationName, "string");
                 }
-                if (page_size !== undefined) {
-                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(page_size, "number");
+                if (pageSize !== undefined) {
+                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
                 }
-                if (start_date !== undefined) {
-                    localVarQueryParameters['start_date'] = models_1.ObjectSerializer.serialize(start_date, "string");
+                if (startDate !== undefined) {
+                    localVarQueryParameters['start_date'] = models_1.ObjectSerializer.serialize(startDate, "string");
                 }
                 if (status !== undefined) {
                     localVarQueryParameters['status'] = models_1.ObjectSerializer.serialize(status, "'ONGOING' | 'RESOLVED'");

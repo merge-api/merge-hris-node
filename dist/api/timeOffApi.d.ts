@@ -25,7 +25,7 @@ export declare class TimeOffApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TimeOffApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    timeOffCreate(x_account_token: string, time_off_endpoint_request: TimeOffEndpointRequest, run_async?: boolean, options?: {
+    timeOffCreate(xAccountToken: string, timeOffEndpointRequest: TimeOffEndpointRequest, runAsync?: boolean, options?: {
         headers: {
             [name: string]: string;
         };
@@ -33,7 +33,7 @@ export declare class TimeOffApi {
         response: http.IncomingMessage;
         body: TimeOffResponse;
     }>;
-    timeOffList(x_account_token: string, approver_id?: string, created_after?: Date, created_before?: Date, cursor?: string, employee_id?: string, expand?: 'approver' | 'employee' | 'employee,approver', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, remote_id?: string, request_type?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options?: {
+    timeOffList(xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options?: {
         headers: {
             [name: string]: string;
         };
@@ -41,7 +41,7 @@ export declare class TimeOffApi {
         response: http.IncomingMessage;
         body: PaginatedTimeOffList;
     }>;
-    timeOffRetrieve(x_account_token: string, id: string, expand?: 'approver' | 'employee' | 'employee,approver', include_remote_data?: boolean, options?: {
+    timeOffRetrieve(xAccountToken: string, id: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

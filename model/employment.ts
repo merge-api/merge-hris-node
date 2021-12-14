@@ -26,7 +26,7 @@ export class Employment {
     /**
     * The third-party API ID of the matching object.
     */
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     /**
     * The employee holding this position.
     */
@@ -34,36 +34,36 @@ export class Employment {
     /**
     * The position\'s title.
     */
-    'job_title'?: string | null;
+    'jobTitle'?: string | null;
     /**
     * The position\'s pay rate in dollars.
     */
-    'pay_rate'?: number | null;
+    'payRate'?: number | null;
     /**
     * The time period this pay rate encompasses.
     */
-    'pay_period'?: PayPeriodEnum | null;
+    'payPeriod'?: PayPeriodEnum | null;
     /**
     * The position\'s pay frequency.
     */
-    'pay_frequency'?: PayFrequencyEnum | null;
+    'payFrequency'?: PayFrequencyEnum | null;
     /**
     * The position\'s currency code.
     */
-    'pay_currency'?: PayCurrencyEnum | null;
+    'payCurrency'?: PayCurrencyEnum | null;
     /**
     * The position\'s FLSA status.
     */
-    'flsa_status'?: FlsaStatusEnum | null;
+    'flsaStatus'?: FlsaStatusEnum | null;
     /**
     * The position\'s effective date.
     */
-    'effective_date'?: Date | null;
+    'effectiveDate'?: Date | null;
     /**
     * The position\'s type of employment.
     */
-    'employment_type'?: EmploymentTypeEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'employmentType'?: EmploymentTypeEnum | null;
+    'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -74,7 +74,7 @@ export class Employment {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -84,47 +84,47 @@ export class Employment {
             "type": "string"
         },
         {
-            "name": "job_title",
+            "name": "jobTitle",
             "baseName": "job_title",
             "type": "string"
         },
         {
-            "name": "pay_rate",
+            "name": "payRate",
             "baseName": "pay_rate",
             "type": "number"
         },
         {
-            "name": "pay_period",
+            "name": "payPeriod",
             "baseName": "pay_period",
             "type": "PayPeriodEnum"
         },
         {
-            "name": "pay_frequency",
+            "name": "payFrequency",
             "baseName": "pay_frequency",
             "type": "PayFrequencyEnum"
         },
         {
-            "name": "pay_currency",
+            "name": "payCurrency",
             "baseName": "pay_currency",
             "type": "PayCurrencyEnum"
         },
         {
-            "name": "flsa_status",
+            "name": "flsaStatus",
             "baseName": "flsa_status",
             "type": "FlsaStatusEnum"
         },
         {
-            "name": "effective_date",
+            "name": "effectiveDate",
             "baseName": "effective_date",
             "type": "Date"
         },
         {
-            "name": "employment_type",
+            "name": "employmentType",
             "baseName": "employment_type",
             "type": "EmploymentTypeEnum"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

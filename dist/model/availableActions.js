@@ -14,12 +14,12 @@ var AvailableActions = (function () {
             "type": "AccountIntegration"
         },
         {
-            "name": "passthrough_available",
+            "name": "passthroughAvailable",
             "baseName": "passthrough_available",
             "type": "boolean"
         },
         {
-            "name": "available_model_operations",
+            "name": "availableModelOperations",
             "baseName": "available_model_operations",
             "type": "Array<ModelOperation>"
         }

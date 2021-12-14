@@ -24,7 +24,7 @@ var AccountIntegration = (function () {
             "type": "string"
         },
         {
-            "name": "square_image",
+            "name": "squareImage",
             "baseName": "square_image",
             "type": "string"
         },

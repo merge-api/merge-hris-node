@@ -22,7 +22,7 @@ export class TimeOffRequest {
     /**
     * The third-party API ID of the matching object.
     */
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     /**
     * The employee requesting time off.
     */
@@ -38,7 +38,7 @@ export class TimeOffRequest {
     /**
     * The employee note for this time off request.
     */
-    'employee_note'?: string | null;
+    'employeeNote'?: string | null;
     /**
     * The unit of time requested.
     */
@@ -50,21 +50,21 @@ export class TimeOffRequest {
     /**
     * The type of time off request.
     */
-    'request_type'?: RequestTypeEnum | null;
+    'requestType'?: RequestTypeEnum | null;
     /**
     * The day and time of the start of the time requested off.
     */
-    'start_time'?: Date | null;
+    'startTime'?: Date | null;
     /**
     * The day and time of the end of the time requested off.
     */
-    'end_time'?: Date | null;
+    'endTime'?: Date | null;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -84,7 +84,7 @@ export class TimeOffRequest {
             "type": "TimeOffStatusEnum"
         },
         {
-            "name": "employee_note",
+            "name": "employeeNote",
             "baseName": "employee_note",
             "type": "string"
         },
@@ -99,17 +99,17 @@ export class TimeOffRequest {
             "type": "number"
         },
         {
-            "name": "request_type",
+            "name": "requestType",
             "baseName": "request_type",
             "type": "RequestTypeEnum"
         },
         {
-            "name": "start_time",
+            "name": "startTime",
             "baseName": "start_time",
             "type": "Date"
         },
         {
-            "name": "end_time",
+            "name": "endTime",
             "baseName": "end_time",
             "type": "Date"
         }    ];

@@ -4,17 +4,17 @@ import { TimeOffStatusEnum } from './timeOffStatusEnum';
 import { UnitsEnum } from './unitsEnum';
 export declare class TimeOff {
     'id'?: string;
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     'employee'?: string | null;
     'approver'?: string | null;
     'status'?: TimeOffStatusEnum | null;
-    'employee_note'?: string | null;
+    'employeeNote'?: string | null;
     'units'?: UnitsEnum | null;
     'amount'?: number | null;
-    'request_type'?: RequestTypeEnum | null;
-    'start_time'?: Date | null;
-    'end_time'?: Date | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'requestType'?: RequestTypeEnum | null;
+    'startTime'?: Date | null;
+    'endTime'?: Date | null;
+    'remoteData'?: Array<RemoteData> | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

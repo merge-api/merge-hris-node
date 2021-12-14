@@ -23,7 +23,7 @@ export declare class LinkTokenApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: LinkTokenApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    linkTokenCreate(end_user_details_request: EndUserDetailsRequest, options?: {
+    linkTokenCreate(endUserDetailsRequest: EndUserDetailsRequest, options?: {
         headers: {
             [name: string]: string;
         };

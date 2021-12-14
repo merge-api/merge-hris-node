@@ -14,37 +14,37 @@ var PayrollRun = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "run_state",
+            "name": "runState",
             "baseName": "run_state",
             "type": "RunStateEnum"
         },
         {
-            "name": "run_type",
+            "name": "runType",
             "baseName": "run_type",
             "type": "RunTypeEnum"
         },
         {
-            "name": "start_date",
+            "name": "startDate",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "end_date",
+            "name": "endDate",
             "baseName": "end_date",
             "type": "Date"
         },
         {
-            "name": "check_date",
+            "name": "checkDate",
             "baseName": "check_date",
             "type": "Date"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

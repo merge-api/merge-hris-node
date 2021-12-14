@@ -23,7 +23,7 @@ export declare class PayrollRunsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: PayrollRunsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    payrollRunsList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, ended_after?: Date, ended_before?: Date, include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, remote_id?: string, run_type?: 'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION', started_after?: Date, started_before?: Date, options?: {
+    payrollRunsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: 'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION', startedAfter?: Date, startedBefore?: Date, options?: {
         headers: {
             [name: string]: string;
         };
@@ -31,7 +31,7 @@ export declare class PayrollRunsApi {
         response: http.IncomingMessage;
         body: PaginatedPayrollRunList;
     }>;
-    payrollRunsRetrieve(x_account_token: string, id: string, include_remote_data?: boolean, options?: {
+    payrollRunsRetrieve(xAccountToken: string, id: string, includeRemoteData?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

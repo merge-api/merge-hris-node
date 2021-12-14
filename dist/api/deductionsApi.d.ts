@@ -23,7 +23,7 @@ export declare class DeductionsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: DeductionsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    deductionsList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, employee_payroll_run_id?: string, include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, remote_id?: string, options?: {
+    deductionsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeePayrollRunId?: string, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options?: {
         headers: {
             [name: string]: string;
         };
@@ -31,7 +31,7 @@ export declare class DeductionsApi {
         response: http.IncomingMessage;
         body: PaginatedDeductionList;
     }>;
-    deductionsRetrieve(x_account_token: string, id: string, include_remote_data?: boolean, options?: {
+    deductionsRetrieve(xAccountToken: string, id: string, includeRemoteData?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

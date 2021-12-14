@@ -14,7 +14,7 @@ var Employment = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -24,47 +24,47 @@ var Employment = (function () {
             "type": "string"
         },
         {
-            "name": "job_title",
+            "name": "jobTitle",
             "baseName": "job_title",
             "type": "string"
         },
         {
-            "name": "pay_rate",
+            "name": "payRate",
             "baseName": "pay_rate",
             "type": "number"
         },
         {
-            "name": "pay_period",
+            "name": "payPeriod",
             "baseName": "pay_period",
             "type": "PayPeriodEnum"
         },
         {
-            "name": "pay_frequency",
+            "name": "payFrequency",
             "baseName": "pay_frequency",
             "type": "PayFrequencyEnum"
         },
         {
-            "name": "pay_currency",
+            "name": "payCurrency",
             "baseName": "pay_currency",
             "type": "PayCurrencyEnum"
         },
         {
-            "name": "flsa_status",
+            "name": "flsaStatus",
             "baseName": "flsa_status",
             "type": "FlsaStatusEnum"
         },
         {
-            "name": "effective_date",
+            "name": "effectiveDate",
             "baseName": "effective_date",
             "type": "Date"
         },
         {
-            "name": "employment_type",
+            "name": "employmentType",
             "baseName": "employment_type",
             "type": "EmploymentTypeEnum"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

@@ -21,7 +21,7 @@ export declare class DeleteAccountApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: DeleteAccountApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    deleteAccountCreate(x_account_token: string, options?: {
+    deleteAccountCreate(xAccountToken: string, options?: {
         headers: {
             [name: string]: string;
         };

@@ -2,13 +2,13 @@ import { IssueStatusEnum } from './issueStatusEnum';
 export declare class Issue {
     'id'?: string;
     'status'?: IssueStatusEnum;
-    'error_description': string;
-    'end_user'?: {
+    'errorDescription': string;
+    'endUser'?: {
         [key: string]: any;
     };
-    'first_incident_time'?: Date | null;
-    'last_incident_time'?: Date | null;
-    'is_muted'?: boolean;
+    'firstIncidentTime'?: Date | null;
+    'lastIncidentTime'?: Date | null;
+    'isMuted'?: boolean;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

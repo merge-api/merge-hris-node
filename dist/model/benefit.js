@@ -14,7 +14,7 @@ var Benefit = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -24,27 +24,27 @@ var Benefit = (function () {
             "type": "string"
         },
         {
-            "name": "provider_name",
+            "name": "providerName",
             "baseName": "provider_name",
             "type": "string"
         },
         {
-            "name": "benefit_plan_type",
+            "name": "benefitPlanType",
             "baseName": "benefit_plan_type",
             "type": "BenefitPlanTypeEnum"
         },
         {
-            "name": "employee_contribution",
+            "name": "employeeContribution",
             "baseName": "employee_contribution",
             "type": "number"
         },
         {
-            "name": "company_contribution",
+            "name": "companyContribution",
             "baseName": "company_contribution",
             "type": "number"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

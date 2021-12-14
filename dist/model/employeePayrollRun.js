@@ -14,7 +14,7 @@ var EmployeePayrollRun = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -24,32 +24,32 @@ var EmployeePayrollRun = (function () {
             "type": "string"
         },
         {
-            "name": "payroll_run",
+            "name": "payrollRun",
             "baseName": "payroll_run",
             "type": "string"
         },
         {
-            "name": "gross_pay",
+            "name": "grossPay",
             "baseName": "gross_pay",
             "type": "number"
         },
         {
-            "name": "net_pay",
+            "name": "netPay",
             "baseName": "net_pay",
             "type": "number"
         },
         {
-            "name": "start_date",
+            "name": "startDate",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "end_date",
+            "name": "endDate",
             "baseName": "end_date",
             "type": "Date"
         },
         {
-            "name": "check_date",
+            "name": "checkDate",
             "baseName": "check_date",
             "type": "Date"
         },
@@ -69,7 +69,7 @@ var EmployeePayrollRun = (function () {
             "type": "Array<Tax>"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

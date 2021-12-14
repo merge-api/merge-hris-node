@@ -14,7 +14,7 @@ var Earning = (function () {
             "type": "string"
         },
         {
-            "name": "employee_payroll_run",
+            "name": "employeePayrollRun",
             "baseName": "employee_payroll_run",
             "type": "string"
         },
@@ -29,7 +29,7 @@ var Earning = (function () {
             "type": "TypeEnum"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<{ [key: string]: any; }>"
         }

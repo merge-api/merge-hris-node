@@ -104,7 +104,7 @@ var PayrollRunsApi = (function () {
     PayrollRunsApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    PayrollRunsApi.prototype.payrollRunsList = function (x_account_token, created_after, created_before, cursor, ended_after, ended_before, include_remote_data, modified_after, modified_before, page_size, remote_id, run_type, started_after, started_before, options) {
+    PayrollRunsApi.prototype.payrollRunsList = function (xAccountToken, createdAfter, createdBefore, cursor, endedAfter, endedBefore, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, runType, startedAfter, startedBefore, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -121,49 +121,49 @@ var PayrollRunsApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (x_account_token === null || x_account_token === undefined) {
-                    throw new Error('Required parameter x_account_token was null or undefined when calling payrollRunsList.');
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling payrollRunsList.');
                 }
-                if (created_after !== undefined) {
-                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(created_after, "Date");
+                if (createdAfter !== undefined) {
+                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(createdAfter, "Date");
                 }
-                if (created_before !== undefined) {
-                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(created_before, "Date");
+                if (createdBefore !== undefined) {
+                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(createdBefore, "Date");
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
                 }
-                if (ended_after !== undefined) {
-                    localVarQueryParameters['ended_after'] = models_1.ObjectSerializer.serialize(ended_after, "Date");
+                if (endedAfter !== undefined) {
+                    localVarQueryParameters['ended_after'] = models_1.ObjectSerializer.serialize(endedAfter, "Date");
                 }
-                if (ended_before !== undefined) {
-                    localVarQueryParameters['ended_before'] = models_1.ObjectSerializer.serialize(ended_before, "Date");
+                if (endedBefore !== undefined) {
+                    localVarQueryParameters['ended_before'] = models_1.ObjectSerializer.serialize(endedBefore, "Date");
                 }
-                if (include_remote_data !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
+                if (includeRemoteData !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
                 }
-                if (modified_after !== undefined) {
-                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modified_after, "Date");
+                if (modifiedAfter !== undefined) {
+                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modifiedAfter, "Date");
                 }
-                if (modified_before !== undefined) {
-                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modified_before, "Date");
+                if (modifiedBefore !== undefined) {
+                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modifiedBefore, "Date");
                 }
-                if (page_size !== undefined) {
-                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(page_size, "number");
+                if (pageSize !== undefined) {
+                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
                 }
-                if (remote_id !== undefined) {
-                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remote_id, "string");
+                if (remoteId !== undefined) {
+                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
                 }
-                if (run_type !== undefined) {
-                    localVarQueryParameters['run_type'] = models_1.ObjectSerializer.serialize(run_type, "'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION'");
+                if (runType !== undefined) {
+                    localVarQueryParameters['run_type'] = models_1.ObjectSerializer.serialize(runType, "'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION'");
                 }
-                if (started_after !== undefined) {
-                    localVarQueryParameters['started_after'] = models_1.ObjectSerializer.serialize(started_after, "Date");
+                if (startedAfter !== undefined) {
+                    localVarQueryParameters['started_after'] = models_1.ObjectSerializer.serialize(startedAfter, "Date");
                 }
-                if (started_before !== undefined) {
-                    localVarQueryParameters['started_before'] = models_1.ObjectSerializer.serialize(started_before, "Date");
+                if (startedBefore !== undefined) {
+                    localVarQueryParameters['started_before'] = models_1.ObjectSerializer.serialize(startedBefore, "Date");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -216,7 +216,7 @@ var PayrollRunsApi = (function () {
             });
         });
     };
-    PayrollRunsApi.prototype.payrollRunsRetrieve = function (x_account_token, id, include_remote_data, options) {
+    PayrollRunsApi.prototype.payrollRunsRetrieve = function (xAccountToken, id, includeRemoteData, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
@@ -234,16 +234,16 @@ var PayrollRunsApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (x_account_token === null || x_account_token === undefined) {
-                    throw new Error('Required parameter x_account_token was null or undefined when calling payrollRunsRetrieve.');
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling payrollRunsRetrieve.');
                 }
                 if (id === null || id === undefined) {
                     throw new Error('Required parameter id was null or undefined when calling payrollRunsRetrieve.');
                 }
-                if (include_remote_data !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
+                if (includeRemoteData !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {

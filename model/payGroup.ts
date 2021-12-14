@@ -21,12 +21,12 @@ export class PayGroup {
     /**
     * The third-party API ID of the matching object.
     */
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     /**
     * The pay group name.
     */
-    'pay_group_name'?: string | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'payGroupName'?: string | null;
+    'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -37,17 +37,17 @@ export class PayGroup {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "pay_group_name",
+            "name": "payGroupName",
             "baseName": "pay_group_name",
             "type": "string"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

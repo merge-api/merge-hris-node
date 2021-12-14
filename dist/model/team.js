@@ -14,7 +14,7 @@ var Team = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -24,12 +24,12 @@ var Team = (function () {
             "type": "string"
         },
         {
-            "name": "parent_team",
+            "name": "parentTeam",
             "baseName": "parent_team",
             "type": "string"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

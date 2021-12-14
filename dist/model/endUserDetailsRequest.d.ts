@@ -1,8 +1,8 @@
 import { CategoriesEnum } from './categoriesEnum';
 export declare class EndUserDetailsRequest {
-    'end_user_email_address': string;
-    'end_user_organization_name': string;
-    'end_user_origin_id': string;
+    'endUserEmailAddress': string;
+    'endUserOrganizationName': string;
+    'endUserOriginId': string;
     'categories'?: Array<CategoriesEnum>;
     'integration'?: string | null;
     static discriminator: string | undefined;

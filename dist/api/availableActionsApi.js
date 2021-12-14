@@ -104,7 +104,7 @@ var AvailableActionsApi = (function () {
     AvailableActionsApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    AvailableActionsApi.prototype.availableActionsRetrieve = function (x_account_token, options) {
+    AvailableActionsApi.prototype.availableActionsRetrieve = function (xAccountToken, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -121,10 +121,10 @@ var AvailableActionsApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (x_account_token === null || x_account_token === undefined) {
-                    throw new Error('Required parameter x_account_token was null or undefined when calling availableActionsRetrieve.');
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling availableActionsRetrieve.');
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {

@@ -9,7 +9,7 @@ var AccountToken = (function () {
     AccountToken.discriminator = undefined;
     AccountToken.attributeTypeMap = [
         {
-            "name": "account_token",
+            "name": "accountToken",
             "baseName": "account_token",
             "type": "string"
         },

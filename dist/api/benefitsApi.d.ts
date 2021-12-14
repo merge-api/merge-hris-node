@@ -23,7 +23,7 @@ export declare class BenefitsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: BenefitsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    benefitsList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, employee_id?: string, expand?: 'employee', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, remote_id?: string, options?: {
+    benefitsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options?: {
         headers: {
             [name: string]: string;
         };
@@ -31,7 +31,7 @@ export declare class BenefitsApi {
         response: http.IncomingMessage;
         body: PaginatedBenefitList;
     }>;
-    benefitsRetrieve(x_account_token: string, id: string, expand?: 'employee', include_remote_data?: boolean, options?: {
+    benefitsRetrieve(xAccountToken: string, id: string, expand?: 'employee', includeRemoteData?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

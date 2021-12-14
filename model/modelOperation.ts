@@ -16,31 +16,31 @@ import { RequestFile } from './models';
 * # The ModelOperation Object ### Description The `ModelOperation` object is used to represent the operations that are currently supported for a given model.  ### Usage Example View what operations are supported for the `Candidate` endpoint.
 */
 export class ModelOperation {
-    'model_name': string;
-    'available_operations': Array<string>;
-    'required_post_parameters': Array<string>;
-    'supported_fields': Array<string>;
+    'modelName': string;
+    'availableOperations': Array<string>;
+    'requiredPostParameters': Array<string>;
+    'supportedFields': Array<string>;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "model_name",
+            "name": "modelName",
             "baseName": "model_name",
             "type": "string"
         },
         {
-            "name": "available_operations",
+            "name": "availableOperations",
             "baseName": "available_operations",
             "type": "Array<string>"
         },
         {
-            "name": "required_post_parameters",
+            "name": "requiredPostParameters",
             "baseName": "required_post_parameters",
             "type": "Array<string>"
         },
         {
-            "name": "supported_fields",
+            "name": "supportedFields",
             "baseName": "supported_fields",
             "type": "Array<string>"
         }    ];

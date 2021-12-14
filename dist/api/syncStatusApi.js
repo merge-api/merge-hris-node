@@ -104,7 +104,7 @@ var SyncStatusApi = (function () {
     SyncStatusApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    SyncStatusApi.prototype.syncStatusList = function (x_account_token, cursor, page_size, options) {
+    SyncStatusApi.prototype.syncStatusList = function (xAccountToken, cursor, pageSize, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -121,16 +121,16 @@ var SyncStatusApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (x_account_token === null || x_account_token === undefined) {
-                    throw new Error('Required parameter x_account_token was null or undefined when calling syncStatusList.');
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling syncStatusList.');
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
                 }
-                if (page_size !== undefined) {
-                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(page_size, "number");
+                if (pageSize !== undefined) {
+                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -183,7 +183,7 @@ var SyncStatusApi = (function () {
             });
         });
     };
-    SyncStatusApi.prototype.syncStatusResyncCreate = function (x_account_token, options) {
+    SyncStatusApi.prototype.syncStatusResyncCreate = function (xAccountToken, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
@@ -200,10 +200,10 @@ var SyncStatusApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (x_account_token === null || x_account_token === undefined) {
-                    throw new Error('Required parameter x_account_token was null or undefined when calling syncStatusResyncCreate.');
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling syncStatusResyncCreate.');
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {

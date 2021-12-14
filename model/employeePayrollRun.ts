@@ -24,7 +24,7 @@ export class EmployeePayrollRun {
     /**
     * The third-party API ID of the matching object.
     */
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     /**
     * The employee whose payroll is being run.
     */
@@ -32,31 +32,31 @@ export class EmployeePayrollRun {
     /**
     * The payroll being run.
     */
-    'payroll_run'?: string | null;
+    'payrollRun'?: string | null;
     /**
     * The gross pay from the run.
     */
-    'gross_pay'?: number | null;
+    'grossPay'?: number | null;
     /**
     * The net pay from the run.
     */
-    'net_pay'?: number | null;
+    'netPay'?: number | null;
     /**
     * The day and time the payroll run started.
     */
-    'start_date'?: Date | null;
+    'startDate'?: Date | null;
     /**
     * The day and time the payroll run ended.
     */
-    'end_date'?: Date | null;
+    'endDate'?: Date | null;
     /**
     * The day and time the payroll run was checked.
     */
-    'check_date'?: Date | null;
+    'checkDate'?: Date | null;
     'earnings'?: Array<Earning>;
     'deductions'?: Array<Deduction>;
     'taxes'?: Array<Tax>;
-    'remote_data'?: Array<RemoteData> | null;
+    'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -67,7 +67,7 @@ export class EmployeePayrollRun {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -77,32 +77,32 @@ export class EmployeePayrollRun {
             "type": "string"
         },
         {
-            "name": "payroll_run",
+            "name": "payrollRun",
             "baseName": "payroll_run",
             "type": "string"
         },
         {
-            "name": "gross_pay",
+            "name": "grossPay",
             "baseName": "gross_pay",
             "type": "number"
         },
         {
-            "name": "net_pay",
+            "name": "netPay",
             "baseName": "net_pay",
             "type": "number"
         },
         {
-            "name": "start_date",
+            "name": "startDate",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "end_date",
+            "name": "endDate",
             "baseName": "end_date",
             "type": "Date"
         },
         {
-            "name": "check_date",
+            "name": "checkDate",
             "baseName": "check_date",
             "type": "Date"
         },
@@ -122,7 +122,7 @@ export class EmployeePayrollRun {
             "type": "Array<Tax>"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

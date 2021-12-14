@@ -104,7 +104,7 @@ var LocationsApi = (function () {
     LocationsApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    LocationsApi.prototype.locationsList = function (x_account_token, created_after, created_before, cursor, include_remote_data, modified_after, modified_before, page_size, remote_id, options) {
+    LocationsApi.prototype.locationsList = function (xAccountToken, createdAfter, createdBefore, cursor, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -121,34 +121,34 @@ var LocationsApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (x_account_token === null || x_account_token === undefined) {
-                    throw new Error('Required parameter x_account_token was null or undefined when calling locationsList.');
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling locationsList.');
                 }
-                if (created_after !== undefined) {
-                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(created_after, "Date");
+                if (createdAfter !== undefined) {
+                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(createdAfter, "Date");
                 }
-                if (created_before !== undefined) {
-                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(created_before, "Date");
+                if (createdBefore !== undefined) {
+                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(createdBefore, "Date");
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
                 }
-                if (include_remote_data !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
+                if (includeRemoteData !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
                 }
-                if (modified_after !== undefined) {
-                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modified_after, "Date");
+                if (modifiedAfter !== undefined) {
+                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modifiedAfter, "Date");
                 }
-                if (modified_before !== undefined) {
-                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modified_before, "Date");
+                if (modifiedBefore !== undefined) {
+                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modifiedBefore, "Date");
                 }
-                if (page_size !== undefined) {
-                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(page_size, "number");
+                if (pageSize !== undefined) {
+                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
                 }
-                if (remote_id !== undefined) {
-                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remote_id, "string");
+                if (remoteId !== undefined) {
+                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {
@@ -201,7 +201,7 @@ var LocationsApi = (function () {
             });
         });
     };
-    LocationsApi.prototype.locationsRetrieve = function (x_account_token, id, include_remote_data, options) {
+    LocationsApi.prototype.locationsRetrieve = function (xAccountToken, id, includeRemoteData, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
@@ -219,16 +219,16 @@ var LocationsApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (x_account_token === null || x_account_token === undefined) {
-                    throw new Error('Required parameter x_account_token was null or undefined when calling locationsRetrieve.');
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling locationsRetrieve.');
                 }
                 if (id === null || id === undefined) {
                     throw new Error('Required parameter id was null or undefined when calling locationsRetrieve.');
                 }
-                if (include_remote_data !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(include_remote_data, "boolean");
+                if (includeRemoteData !== undefined) {
+                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
                 }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(x_account_token, "string");
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;
                 localVarRequestOptions = {

@@ -22,7 +22,7 @@ export declare class AvailableActionsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: AvailableActionsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    availableActionsRetrieve(x_account_token: string, options?: {
+    availableActionsRetrieve(xAccountToken: string, options?: {
         headers: {
             [name: string]: string;
         };

@@ -16,7 +16,7 @@ export class ValidationProblem {
     'source'?: string;
     'title': string;
     'detail': string;
-    'problem_type': string;
+    'problemType': string;
 
     static discriminator: string | undefined = undefined;
 
@@ -37,7 +37,7 @@ export class ValidationProblem {
             "type": "string"
         },
         {
-            "name": "problem_type",
+            "name": "problemType",
             "baseName": "problem_type",
             "type": "string"
         }    ];

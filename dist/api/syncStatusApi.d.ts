@@ -23,7 +23,7 @@ export declare class SyncStatusApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: SyncStatusApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    syncStatusList(x_account_token: string, cursor?: string, page_size?: number, options?: {
+    syncStatusList(xAccountToken: string, cursor?: string, pageSize?: number, options?: {
         headers: {
             [name: string]: string;
         };
@@ -31,7 +31,7 @@ export declare class SyncStatusApi {
         response: http.IncomingMessage;
         body: PaginatedSyncStatusList;
     }>;
-    syncStatusResyncCreate(x_account_token: string, options?: {
+    syncStatusResyncCreate(xAccountToken: string, options?: {
         headers: {
             [name: string]: string;
         };

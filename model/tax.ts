@@ -20,7 +20,7 @@ export class Tax {
     /**
     * The tax\'s employee payroll run.
     */
-    'employee_payroll_run'?: string | null;
+    'employeePayrollRun'?: string | null;
     /**
     * The tax\'s name.
     */
@@ -32,8 +32,8 @@ export class Tax {
     /**
     * Whether or not the employer is responsible for paying the tax.
     */
-    'employer_tax'?: boolean | null;
-    'remote_data'?: Array<{ [key: string]: any; }> | null;
+    'employerTax'?: boolean | null;
+    'remoteData'?: Array<{ [key: string]: any; }> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -44,7 +44,7 @@ export class Tax {
             "type": "string"
         },
         {
-            "name": "employee_payroll_run",
+            "name": "employeePayrollRun",
             "baseName": "employee_payroll_run",
             "type": "string"
         },
@@ -59,12 +59,12 @@ export class Tax {
             "type": "number"
         },
         {
-            "name": "employer_tax",
+            "name": "employerTax",
             "baseName": "employer_tax",
             "type": "boolean"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<{ [key: string]: any; }>"
         }    ];

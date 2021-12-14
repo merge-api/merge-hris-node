@@ -9,12 +9,12 @@ var LinkToken = (function () {
     LinkToken.discriminator = undefined;
     LinkToken.attributeTypeMap = [
         {
-            "name": "link_token",
+            "name": "linkToken",
             "baseName": "link_token",
             "type": "string"
         },
         {
-            "name": "integration_name",
+            "name": "integrationName",
             "baseName": "integration_name",
             "type": "string"
         }

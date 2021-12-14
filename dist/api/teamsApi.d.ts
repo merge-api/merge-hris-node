@@ -23,7 +23,7 @@ export declare class TeamsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TeamsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    teamsList(x_account_token: string, created_after?: Date, created_before?: Date, cursor?: string, expand?: 'parent_team', include_remote_data?: boolean, modified_after?: Date, modified_before?: Date, page_size?: number, parent_team_id?: string, remote_id?: string, options?: {
+    teamsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'parent_team', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options?: {
         headers: {
             [name: string]: string;
         };
@@ -31,7 +31,7 @@ export declare class TeamsApi {
         response: http.IncomingMessage;
         body: PaginatedTeamList;
     }>;
-    teamsRetrieve(x_account_token: string, id: string, expand?: 'parent_team', include_remote_data?: boolean, options?: {
+    teamsRetrieve(xAccountToken: string, id: string, expand?: 'parent_team', includeRemoteData?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

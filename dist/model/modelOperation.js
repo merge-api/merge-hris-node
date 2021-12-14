@@ -9,22 +9,22 @@ var ModelOperation = (function () {
     ModelOperation.discriminator = undefined;
     ModelOperation.attributeTypeMap = [
         {
-            "name": "model_name",
+            "name": "modelName",
             "baseName": "model_name",
             "type": "string"
         },
         {
-            "name": "available_operations",
+            "name": "availableOperations",
             "baseName": "available_operations",
             "type": "Array<string>"
         },
         {
-            "name": "required_post_parameters",
+            "name": "requiredPostParameters",
             "baseName": "required_post_parameters",
             "type": "Array<string>"
         },
         {
-            "name": "supported_fields",
+            "name": "supportedFields",
             "baseName": "supported_fields",
             "type": "Array<string>"
         }

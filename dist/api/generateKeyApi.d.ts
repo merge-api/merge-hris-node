@@ -23,7 +23,7 @@ export declare class GenerateKeyApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: GenerateKeyApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    generateKeyCreate(generate_remote_key_request: GenerateRemoteKeyRequest, options?: {
+    generateKeyCreate(generateRemoteKeyRequest: GenerateRemoteKeyRequest, options?: {
         headers: {
             [name: string]: string;
         };

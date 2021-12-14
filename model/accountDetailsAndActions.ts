@@ -22,10 +22,10 @@ export class AccountDetailsAndActions {
     'id': string;
     'category'?: CategoryEnum | null;
     'status': AccountDetailsAndActionsStatusEnum | null;
-    'status_detail'?: string;
-    'end_user_origin_id'?: string;
-    'end_user_organization_name': string;
-    'end_user_email_address': string;
+    'statusDetail'?: string;
+    'endUserOriginId'?: string;
+    'endUserOrganizationName': string;
+    'endUserEmailAddress': string;
     'integration'?: AccountDetailsAndActionsIntegration;
 
     static discriminator: string | undefined = undefined;
@@ -47,22 +47,22 @@ export class AccountDetailsAndActions {
             "type": "AccountDetailsAndActionsStatusEnum"
         },
         {
-            "name": "status_detail",
+            "name": "statusDetail",
             "baseName": "status_detail",
             "type": "string"
         },
         {
-            "name": "end_user_origin_id",
+            "name": "endUserOriginId",
             "baseName": "end_user_origin_id",
             "type": "string"
         },
         {
-            "name": "end_user_organization_name",
+            "name": "endUserOrganizationName",
             "baseName": "end_user_organization_name",
             "type": "string"
         },
         {
-            "name": "end_user_email_address",
+            "name": "endUserEmailAddress",
             "baseName": "end_user_email_address",
             "type": "string"
         },

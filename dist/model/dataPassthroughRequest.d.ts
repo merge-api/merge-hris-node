@@ -3,12 +3,12 @@ import { RequestFormatEnum } from './requestFormatEnum';
 export declare class DataPassthroughRequest {
     'method': MethodEnum | null;
     'path': string;
-    'base_url_override'?: string | null;
+    'baseUrlOverride'?: string | null;
     'data'?: string | null;
     'headers'?: {
         [key: string]: any;
     } | null;
-    'request_format'?: RequestFormatEnum | null;
+    'requestFormat'?: RequestFormatEnum | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

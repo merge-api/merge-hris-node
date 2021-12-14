@@ -24,7 +24,7 @@ export class TimeOff {
     /**
     * The third-party API ID of the matching object.
     */
-    'remote_id'?: string | null;
+    'remoteId'?: string | null;
     /**
     * The employee requesting time off.
     */
@@ -40,7 +40,7 @@ export class TimeOff {
     /**
     * The employee note for this time off request.
     */
-    'employee_note'?: string | null;
+    'employeeNote'?: string | null;
     /**
     * The unit of time requested.
     */
@@ -52,16 +52,16 @@ export class TimeOff {
     /**
     * The type of time off request.
     */
-    'request_type'?: RequestTypeEnum | null;
+    'requestType'?: RequestTypeEnum | null;
     /**
     * The day and time of the start of the time requested off.
     */
-    'start_time'?: Date | null;
+    'startTime'?: Date | null;
     /**
     * The day and time of the end of the time requested off.
     */
-    'end_time'?: Date | null;
-    'remote_data'?: Array<RemoteData> | null;
+    'endTime'?: Date | null;
+    'remoteData'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -72,7 +72,7 @@ export class TimeOff {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -92,7 +92,7 @@ export class TimeOff {
             "type": "TimeOffStatusEnum"
         },
         {
-            "name": "employee_note",
+            "name": "employeeNote",
             "baseName": "employee_note",
             "type": "string"
         },
@@ -107,22 +107,22 @@ export class TimeOff {
             "type": "number"
         },
         {
-            "name": "request_type",
+            "name": "requestType",
             "baseName": "request_type",
             "type": "RequestTypeEnum"
         },
         {
-            "name": "start_time",
+            "name": "startTime",
             "baseName": "start_time",
             "type": "Date"
         },
         {
-            "name": "end_time",
+            "name": "endTime",
             "baseName": "end_time",
             "type": "Date"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }    ];

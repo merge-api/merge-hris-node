@@ -3,7 +3,7 @@ export declare class AccountIntegration {
     'name': string;
     'categories'?: Array<CategoriesEnum>;
     'image'?: string | null;
-    'square_image'?: string | null;
+    'squareImage'?: string | null;
     'color'?: string;
     'slug'?: string;
     static discriminator: string | undefined;

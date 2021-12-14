@@ -104,14 +104,14 @@ var AccountTokenApi = (function () {
     AccountTokenApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    AccountTokenApi.prototype.accountTokenRetrieve = function (public_token, options) {
+    AccountTokenApi.prototype.accountTokenRetrieve = function (publicToken, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
             var _this = this;
             return __generator(this, function (_b) {
                 localVarPath = this.basePath + '/account-token/{public_token}'
-                    .replace('{' + 'public_token' + '}', encodeURIComponent(String(public_token)));
+                    .replace('{' + 'public_token' + '}', encodeURIComponent(String(publicToken)));
                 localVarQueryParameters = {};
                 localVarHeaderParams = Object.assign({}, this._defaultHeaders);
                 produces = ['application/json'];
@@ -122,8 +122,8 @@ var AccountTokenApi = (function () {
                     localVarHeaderParams.Accept = produces.join(',');
                 }
                 localVarFormParams = {};
-                if (public_token === null || public_token === undefined) {
-                    throw new Error('Required parameter public_token was null or undefined when calling accountTokenRetrieve.');
+                if (publicToken === null || publicToken === undefined) {
+                    throw new Error('Required parameter publicToken was null or undefined when calling accountTokenRetrieve.');
                 }
                 Object.assign(localVarHeaderParams, options.headers);
                 localVarUseFormData = false;

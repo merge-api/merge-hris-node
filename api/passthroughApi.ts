@@ -92,10 +92,10 @@ export class PassthroughApi {
 
     /**
      * Pull data from an endpoint not currently supported by Merge.
-     * @param x_account_token Token identifying the end user.
-     * @param data_passthrough_request 
+     * @param xAccountToken Token identifying the end user.
+     * @param dataPassthroughRequest 
      */
-    public async passthroughCreate (x_account_token: string, data_passthrough_request: DataPassthroughRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteResponse;  }> {
+    public async passthroughCreate (xAccountToken: string, dataPassthroughRequest: DataPassthroughRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteResponse;  }> {
         const localVarPath = this.basePath + '/passthrough';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -108,17 +108,17 @@ export class PassthroughApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'x_account_token' is not null or undefined
-        if (x_account_token === null || x_account_token === undefined) {
-            throw new Error('Required parameter x_account_token was null or undefined when calling passthroughCreate.');
+        // verify required parameter 'xAccountToken' is not null or undefined
+        if (xAccountToken === null || xAccountToken === undefined) {
+            throw new Error('Required parameter xAccountToken was null or undefined when calling passthroughCreate.');
         }
 
-        // verify required parameter 'data_passthrough_request' is not null or undefined
-        if (data_passthrough_request === null || data_passthrough_request === undefined) {
-            throw new Error('Required parameter data_passthrough_request was null or undefined when calling passthroughCreate.');
+        // verify required parameter 'dataPassthroughRequest' is not null or undefined
+        if (dataPassthroughRequest === null || dataPassthroughRequest === undefined) {
+            throw new Error('Required parameter dataPassthroughRequest was null or undefined when calling passthroughCreate.');
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(x_account_token, "string");
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -130,7 +130,7 @@ export class PassthroughApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(data_passthrough_request, "DataPassthroughRequest")
+            body: ObjectSerializer.serialize(dataPassthroughRequest, "DataPassthroughRequest")
         };
 
         let authenticationPromise = Promise.resolve();

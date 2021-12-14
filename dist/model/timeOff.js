@@ -14,7 +14,7 @@ var TimeOff = (function () {
             "type": "string"
         },
         {
-            "name": "remote_id",
+            "name": "remoteId",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -34,7 +34,7 @@ var TimeOff = (function () {
             "type": "TimeOffStatusEnum"
         },
         {
-            "name": "employee_note",
+            "name": "employeeNote",
             "baseName": "employee_note",
             "type": "string"
         },
@@ -49,22 +49,22 @@ var TimeOff = (function () {
             "type": "number"
         },
         {
-            "name": "request_type",
+            "name": "requestType",
             "baseName": "request_type",
             "type": "RequestTypeEnum"
         },
         {
-            "name": "start_time",
+            "name": "startTime",
             "baseName": "start_time",
             "type": "Date"
         },
         {
-            "name": "end_time",
+            "name": "endTime",
             "baseName": "end_time",
             "type": "Date"
         },
         {
-            "name": "remote_data",
+            "name": "remoteData",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }
