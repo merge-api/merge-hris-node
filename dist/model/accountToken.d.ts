@@ -1,6 +1,6 @@
 import { AccountIntegration } from './accountIntegration';
 export declare class AccountToken {
-    'accountToken': string;
+    'account_token': string;
     'integration': AccountIntegration;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

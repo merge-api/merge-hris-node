@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TimeOffRequest = void 0;
 var TimeOffRequest = (function () {
     function TimeOffRequest() {
     }
@@ -9,7 +10,7 @@ var TimeOffRequest = (function () {
     TimeOffRequest.discriminator = undefined;
     TimeOffRequest.attributeTypeMap = [
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -29,7 +30,7 @@ var TimeOffRequest = (function () {
             "type": "TimeOffStatusEnum"
         },
         {
-            "name": "employeeNote",
+            "name": "employee_note",
             "baseName": "employee_note",
             "type": "string"
         },
@@ -44,17 +45,17 @@ var TimeOffRequest = (function () {
             "type": "number"
         },
         {
-            "name": "requestType",
+            "name": "request_type",
             "baseName": "request_type",
             "type": "RequestTypeEnum"
         },
         {
-            "name": "startTime",
+            "name": "start_time",
             "baseName": "start_time",
             "type": "Date"
         },
         {
-            "name": "endTime",
+            "name": "end_time",
             "baseName": "end_time",
             "type": "Date"
         }

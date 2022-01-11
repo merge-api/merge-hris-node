@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmployeePayrollRun = void 0;
 var EmployeePayrollRun = (function () {
     function EmployeePayrollRun() {
     }
@@ -14,7 +15,7 @@ var EmployeePayrollRun = (function () {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -24,32 +25,32 @@ var EmployeePayrollRun = (function () {
             "type": "string"
         },
         {
-            "name": "payrollRun",
+            "name": "payroll_run",
             "baseName": "payroll_run",
             "type": "string"
         },
         {
-            "name": "grossPay",
+            "name": "gross_pay",
             "baseName": "gross_pay",
             "type": "number"
         },
         {
-            "name": "netPay",
+            "name": "net_pay",
             "baseName": "net_pay",
             "type": "number"
         },
         {
-            "name": "startDate",
+            "name": "start_date",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "endDate",
+            "name": "end_date",
             "baseName": "end_date",
             "type": "Date"
         },
         {
-            "name": "checkDate",
+            "name": "check_date",
             "baseName": "check_date",
             "type": "Date"
         },
@@ -69,7 +70,7 @@ var EmployeePayrollRun = (function () {
             "type": "Array<Tax>"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

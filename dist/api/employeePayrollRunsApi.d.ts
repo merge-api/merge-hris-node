@@ -12,18 +12,20 @@ export declare class EmployeePayrollRunsApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        'default': Authentication;
-        'tokenAuth': ApiKeyAuth;
+        default: Authentication;
+        tokenAuth: ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
-    defaultHeaders: any;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    set defaultHeaders(defaultHeaders: any);
+    get defaultHeaders(): any;
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: EmployeePayrollRunsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    employeePayrollRunsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, endedAfter?: Date, endedBefore?: Date, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, payrollRunId?: string, remoteId?: string, startedAfter?: Date, startedBefore?: Date, options?: {
+    employeePayrollRunsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, endedAfter?: Date, endedBefore?: Date, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, payrollRunId?: string, remoteId?: string, startedAfter?: Date, startedBefore?: Date, options?: {
         headers: {
             [name: string]: string;
         };

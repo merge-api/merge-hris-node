@@ -14,14 +14,16 @@ export declare class TimeOffApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        'default': Authentication;
-        'tokenAuth': ApiKeyAuth;
+        default: Authentication;
+        tokenAuth: ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
-    defaultHeaders: any;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    set defaultHeaders(defaultHeaders: any);
+    get defaultHeaders(): any;
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TimeOffApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
@@ -33,7 +35,7 @@ export declare class TimeOffApi {
         response: http.IncomingMessage;
         body: TimeOffResponse;
     }>;
-    timeOffList(xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options?: {
+    timeOffList(xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options?: {
         headers: {
             [name: string]: string;
         };

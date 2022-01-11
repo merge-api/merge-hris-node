@@ -12,18 +12,20 @@ export declare class PayrollRunsApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        'default': Authentication;
-        'tokenAuth': ApiKeyAuth;
+        default: Authentication;
+        tokenAuth: ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
-    defaultHeaders: any;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    set defaultHeaders(defaultHeaders: any);
+    get defaultHeaders(): any;
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: PayrollRunsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    payrollRunsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: 'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION', startedAfter?: Date, startedBefore?: Date, options?: {
+    payrollRunsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: 'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION', startedAfter?: Date, startedBefore?: Date, options?: {
         headers: {
             [name: string]: string;
         };

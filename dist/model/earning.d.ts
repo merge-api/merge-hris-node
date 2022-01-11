@@ -1,10 +1,10 @@
 import { TypeEnum } from './typeEnum';
 export declare class Earning {
     'id'?: string;
-    'employeePayrollRun'?: string | null;
+    'employee_payroll_run'?: string | null;
     'amount'?: number | null;
     'type'?: TypeEnum | null;
-    'remoteData'?: Array<{
+    'remote_data'?: Array<{
         [key: string]: any;
     }> | null;
     static discriminator: string | undefined;

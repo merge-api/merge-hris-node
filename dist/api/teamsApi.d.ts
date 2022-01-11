@@ -12,18 +12,20 @@ export declare class TeamsApi {
     protected _defaultHeaders: any;
     protected _useQuerystring: boolean;
     protected authentications: {
-        'default': Authentication;
-        'tokenAuth': ApiKeyAuth;
+        default: Authentication;
+        tokenAuth: ApiKeyAuth;
     };
     protected interceptors: Interceptor[];
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
-    defaultHeaders: any;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    set defaultHeaders(defaultHeaders: any);
+    get defaultHeaders(): any;
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TeamsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    teamsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'parent_team', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options?: {
+    teamsList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'parent_team', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options?: {
         headers: {
             [name: string]: string;
         };

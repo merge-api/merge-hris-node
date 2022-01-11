@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.RemoteData = void 0;
 var RemoteData = (function () {
     function RemoteData() {
     }

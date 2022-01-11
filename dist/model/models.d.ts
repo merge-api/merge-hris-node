@@ -24,6 +24,7 @@ export * from './employment';
 export * from './employmentStatusEnum';
 export * from './employmentTypeEnum';
 export * from './endUserDetailsRequest';
+export * from './errorValidationProblem';
 export * from './ethnicityEnum';
 export * from './flsaStatusEnum';
 export * from './genderEnum';
@@ -79,6 +80,8 @@ export * from './timeOffStatusEnum';
 export * from './typeEnum';
 export * from './unitsEnum';
 export * from './validationProblem';
+export * from './validationProblemSource';
+export * from './warningValidationProblem';
 import * as fs from 'fs';
 export interface RequestDetailedFile {
     value: Buffer;

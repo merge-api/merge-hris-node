@@ -1,14 +1,14 @@
 import { MethodEnum } from './methodEnum';
 import { RequestFormatEnum } from './requestFormatEnum';
 export declare class DataPassthroughRequest {
-    'method': MethodEnum | null;
+    'method': MethodEnum;
     'path': string;
-    'baseUrlOverride'?: string | null;
+    'base_url_override'?: string | null;
     'data'?: string | null;
     'headers'?: {
         [key: string]: any;
     } | null;
-    'requestFormat'?: RequestFormatEnum | null;
+    'request_format'?: RequestFormatEnum | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

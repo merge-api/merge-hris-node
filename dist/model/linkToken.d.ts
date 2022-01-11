@@ -1,6 +1,6 @@
 export declare class LinkToken {
-    'linkToken': string;
-    'integrationName': string;
+    'link_token': string;
+    'integration_name': string;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

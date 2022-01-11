@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeductionRequest = void 0;
 var DeductionRequest = (function () {
     function DeductionRequest() {
     }

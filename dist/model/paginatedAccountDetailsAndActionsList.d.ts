@@ -1,0 +1,17 @@
+import { AccountDetailsAndActions } from './accountDetailsAndActions';
+export declare class PaginatedAccountDetailsAndActionsList {
+    'next'?: string | null;
+    'previous'?: string | null;
+    'results'?: Array<AccountDetailsAndActions>;
+    static discriminator: string | undefined;
+    static attributeTypeMap: Array<{
+        name: string;
+        baseName: string;
+        type: string;
+    }>;
+    static getAttributeTypeMap(): {
+        name: string;
+        baseName: string;
+        type: string;
+    }[];
+}

@@ -1,10 +1,10 @@
 import { RemoteData } from './remoteData';
 export declare class Team {
     'id'?: string;
-    'remoteId'?: string | null;
+    'remote_id'?: string | null;
     'name'?: string | null;
-    'parentTeam'?: string | null;
-    'remoteData'?: Array<RemoteData> | null;
+    'parent_team'?: string | null;
+    'remote_data'?: Array<RemoteData> | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

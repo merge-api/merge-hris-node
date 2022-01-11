@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PayrollRun = void 0;
 var PayrollRun = (function () {
     function PayrollRun() {
     }
@@ -14,37 +15,37 @@ var PayrollRun = (function () {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "runState",
+            "name": "run_state",
             "baseName": "run_state",
             "type": "RunStateEnum"
         },
         {
-            "name": "runType",
+            "name": "run_type",
             "baseName": "run_type",
             "type": "RunTypeEnum"
         },
         {
-            "name": "startDate",
+            "name": "start_date",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "endDate",
+            "name": "end_date",
             "baseName": "end_date",
             "type": "Date"
         },
         {
-            "name": "checkDate",
+            "name": "check_date",
             "baseName": "check_date",
             "type": "Date"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Tax = void 0;
 var Tax = (function () {
     function Tax() {
     }
@@ -14,7 +15,7 @@ var Tax = (function () {
             "type": "string"
         },
         {
-            "name": "employeePayrollRun",
+            "name": "employee_payroll_run",
             "baseName": "employee_payroll_run",
             "type": "string"
         },
@@ -29,12 +30,12 @@ var Tax = (function () {
             "type": "number"
         },
         {
-            "name": "employerTax",
+            "name": "employer_tax",
             "baseName": "employer_tax",
             "type": "boolean"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<{ [key: string]: any; }>"
         }

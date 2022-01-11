@@ -21,6 +21,8 @@ export * from './employeesApi';
 import { EmployeesApi } from './employeesApi';
 export * from './employmentsApi';
 import { EmploymentsApi } from './employmentsApi';
+export * from './forceResyncApi';
+import { ForceResyncApi } from './forceResyncApi';
 export * from './generateKeyApi';
 import { GenerateKeyApi } from './generateKeyApi';
 export * from './issuesApi';
@@ -35,6 +37,8 @@ export * from './passthroughApi';
 import { PassthroughApi } from './passthroughApi';
 export * from './payGroupApi';
 import { PayGroupApi } from './payGroupApi';
+export * from './payGroupsApi';
+import { PayGroupsApi } from './payGroupsApi';
 export * from './payrollRunsApi';
 import { PayrollRunsApi } from './payrollRunsApi';
 export * from './regenerateKeyApi';
@@ -47,6 +51,8 @@ export * from './timeOffApi';
 import { TimeOffApi } from './timeOffApi';
 export * from './timeOffBalanceApi';
 import { TimeOffBalanceApi } from './timeOffBalanceApi';
+export * from './timeOffBalancesApi';
+import { TimeOffBalancesApi } from './timeOffBalancesApi';
 import * as http from 'http';
 export declare class HttpError extends Error {
     response: http.IncomingMessage;
@@ -55,4 +61,4 @@ export declare class HttpError extends Error {
     constructor(response: http.IncomingMessage, body: any, statusCode?: number | undefined);
 }
 export { RequestFile } from '../model/models';
-export declare const APIS: (typeof AccountDetailsApi | typeof AccountTokenApi | typeof AvailableActionsApi | typeof BankInfoApi | typeof BenefitsApi | typeof CompaniesApi | typeof DeductionsApi | typeof DeleteAccountApi | typeof EmployeePayrollRunsApi | typeof EmployeesApi | typeof EmploymentsApi | typeof GenerateKeyApi | typeof IssuesApi | typeof LinkTokenApi | typeof LinkedAccountsApi | typeof LocationsApi | typeof PassthroughApi | typeof PayGroupApi | typeof PayrollRunsApi | typeof RegenerateKeyApi | typeof SyncStatusApi | typeof TeamsApi | typeof TimeOffApi | typeof TimeOffBalanceApi)[];
+export declare const APIS: (typeof AccountDetailsApi | typeof AccountTokenApi | typeof AvailableActionsApi | typeof BankInfoApi | typeof BenefitsApi | typeof CompaniesApi | typeof DeductionsApi | typeof DeleteAccountApi | typeof EmployeePayrollRunsApi | typeof EmployeesApi | typeof EmploymentsApi | typeof ForceResyncApi | typeof GenerateKeyApi | typeof IssuesApi | typeof LinkTokenApi | typeof LinkedAccountsApi | typeof LocationsApi | typeof PassthroughApi | typeof PayGroupApi | typeof PayGroupsApi | typeof PayrollRunsApi | typeof RegenerateKeyApi | typeof SyncStatusApi | typeof TeamsApi | typeof TimeOffApi | typeof TimeOffBalanceApi | typeof TimeOffBalancesApi)[];

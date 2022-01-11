@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LinkToken = void 0;
 var LinkToken = (function () {
     function LinkToken() {
     }
@@ -9,12 +10,12 @@ var LinkToken = (function () {
     LinkToken.discriminator = undefined;
     LinkToken.attributeTypeMap = [
         {
-            "name": "linkToken",
+            "name": "link_token",
             "baseName": "link_token",
             "type": "string"
         },
         {
-            "name": "integrationName",
+            "name": "integration_name",
             "baseName": "integration_name",
             "type": "string"
         }

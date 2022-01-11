@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmployeeRequest = void 0;
 var EmployeeRequest = (function () {
     function EmployeeRequest() {
     }

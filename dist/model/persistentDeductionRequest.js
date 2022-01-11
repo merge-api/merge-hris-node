@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PersistentDeductionRequest = void 0;
 var PersistentDeductionRequest = (function () {
     function PersistentDeductionRequest() {
     }

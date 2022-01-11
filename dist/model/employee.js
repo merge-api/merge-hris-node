@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Employee = void 0;
 var Employee = (function () {
     function Employee() {
     }
@@ -14,12 +15,12 @@ var Employee = (function () {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
         {
-            "name": "employeeNumber",
+            "name": "employee_number",
             "baseName": "employee_number",
             "type": "string"
         },
@@ -29,32 +30,32 @@ var Employee = (function () {
             "type": "string"
         },
         {
-            "name": "firstName",
+            "name": "first_name",
             "baseName": "first_name",
             "type": "string"
         },
         {
-            "name": "lastName",
+            "name": "last_name",
             "baseName": "last_name",
             "type": "string"
         },
         {
-            "name": "displayFullName",
+            "name": "display_full_name",
             "baseName": "display_full_name",
             "type": "string"
         },
         {
-            "name": "workEmail",
+            "name": "work_email",
             "baseName": "work_email",
             "type": "string"
         },
         {
-            "name": "personalEmail",
+            "name": "personal_email",
             "baseName": "personal_email",
             "type": "string"
         },
         {
-            "name": "mobilePhoneNumber",
+            "name": "mobile_phone_number",
             "baseName": "mobile_phone_number",
             "type": "string"
         },
@@ -64,12 +65,12 @@ var Employee = (function () {
             "type": "Array<string>"
         },
         {
-            "name": "homeLocation",
+            "name": "home_location",
             "baseName": "home_location",
             "type": "string"
         },
         {
-            "name": "workLocation",
+            "name": "work_location",
             "baseName": "work_location",
             "type": "string"
         },
@@ -84,7 +85,7 @@ var Employee = (function () {
             "type": "string"
         },
         {
-            "name": "payGroup",
+            "name": "pay_group",
             "baseName": "pay_group",
             "type": "string"
         },
@@ -104,32 +105,32 @@ var Employee = (function () {
             "type": "EthnicityEnum"
         },
         {
-            "name": "maritalStatus",
+            "name": "marital_status",
             "baseName": "marital_status",
             "type": "MaritalStatusEnum"
         },
         {
-            "name": "dateOfBirth",
+            "name": "date_of_birth",
             "baseName": "date_of_birth",
             "type": "Date"
         },
         {
-            "name": "hireDate",
+            "name": "hire_date",
             "baseName": "hire_date",
             "type": "Date"
         },
         {
-            "name": "startDate",
+            "name": "start_date",
             "baseName": "start_date",
             "type": "Date"
         },
         {
-            "name": "employmentStatus",
+            "name": "employment_status",
             "baseName": "employment_status",
             "type": "EmploymentStatusEnum"
         },
         {
-            "name": "terminationDate",
+            "name": "termination_date",
             "baseName": "termination_date",
             "type": "Date"
         },
@@ -139,12 +140,12 @@ var Employee = (function () {
             "type": "string"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         },
         {
-            "name": "customFields",
+            "name": "custom_fields",
             "baseName": "custom_fields",
             "type": "{ [key: string]: any; }"
         }
