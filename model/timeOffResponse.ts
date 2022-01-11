@@ -11,31 +11,32 @@
  */
 
 import { RequestFile } from './models';
+import { ErrorValidationProblem } from './errorValidationProblem';
 import { TimeOff } from './timeOff';
-import { ValidationProblem } from './validationProblem';
+import { WarningValidationProblem } from './warningValidationProblem';
 
 export class TimeOffResponse {
-    'errors': Array<ValidationProblem>;
-    'warnings': Array<ValidationProblem>;
     'model': TimeOff;
+    'warnings': Array<WarningValidationProblem>;
+    'errors': Array<ErrorValidationProblem>;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "errors",
-            "baseName": "errors",
-            "type": "Array<ValidationProblem>"
+            "name": "model",
+            "baseName": "model",
+            "type": "TimeOff"
         },
         {
             "name": "warnings",
             "baseName": "warnings",
-            "type": "Array<ValidationProblem>"
+            "type": "Array<WarningValidationProblem>"
         },
         {
-            "name": "model",
-            "baseName": "model",
-            "type": "TimeOff"
+            "name": "errors",
+            "baseName": "errors",
+            "type": "Array<ErrorValidationProblem>"
         }    ];
 
     static getAttributeTypeMap() {

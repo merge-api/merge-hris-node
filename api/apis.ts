@@ -20,6 +20,8 @@ export * from './employeesApi';
 import { EmployeesApi } from './employeesApi';
 export * from './employmentsApi';
 import { EmploymentsApi } from './employmentsApi';
+export * from './forceResyncApi';
+import { ForceResyncApi } from './forceResyncApi';
 export * from './generateKeyApi';
 import { GenerateKeyApi } from './generateKeyApi';
 export * from './issuesApi';
@@ -34,6 +36,8 @@ export * from './passthroughApi';
 import { PassthroughApi } from './passthroughApi';
 export * from './payGroupApi';
 import { PayGroupApi } from './payGroupApi';
+export * from './payGroupsApi';
+import { PayGroupsApi } from './payGroupsApi';
 export * from './payrollRunsApi';
 import { PayrollRunsApi } from './payrollRunsApi';
 export * from './regenerateKeyApi';
@@ -46,6 +50,8 @@ export * from './timeOffApi';
 import { TimeOffApi } from './timeOffApi';
 export * from './timeOffBalanceApi';
 import { TimeOffBalanceApi } from './timeOffBalanceApi';
+export * from './timeOffBalancesApi';
+import { TimeOffBalancesApi } from './timeOffBalancesApi';
 import * as http from 'http';
 
 export class HttpError extends Error {
@@ -57,4 +63,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AccountDetailsApi, AccountTokenApi, AvailableActionsApi, BankInfoApi, BenefitsApi, CompaniesApi, DeductionsApi, DeleteAccountApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, GenerateKeyApi, IssuesApi, LinkTokenApi, LinkedAccountsApi, LocationsApi, PassthroughApi, PayGroupApi, PayrollRunsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalanceApi];
+export const APIS = [AccountDetailsApi, AccountTokenApi, AvailableActionsApi, BankInfoApi, BenefitsApi, CompaniesApi, DeductionsApi, DeleteAccountApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, ForceResyncApi, GenerateKeyApi, IssuesApi, LinkTokenApi, LinkedAccountsApi, LocationsApi, PassthroughApi, PayGroupApi, PayGroupsApi, PayrollRunsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalanceApi, TimeOffBalancesApi];

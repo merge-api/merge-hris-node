@@ -24,6 +24,7 @@ export * from './employment';
 export * from './employmentStatusEnum';
 export * from './employmentTypeEnum';
 export * from './endUserDetailsRequest';
+export * from './errorValidationProblem';
 export * from './ethnicityEnum';
 export * from './flsaStatusEnum';
 export * from './genderEnum';
@@ -79,6 +80,8 @@ export * from './timeOffStatusEnum';
 export * from './typeEnum';
 export * from './unitsEnum';
 export * from './validationProblem';
+export * from './validationProblemSource';
+export * from './warningValidationProblem';
 
 import * as fs from 'fs';
 
@@ -117,6 +120,7 @@ import { Employment } from './employment';
 import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EmploymentTypeEnum } from './employmentTypeEnum';
 import { EndUserDetailsRequest } from './endUserDetailsRequest';
+import { ErrorValidationProblem } from './errorValidationProblem';
 import { EthnicityEnum } from './ethnicityEnum';
 import { FlsaStatusEnum } from './flsaStatusEnum';
 import { GenderEnum } from './genderEnum';
@@ -171,7 +175,8 @@ import { TimeOffResponse } from './timeOffResponse';
 import { TimeOffStatusEnum } from './timeOffStatusEnum';
 import { TypeEnum } from './typeEnum';
 import { UnitsEnum } from './unitsEnum';
-import { ValidationProblem } from './validationProblem';
+import { ValidationProblemSource } from './validationProblemSource';
+import { WarningValidationProblem } from './warningValidationProblem';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -231,6 +236,7 @@ let typeMap: {[index: string]: any} = {
     "EmployeePayrollRun": EmployeePayrollRun,
     "Employment": Employment,
     "EndUserDetailsRequest": EndUserDetailsRequest,
+    "ErrorValidationProblem": ErrorValidationProblem,
     "GenerateRemoteKeyRequest": GenerateRemoteKeyRequest,
     "Issue": Issue,
     "LinkToken": LinkToken,
@@ -267,7 +273,8 @@ let typeMap: {[index: string]: any} = {
     "TimeOffEndpointRequest": TimeOffEndpointRequest,
     "TimeOffRequest": TimeOffRequest,
     "TimeOffResponse": TimeOffResponse,
-    "ValidationProblem": ValidationProblem,
+    "ValidationProblemSource": ValidationProblemSource,
+    "WarningValidationProblem": WarningValidationProblem,
 }
 
 export class ObjectSerializer {

@@ -43,7 +43,7 @@ export class Employee {
     */
     'last_name'?: string | null;
     /**
-    * The employee\'s full name, to use for display purposes.
+    * The employee\'s full name, to use for display purposes. If a preferred first name is available, the full name will include the preferred first name.
     */
     'display_full_name'?: string | null;
     /**
