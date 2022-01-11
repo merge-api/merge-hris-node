@@ -98,6 +98,7 @@ export class EmploymentsApi {
      * @param cursor The pagination cursor value.
      * @param employeeId If provided, will only return employments for this employee.
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+     * @param includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param modifiedAfter If provided, will only return objects modified after this datetime.
      * @param modifiedBefore If provided, will only return objects modified before this datetime.
@@ -105,7 +106,7 @@ export class EmploymentsApi {
      * @param pageSize Number of results to return per page.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async employmentsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-effective_date' | 'effective_date', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmploymentList;  }> {
+    public async employmentsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-effective_date' | 'effective_date', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmploymentList;  }> {
         const localVarPath = this.basePath + '/employments';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -141,6 +142,10 @@ export class EmploymentsApi {
 
         if (expand !== undefined) {
             localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee'");
+        }
+
+        if (includeDeletedData !== undefined) {
+            localVarQueryParameters['include_deleted_data'] = ObjectSerializer.serialize(includeDeletedData, "boolean");
         }
 
         if (includeRemoteData !== undefined) {

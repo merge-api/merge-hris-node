@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmploymentTypeEnum = void 0;
 var EmploymentTypeEnum;
 (function (EmploymentTypeEnum) {
     EmploymentTypeEnum[EmploymentTypeEnum["FullTime"] = 'FULL_TIME'] = "FullTime";

@@ -1,10 +1,10 @@
 export declare class Tax {
     'id'?: string;
-    'employeePayrollRun'?: string | null;
+    'employee_payroll_run'?: string | null;
     'name'?: string | null;
     'amount'?: number | null;
-    'employerTax'?: boolean | null;
-    'remoteData'?: Array<{
+    'employer_tax'?: boolean | null;
+    'remote_data'?: Array<{
         [key: string]: any;
     }> | null;
     static discriminator: string | undefined;

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Employment = void 0;
 var Employment = (function () {
     function Employment() {
     }
@@ -14,7 +15,7 @@ var Employment = (function () {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -24,47 +25,47 @@ var Employment = (function () {
             "type": "string"
         },
         {
-            "name": "jobTitle",
+            "name": "job_title",
             "baseName": "job_title",
             "type": "string"
         },
         {
-            "name": "payRate",
+            "name": "pay_rate",
             "baseName": "pay_rate",
             "type": "number"
         },
         {
-            "name": "payPeriod",
+            "name": "pay_period",
             "baseName": "pay_period",
             "type": "PayPeriodEnum"
         },
         {
-            "name": "payFrequency",
+            "name": "pay_frequency",
             "baseName": "pay_frequency",
             "type": "PayFrequencyEnum"
         },
         {
-            "name": "payCurrency",
+            "name": "pay_currency",
             "baseName": "pay_currency",
             "type": "PayCurrencyEnum"
         },
         {
-            "name": "flsaStatus",
+            "name": "flsa_status",
             "baseName": "flsa_status",
             "type": "FlsaStatusEnum"
         },
         {
-            "name": "effectiveDate",
+            "name": "effective_date",
             "baseName": "effective_date",
             "type": "Date"
         },
         {
-            "name": "employmentType",
+            "name": "employment_type",
             "baseName": "employment_type",
             "type": "EmploymentTypeEnum"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

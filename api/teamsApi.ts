@@ -97,6 +97,7 @@ export class TeamsApi {
      * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+     * @param includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param modifiedAfter If provided, will only return objects modified after this datetime.
      * @param modifiedBefore If provided, will only return objects modified before this datetime.
@@ -104,7 +105,7 @@ export class TeamsApi {
      * @param parentTeamId If provided, will only return teams with this parent team.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async teamsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'parent_team', includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTeamList;  }> {
+    public async teamsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'parent_team', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTeamList;  }> {
         const localVarPath = this.basePath + '/teams';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -136,6 +137,10 @@ export class TeamsApi {
 
         if (expand !== undefined) {
             localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'parent_team'");
+        }
+
+        if (includeDeletedData !== undefined) {
+            localVarQueryParameters['include_deleted_data'] = ObjectSerializer.serialize(includeDeletedData, "boolean");
         }
 
         if (includeRemoteData !== undefined) {

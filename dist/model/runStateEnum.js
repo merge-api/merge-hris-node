@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.RunStateEnum = void 0;
 var RunStateEnum;
 (function (RunStateEnum) {
     RunStateEnum[RunStateEnum["Paid"] = 'PAID'] = "Paid";

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AvailableActions = void 0;
 var AvailableActions = (function () {
     function AvailableActions() {
     }
@@ -14,12 +15,12 @@ var AvailableActions = (function () {
             "type": "AccountIntegration"
         },
         {
-            "name": "passthroughAvailable",
+            "name": "passthrough_available",
             "baseName": "passthrough_available",
             "type": "boolean"
         },
         {
-            "name": "availableModelOperations",
+            "name": "available_model_operations",
             "baseName": "available_model_operations",
             "type": "Array<ModelOperation>"
         }

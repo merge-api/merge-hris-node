@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.BenefitPlanTypeEnum = void 0;
 var BenefitPlanTypeEnum;
 (function (BenefitPlanTypeEnum) {
     BenefitPlanTypeEnum[BenefitPlanTypeEnum["Medical"] = 'MEDICAL'] = "Medical";

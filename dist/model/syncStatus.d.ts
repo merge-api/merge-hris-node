@@ -1,11 +1,11 @@
 import { SyncStatusStatusEnum } from './syncStatusStatusEnum';
 export declare class SyncStatus {
-    'modelName': string;
-    'modelId': string;
-    'lastSyncStart': Date;
-    'nextSyncStart': Date;
+    'model_name': string;
+    'model_id': string;
+    'last_sync_start': Date;
+    'next_sync_start': Date;
     'status': SyncStatusStatusEnum | null;
-    'isInitialSync': boolean;
+    'is_initial_sync': boolean;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

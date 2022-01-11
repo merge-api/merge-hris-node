@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EthnicityEnum = void 0;
 var EthnicityEnum;
 (function (EthnicityEnum) {
     EthnicityEnum[EthnicityEnum["AmericanIndianOrAlaskaNative"] = 'AMERICAN_INDIAN_OR_ALASKA_NATIVE'] = "AmericanIndianOrAlaskaNative";

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AccountIntegration = void 0;
 var AccountIntegration = (function () {
     function AccountIntegration() {
     }
@@ -24,7 +25,7 @@ var AccountIntegration = (function () {
             "type": "string"
         },
         {
-            "name": "squareImage",
+            "name": "square_image",
             "baseName": "square_image",
             "type": "string"
         },

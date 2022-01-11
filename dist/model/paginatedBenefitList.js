@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PaginatedBenefitList = void 0;
 var PaginatedBenefitList = (function () {
     function PaginatedBenefitList() {
     }

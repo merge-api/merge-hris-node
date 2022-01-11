@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Team = void 0;
 var Team = (function () {
     function Team() {
     }
@@ -14,7 +15,7 @@ var Team = (function () {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -24,12 +25,12 @@ var Team = (function () {
             "type": "string"
         },
         {
-            "name": "parentTeam",
+            "name": "parent_team",
             "baseName": "parent_team",
             "type": "string"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

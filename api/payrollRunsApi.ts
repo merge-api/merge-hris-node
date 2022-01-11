@@ -98,6 +98,7 @@ export class PayrollRunsApi {
      * @param cursor The pagination cursor value.
      * @param endedAfter If provided, will only return payroll runs ended after this datetime.
      * @param endedBefore If provided, will only return payroll runs ended before this datetime.
+     * @param includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param modifiedAfter If provided, will only return objects modified after this datetime.
      * @param modifiedBefore If provided, will only return objects modified before this datetime.
@@ -107,7 +108,7 @@ export class PayrollRunsApi {
      * @param startedAfter If provided, will only return payroll runs started after this datetime.
      * @param startedBefore If provided, will only return payroll runs started before this datetime.
      */
-    public async payrollRunsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: 'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION', startedAfter?: Date, startedBefore?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedPayrollRunList;  }> {
+    public async payrollRunsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, endedAfter?: Date, endedBefore?: Date, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, runType?: 'CORRECTION' | 'OFF_CYCLE' | 'REGULAR' | 'SIGN_ON_BONUS' | 'TERMINATION', startedAfter?: Date, startedBefore?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedPayrollRunList;  }> {
         const localVarPath = this.basePath + '/payroll-runs';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -143,6 +144,10 @@ export class PayrollRunsApi {
 
         if (endedBefore !== undefined) {
             localVarQueryParameters['ended_before'] = ObjectSerializer.serialize(endedBefore, "Date");
+        }
+
+        if (includeDeletedData !== undefined) {
+            localVarQueryParameters['include_deleted_data'] = ObjectSerializer.serialize(includeDeletedData, "boolean");
         }
 
         if (includeRemoteData !== undefined) {

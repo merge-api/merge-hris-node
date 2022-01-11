@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ModelOperation = void 0;
 var ModelOperation = (function () {
     function ModelOperation() {
     }
@@ -9,22 +10,22 @@ var ModelOperation = (function () {
     ModelOperation.discriminator = undefined;
     ModelOperation.attributeTypeMap = [
         {
-            "name": "modelName",
+            "name": "model_name",
             "baseName": "model_name",
             "type": "string"
         },
         {
-            "name": "availableOperations",
+            "name": "available_operations",
             "baseName": "available_operations",
             "type": "Array<string>"
         },
         {
-            "name": "requiredPostParameters",
+            "name": "required_post_parameters",
             "baseName": "required_post_parameters",
             "type": "Array<string>"
         },
         {
-            "name": "supportedFields",
+            "name": "supported_fields",
             "baseName": "supported_fields",
             "type": "Array<string>"
         }

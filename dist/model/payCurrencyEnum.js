@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PayCurrencyEnum = void 0;
 var PayCurrencyEnum;
 (function (PayCurrencyEnum) {
     PayCurrencyEnum[PayCurrencyEnum["Xua"] = 'XUA'] = "Xua";

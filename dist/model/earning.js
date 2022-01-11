@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Earning = void 0;
 var Earning = (function () {
     function Earning() {
     }
@@ -14,7 +15,7 @@ var Earning = (function () {
             "type": "string"
         },
         {
-            "name": "employeePayrollRun",
+            "name": "employee_payroll_run",
             "baseName": "employee_payroll_run",
             "type": "string"
         },
@@ -29,7 +30,7 @@ var Earning = (function () {
             "type": "TypeEnum"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<{ [key: string]: any; }>"
         }

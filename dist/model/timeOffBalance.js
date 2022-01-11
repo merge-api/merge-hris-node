@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TimeOffBalance = void 0;
 var TimeOffBalance = (function () {
     function TimeOffBalance() {
     }
@@ -14,7 +15,7 @@ var TimeOffBalance = (function () {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -34,12 +35,12 @@ var TimeOffBalance = (function () {
             "type": "number"
         },
         {
-            "name": "policyType",
+            "name": "policy_type",
             "baseName": "policy_type",
             "type": "PolicyTypeEnum"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

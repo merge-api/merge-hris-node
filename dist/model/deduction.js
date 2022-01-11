@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Deduction = void 0;
 var Deduction = (function () {
     function Deduction() {
     }
@@ -14,7 +15,7 @@ var Deduction = (function () {
             "type": "string"
         },
         {
-            "name": "employeePayrollRun",
+            "name": "employee_payroll_run",
             "baseName": "employee_payroll_run",
             "type": "string"
         },
@@ -24,17 +25,17 @@ var Deduction = (function () {
             "type": "string"
         },
         {
-            "name": "employeeDeduction",
+            "name": "employee_deduction",
             "baseName": "employee_deduction",
             "type": "number"
         },
         {
-            "name": "companyDeduction",
+            "name": "company_deduction",
             "baseName": "company_deduction",
             "type": "number"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<{ [key: string]: any; }>"
         }

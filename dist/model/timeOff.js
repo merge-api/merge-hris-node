@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TimeOff = void 0;
 var TimeOff = (function () {
     function TimeOff() {
     }
@@ -14,7 +15,7 @@ var TimeOff = (function () {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -34,7 +35,7 @@ var TimeOff = (function () {
             "type": "TimeOffStatusEnum"
         },
         {
-            "name": "employeeNote",
+            "name": "employee_note",
             "baseName": "employee_note",
             "type": "string"
         },
@@ -49,22 +50,22 @@ var TimeOff = (function () {
             "type": "number"
         },
         {
-            "name": "requestType",
+            "name": "request_type",
             "baseName": "request_type",
             "type": "RequestTypeEnum"
         },
         {
-            "name": "startTime",
+            "name": "start_time",
             "baseName": "start_time",
             "type": "Date"
         },
         {
-            "name": "endTime",
+            "name": "end_time",
             "baseName": "end_time",
             "type": "Date"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

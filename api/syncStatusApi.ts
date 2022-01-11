@@ -91,7 +91,7 @@ export class SyncStatusApi {
     }
 
     /**
-     * Get syncing status.
+     * Get syncing status. Possible values: `DISABLED`, `DONE`, `FAILED`, `SYNCING`
      * @param xAccountToken Token identifying the end user.
      * @param cursor The pagination cursor value.
      * @param pageSize Number of results to return per page.

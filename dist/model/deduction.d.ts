@@ -1,10 +1,10 @@
 export declare class Deduction {
     'id'?: string;
-    'employeePayrollRun'?: string | null;
+    'employee_payroll_run'?: string | null;
     'name'?: string | null;
-    'employeeDeduction'?: number | null;
-    'companyDeduction'?: number | null;
-    'remoteData'?: Array<{
+    'employee_deduction'?: number | null;
+    'company_deduction'?: number | null;
+    'remote_data'?: Array<{
         [key: string]: any;
     }> | null;
     static discriminator: string | undefined;

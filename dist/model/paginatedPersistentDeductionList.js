@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PaginatedPersistentDeductionList = void 0;
 var PaginatedPersistentDeductionList = (function () {
     function PaginatedPersistentDeductionList() {
     }

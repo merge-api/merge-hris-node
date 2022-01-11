@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Benefit = void 0;
 var Benefit = (function () {
     function Benefit() {
     }
@@ -14,7 +15,7 @@ var Benefit = (function () {
             "type": "string"
         },
         {
-            "name": "remoteId",
+            "name": "remote_id",
             "baseName": "remote_id",
             "type": "string"
         },
@@ -24,27 +25,27 @@ var Benefit = (function () {
             "type": "string"
         },
         {
-            "name": "providerName",
+            "name": "provider_name",
             "baseName": "provider_name",
             "type": "string"
         },
         {
-            "name": "benefitPlanType",
+            "name": "benefit_plan_type",
             "baseName": "benefit_plan_type",
             "type": "BenefitPlanTypeEnum"
         },
         {
-            "name": "employeeContribution",
+            "name": "employee_contribution",
             "baseName": "employee_contribution",
             "type": "number"
         },
         {
-            "name": "companyContribution",
+            "name": "company_contribution",
             "baseName": "company_contribution",
             "type": "number"
         },
         {
-            "name": "remoteData",
+            "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
         }

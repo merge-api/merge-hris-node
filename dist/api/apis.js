@@ -1,66 +1,85 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(require("./accountDetailsApi"));
+exports.APIS = exports.HttpError = void 0;
+__exportStar(require("./accountDetailsApi"), exports);
 var accountDetailsApi_1 = require("./accountDetailsApi");
-__export(require("./accountTokenApi"));
+__exportStar(require("./accountTokenApi"), exports);
 var accountTokenApi_1 = require("./accountTokenApi");
-__export(require("./availableActionsApi"));
+__exportStar(require("./availableActionsApi"), exports);
 var availableActionsApi_1 = require("./availableActionsApi");
-__export(require("./bankInfoApi"));
+__exportStar(require("./bankInfoApi"), exports);
 var bankInfoApi_1 = require("./bankInfoApi");
-__export(require("./benefitsApi"));
+__exportStar(require("./benefitsApi"), exports);
 var benefitsApi_1 = require("./benefitsApi");
-__export(require("./companiesApi"));
+__exportStar(require("./companiesApi"), exports);
 var companiesApi_1 = require("./companiesApi");
-__export(require("./deductionsApi"));
+__exportStar(require("./deductionsApi"), exports);
 var deductionsApi_1 = require("./deductionsApi");
-__export(require("./deleteAccountApi"));
+__exportStar(require("./deleteAccountApi"), exports);
 var deleteAccountApi_1 = require("./deleteAccountApi");
-__export(require("./employeePayrollRunsApi"));
+__exportStar(require("./employeePayrollRunsApi"), exports);
 var employeePayrollRunsApi_1 = require("./employeePayrollRunsApi");
-__export(require("./employeesApi"));
+__exportStar(require("./employeesApi"), exports);
 var employeesApi_1 = require("./employeesApi");
-__export(require("./employmentsApi"));
+__exportStar(require("./employmentsApi"), exports);
 var employmentsApi_1 = require("./employmentsApi");
-__export(require("./generateKeyApi"));
+__exportStar(require("./forceResyncApi"), exports);
+var forceResyncApi_1 = require("./forceResyncApi");
+__exportStar(require("./generateKeyApi"), exports);
 var generateKeyApi_1 = require("./generateKeyApi");
-__export(require("./issuesApi"));
+__exportStar(require("./issuesApi"), exports);
 var issuesApi_1 = require("./issuesApi");
-__export(require("./linkTokenApi"));
+__exportStar(require("./linkTokenApi"), exports);
 var linkTokenApi_1 = require("./linkTokenApi");
-__export(require("./linkedAccountsApi"));
+__exportStar(require("./linkedAccountsApi"), exports);
 var linkedAccountsApi_1 = require("./linkedAccountsApi");
-__export(require("./locationsApi"));
+__exportStar(require("./locationsApi"), exports);
 var locationsApi_1 = require("./locationsApi");
-__export(require("./passthroughApi"));
+__exportStar(require("./passthroughApi"), exports);
 var passthroughApi_1 = require("./passthroughApi");
-__export(require("./payGroupApi"));
+__exportStar(require("./payGroupApi"), exports);
 var payGroupApi_1 = require("./payGroupApi");
-__export(require("./payrollRunsApi"));
+__exportStar(require("./payGroupsApi"), exports);
+var payGroupsApi_1 = require("./payGroupsApi");
+__exportStar(require("./payrollRunsApi"), exports);
 var payrollRunsApi_1 = require("./payrollRunsApi");
-__export(require("./regenerateKeyApi"));
+__exportStar(require("./regenerateKeyApi"), exports);
 var regenerateKeyApi_1 = require("./regenerateKeyApi");
-__export(require("./syncStatusApi"));
+__exportStar(require("./syncStatusApi"), exports);
 var syncStatusApi_1 = require("./syncStatusApi");
-__export(require("./teamsApi"));
+__exportStar(require("./teamsApi"), exports);
 var teamsApi_1 = require("./teamsApi");
-__export(require("./timeOffApi"));
+__exportStar(require("./timeOffApi"), exports);
 var timeOffApi_1 = require("./timeOffApi");
-__export(require("./timeOffBalanceApi"));
+__exportStar(require("./timeOffBalanceApi"), exports);
 var timeOffBalanceApi_1 = require("./timeOffBalanceApi");
+__exportStar(require("./timeOffBalancesApi"), exports);
+var timeOffBalancesApi_1 = require("./timeOffBalancesApi");
 var HttpError = (function (_super) {
     __extends(HttpError, _super);
     function HttpError(response, body, statusCode) {
@@ -74,5 +93,5 @@ var HttpError = (function (_super) {
     return HttpError;
 }(Error));
 exports.HttpError = HttpError;
-exports.APIS = [accountDetailsApi_1.AccountDetailsApi, accountTokenApi_1.AccountTokenApi, availableActionsApi_1.AvailableActionsApi, bankInfoApi_1.BankInfoApi, benefitsApi_1.BenefitsApi, companiesApi_1.CompaniesApi, deductionsApi_1.DeductionsApi, deleteAccountApi_1.DeleteAccountApi, employeePayrollRunsApi_1.EmployeePayrollRunsApi, employeesApi_1.EmployeesApi, employmentsApi_1.EmploymentsApi, generateKeyApi_1.GenerateKeyApi, issuesApi_1.IssuesApi, linkTokenApi_1.LinkTokenApi, linkedAccountsApi_1.LinkedAccountsApi, locationsApi_1.LocationsApi, passthroughApi_1.PassthroughApi, payGroupApi_1.PayGroupApi, payrollRunsApi_1.PayrollRunsApi, regenerateKeyApi_1.RegenerateKeyApi, syncStatusApi_1.SyncStatusApi, teamsApi_1.TeamsApi, timeOffApi_1.TimeOffApi, timeOffBalanceApi_1.TimeOffBalanceApi];
+exports.APIS = [accountDetailsApi_1.AccountDetailsApi, accountTokenApi_1.AccountTokenApi, availableActionsApi_1.AvailableActionsApi, bankInfoApi_1.BankInfoApi, benefitsApi_1.BenefitsApi, companiesApi_1.CompaniesApi, deductionsApi_1.DeductionsApi, deleteAccountApi_1.DeleteAccountApi, employeePayrollRunsApi_1.EmployeePayrollRunsApi, employeesApi_1.EmployeesApi, employmentsApi_1.EmploymentsApi, forceResyncApi_1.ForceResyncApi, generateKeyApi_1.GenerateKeyApi, issuesApi_1.IssuesApi, linkTokenApi_1.LinkTokenApi, linkedAccountsApi_1.LinkedAccountsApi, locationsApi_1.LocationsApi, passthroughApi_1.PassthroughApi, payGroupApi_1.PayGroupApi, payGroupsApi_1.PayGroupsApi, payrollRunsApi_1.PayrollRunsApi, regenerateKeyApi_1.RegenerateKeyApi, syncStatusApi_1.SyncStatusApi, teamsApi_1.TeamsApi, timeOffApi_1.TimeOffApi, timeOffBalanceApi_1.TimeOffBalanceApi, timeOffBalancesApi_1.TimeOffBalancesApi];
 //# sourceMappingURL=apis.js.map

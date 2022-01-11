@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -38,6 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CompaniesApi = exports.CompaniesApiApiKeys = void 0;
 var request_1 = __importDefault(require("request"));
 var models_1 = require("../model/models");
 var models_2 = require("../model/models");
@@ -72,7 +74,7 @@ var CompaniesApi = (function () {
         set: function (value) {
             this._useQuerystring = value;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CompaniesApi.prototype, "basePath", {
@@ -82,7 +84,7 @@ var CompaniesApi = (function () {
         set: function (basePath) {
             this._basePath = basePath;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CompaniesApi.prototype, "defaultHeaders", {
@@ -92,7 +94,7 @@ var CompaniesApi = (function () {
         set: function (defaultHeaders) {
             this._defaultHeaders = defaultHeaders;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     CompaniesApi.prototype.setDefaultAuthentication = function (auth) {
@@ -104,7 +106,7 @@ var CompaniesApi = (function () {
     CompaniesApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    CompaniesApi.prototype.companiesList = function (xAccountToken, createdAfter, createdBefore, cursor, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, options) {
+    CompaniesApi.prototype.companiesList = function (xAccountToken, createdAfter, createdBefore, cursor, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, remoteId, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -132,6 +134,9 @@ var CompaniesApi = (function () {
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
+                }
+                if (includeDeletedData !== undefined) {
+                    localVarQueryParameters['include_deleted_data'] = models_1.ObjectSerializer.serialize(includeDeletedData, "boolean");
                 }
                 if (includeRemoteData !== undefined) {
                     localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
