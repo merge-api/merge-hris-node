@@ -12,6 +12,7 @@
 
 import { RequestFile } from './models';
 import { CountryEnum } from './countryEnum';
+import { LocationTypeEnum } from './locationTypeEnum';
 import { RemoteData } from './remoteData';
 
 /**
@@ -55,6 +56,10 @@ export class Location {
     * The location\'s country.
     */
     'country'?: CountryEnum | null;
+    /**
+    * The location\'s type. Can be either WORK or HOME
+    */
+    'location_type'?: LocationTypeEnum | null;
     'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -109,6 +114,11 @@ export class Location {
             "name": "country",
             "baseName": "country",
             "type": "CountryEnum"
+        },
+        {
+            "name": "location_type",
+            "baseName": "location_type",
+            "type": "LocationTypeEnum"
         },
         {
             "name": "remote_data",
