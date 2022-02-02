@@ -67,7 +67,7 @@ class BankInfoApi {
     addInterceptor(interceptor) {
         this.interceptors.push(interceptor);
     }
-    bankInfoList(xAccountToken, accountType, bankName, createdAfter, createdBefore, cursor, employeeId, expand, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, orderBy, pageSize, remoteId, options = { headers: {} }) {
+    bankInfoList(xAccountToken, accountType, bankName, createdAfter, createdBefore, cursor, employee, employeeId, expand, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, orderBy, pageSize, remoteId, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
             const localVarPath = this.basePath + '/bank-info';
             let localVarQueryParameters = {};
@@ -97,6 +97,9 @@ class BankInfoApi {
             }
             if (cursor !== undefined) {
                 localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
+            }
+            if (employee !== undefined) {
+                localVarQueryParameters['employee'] = models_1.ObjectSerializer.serialize(employee, "string");
             }
             if (employeeId !== undefined) {
                 localVarQueryParameters['employee_id'] = models_1.ObjectSerializer.serialize(employeeId, "string");
