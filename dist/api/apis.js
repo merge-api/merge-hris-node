@@ -1,20 +1,4 @@
 "use strict";
-<<<<<<< HEAD
-=======
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
->>>>>>> lee/node-employee-paygroup
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -62,13 +46,7 @@ const linkedAccountsApi_1 = require("./linkedAccountsApi");
 __exportStar(require("./locationsApi"), exports);
 const locationsApi_1 = require("./locationsApi");
 __exportStar(require("./passthroughApi"), exports);
-<<<<<<< HEAD
 const passthroughApi_1 = require("./passthroughApi");
-__exportStar(require("./payGroupApi"), exports);
-const payGroupApi_1 = require("./payGroupApi");
-=======
-var passthroughApi_1 = require("./passthroughApi");
->>>>>>> lee/node-employee-paygroup
 __exportStar(require("./payGroupsApi"), exports);
 const payGroupsApi_1 = require("./payGroupsApi");
 __exportStar(require("./payrollRunsApi"), exports);
@@ -80,13 +58,7 @@ const syncStatusApi_1 = require("./syncStatusApi");
 __exportStar(require("./teamsApi"), exports);
 const teamsApi_1 = require("./teamsApi");
 __exportStar(require("./timeOffApi"), exports);
-<<<<<<< HEAD
 const timeOffApi_1 = require("./timeOffApi");
-__exportStar(require("./timeOffBalanceApi"), exports);
-const timeOffBalanceApi_1 = require("./timeOffBalanceApi");
-=======
-var timeOffApi_1 = require("./timeOffApi");
->>>>>>> lee/node-employee-paygroup
 __exportStar(require("./timeOffBalancesApi"), exports);
 const timeOffBalancesApi_1 = require("./timeOffBalancesApi");
 class HttpError extends Error {

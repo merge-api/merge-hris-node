@@ -66,9 +66,8 @@ class BankInfoApi {
     }
     addInterceptor(interceptor) {
         this.interceptors.push(interceptor);
-<<<<<<< HEAD
     }
-    bankInfoList(xAccountToken, accountType, bankName, createdAfter, createdBefore, cursor, employee, employeeId, expand, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, orderBy, pageSize, remoteCreatedAt, remoteId, options = { headers: {} }) {
+    bankInfoList(xAccountToken, accountType, bankName, createdAfter, createdBefore, cursor, employeeId, expand, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, orderBy, pageSize, remoteId, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
             const localVarPath = this.basePath + '/bank-info';
             let localVarQueryParameters = {};
@@ -99,9 +98,6 @@ class BankInfoApi {
             if (cursor !== undefined) {
                 localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
             }
-            if (employee !== undefined) {
-                localVarQueryParameters['employee'] = models_1.ObjectSerializer.serialize(employee, "string");
-            }
             if (employeeId !== undefined) {
                 localVarQueryParameters['employee_id'] = models_1.ObjectSerializer.serialize(employeeId, "string");
             }
@@ -125,9 +121,6 @@ class BankInfoApi {
             }
             if (pageSize !== undefined) {
                 localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
-            }
-            if (remoteCreatedAt !== undefined) {
-                localVarQueryParameters['remote_created_at'] = models_1.ObjectSerializer.serialize(remoteCreatedAt, "Date");
             }
             if (remoteId !== undefined) {
                 localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
@@ -160,94 +153,6 @@ class BankInfoApi {
                     else {
                         localVarRequestOptions.form = localVarFormParams;
                     }
-=======
-    };
-    BankInfoApi.prototype.bankInfoList = function (xAccountToken, accountType, bankName, createdAfter, createdBefore, cursor, employeeId, expand, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, orderBy, pageSize, remoteId, options) {
-        if (options === void 0) { options = { headers: {} }; }
-        return __awaiter(this, void 0, void 0, function () {
-            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
-            var _this = this;
-            return __generator(this, function (_b) {
-                localVarPath = this.basePath + '/bank-info';
-                localVarQueryParameters = {};
-                localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-                produces = ['application/json'];
-                if (produces.indexOf('application/json') >= 0) {
-                    localVarHeaderParams.Accept = 'application/json';
-                }
-                else {
-                    localVarHeaderParams.Accept = produces.join(',');
-                }
-                localVarFormParams = {};
-                if (xAccountToken === null || xAccountToken === undefined) {
-                    throw new Error('Required parameter xAccountToken was null or undefined when calling bankInfoList.');
-                }
-                if (accountType !== undefined) {
-                    localVarQueryParameters['account_type'] = models_1.ObjectSerializer.serialize(accountType, "'CHECKING' | 'SAVINGS'");
-                }
-                if (bankName !== undefined) {
-                    localVarQueryParameters['bank_name'] = models_1.ObjectSerializer.serialize(bankName, "string");
-                }
-                if (createdAfter !== undefined) {
-                    localVarQueryParameters['created_after'] = models_1.ObjectSerializer.serialize(createdAfter, "Date");
-                }
-                if (createdBefore !== undefined) {
-                    localVarQueryParameters['created_before'] = models_1.ObjectSerializer.serialize(createdBefore, "Date");
-                }
-                if (cursor !== undefined) {
-                    localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
-                }
-                if (employeeId !== undefined) {
-                    localVarQueryParameters['employee_id'] = models_1.ObjectSerializer.serialize(employeeId, "string");
-                }
-                if (expand !== undefined) {
-                    localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'employee'");
-                }
-                if (includeDeletedData !== undefined) {
-                    localVarQueryParameters['include_deleted_data'] = models_1.ObjectSerializer.serialize(includeDeletedData, "boolean");
-                }
-                if (includeRemoteData !== undefined) {
-                    localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
-                }
-                if (modifiedAfter !== undefined) {
-                    localVarQueryParameters['modified_after'] = models_1.ObjectSerializer.serialize(modifiedAfter, "Date");
-                }
-                if (modifiedBefore !== undefined) {
-                    localVarQueryParameters['modified_before'] = models_1.ObjectSerializer.serialize(modifiedBefore, "Date");
-                }
-                if (orderBy !== undefined) {
-                    localVarQueryParameters['order_by'] = models_1.ObjectSerializer.serialize(orderBy, "'-remote_created_at' | 'remote_created_at'");
-                }
-                if (pageSize !== undefined) {
-                    localVarQueryParameters['page_size'] = models_1.ObjectSerializer.serialize(pageSize, "number");
-                }
-                if (remoteId !== undefined) {
-                    localVarQueryParameters['remote_id'] = models_1.ObjectSerializer.serialize(remoteId, "string");
-                }
-                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
-                Object.assign(localVarHeaderParams, options.headers);
-                localVarUseFormData = false;
-                localVarRequestOptions = {
-                    method: 'GET',
-                    qs: localVarQueryParameters,
-                    headers: localVarHeaderParams,
-                    uri: localVarPath,
-                    useQuerystring: this._useQuerystring,
-                    json: true,
-                };
-                authenticationPromise = Promise.resolve();
-                if (this.authentications.tokenAuth.apiKey) {
-                    authenticationPromise = authenticationPromise.then(function () { return _this.authentications.tokenAuth.applyToRequest(localVarRequestOptions); });
-                }
-                authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
-                interceptorPromise = authenticationPromise;
-                _loop_1 = function (interceptor) {
-                    interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
-                };
-                for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
-                    interceptor = _a[_i];
-                    _loop_1(interceptor);
->>>>>>> lee/node-employee-paygroup
                 }
                 return new Promise((resolve, reject) => {
                     request_1.default(localVarRequestOptions, (error, response, body) => {
