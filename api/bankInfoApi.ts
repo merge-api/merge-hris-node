@@ -98,6 +98,7 @@ export class BankInfoApi {
      * @param createdAfter If provided, will only return objects created after this datetime.
      * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
+     * @param employee If provided, will only return bank accounts for this employee.
      * @param employeeId If provided, will only return bank accounts for this employee.
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeDeletedData Whether to include data that was deleted in the third-party service.
@@ -108,7 +109,7 @@ export class BankInfoApi {
      * @param pageSize Number of results to return per page.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async bankInfoList (xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBankInfoList;  }> {
+    public async bankInfoList (xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employee?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBankInfoList;  }> {
         const localVarPath = this.basePath + '/bank-info';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -144,6 +145,10 @@ export class BankInfoApi {
 
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
+        }
+
+        if (employee !== undefined) {
+            localVarQueryParameters['employee'] = ObjectSerializer.serialize(employee, "string");
         }
 
         if (employeeId !== undefined) {
