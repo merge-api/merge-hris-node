@@ -1,7 +1,6 @@
 /// <reference types="node" />
 import http from 'http';
 import { PaginatedSyncStatusList } from '../model/paginatedSyncStatusList';
-import { SyncStatus } from '../model/syncStatus';
 import { Authentication, Interceptor } from '../model/models';
 import { ApiKeyAuth } from '../model/models';
 export declare enum SyncStatusApiApiKeys {
@@ -32,13 +31,5 @@ export declare class SyncStatusApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: PaginatedSyncStatusList;
-    }>;
-    syncStatusResyncCreate(xAccountToken: string, options?: {
-        headers: {
-            [name: string]: string;
-        };
-    }): Promise<{
-        response: http.IncomingMessage;
-        body: SyncStatus;
     }>;
 }

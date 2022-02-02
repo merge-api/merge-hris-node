@@ -14,5 +14,6 @@ import { RequestFile } from './models';
 
 export enum RequestFormatEnum {
     Json = <any> 'JSON',
-    Xml = <any> 'XML'
+    Xml = <any> 'XML',
+    Multipart = <any> 'MULTIPART'
 }

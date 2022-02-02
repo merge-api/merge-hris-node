@@ -23,10 +23,7 @@ export class TimeOffBalance {
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
-    /**
-    * The employee the balance belongs to.
-    */
-    'employee'?: string | null;
+    'employee'?: string;
     /**
     * The current PTO balance in terms of hours.
     */

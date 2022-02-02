@@ -66,6 +66,7 @@ class TimeOffApi {
     }
     addInterceptor(interceptor) {
         this.interceptors.push(interceptor);
+<<<<<<< HEAD
     }
     timeOffCreate(xAccountToken, timeOffEndpointRequest, runAsync, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -128,6 +129,67 @@ class TimeOffApi {
                             body = models_1.ObjectSerializer.deserialize(body, "TimeOffResponse");
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                 resolve({ response: response, body: body });
+=======
+    };
+    TimeOffApi.prototype.timeOffCreate = function (xAccountToken, timeOffEndpointRequest, isDebugMode, runAsync, options) {
+        if (options === void 0) { options = { headers: {} }; }
+        return __awaiter(this, void 0, void 0, function () {
+            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
+            var _this = this;
+            return __generator(this, function (_b) {
+                localVarPath = this.basePath + '/time-off';
+                localVarQueryParameters = {};
+                localVarHeaderParams = Object.assign({}, this._defaultHeaders);
+                produces = ['application/json'];
+                if (produces.indexOf('application/json') >= 0) {
+                    localVarHeaderParams.Accept = 'application/json';
+                }
+                else {
+                    localVarHeaderParams.Accept = produces.join(',');
+                }
+                localVarFormParams = {};
+                if (xAccountToken === null || xAccountToken === undefined) {
+                    throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffCreate.');
+                }
+                if (timeOffEndpointRequest === null || timeOffEndpointRequest === undefined) {
+                    throw new Error('Required parameter timeOffEndpointRequest was null or undefined when calling timeOffCreate.');
+                }
+                if (isDebugMode !== undefined) {
+                    localVarQueryParameters['is_debug_mode'] = models_1.ObjectSerializer.serialize(isDebugMode, "boolean");
+                }
+                if (runAsync !== undefined) {
+                    localVarQueryParameters['run_async'] = models_1.ObjectSerializer.serialize(runAsync, "boolean");
+                }
+                localVarHeaderParams['X-Account-Token'] = models_1.ObjectSerializer.serialize(xAccountToken, "string");
+                Object.assign(localVarHeaderParams, options.headers);
+                localVarUseFormData = false;
+                localVarRequestOptions = {
+                    method: 'POST',
+                    qs: localVarQueryParameters,
+                    headers: localVarHeaderParams,
+                    uri: localVarPath,
+                    useQuerystring: this._useQuerystring,
+                    json: true,
+                    body: models_1.ObjectSerializer.serialize(timeOffEndpointRequest, "TimeOffEndpointRequest")
+                };
+                authenticationPromise = Promise.resolve();
+                if (this.authentications.tokenAuth.apiKey) {
+                    authenticationPromise = authenticationPromise.then(function () { return _this.authentications.tokenAuth.applyToRequest(localVarRequestOptions); });
+                }
+                authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
+                interceptorPromise = authenticationPromise;
+                _loop_1 = function (interceptor) {
+                    interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
+                };
+                for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
+                    interceptor = _a[_i];
+                    _loop_1(interceptor);
+                }
+                return [2, interceptorPromise.then(function () {
+                        if (Object.keys(localVarFormParams).length) {
+                            if (localVarUseFormData) {
+                                localVarRequestOptions.formData = localVarFormParams;
+>>>>>>> lee/node-employee-paygroup
                             }
                             else {
                                 reject(new apis_1.HttpError(response, body, response.statusCode));

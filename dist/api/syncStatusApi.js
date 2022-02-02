@@ -136,6 +136,7 @@ class SyncStatusApi {
                 });
             });
         });
+<<<<<<< HEAD
     }
     syncStatusResyncCreate(xAccountToken, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -202,5 +203,10 @@ class SyncStatusApi {
         });
     }
 }
+=======
+    };
+    return SyncStatusApi;
+}());
+>>>>>>> lee/node-employee-paygroup
 exports.SyncStatusApi = SyncStatusApi;
 //# sourceMappingURL=syncStatusApi.js.map

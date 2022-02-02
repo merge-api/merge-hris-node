@@ -93,12 +93,11 @@ export class BankInfoApi {
     /**
      * Returns a list of `BankInfo` objects.
      * @param xAccountToken Token identifying the end user.
-     * @param accountType The bank account type
-     * @param bankName 
+     * @param accountType If provided, will only return BankInfo\&#39;s with this account type. Options: (\&#39;SAVINGS\&#39;, \&#39;CHECKING\&#39;)
+     * @param bankName If provided, will only return BankInfo\&#39;s with this bank name.
      * @param createdAfter If provided, will only return objects created after this datetime.
      * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
-     * @param employee If provided, will only return bank accounts for this employee.
      * @param employeeId If provided, will only return bank accounts for this employee.
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeDeletedData Whether to include data that was deleted in the third-party service.
@@ -107,10 +106,9 @@ export class BankInfoApi {
      * @param modifiedBefore If provided, will only return objects modified before this datetime.
      * @param orderBy Overrides the default ordering for this endpoint.
      * @param pageSize Number of results to return per page.
-     * @param remoteCreatedAt 
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async bankInfoList (xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employee?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteCreatedAt?: Date, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBankInfoList;  }> {
+    public async bankInfoList (xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBankInfoList;  }> {
         const localVarPath = this.basePath + '/bank-info';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -148,10 +146,6 @@ export class BankInfoApi {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
         }
 
-        if (employee !== undefined) {
-            localVarQueryParameters['employee'] = ObjectSerializer.serialize(employee, "string");
-        }
-
         if (employeeId !== undefined) {
             localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employeeId, "string");
         }
@@ -182,10 +176,6 @@ export class BankInfoApi {
 
         if (pageSize !== undefined) {
             localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
-        }
-
-        if (remoteCreatedAt !== undefined) {
-            localVarQueryParameters['remote_created_at'] = ObjectSerializer.serialize(remoteCreatedAt, "Date");
         }
 
         if (remoteId !== undefined) {

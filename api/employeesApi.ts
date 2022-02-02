@@ -16,6 +16,7 @@ import http from 'http';
 
 /* tslint:disable:no-unused-locals */
 import { Employee } from '../model/employee';
+import { IgnoreCommonModelRequest } from '../model/ignoreCommonModelRequest';
 import { PaginatedEmployeeList } from '../model/paginatedEmployeeList';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
@@ -90,6 +91,76 @@ export class EmployeesApi {
         this.interceptors.push(interceptor);
     }
 
+    /**
+     * Ignores a specific row based on the `model_id` in the url. These records will have their properties set to null, and will not be updated in future syncs. The \"reason\" and \"message\" fields in the request body will be stored for audit purposes.
+     * @param modelId 
+     * @param ignoreCommonModelRequest 
+     */
+    public async employeesIgnoreCreate (modelId: string, ignoreCommonModelRequest: IgnoreCommonModelRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+        const localVarPath = this.basePath + '/employees/ignore/{model_id}'
+            .replace('{' + 'model_id' + '}', encodeURIComponent(String(modelId)));
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'modelId' is not null or undefined
+        if (modelId === null || modelId === undefined) {
+            throw new Error('Required parameter modelId was null or undefined when calling employeesIgnoreCreate.');
+        }
+
+        // verify required parameter 'ignoreCommonModelRequest' is not null or undefined
+        if (ignoreCommonModelRequest === null || ignoreCommonModelRequest === undefined) {
+            throw new Error('Required parameter ignoreCommonModelRequest was null or undefined when calling employeesIgnoreCreate.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(ignoreCommonModelRequest, "IgnoreCommonModelRequest")
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.tokenAuth.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
     /**
      * Returns a list of `Employee` objects.
      * @param xAccountToken Token identifying the end user.

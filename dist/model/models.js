@@ -40,10 +40,12 @@ __exportStar(require("./ethnicityEnum"), exports);
 __exportStar(require("./flsaStatusEnum"), exports);
 __exportStar(require("./genderEnum"), exports);
 __exportStar(require("./generateRemoteKeyRequest"), exports);
+__exportStar(require("./ignoreCommonModelRequest"), exports);
 __exportStar(require("./issue"), exports);
 __exportStar(require("./issueStatusEnum"), exports);
 __exportStar(require("./linkToken"), exports);
 __exportStar(require("./location"), exports);
+__exportStar(require("./locationTypeEnum"), exports);
 __exportStar(require("./maritalStatusEnum"), exports);
 __exportStar(require("./methodEnum"), exports);
 __exportStar(require("./modelOperation"), exports);
@@ -69,6 +71,7 @@ __exportStar(require("./payGroup"), exports);
 __exportStar(require("./payPeriodEnum"), exports);
 __exportStar(require("./payrollRun"), exports);
 __exportStar(require("./policyTypeEnum"), exports);
+__exportStar(require("./reasonEnum"), exports);
 __exportStar(require("./remoteData"), exports);
 __exportStar(require("./remoteDataRequest"), exports);
 __exportStar(require("./remoteKey"), exports);
@@ -90,9 +93,9 @@ __exportStar(require("./timeOffResponse"), exports);
 __exportStar(require("./timeOffStatusEnum"), exports);
 __exportStar(require("./typeEnum"), exports);
 __exportStar(require("./unitsEnum"), exports);
-__exportStar(require("./validationProblem"), exports);
 __exportStar(require("./validationProblemSource"), exports);
 __exportStar(require("./warningValidationProblem"), exports);
+<<<<<<< HEAD
 const accountDetails_1 = require("./accountDetails");
 const accountDetailsAndActions_1 = require("./accountDetailsAndActions");
 const accountDetailsAndActionsIntegration_1 = require("./accountDetailsAndActionsIntegration");
@@ -175,6 +178,93 @@ const unitsEnum_1 = require("./unitsEnum");
 const validationProblemSource_1 = require("./validationProblemSource");
 const warningValidationProblem_1 = require("./warningValidationProblem");
 let primitives = [
+=======
+var accountDetails_1 = require("./accountDetails");
+var accountDetailsAndActions_1 = require("./accountDetailsAndActions");
+var accountDetailsAndActionsIntegration_1 = require("./accountDetailsAndActionsIntegration");
+var accountDetailsAndActionsStatusEnum_1 = require("./accountDetailsAndActionsStatusEnum");
+var accountIntegration_1 = require("./accountIntegration");
+var accountToken_1 = require("./accountToken");
+var accountTypeEnum_1 = require("./accountTypeEnum");
+var availableActions_1 = require("./availableActions");
+var bankInfo_1 = require("./bankInfo");
+var benefit_1 = require("./benefit");
+var benefitPlanTypeEnum_1 = require("./benefitPlanTypeEnum");
+var categoriesEnum_1 = require("./categoriesEnum");
+var categoryEnum_1 = require("./categoryEnum");
+var company_1 = require("./company");
+var countryEnum_1 = require("./countryEnum");
+var dataPassthroughRequest_1 = require("./dataPassthroughRequest");
+var deduction_1 = require("./deduction");
+var earning_1 = require("./earning");
+var employee_1 = require("./employee");
+var employeePayrollRun_1 = require("./employeePayrollRun");
+var employment_1 = require("./employment");
+var employmentStatusEnum_1 = require("./employmentStatusEnum");
+var employmentTypeEnum_1 = require("./employmentTypeEnum");
+var endUserDetailsRequest_1 = require("./endUserDetailsRequest");
+var errorValidationProblem_1 = require("./errorValidationProblem");
+var ethnicityEnum_1 = require("./ethnicityEnum");
+var flsaStatusEnum_1 = require("./flsaStatusEnum");
+var genderEnum_1 = require("./genderEnum");
+var generateRemoteKeyRequest_1 = require("./generateRemoteKeyRequest");
+var ignoreCommonModelRequest_1 = require("./ignoreCommonModelRequest");
+var issue_1 = require("./issue");
+var issueStatusEnum_1 = require("./issueStatusEnum");
+var linkToken_1 = require("./linkToken");
+var location_1 = require("./location");
+var locationTypeEnum_1 = require("./locationTypeEnum");
+var maritalStatusEnum_1 = require("./maritalStatusEnum");
+var methodEnum_1 = require("./methodEnum");
+var modelOperation_1 = require("./modelOperation");
+var paginatedAccountDetailsAndActionsList_1 = require("./paginatedAccountDetailsAndActionsList");
+var paginatedBankInfoList_1 = require("./paginatedBankInfoList");
+var paginatedBenefitList_1 = require("./paginatedBenefitList");
+var paginatedCompanyList_1 = require("./paginatedCompanyList");
+var paginatedDeductionList_1 = require("./paginatedDeductionList");
+var paginatedEmployeeList_1 = require("./paginatedEmployeeList");
+var paginatedEmployeePayrollRunList_1 = require("./paginatedEmployeePayrollRunList");
+var paginatedEmploymentList_1 = require("./paginatedEmploymentList");
+var paginatedIssueList_1 = require("./paginatedIssueList");
+var paginatedLocationList_1 = require("./paginatedLocationList");
+var paginatedPayGroupList_1 = require("./paginatedPayGroupList");
+var paginatedPayrollRunList_1 = require("./paginatedPayrollRunList");
+var paginatedSyncStatusList_1 = require("./paginatedSyncStatusList");
+var paginatedTeamList_1 = require("./paginatedTeamList");
+var paginatedTimeOffBalanceList_1 = require("./paginatedTimeOffBalanceList");
+var paginatedTimeOffList_1 = require("./paginatedTimeOffList");
+var payCurrencyEnum_1 = require("./payCurrencyEnum");
+var payFrequencyEnum_1 = require("./payFrequencyEnum");
+var payGroup_1 = require("./payGroup");
+var payPeriodEnum_1 = require("./payPeriodEnum");
+var payrollRun_1 = require("./payrollRun");
+var policyTypeEnum_1 = require("./policyTypeEnum");
+var reasonEnum_1 = require("./reasonEnum");
+var remoteData_1 = require("./remoteData");
+var remoteDataRequest_1 = require("./remoteDataRequest");
+var remoteKey_1 = require("./remoteKey");
+var remoteKeyForRegenerationRequest_1 = require("./remoteKeyForRegenerationRequest");
+var remoteResponse_1 = require("./remoteResponse");
+var requestFormatEnum_1 = require("./requestFormatEnum");
+var requestTypeEnum_1 = require("./requestTypeEnum");
+var runStateEnum_1 = require("./runStateEnum");
+var runTypeEnum_1 = require("./runTypeEnum");
+var syncStatus_1 = require("./syncStatus");
+var syncStatusStatusEnum_1 = require("./syncStatusStatusEnum");
+var tax_1 = require("./tax");
+var team_1 = require("./team");
+var timeOff_1 = require("./timeOff");
+var timeOffBalance_1 = require("./timeOffBalance");
+var timeOffEndpointRequest_1 = require("./timeOffEndpointRequest");
+var timeOffRequest_1 = require("./timeOffRequest");
+var timeOffResponse_1 = require("./timeOffResponse");
+var timeOffStatusEnum_1 = require("./timeOffStatusEnum");
+var typeEnum_1 = require("./typeEnum");
+var unitsEnum_1 = require("./unitsEnum");
+var validationProblemSource_1 = require("./validationProblemSource");
+var warningValidationProblem_1 = require("./warningValidationProblem");
+var primitives = [
+>>>>>>> lee/node-employee-paygroup
     "string",
     "boolean",
     "double",
@@ -197,12 +287,14 @@ let enumsMap = {
     "FlsaStatusEnum": flsaStatusEnum_1.FlsaStatusEnum,
     "GenderEnum": genderEnum_1.GenderEnum,
     "IssueStatusEnum": issueStatusEnum_1.IssueStatusEnum,
+    "LocationTypeEnum": locationTypeEnum_1.LocationTypeEnum,
     "MaritalStatusEnum": maritalStatusEnum_1.MaritalStatusEnum,
     "MethodEnum": methodEnum_1.MethodEnum,
     "PayCurrencyEnum": payCurrencyEnum_1.PayCurrencyEnum,
     "PayFrequencyEnum": payFrequencyEnum_1.PayFrequencyEnum,
     "PayPeriodEnum": payPeriodEnum_1.PayPeriodEnum,
     "PolicyTypeEnum": policyTypeEnum_1.PolicyTypeEnum,
+    "ReasonEnum": reasonEnum_1.ReasonEnum,
     "RequestFormatEnum": requestFormatEnum_1.RequestFormatEnum,
     "RequestTypeEnum": requestTypeEnum_1.RequestTypeEnum,
     "RunStateEnum": runStateEnum_1.RunStateEnum,
@@ -231,6 +323,7 @@ let typeMap = {
     "EndUserDetailsRequest": endUserDetailsRequest_1.EndUserDetailsRequest,
     "ErrorValidationProblem": errorValidationProblem_1.ErrorValidationProblem,
     "GenerateRemoteKeyRequest": generateRemoteKeyRequest_1.GenerateRemoteKeyRequest,
+    "IgnoreCommonModelRequest": ignoreCommonModelRequest_1.IgnoreCommonModelRequest,
     "Issue": issue_1.Issue,
     "LinkToken": linkToken_1.LinkToken,
     "Location": location_1.Location,

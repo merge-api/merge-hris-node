@@ -7,7 +7,7 @@ export declare class Employee {
     'id'?: string;
     'remote_id'?: string | null;
     'employee_number'?: string | null;
-    'company'?: string | null;
+    'company'?: string;
     'first_name'?: string | null;
     'last_name'?: string | null;
     'display_full_name'?: string | null;
@@ -15,11 +15,11 @@ export declare class Employee {
     'personal_email'?: string | null;
     'mobile_phone_number'?: string | null;
     'employments'?: Array<string>;
-    'home_location'?: string | null;
-    'work_location'?: string | null;
-    'manager'?: string | null;
-    'team'?: string | null;
-    'pay_group'?: string | null;
+    'home_location'?: string;
+    'work_location'?: string;
+    'manager'?: string;
+    'team'?: string;
+    'pay_group'?: string;
     'ssn'?: string | null;
     'gender'?: GenderEnum | null;
     'ethnicity'?: EthnicityEnum | null;

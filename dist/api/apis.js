@@ -1,4 +1,20 @@
 "use strict";
+<<<<<<< HEAD
+=======
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+>>>>>>> lee/node-employee-paygroup
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -46,9 +62,13 @@ const linkedAccountsApi_1 = require("./linkedAccountsApi");
 __exportStar(require("./locationsApi"), exports);
 const locationsApi_1 = require("./locationsApi");
 __exportStar(require("./passthroughApi"), exports);
+<<<<<<< HEAD
 const passthroughApi_1 = require("./passthroughApi");
 __exportStar(require("./payGroupApi"), exports);
 const payGroupApi_1 = require("./payGroupApi");
+=======
+var passthroughApi_1 = require("./passthroughApi");
+>>>>>>> lee/node-employee-paygroup
 __exportStar(require("./payGroupsApi"), exports);
 const payGroupsApi_1 = require("./payGroupsApi");
 __exportStar(require("./payrollRunsApi"), exports);
@@ -60,9 +80,13 @@ const syncStatusApi_1 = require("./syncStatusApi");
 __exportStar(require("./teamsApi"), exports);
 const teamsApi_1 = require("./teamsApi");
 __exportStar(require("./timeOffApi"), exports);
+<<<<<<< HEAD
 const timeOffApi_1 = require("./timeOffApi");
 __exportStar(require("./timeOffBalanceApi"), exports);
 const timeOffBalanceApi_1 = require("./timeOffBalanceApi");
+=======
+var timeOffApi_1 = require("./timeOffApi");
+>>>>>>> lee/node-employee-paygroup
 __exportStar(require("./timeOffBalancesApi"), exports);
 const timeOffBalancesApi_1 = require("./timeOffBalancesApi");
 class HttpError extends Error {
@@ -75,5 +99,5 @@ class HttpError extends Error {
     }
 }
 exports.HttpError = HttpError;
-exports.APIS = [accountDetailsApi_1.AccountDetailsApi, accountTokenApi_1.AccountTokenApi, availableActionsApi_1.AvailableActionsApi, bankInfoApi_1.BankInfoApi, benefitsApi_1.BenefitsApi, companiesApi_1.CompaniesApi, deductionsApi_1.DeductionsApi, deleteAccountApi_1.DeleteAccountApi, employeePayrollRunsApi_1.EmployeePayrollRunsApi, employeesApi_1.EmployeesApi, employmentsApi_1.EmploymentsApi, forceResyncApi_1.ForceResyncApi, generateKeyApi_1.GenerateKeyApi, issuesApi_1.IssuesApi, linkTokenApi_1.LinkTokenApi, linkedAccountsApi_1.LinkedAccountsApi, locationsApi_1.LocationsApi, passthroughApi_1.PassthroughApi, payGroupApi_1.PayGroupApi, payGroupsApi_1.PayGroupsApi, payrollRunsApi_1.PayrollRunsApi, regenerateKeyApi_1.RegenerateKeyApi, syncStatusApi_1.SyncStatusApi, teamsApi_1.TeamsApi, timeOffApi_1.TimeOffApi, timeOffBalanceApi_1.TimeOffBalanceApi, timeOffBalancesApi_1.TimeOffBalancesApi];
+exports.APIS = [accountDetailsApi_1.AccountDetailsApi, accountTokenApi_1.AccountTokenApi, availableActionsApi_1.AvailableActionsApi, bankInfoApi_1.BankInfoApi, benefitsApi_1.BenefitsApi, companiesApi_1.CompaniesApi, deductionsApi_1.DeductionsApi, deleteAccountApi_1.DeleteAccountApi, employeePayrollRunsApi_1.EmployeePayrollRunsApi, employeesApi_1.EmployeesApi, employmentsApi_1.EmploymentsApi, forceResyncApi_1.ForceResyncApi, generateKeyApi_1.GenerateKeyApi, issuesApi_1.IssuesApi, linkTokenApi_1.LinkTokenApi, linkedAccountsApi_1.LinkedAccountsApi, locationsApi_1.LocationsApi, passthroughApi_1.PassthroughApi, payGroupsApi_1.PayGroupsApi, payrollRunsApi_1.PayrollRunsApi, regenerateKeyApi_1.RegenerateKeyApi, syncStatusApi_1.SyncStatusApi, teamsApi_1.TeamsApi, timeOffApi_1.TimeOffApi, timeOffBalancesApi_1.TimeOffBalancesApi];
 //# sourceMappingURL=apis.js.map
