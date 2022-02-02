@@ -8,19 +8,26 @@
     "scripts": {
         "clean": "rm -Rf node_modules/ *.js",
         "build": "tsc",
-        "test": "npm run build && node dist/client.js"
+        "test": "npm run build && node dist/api.js && ./node_modules/.bin/_mocha 'test/**/*.test.ts'"
     },
     "author": "OpenAPI-Generator Contributors",
     "license": "Unlicense",
     "dependencies": {
-        "bluebird": "^3.5.0",
-        "request": "^2.81.0",
+        "@testdeck/mocha": "^0.2.0",
         "@types/bluebird": "3.5.33",
         "@types/request": "*",
-        "rewire": "^3.0.2"
+        "bluebird": "^3.5.0",
+        "chai": "^4.3.6",
+        "mocha": "^9.2.0",
+        "mocha-typescript": "^1.1.17",
+        "nyc": "^15.1.0",
+        "request": "^2.81.0",
+        "rewire": "^3.0.2",
+        "ts-mockito": "^2.6.1",
+        "ts-node": "^10.4.0"
     },
     "devDependencies": {
-        "typescript": "^2.4.2",
-        "@types/node": "8.10.34"
+        "@types/node": "^17.0",
+        "typescript": "^3.7"
     }
 }

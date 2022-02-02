@@ -1,31 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaginatedDeductionList = void 0;
-var PaginatedDeductionList = (function () {
-    function PaginatedDeductionList() {
-    }
-    PaginatedDeductionList.getAttributeTypeMap = function () {
+class PaginatedDeductionList {
+    static getAttributeTypeMap() {
         return PaginatedDeductionList.attributeTypeMap;
-    };
-    PaginatedDeductionList.discriminator = undefined;
-    PaginatedDeductionList.attributeTypeMap = [
-        {
-            "name": "next",
-            "baseName": "next",
-            "type": "string"
-        },
-        {
-            "name": "previous",
-            "baseName": "previous",
-            "type": "string"
-        },
-        {
-            "name": "results",
-            "baseName": "results",
-            "type": "Array<Deduction>"
-        }
-    ];
-    return PaginatedDeductionList;
-}());
+    }
+}
 exports.PaginatedDeductionList = PaginatedDeductionList;
+PaginatedDeductionList.discriminator = undefined;
+PaginatedDeductionList.attributeTypeMap = [
+    {
+        "name": "next",
+        "baseName": "next",
+        "type": "string"
+    },
+    {
+        "name": "previous",
+        "baseName": "previous",
+        "type": "string"
+    },
+    {
+        "name": "results",
+        "baseName": "results",
+        "type": "Array<Deduction>"
+    }
+];
 //# sourceMappingURL=paginatedDeductionList.js.map

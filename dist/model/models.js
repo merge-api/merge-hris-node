@@ -7,7 +7,7 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     o[k2] = m[k];
 }));
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VoidAuth = exports.OAuth = exports.ApiKeyAuth = exports.HttpBearerAuth = exports.HttpBasicAuth = exports.ObjectSerializer = void 0;
@@ -93,88 +93,88 @@ __exportStar(require("./unitsEnum"), exports);
 __exportStar(require("./validationProblem"), exports);
 __exportStar(require("./validationProblemSource"), exports);
 __exportStar(require("./warningValidationProblem"), exports);
-var accountDetails_1 = require("./accountDetails");
-var accountDetailsAndActions_1 = require("./accountDetailsAndActions");
-var accountDetailsAndActionsIntegration_1 = require("./accountDetailsAndActionsIntegration");
-var accountDetailsAndActionsStatusEnum_1 = require("./accountDetailsAndActionsStatusEnum");
-var accountIntegration_1 = require("./accountIntegration");
-var accountToken_1 = require("./accountToken");
-var accountTypeEnum_1 = require("./accountTypeEnum");
-var availableActions_1 = require("./availableActions");
-var bankInfo_1 = require("./bankInfo");
-var benefit_1 = require("./benefit");
-var benefitPlanTypeEnum_1 = require("./benefitPlanTypeEnum");
-var categoriesEnum_1 = require("./categoriesEnum");
-var categoryEnum_1 = require("./categoryEnum");
-var company_1 = require("./company");
-var countryEnum_1 = require("./countryEnum");
-var dataPassthroughRequest_1 = require("./dataPassthroughRequest");
-var deduction_1 = require("./deduction");
-var earning_1 = require("./earning");
-var employee_1 = require("./employee");
-var employeePayrollRun_1 = require("./employeePayrollRun");
-var employment_1 = require("./employment");
-var employmentStatusEnum_1 = require("./employmentStatusEnum");
-var employmentTypeEnum_1 = require("./employmentTypeEnum");
-var endUserDetailsRequest_1 = require("./endUserDetailsRequest");
-var errorValidationProblem_1 = require("./errorValidationProblem");
-var ethnicityEnum_1 = require("./ethnicityEnum");
-var flsaStatusEnum_1 = require("./flsaStatusEnum");
-var genderEnum_1 = require("./genderEnum");
-var generateRemoteKeyRequest_1 = require("./generateRemoteKeyRequest");
-var issue_1 = require("./issue");
-var issueStatusEnum_1 = require("./issueStatusEnum");
-var linkToken_1 = require("./linkToken");
-var location_1 = require("./location");
-var maritalStatusEnum_1 = require("./maritalStatusEnum");
-var methodEnum_1 = require("./methodEnum");
-var modelOperation_1 = require("./modelOperation");
-var paginatedAccountDetailsAndActionsList_1 = require("./paginatedAccountDetailsAndActionsList");
-var paginatedBankInfoList_1 = require("./paginatedBankInfoList");
-var paginatedBenefitList_1 = require("./paginatedBenefitList");
-var paginatedCompanyList_1 = require("./paginatedCompanyList");
-var paginatedDeductionList_1 = require("./paginatedDeductionList");
-var paginatedEmployeeList_1 = require("./paginatedEmployeeList");
-var paginatedEmployeePayrollRunList_1 = require("./paginatedEmployeePayrollRunList");
-var paginatedEmploymentList_1 = require("./paginatedEmploymentList");
-var paginatedIssueList_1 = require("./paginatedIssueList");
-var paginatedLocationList_1 = require("./paginatedLocationList");
-var paginatedPayGroupList_1 = require("./paginatedPayGroupList");
-var paginatedPayrollRunList_1 = require("./paginatedPayrollRunList");
-var paginatedSyncStatusList_1 = require("./paginatedSyncStatusList");
-var paginatedTeamList_1 = require("./paginatedTeamList");
-var paginatedTimeOffBalanceList_1 = require("./paginatedTimeOffBalanceList");
-var paginatedTimeOffList_1 = require("./paginatedTimeOffList");
-var payCurrencyEnum_1 = require("./payCurrencyEnum");
-var payFrequencyEnum_1 = require("./payFrequencyEnum");
-var payGroup_1 = require("./payGroup");
-var payPeriodEnum_1 = require("./payPeriodEnum");
-var payrollRun_1 = require("./payrollRun");
-var policyTypeEnum_1 = require("./policyTypeEnum");
-var remoteData_1 = require("./remoteData");
-var remoteDataRequest_1 = require("./remoteDataRequest");
-var remoteKey_1 = require("./remoteKey");
-var remoteKeyForRegenerationRequest_1 = require("./remoteKeyForRegenerationRequest");
-var remoteResponse_1 = require("./remoteResponse");
-var requestFormatEnum_1 = require("./requestFormatEnum");
-var requestTypeEnum_1 = require("./requestTypeEnum");
-var runStateEnum_1 = require("./runStateEnum");
-var runTypeEnum_1 = require("./runTypeEnum");
-var syncStatus_1 = require("./syncStatus");
-var syncStatusStatusEnum_1 = require("./syncStatusStatusEnum");
-var tax_1 = require("./tax");
-var team_1 = require("./team");
-var timeOff_1 = require("./timeOff");
-var timeOffBalance_1 = require("./timeOffBalance");
-var timeOffEndpointRequest_1 = require("./timeOffEndpointRequest");
-var timeOffRequest_1 = require("./timeOffRequest");
-var timeOffResponse_1 = require("./timeOffResponse");
-var timeOffStatusEnum_1 = require("./timeOffStatusEnum");
-var typeEnum_1 = require("./typeEnum");
-var unitsEnum_1 = require("./unitsEnum");
-var validationProblemSource_1 = require("./validationProblemSource");
-var warningValidationProblem_1 = require("./warningValidationProblem");
-var primitives = [
+const accountDetails_1 = require("./accountDetails");
+const accountDetailsAndActions_1 = require("./accountDetailsAndActions");
+const accountDetailsAndActionsIntegration_1 = require("./accountDetailsAndActionsIntegration");
+const accountDetailsAndActionsStatusEnum_1 = require("./accountDetailsAndActionsStatusEnum");
+const accountIntegration_1 = require("./accountIntegration");
+const accountToken_1 = require("./accountToken");
+const accountTypeEnum_1 = require("./accountTypeEnum");
+const availableActions_1 = require("./availableActions");
+const bankInfo_1 = require("./bankInfo");
+const benefit_1 = require("./benefit");
+const benefitPlanTypeEnum_1 = require("./benefitPlanTypeEnum");
+const categoriesEnum_1 = require("./categoriesEnum");
+const categoryEnum_1 = require("./categoryEnum");
+const company_1 = require("./company");
+const countryEnum_1 = require("./countryEnum");
+const dataPassthroughRequest_1 = require("./dataPassthroughRequest");
+const deduction_1 = require("./deduction");
+const earning_1 = require("./earning");
+const employee_1 = require("./employee");
+const employeePayrollRun_1 = require("./employeePayrollRun");
+const employment_1 = require("./employment");
+const employmentStatusEnum_1 = require("./employmentStatusEnum");
+const employmentTypeEnum_1 = require("./employmentTypeEnum");
+const endUserDetailsRequest_1 = require("./endUserDetailsRequest");
+const errorValidationProblem_1 = require("./errorValidationProblem");
+const ethnicityEnum_1 = require("./ethnicityEnum");
+const flsaStatusEnum_1 = require("./flsaStatusEnum");
+const genderEnum_1 = require("./genderEnum");
+const generateRemoteKeyRequest_1 = require("./generateRemoteKeyRequest");
+const issue_1 = require("./issue");
+const issueStatusEnum_1 = require("./issueStatusEnum");
+const linkToken_1 = require("./linkToken");
+const location_1 = require("./location");
+const maritalStatusEnum_1 = require("./maritalStatusEnum");
+const methodEnum_1 = require("./methodEnum");
+const modelOperation_1 = require("./modelOperation");
+const paginatedAccountDetailsAndActionsList_1 = require("./paginatedAccountDetailsAndActionsList");
+const paginatedBankInfoList_1 = require("./paginatedBankInfoList");
+const paginatedBenefitList_1 = require("./paginatedBenefitList");
+const paginatedCompanyList_1 = require("./paginatedCompanyList");
+const paginatedDeductionList_1 = require("./paginatedDeductionList");
+const paginatedEmployeeList_1 = require("./paginatedEmployeeList");
+const paginatedEmployeePayrollRunList_1 = require("./paginatedEmployeePayrollRunList");
+const paginatedEmploymentList_1 = require("./paginatedEmploymentList");
+const paginatedIssueList_1 = require("./paginatedIssueList");
+const paginatedLocationList_1 = require("./paginatedLocationList");
+const paginatedPayGroupList_1 = require("./paginatedPayGroupList");
+const paginatedPayrollRunList_1 = require("./paginatedPayrollRunList");
+const paginatedSyncStatusList_1 = require("./paginatedSyncStatusList");
+const paginatedTeamList_1 = require("./paginatedTeamList");
+const paginatedTimeOffBalanceList_1 = require("./paginatedTimeOffBalanceList");
+const paginatedTimeOffList_1 = require("./paginatedTimeOffList");
+const payCurrencyEnum_1 = require("./payCurrencyEnum");
+const payFrequencyEnum_1 = require("./payFrequencyEnum");
+const payGroup_1 = require("./payGroup");
+const payPeriodEnum_1 = require("./payPeriodEnum");
+const payrollRun_1 = require("./payrollRun");
+const policyTypeEnum_1 = require("./policyTypeEnum");
+const remoteData_1 = require("./remoteData");
+const remoteDataRequest_1 = require("./remoteDataRequest");
+const remoteKey_1 = require("./remoteKey");
+const remoteKeyForRegenerationRequest_1 = require("./remoteKeyForRegenerationRequest");
+const remoteResponse_1 = require("./remoteResponse");
+const requestFormatEnum_1 = require("./requestFormatEnum");
+const requestTypeEnum_1 = require("./requestTypeEnum");
+const runStateEnum_1 = require("./runStateEnum");
+const runTypeEnum_1 = require("./runTypeEnum");
+const syncStatus_1 = require("./syncStatus");
+const syncStatusStatusEnum_1 = require("./syncStatusStatusEnum");
+const tax_1 = require("./tax");
+const team_1 = require("./team");
+const timeOff_1 = require("./timeOff");
+const timeOffBalance_1 = require("./timeOffBalance");
+const timeOffEndpointRequest_1 = require("./timeOffEndpointRequest");
+const timeOffRequest_1 = require("./timeOffRequest");
+const timeOffResponse_1 = require("./timeOffResponse");
+const timeOffStatusEnum_1 = require("./timeOffStatusEnum");
+const typeEnum_1 = require("./typeEnum");
+const unitsEnum_1 = require("./unitsEnum");
+const validationProblemSource_1 = require("./validationProblemSource");
+const warningValidationProblem_1 = require("./warningValidationProblem");
+let primitives = [
     "string",
     "boolean",
     "double",
@@ -184,7 +184,7 @@ var primitives = [
     "number",
     "any"
 ];
-var enumsMap = {
+let enumsMap = {
     "AccountDetailsAndActionsStatusEnum": accountDetailsAndActionsStatusEnum_1.AccountDetailsAndActionsStatusEnum,
     "AccountTypeEnum": accountTypeEnum_1.AccountTypeEnum,
     "BenefitPlanTypeEnum": benefitPlanTypeEnum_1.BenefitPlanTypeEnum,
@@ -212,7 +212,7 @@ var enumsMap = {
     "TypeEnum": typeEnum_1.TypeEnum,
     "UnitsEnum": unitsEnum_1.UnitsEnum,
 };
-var typeMap = {
+let typeMap = {
     "AccountDetails": accountDetails_1.AccountDetails,
     "AccountDetailsAndActions": accountDetailsAndActions_1.AccountDetailsAndActions,
     "AccountDetailsAndActionsIntegration": accountDetailsAndActionsIntegration_1.AccountDetailsAndActionsIntegration,
@@ -269,10 +269,8 @@ var typeMap = {
     "ValidationProblemSource": validationProblemSource_1.ValidationProblemSource,
     "WarningValidationProblem": warningValidationProblem_1.WarningValidationProblem,
 };
-var ObjectSerializer = (function () {
-    function ObjectSerializer() {
-    }
-    ObjectSerializer.findCorrectType = function (data, expectedType) {
+class ObjectSerializer {
+    static findCorrectType(data, expectedType) {
         if (data == undefined) {
             return expectedType;
         }
@@ -289,7 +287,7 @@ var ObjectSerializer = (function () {
             if (!typeMap[expectedType]) {
                 return expectedType;
             }
-            var discriminatorProperty = typeMap[expectedType].discriminator;
+            let discriminatorProperty = typeMap[expectedType].discriminator;
             if (discriminatorProperty == null) {
                 return expectedType;
             }
@@ -308,8 +306,8 @@ var ObjectSerializer = (function () {
                 }
             }
         }
-    };
-    ObjectSerializer.serialize = function (data, type) {
+    }
+    static serialize(data, type) {
         if (data == undefined) {
             return data;
         }
@@ -317,11 +315,11 @@ var ObjectSerializer = (function () {
             return data;
         }
         else if (type.lastIndexOf("Array<", 0) === 0) {
-            var subType = type.replace("Array<", "");
+            let subType = type.replace("Array<", "");
             subType = subType.substring(0, subType.length - 1);
-            var transformedData = [];
-            for (var index = 0; index < data.length; index++) {
-                var datum = data[index];
+            let transformedData = [];
+            for (let index = 0; index < data.length; index++) {
+                let datum = data[index];
                 transformedData.push(ObjectSerializer.serialize(datum, subType));
             }
             return transformedData;
@@ -337,16 +335,16 @@ var ObjectSerializer = (function () {
                 return data;
             }
             type = this.findCorrectType(data, type);
-            var attributeTypes = typeMap[type].getAttributeTypeMap();
-            var instance = {};
-            for (var index = 0; index < attributeTypes.length; index++) {
-                var attributeType = attributeTypes[index];
+            let attributeTypes = typeMap[type].getAttributeTypeMap();
+            let instance = {};
+            for (let index = 0; index < attributeTypes.length; index++) {
+                let attributeType = attributeTypes[index];
                 instance[attributeType.baseName] = ObjectSerializer.serialize(data[attributeType.name], attributeType.type);
             }
             return instance;
         }
-    };
-    ObjectSerializer.deserialize = function (data, type) {
+    }
+    static deserialize(data, type) {
         type = ObjectSerializer.findCorrectType(data, type);
         if (data == undefined) {
             return data;
@@ -355,11 +353,11 @@ var ObjectSerializer = (function () {
             return data;
         }
         else if (type.lastIndexOf("Array<", 0) === 0) {
-            var subType = type.replace("Array<", "");
+            let subType = type.replace("Array<", "");
             subType = subType.substring(0, subType.length - 1);
-            var transformedData = [];
-            for (var index = 0; index < data.length; index++) {
-                var datum = data[index];
+            let transformedData = [];
+            for (let index = 0; index < data.length; index++) {
+                let datum = data[index];
                 transformedData.push(ObjectSerializer.deserialize(datum, subType));
             }
             return transformedData;
@@ -374,53 +372,50 @@ var ObjectSerializer = (function () {
             if (!typeMap[type]) {
                 return data;
             }
-            var instance = new typeMap[type]();
-            var attributeTypes = typeMap[type].getAttributeTypeMap();
-            for (var index = 0; index < attributeTypes.length; index++) {
-                var attributeType = attributeTypes[index];
+            let instance = new typeMap[type]();
+            let attributeTypes = typeMap[type].getAttributeTypeMap();
+            for (let index = 0; index < attributeTypes.length; index++) {
+                let attributeType = attributeTypes[index];
                 instance[attributeType.name] = ObjectSerializer.deserialize(data[attributeType.baseName], attributeType.type);
             }
             return instance;
         }
-    };
-    return ObjectSerializer;
-}());
+    }
+}
 exports.ObjectSerializer = ObjectSerializer;
-var HttpBasicAuth = (function () {
-    function HttpBasicAuth() {
+class HttpBasicAuth {
+    constructor() {
         this.username = '';
         this.password = '';
     }
-    HttpBasicAuth.prototype.applyToRequest = function (requestOptions) {
+    applyToRequest(requestOptions) {
         requestOptions.auth = {
             username: this.username, password: this.password
         };
-    };
-    return HttpBasicAuth;
-}());
+    }
+}
 exports.HttpBasicAuth = HttpBasicAuth;
-var HttpBearerAuth = (function () {
-    function HttpBearerAuth() {
+class HttpBearerAuth {
+    constructor() {
         this.accessToken = '';
     }
-    HttpBearerAuth.prototype.applyToRequest = function (requestOptions) {
+    applyToRequest(requestOptions) {
         if (requestOptions && requestOptions.headers) {
-            var accessToken = typeof this.accessToken === 'function'
+            const accessToken = typeof this.accessToken === 'function'
                 ? this.accessToken()
                 : this.accessToken;
             requestOptions.headers["Authorization"] = "Bearer " + accessToken;
         }
-    };
-    return HttpBearerAuth;
-}());
+    }
+}
 exports.HttpBearerAuth = HttpBearerAuth;
-var ApiKeyAuth = (function () {
-    function ApiKeyAuth(location, paramName) {
+class ApiKeyAuth {
+    constructor(location, paramName) {
         this.location = location;
         this.paramName = paramName;
         this.apiKey = '';
     }
-    ApiKeyAuth.prototype.applyToRequest = function (requestOptions) {
+    applyToRequest(requestOptions) {
         if (this.location == "query") {
             requestOptions.qs[this.paramName] = this.apiKey;
         }
@@ -435,30 +430,27 @@ var ApiKeyAuth = (function () {
                 requestOptions.headers['Cookie'] = this.paramName + '=' + encodeURIComponent(this.apiKey);
             }
         }
-    };
-    return ApiKeyAuth;
-}());
+    }
+}
 exports.ApiKeyAuth = ApiKeyAuth;
-var OAuth = (function () {
-    function OAuth() {
+class OAuth {
+    constructor() {
         this.accessToken = '';
     }
-    OAuth.prototype.applyToRequest = function (requestOptions) {
+    applyToRequest(requestOptions) {
         if (requestOptions && requestOptions.headers) {
             requestOptions.headers["Authorization"] = "Bearer " + this.accessToken;
         }
-    };
-    return OAuth;
-}());
+    }
+}
 exports.OAuth = OAuth;
-var VoidAuth = (function () {
-    function VoidAuth() {
+class VoidAuth {
+    constructor() {
         this.username = '';
         this.password = '';
     }
-    VoidAuth.prototype.applyToRequest = function (_) {
-    };
-    return VoidAuth;
-}());
+    applyToRequest(_) {
+    }
+}
 exports.VoidAuth = VoidAuth;
 //# sourceMappingURL=models.js.map

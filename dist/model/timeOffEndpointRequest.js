@@ -1,21 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TimeOffEndpointRequest = void 0;
-var TimeOffEndpointRequest = (function () {
-    function TimeOffEndpointRequest() {
-    }
-    TimeOffEndpointRequest.getAttributeTypeMap = function () {
+class TimeOffEndpointRequest {
+    static getAttributeTypeMap() {
         return TimeOffEndpointRequest.attributeTypeMap;
-    };
-    TimeOffEndpointRequest.discriminator = undefined;
-    TimeOffEndpointRequest.attributeTypeMap = [
-        {
-            "name": "model",
-            "baseName": "model",
-            "type": "TimeOffRequest"
-        }
-    ];
-    return TimeOffEndpointRequest;
-}());
+    }
+}
 exports.TimeOffEndpointRequest = TimeOffEndpointRequest;
+TimeOffEndpointRequest.discriminator = undefined;
+TimeOffEndpointRequest.attributeTypeMap = [
+    {
+        "name": "model",
+        "baseName": "model",
+        "type": "TimeOffRequest"
+    }
+];
 //# sourceMappingURL=timeOffEndpointRequest.js.map

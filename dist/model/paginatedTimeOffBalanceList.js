@@ -1,31 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaginatedTimeOffBalanceList = void 0;
-var PaginatedTimeOffBalanceList = (function () {
-    function PaginatedTimeOffBalanceList() {
-    }
-    PaginatedTimeOffBalanceList.getAttributeTypeMap = function () {
+class PaginatedTimeOffBalanceList {
+    static getAttributeTypeMap() {
         return PaginatedTimeOffBalanceList.attributeTypeMap;
-    };
-    PaginatedTimeOffBalanceList.discriminator = undefined;
-    PaginatedTimeOffBalanceList.attributeTypeMap = [
-        {
-            "name": "next",
-            "baseName": "next",
-            "type": "string"
-        },
-        {
-            "name": "previous",
-            "baseName": "previous",
-            "type": "string"
-        },
-        {
-            "name": "results",
-            "baseName": "results",
-            "type": "Array<TimeOffBalance>"
-        }
-    ];
-    return PaginatedTimeOffBalanceList;
-}());
+    }
+}
 exports.PaginatedTimeOffBalanceList = PaginatedTimeOffBalanceList;
+PaginatedTimeOffBalanceList.discriminator = undefined;
+PaginatedTimeOffBalanceList.attributeTypeMap = [
+    {
+        "name": "next",
+        "baseName": "next",
+        "type": "string"
+    },
+    {
+        "name": "previous",
+        "baseName": "previous",
+        "type": "string"
+    },
+    {
+        "name": "results",
+        "baseName": "results",
+        "type": "Array<TimeOffBalance>"
+    }
+];
 //# sourceMappingURL=paginatedTimeOffBalanceList.js.map

@@ -99,6 +99,11 @@ var Employee = /** @class */ (function () {
             "type": "string"
         },
         {
+            "name": "pay_group",
+            "baseName": "pay_group",
+            "type": "string"
+        },
+        {
             "name": "ssn",
             "baseName": "ssn",
             "type": "string"

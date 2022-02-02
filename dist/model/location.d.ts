@@ -1,4 +1,5 @@
 import { CountryEnum } from './countryEnum';
+import { LocationTypeEnum } from './locationTypeEnum';
 import { RemoteData } from './remoteData';
 export declare class Location {
     'id'?: string;
@@ -11,6 +12,7 @@ export declare class Location {
     'state'?: string | null;
     'zip_code'?: string | null;
     'country'?: CountryEnum | null;
+    'location_type'?: LocationTypeEnum | null;
     'remote_data'?: Array<RemoteData> | null;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

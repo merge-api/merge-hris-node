@@ -1,31 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaginatedEmployeePayrollRunList = void 0;
-var PaginatedEmployeePayrollRunList = (function () {
-    function PaginatedEmployeePayrollRunList() {
-    }
-    PaginatedEmployeePayrollRunList.getAttributeTypeMap = function () {
+class PaginatedEmployeePayrollRunList {
+    static getAttributeTypeMap() {
         return PaginatedEmployeePayrollRunList.attributeTypeMap;
-    };
-    PaginatedEmployeePayrollRunList.discriminator = undefined;
-    PaginatedEmployeePayrollRunList.attributeTypeMap = [
-        {
-            "name": "next",
-            "baseName": "next",
-            "type": "string"
-        },
-        {
-            "name": "previous",
-            "baseName": "previous",
-            "type": "string"
-        },
-        {
-            "name": "results",
-            "baseName": "results",
-            "type": "Array<EmployeePayrollRun>"
-        }
-    ];
-    return PaginatedEmployeePayrollRunList;
-}());
+    }
+}
 exports.PaginatedEmployeePayrollRunList = PaginatedEmployeePayrollRunList;
+PaginatedEmployeePayrollRunList.discriminator = undefined;
+PaginatedEmployeePayrollRunList.attributeTypeMap = [
+    {
+        "name": "next",
+        "baseName": "next",
+        "type": "string"
+    },
+    {
+        "name": "previous",
+        "baseName": "previous",
+        "type": "string"
+    },
+    {
+        "name": "results",
+        "baseName": "results",
+        "type": "Array<EmployeePayrollRun>"
+    }
+];
 //# sourceMappingURL=paginatedEmployeePayrollRunList.js.map

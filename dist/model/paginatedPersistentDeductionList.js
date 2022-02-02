@@ -1,31 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaginatedPersistentDeductionList = void 0;
-var PaginatedPersistentDeductionList = (function () {
-    function PaginatedPersistentDeductionList() {
-    }
-    PaginatedPersistentDeductionList.getAttributeTypeMap = function () {
+class PaginatedPersistentDeductionList {
+    static getAttributeTypeMap() {
         return PaginatedPersistentDeductionList.attributeTypeMap;
-    };
-    PaginatedPersistentDeductionList.discriminator = undefined;
-    PaginatedPersistentDeductionList.attributeTypeMap = [
-        {
-            "name": "next",
-            "baseName": "next",
-            "type": "string"
-        },
-        {
-            "name": "previous",
-            "baseName": "previous",
-            "type": "string"
-        },
-        {
-            "name": "results",
-            "baseName": "results",
-            "type": "Array<PersistentDeduction>"
-        }
-    ];
-    return PaginatedPersistentDeductionList;
-}());
+    }
+}
 exports.PaginatedPersistentDeductionList = PaginatedPersistentDeductionList;
+PaginatedPersistentDeductionList.discriminator = undefined;
+PaginatedPersistentDeductionList.attributeTypeMap = [
+    {
+        "name": "next",
+        "baseName": "next",
+        "type": "string"
+    },
+    {
+        "name": "previous",
+        "baseName": "previous",
+        "type": "string"
+    },
+    {
+        "name": "results",
+        "baseName": "results",
+        "type": "Array<PersistentDeduction>"
+    }
+];
 //# sourceMappingURL=paginatedPersistentDeductionList.js.map
