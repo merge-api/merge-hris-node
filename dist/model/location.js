@@ -60,6 +60,11 @@ var Location = (function () {
             "type": "CountryEnum"
         },
         {
+            "name": "location_type",
+            "baseName": "location_type",
+            "type": "LocationTypeEnum"
+        },
+        {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"

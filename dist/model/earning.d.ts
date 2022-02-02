@@ -1,7 +1,7 @@
 import { TypeEnum } from './typeEnum';
 export declare class Earning {
     'id'?: string;
-    'employee_payroll_run'?: string | null;
+    'employee_payroll_run'?: string;
     'amount'?: number | null;
     'type'?: TypeEnum | null;
     'remote_data'?: Array<{

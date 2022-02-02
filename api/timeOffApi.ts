@@ -96,9 +96,10 @@ export class TimeOffApi {
      * Creates a `TimeOff` object with the given values.
      * @param xAccountToken Token identifying the end user.
      * @param timeOffEndpointRequest 
+     * @param isDebugMode Whether to include debug fields (such as log file links) in the response.
      * @param runAsync Whether or not third-party updates should be run asynchronously.
      */
-    public async timeOffCreate (xAccountToken: string, timeOffEndpointRequest: TimeOffEndpointRequest, runAsync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOffResponse;  }> {
+    public async timeOffCreate (xAccountToken: string, timeOffEndpointRequest: TimeOffEndpointRequest, isDebugMode?: boolean, runAsync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOffResponse;  }> {
         const localVarPath = this.basePath + '/time-off';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -119,6 +120,10 @@ export class TimeOffApi {
         // verify required parameter 'timeOffEndpointRequest' is not null or undefined
         if (timeOffEndpointRequest === null || timeOffEndpointRequest === undefined) {
             throw new Error('Required parameter timeOffEndpointRequest was null or undefined when calling timeOffCreate.');
+        }
+
+        if (isDebugMode !== undefined) {
+            localVarQueryParameters['is_debug_mode'] = ObjectSerializer.serialize(isDebugMode, "boolean");
         }
 
         if (runAsync !== undefined) {

@@ -27,10 +27,7 @@ export class Employment {
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
-    /**
-    * The employee holding this position.
-    */
-    'employee'?: string | null;
+    'employee'?: string;
     /**
     * The position\'s title.
     */

@@ -5,8 +5,8 @@ import { UnitsEnum } from './unitsEnum';
 export declare class TimeOff {
     'id'?: string;
     'remote_id'?: string | null;
-    'employee'?: string | null;
-    'approver'?: string | null;
+    'employee'?: string;
+    'approver'?: string;
     'status'?: TimeOffStatusEnum | null;
     'employee_note'?: string | null;
     'units'?: UnitsEnum | null;

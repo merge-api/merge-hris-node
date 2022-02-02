@@ -25,14 +25,8 @@ export class TimeOff {
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
-    /**
-    * The employee requesting time off.
-    */
-    'employee'?: string | null;
-    /**
-    * The employee approving the time off request.
-    */
-    'approver'?: string | null;
+    'employee'?: string;
+    'approver'?: string;
     /**
     * The status of this time off request.
     */

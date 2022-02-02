@@ -4,7 +4,7 @@ export declare class SyncStatus {
     'model_id': string;
     'last_sync_start': Date;
     'next_sync_start': Date;
-    'status': SyncStatusStatusEnum | null;
+    'status': SyncStatusStatusEnum;
     'is_initial_sync': boolean;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

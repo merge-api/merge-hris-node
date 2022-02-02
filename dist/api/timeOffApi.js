@@ -106,7 +106,7 @@ var TimeOffApi = (function () {
     TimeOffApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    TimeOffApi.prototype.timeOffCreate = function (xAccountToken, timeOffEndpointRequest, runAsync, options) {
+    TimeOffApi.prototype.timeOffCreate = function (xAccountToken, timeOffEndpointRequest, isDebugMode, runAsync, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -128,6 +128,9 @@ var TimeOffApi = (function () {
                 }
                 if (timeOffEndpointRequest === null || timeOffEndpointRequest === undefined) {
                     throw new Error('Required parameter timeOffEndpointRequest was null or undefined when calling timeOffCreate.');
+                }
+                if (isDebugMode !== undefined) {
+                    localVarQueryParameters['is_debug_mode'] = models_1.ObjectSerializer.serialize(isDebugMode, "boolean");
                 }
                 if (runAsync !== undefined) {
                     localVarQueryParameters['run_async'] = models_1.ObjectSerializer.serialize(runAsync, "boolean");

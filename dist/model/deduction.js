@@ -37,7 +37,7 @@ var Deduction = (function () {
         {
             "name": "remote_data",
             "baseName": "remote_data",
-            "type": "Array<{ [key: string]: any; }>"
+            "type": "Array<RemoteData>"
         }
     ];
     return Deduction;

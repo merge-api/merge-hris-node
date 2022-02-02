@@ -3,7 +3,7 @@ import { RemoteData } from './remoteData';
 export declare class Benefit {
     'id'?: string;
     'remote_id'?: string | null;
-    'employee'?: string | null;
+    'employee'?: string;
     'provider_name'?: string | null;
     'benefit_plan_type'?: BenefitPlanTypeEnum | null;
     'employee_contribution'?: number | null;

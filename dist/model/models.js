@@ -7,7 +7,7 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     o[k2] = m[k];
 }));
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VoidAuth = exports.OAuth = exports.ApiKeyAuth = exports.HttpBearerAuth = exports.HttpBasicAuth = exports.ObjectSerializer = void 0;
@@ -40,10 +40,12 @@ __exportStar(require("./ethnicityEnum"), exports);
 __exportStar(require("./flsaStatusEnum"), exports);
 __exportStar(require("./genderEnum"), exports);
 __exportStar(require("./generateRemoteKeyRequest"), exports);
+__exportStar(require("./ignoreCommonModelRequest"), exports);
 __exportStar(require("./issue"), exports);
 __exportStar(require("./issueStatusEnum"), exports);
 __exportStar(require("./linkToken"), exports);
 __exportStar(require("./location"), exports);
+__exportStar(require("./locationTypeEnum"), exports);
 __exportStar(require("./maritalStatusEnum"), exports);
 __exportStar(require("./methodEnum"), exports);
 __exportStar(require("./modelOperation"), exports);
@@ -69,6 +71,7 @@ __exportStar(require("./payGroup"), exports);
 __exportStar(require("./payPeriodEnum"), exports);
 __exportStar(require("./payrollRun"), exports);
 __exportStar(require("./policyTypeEnum"), exports);
+__exportStar(require("./reasonEnum"), exports);
 __exportStar(require("./remoteData"), exports);
 __exportStar(require("./remoteDataRequest"), exports);
 __exportStar(require("./remoteKey"), exports);
@@ -90,7 +93,6 @@ __exportStar(require("./timeOffResponse"), exports);
 __exportStar(require("./timeOffStatusEnum"), exports);
 __exportStar(require("./typeEnum"), exports);
 __exportStar(require("./unitsEnum"), exports);
-__exportStar(require("./validationProblem"), exports);
 __exportStar(require("./validationProblemSource"), exports);
 __exportStar(require("./warningValidationProblem"), exports);
 var accountDetails_1 = require("./accountDetails");
@@ -122,10 +124,12 @@ var ethnicityEnum_1 = require("./ethnicityEnum");
 var flsaStatusEnum_1 = require("./flsaStatusEnum");
 var genderEnum_1 = require("./genderEnum");
 var generateRemoteKeyRequest_1 = require("./generateRemoteKeyRequest");
+var ignoreCommonModelRequest_1 = require("./ignoreCommonModelRequest");
 var issue_1 = require("./issue");
 var issueStatusEnum_1 = require("./issueStatusEnum");
 var linkToken_1 = require("./linkToken");
 var location_1 = require("./location");
+var locationTypeEnum_1 = require("./locationTypeEnum");
 var maritalStatusEnum_1 = require("./maritalStatusEnum");
 var methodEnum_1 = require("./methodEnum");
 var modelOperation_1 = require("./modelOperation");
@@ -151,6 +155,7 @@ var payGroup_1 = require("./payGroup");
 var payPeriodEnum_1 = require("./payPeriodEnum");
 var payrollRun_1 = require("./payrollRun");
 var policyTypeEnum_1 = require("./policyTypeEnum");
+var reasonEnum_1 = require("./reasonEnum");
 var remoteData_1 = require("./remoteData");
 var remoteDataRequest_1 = require("./remoteDataRequest");
 var remoteKey_1 = require("./remoteKey");
@@ -197,12 +202,14 @@ var enumsMap = {
     "FlsaStatusEnum": flsaStatusEnum_1.FlsaStatusEnum,
     "GenderEnum": genderEnum_1.GenderEnum,
     "IssueStatusEnum": issueStatusEnum_1.IssueStatusEnum,
+    "LocationTypeEnum": locationTypeEnum_1.LocationTypeEnum,
     "MaritalStatusEnum": maritalStatusEnum_1.MaritalStatusEnum,
     "MethodEnum": methodEnum_1.MethodEnum,
     "PayCurrencyEnum": payCurrencyEnum_1.PayCurrencyEnum,
     "PayFrequencyEnum": payFrequencyEnum_1.PayFrequencyEnum,
     "PayPeriodEnum": payPeriodEnum_1.PayPeriodEnum,
     "PolicyTypeEnum": policyTypeEnum_1.PolicyTypeEnum,
+    "ReasonEnum": reasonEnum_1.ReasonEnum,
     "RequestFormatEnum": requestFormatEnum_1.RequestFormatEnum,
     "RequestTypeEnum": requestTypeEnum_1.RequestTypeEnum,
     "RunStateEnum": runStateEnum_1.RunStateEnum,
@@ -231,6 +238,7 @@ var typeMap = {
     "EndUserDetailsRequest": endUserDetailsRequest_1.EndUserDetailsRequest,
     "ErrorValidationProblem": errorValidationProblem_1.ErrorValidationProblem,
     "GenerateRemoteKeyRequest": generateRemoteKeyRequest_1.GenerateRemoteKeyRequest,
+    "IgnoreCommonModelRequest": ignoreCommonModelRequest_1.IgnoreCommonModelRequest,
     "Issue": issue_1.Issue,
     "LinkToken": linkToken_1.LinkToken,
     "Location": location_1.Location,

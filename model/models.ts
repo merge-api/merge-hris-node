@@ -29,10 +29,12 @@ export * from './ethnicityEnum';
 export * from './flsaStatusEnum';
 export * from './genderEnum';
 export * from './generateRemoteKeyRequest';
+export * from './ignoreCommonModelRequest';
 export * from './issue';
 export * from './issueStatusEnum';
 export * from './linkToken';
 export * from './location';
+export * from './locationTypeEnum';
 export * from './maritalStatusEnum';
 export * from './methodEnum';
 export * from './modelOperation';
@@ -58,6 +60,7 @@ export * from './payGroup';
 export * from './payPeriodEnum';
 export * from './payrollRun';
 export * from './policyTypeEnum';
+export * from './reasonEnum';
 export * from './remoteData';
 export * from './remoteDataRequest';
 export * from './remoteKey';
@@ -79,7 +82,6 @@ export * from './timeOffResponse';
 export * from './timeOffStatusEnum';
 export * from './typeEnum';
 export * from './unitsEnum';
-export * from './validationProblem';
 export * from './validationProblemSource';
 export * from './warningValidationProblem';
 
@@ -125,10 +127,12 @@ import { EthnicityEnum } from './ethnicityEnum';
 import { FlsaStatusEnum } from './flsaStatusEnum';
 import { GenderEnum } from './genderEnum';
 import { GenerateRemoteKeyRequest } from './generateRemoteKeyRequest';
+import { IgnoreCommonModelRequest } from './ignoreCommonModelRequest';
 import { Issue } from './issue';
 import { IssueStatusEnum } from './issueStatusEnum';
 import { LinkToken } from './linkToken';
 import { Location } from './location';
+import { LocationTypeEnum } from './locationTypeEnum';
 import { MaritalStatusEnum } from './maritalStatusEnum';
 import { MethodEnum } from './methodEnum';
 import { ModelOperation } from './modelOperation';
@@ -154,6 +158,7 @@ import { PayGroup } from './payGroup';
 import { PayPeriodEnum } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
 import { PolicyTypeEnum } from './policyTypeEnum';
+import { ReasonEnum } from './reasonEnum';
 import { RemoteData } from './remoteData';
 import { RemoteDataRequest } from './remoteDataRequest';
 import { RemoteKey } from './remoteKey';
@@ -203,12 +208,14 @@ let enumsMap: {[index: string]: any} = {
         "FlsaStatusEnum": FlsaStatusEnum,
         "GenderEnum": GenderEnum,
         "IssueStatusEnum": IssueStatusEnum,
+        "LocationTypeEnum": LocationTypeEnum,
         "MaritalStatusEnum": MaritalStatusEnum,
         "MethodEnum": MethodEnum,
         "PayCurrencyEnum": PayCurrencyEnum,
         "PayFrequencyEnum": PayFrequencyEnum,
         "PayPeriodEnum": PayPeriodEnum,
         "PolicyTypeEnum": PolicyTypeEnum,
+        "ReasonEnum": ReasonEnum,
         "RequestFormatEnum": RequestFormatEnum,
         "RequestTypeEnum": RequestTypeEnum,
         "RunStateEnum": RunStateEnum,
@@ -238,6 +245,7 @@ let typeMap: {[index: string]: any} = {
     "EndUserDetailsRequest": EndUserDetailsRequest,
     "ErrorValidationProblem": ErrorValidationProblem,
     "GenerateRemoteKeyRequest": GenerateRemoteKeyRequest,
+    "IgnoreCommonModelRequest": IgnoreCommonModelRequest,
     "Issue": Issue,
     "LinkToken": LinkToken,
     "Location": Location,

@@ -19,6 +19,7 @@ export class TimeOffResponse {
     'model': TimeOff;
     'warnings': Array<WarningValidationProblem>;
     'errors': Array<ErrorValidationProblem>;
+    'logs'?: Array<string>;
 
     static discriminator: string | undefined = undefined;
 
@@ -37,6 +38,11 @@ export class TimeOffResponse {
             "name": "errors",
             "baseName": "errors",
             "type": "Array<ErrorValidationProblem>"
+        },
+        {
+            "name": "logs",
+            "baseName": "logs",
+            "type": "Array<string>"
         }    ];
 
     static getAttributeTypeMap() {

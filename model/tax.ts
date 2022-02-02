@@ -17,10 +17,7 @@ import { RequestFile } from './models';
 */
 export class Tax {
     'id'?: string;
-    /**
-    * The tax\'s employee payroll run.
-    */
-    'employee_payroll_run'?: string | null;
+    'employee_payroll_run'?: string;
     /**
     * The tax\'s name.
     */
