@@ -23,6 +23,11 @@ var TimeOffResponse = (function () {
             "name": "errors",
             "baseName": "errors",
             "type": "Array<ErrorValidationProblem>"
+        },
+        {
+            "name": "logs",
+            "baseName": "logs",
+            "type": "Array<string>"
         }
     ];
     return TimeOffResponse;

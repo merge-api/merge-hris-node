@@ -1,6 +1,6 @@
 export declare class Tax {
     'id'?: string;
-    'employee_payroll_run'?: string | null;
+    'employee_payroll_run'?: string;
     'name'?: string | null;
     'amount'?: number | null;
     'employer_tax'?: boolean | null;

@@ -5,6 +5,7 @@ export declare class TimeOffResponse {
     'model': TimeOff;
     'warnings': Array<WarningValidationProblem>;
     'errors': Array<ErrorValidationProblem>;
+    'logs'?: Array<string>;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

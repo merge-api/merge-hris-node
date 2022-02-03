@@ -25,7 +25,7 @@ export declare class BankInfoApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: BankInfoApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    bankInfoList(xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employee?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteCreatedAt?: Date, remoteId?: string, options?: {
+    bankInfoList(xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employee?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteId?: string, options?: {
         headers: {
             [name: string]: string;
         };

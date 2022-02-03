@@ -18,10 +18,7 @@ import { TypeEnum } from './typeEnum';
 */
 export class Earning {
     'id'?: string;
-    /**
-    * The earning\'s employee payroll run.
-    */
-    'employee_payroll_run'?: string | null;
+    'employee_payroll_run'?: string;
     /**
     * The amount earned.
     */

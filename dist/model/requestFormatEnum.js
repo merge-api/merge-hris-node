@@ -5,5 +5,6 @@ var RequestFormatEnum;
 (function (RequestFormatEnum) {
     RequestFormatEnum[RequestFormatEnum["Json"] = 'JSON'] = "Json";
     RequestFormatEnum[RequestFormatEnum["Xml"] = 'XML'] = "Xml";
+    RequestFormatEnum[RequestFormatEnum["Multipart"] = 'MULTIPART'] = "Multipart";
 })(RequestFormatEnum = exports.RequestFormatEnum || (exports.RequestFormatEnum = {}));
 //# sourceMappingURL=requestFormatEnum.js.map

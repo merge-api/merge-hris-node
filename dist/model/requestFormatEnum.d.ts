@@ -1,4 +1,5 @@
 export declare enum RequestFormatEnum {
     Json,
-    Xml
+    Xml,
+    Multipart
 }

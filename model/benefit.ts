@@ -23,10 +23,7 @@ export class Benefit {
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
-    /**
-    * The employee on the plan.
-    */
-    'employee'?: string | null;
+    'employee'?: string;
     /**
     * The name of the benefit provider.
     */

@@ -25,7 +25,7 @@ export declare class PayGroupApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: PayGroupApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    payGroupList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options?: {
+    payGroupList(xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options?: {
         headers: {
             [name: string]: string;
         };

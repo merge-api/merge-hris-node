@@ -27,7 +27,7 @@ export declare class TimeOffApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TimeOffApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    timeOffCreate(xAccountToken: string, timeOffEndpointRequest: TimeOffEndpointRequest, runAsync?: boolean, options?: {
+    timeOffCreate(xAccountToken: string, timeOffEndpointRequest: TimeOffEndpointRequest, isDebugMode?: boolean, runAsync?: boolean, options?: {
         headers: {
             [name: string]: string;
         };

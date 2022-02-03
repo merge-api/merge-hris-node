@@ -106,10 +106,79 @@ var EmployeesApi = (function () {
     EmployeesApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
+    EmployeesApi.prototype.employeesIgnoreCreate = function (modelId, ignoreCommonModelRequest, options) {
+        if (options === void 0) { options = { headers: {} }; }
+        return __awaiter(this, void 0, void 0, function () {
+            var localVarPath, localVarQueryParameters, localVarHeaderParams, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
+            var _this = this;
+            return __generator(this, function (_b) {
+                localVarPath = this.basePath + '/employees/ignore/{model_id}'
+                    .replace('{' + 'model_id' + '}', encodeURIComponent(String(modelId)));
+                localVarQueryParameters = {};
+                localVarHeaderParams = Object.assign({}, this._defaultHeaders);
+                localVarFormParams = {};
+                if (modelId === null || modelId === undefined) {
+                    throw new Error('Required parameter modelId was null or undefined when calling employeesIgnoreCreate.');
+                }
+                if (ignoreCommonModelRequest === null || ignoreCommonModelRequest === undefined) {
+                    throw new Error('Required parameter ignoreCommonModelRequest was null or undefined when calling employeesIgnoreCreate.');
+                }
+                Object.assign(localVarHeaderParams, options.headers);
+                localVarUseFormData = false;
+                localVarRequestOptions = {
+                    method: 'POST',
+                    qs: localVarQueryParameters,
+                    headers: localVarHeaderParams,
+                    uri: localVarPath,
+                    useQuerystring: this._useQuerystring,
+                    json: true,
+                    body: models_1.ObjectSerializer.serialize(ignoreCommonModelRequest, "IgnoreCommonModelRequest")
+                };
+                authenticationPromise = Promise.resolve();
+                if (this.authentications.tokenAuth.apiKey) {
+                    authenticationPromise = authenticationPromise.then(function () { return _this.authentications.tokenAuth.applyToRequest(localVarRequestOptions); });
+                }
+                authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
+                interceptorPromise = authenticationPromise;
+                _loop_1 = function (interceptor) {
+                    interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
+                };
+                for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
+                    interceptor = _a[_i];
+                    _loop_1(interceptor);
+                }
+                return [2, interceptorPromise.then(function () {
+                        if (Object.keys(localVarFormParams).length) {
+                            if (localVarUseFormData) {
+                                localVarRequestOptions.formData = localVarFormParams;
+                            }
+                            else {
+                                localVarRequestOptions.form = localVarFormParams;
+                            }
+                        }
+                        return new Promise(function (resolve, reject) {
+                            request_1.default(localVarRequestOptions, function (error, response, body) {
+                                if (error) {
+                                    reject(error);
+                                }
+                                else {
+                                    if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                                        resolve({ response: response, body: body });
+                                    }
+                                    else {
+                                        reject(new apis_1.HttpError(response, body, response.statusCode));
+                                    }
+                                }
+                            });
+                        });
+                    })];
+            });
+        });
+    };
     EmployeesApi.prototype.employeesList = function (xAccountToken, companyId, createdAfter, createdBefore, cursor, expand, includeDeletedData, includeRemoteData, includeSensitiveFields, managerId, modifiedAfter, modifiedBefore, pageSize, payGroupId, personalEmail, remoteId, teamId, workEmail, workLocationId, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
-            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
+            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
             var _this = this;
             return __generator(this, function (_b) {
                 localVarPath = this.basePath + '/employees';
@@ -197,12 +266,12 @@ var EmployeesApi = (function () {
                 }
                 authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
                 interceptorPromise = authenticationPromise;
-                _loop_1 = function (interceptor) {
+                _loop_2 = function (interceptor) {
                     interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
                 };
                 for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
                     interceptor = _a[_i];
-                    _loop_1(interceptor);
+                    _loop_2(interceptor);
                 }
                 return [2, interceptorPromise.then(function () {
                         if (Object.keys(localVarFormParams).length) {
@@ -236,7 +305,7 @@ var EmployeesApi = (function () {
     EmployeesApi.prototype.employeesRetrieve = function (xAccountToken, id, expand, includeRemoteData, includeSensitiveFields, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
-            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_2, _i, _a, interceptor;
+            var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_3, _i, _a, interceptor;
             var _this = this;
             return __generator(this, function (_b) {
                 localVarPath = this.basePath + '/employees/{id}'
@@ -283,12 +352,12 @@ var EmployeesApi = (function () {
                 }
                 authenticationPromise = authenticationPromise.then(function () { return _this.authentications.default.applyToRequest(localVarRequestOptions); });
                 interceptorPromise = authenticationPromise;
-                _loop_2 = function (interceptor) {
+                _loop_3 = function (interceptor) {
                     interceptorPromise = interceptorPromise.then(function () { return interceptor(localVarRequestOptions); });
                 };
                 for (_i = 0, _a = this.interceptors; _i < _a.length; _i++) {
                     interceptor = _a[_i];
-                    _loop_2(interceptor);
+                    _loop_3(interceptor);
                 }
                 return [2, interceptorPromise.then(function () {
                         if (Object.keys(localVarFormParams).length) {
