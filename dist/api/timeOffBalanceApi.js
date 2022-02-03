@@ -106,7 +106,7 @@ var TimeOffBalanceApi = (function () {
     TimeOffBalanceApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    TimeOffBalanceApi.prototype.timeOffBalanceList = function (xAccountToken, createdAfter, createdBefore, cursor, employeeId, expand, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, policyType, remoteId, options) {
+    TimeOffBalanceApi.prototype.timeOffBalanceList = function (xAccountToken, createdAfter, createdBefore, cursor, employeeId, expand, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, pageSize, policyType, remoteId, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -140,6 +140,9 @@ var TimeOffBalanceApi = (function () {
                 }
                 if (expand !== undefined) {
                     localVarQueryParameters['expand'] = models_1.ObjectSerializer.serialize(expand, "'employee'");
+                }
+                if (includeDeletedData !== undefined) {
+                    localVarQueryParameters['include_deleted_data'] = models_1.ObjectSerializer.serialize(includeDeletedData, "boolean");
                 }
                 if (includeRemoteData !== undefined) {
                     localVarQueryParameters['include_remote_data'] = models_1.ObjectSerializer.serialize(includeRemoteData, "boolean");
