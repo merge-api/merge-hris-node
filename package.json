@@ -1,6 +1,6 @@
 {
     "name": "@mergeapi/merge-hris-node",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "NodeJS client for @mergeapi/merge-hris-node",
     "repository": "merge-api/merge-hris-node",
     "main": "dist/api.js",

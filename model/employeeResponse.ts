@@ -12,12 +12,12 @@
 
 import { RequestFile } from './models';
 import { DebugModeLog } from './debugModeLog';
+import { Employee } from './employee';
 import { ErrorValidationProblem } from './errorValidationProblem';
-import { TimeOff } from './timeOff';
 import { WarningValidationProblem } from './warningValidationProblem';
 
-export class TimeOffResponse {
-    'model': TimeOff;
+export class EmployeeResponse {
+    'model': Employee;
     'warnings': Array<WarningValidationProblem>;
     'errors': Array<ErrorValidationProblem>;
     'logs'?: Array<DebugModeLog>;
@@ -28,7 +28,7 @@ export class TimeOffResponse {
         {
             "name": "model",
             "baseName": "model",
-            "type": "TimeOff"
+            "type": "Employee"
         },
         {
             "name": "warnings",
@@ -47,7 +47,7 @@ export class TimeOffResponse {
         }    ];
 
     static getAttributeTypeMap() {
-        return TimeOffResponse.attributeTypeMap;
+        return EmployeeResponse.attributeTypeMap;
     }
 }
 

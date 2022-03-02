@@ -18,7 +18,7 @@ import { RemoteData } from './remoteData';
 */
 export class Deduction {
     'id'?: string;
-    'employee_payroll_run'?: string;
+    'employee_payroll_run'?: string | null;
     /**
     * The deduction\'s name.
     */

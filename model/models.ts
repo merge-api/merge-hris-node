@@ -10,25 +10,34 @@ export * from './accountTypeEnum';
 export * from './availableActions';
 export * from './bankInfo';
 export * from './benefit';
-export * from './benefitPlanTypeEnum';
 export * from './categoriesEnum';
 export * from './categoryEnum';
 export * from './company';
 export * from './countryEnum';
 export * from './dataPassthroughRequest';
+export * from './debugModeLog';
+export * from './debugModelLogSummary';
 export * from './deduction';
 export * from './earning';
+export * from './earningTypeEnum';
 export * from './employee';
+export * from './employeeEndpointRequest';
 export * from './employeePayrollRun';
+export * from './employeeRequest';
+export * from './employeeResponse';
 export * from './employment';
 export * from './employmentStatusEnum';
 export * from './employmentTypeEnum';
+export * from './encodingEnum';
 export * from './endUserDetailsRequest';
 export * from './errorValidationProblem';
 export * from './ethnicityEnum';
 export * from './flsaStatusEnum';
 export * from './genderEnum';
 export * from './generateRemoteKeyRequest';
+export * from './group';
+export * from './groupTypeEnum';
+export * from './ignoreCommonModel';
 export * from './ignoreCommonModelRequest';
 export * from './issue';
 export * from './issueStatusEnum';
@@ -38,6 +47,7 @@ export * from './locationTypeEnum';
 export * from './maritalStatusEnum';
 export * from './methodEnum';
 export * from './modelOperation';
+export * from './multipartFormFieldRequest';
 export * from './paginatedAccountDetailsAndActionsList';
 export * from './paginatedBankInfoList';
 export * from './paginatedBenefitList';
@@ -46,6 +56,7 @@ export * from './paginatedDeductionList';
 export * from './paginatedEmployeeList';
 export * from './paginatedEmployeePayrollRunList';
 export * from './paginatedEmploymentList';
+export * from './paginatedGroupList';
 export * from './paginatedIssueList';
 export * from './paginatedLocationList';
 export * from './paginatedPayGroupList';
@@ -80,7 +91,6 @@ export * from './timeOffEndpointRequest';
 export * from './timeOffRequest';
 export * from './timeOffResponse';
 export * from './timeOffStatusEnum';
-export * from './typeEnum';
 export * from './unitsEnum';
 export * from './validationProblemSource';
 export * from './warningValidationProblem';
@@ -108,25 +118,34 @@ import { AccountTypeEnum } from './accountTypeEnum';
 import { AvailableActions } from './availableActions';
 import { BankInfo } from './bankInfo';
 import { Benefit } from './benefit';
-import { BenefitPlanTypeEnum } from './benefitPlanTypeEnum';
 import { CategoriesEnum } from './categoriesEnum';
 import { CategoryEnum } from './categoryEnum';
 import { Company } from './company';
 import { CountryEnum } from './countryEnum';
 import { DataPassthroughRequest } from './dataPassthroughRequest';
+import { DebugModeLog } from './debugModeLog';
+import { DebugModelLogSummary } from './debugModelLogSummary';
 import { Deduction } from './deduction';
 import { Earning } from './earning';
+import { EarningTypeEnum } from './earningTypeEnum';
 import { Employee } from './employee';
+import { EmployeeEndpointRequest } from './employeeEndpointRequest';
 import { EmployeePayrollRun } from './employeePayrollRun';
+import { EmployeeRequest } from './employeeRequest';
+import { EmployeeResponse } from './employeeResponse';
 import { Employment } from './employment';
 import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EmploymentTypeEnum } from './employmentTypeEnum';
+import { EncodingEnum } from './encodingEnum';
 import { EndUserDetailsRequest } from './endUserDetailsRequest';
 import { ErrorValidationProblem } from './errorValidationProblem';
 import { EthnicityEnum } from './ethnicityEnum';
 import { FlsaStatusEnum } from './flsaStatusEnum';
 import { GenderEnum } from './genderEnum';
 import { GenerateRemoteKeyRequest } from './generateRemoteKeyRequest';
+import { Group } from './group';
+import { GroupTypeEnum } from './groupTypeEnum';
+import { IgnoreCommonModel } from './ignoreCommonModel';
 import { IgnoreCommonModelRequest } from './ignoreCommonModelRequest';
 import { Issue } from './issue';
 import { IssueStatusEnum } from './issueStatusEnum';
@@ -136,6 +155,7 @@ import { LocationTypeEnum } from './locationTypeEnum';
 import { MaritalStatusEnum } from './maritalStatusEnum';
 import { MethodEnum } from './methodEnum';
 import { ModelOperation } from './modelOperation';
+import { MultipartFormFieldRequest } from './multipartFormFieldRequest';
 import { PaginatedAccountDetailsAndActionsList } from './paginatedAccountDetailsAndActionsList';
 import { PaginatedBankInfoList } from './paginatedBankInfoList';
 import { PaginatedBenefitList } from './paginatedBenefitList';
@@ -144,6 +164,7 @@ import { PaginatedDeductionList } from './paginatedDeductionList';
 import { PaginatedEmployeeList } from './paginatedEmployeeList';
 import { PaginatedEmployeePayrollRunList } from './paginatedEmployeePayrollRunList';
 import { PaginatedEmploymentList } from './paginatedEmploymentList';
+import { PaginatedGroupList } from './paginatedGroupList';
 import { PaginatedIssueList } from './paginatedIssueList';
 import { PaginatedLocationList } from './paginatedLocationList';
 import { PaginatedPayGroupList } from './paginatedPayGroupList';
@@ -178,7 +199,6 @@ import { TimeOffEndpointRequest } from './timeOffEndpointRequest';
 import { TimeOffRequest } from './timeOffRequest';
 import { TimeOffResponse } from './timeOffResponse';
 import { TimeOffStatusEnum } from './timeOffStatusEnum';
-import { TypeEnum } from './typeEnum';
 import { UnitsEnum } from './unitsEnum';
 import { ValidationProblemSource } from './validationProblemSource';
 import { WarningValidationProblem } from './warningValidationProblem';
@@ -198,15 +218,17 @@ let primitives = [
 let enumsMap: {[index: string]: any} = {
         "AccountDetailsAndActionsStatusEnum": AccountDetailsAndActionsStatusEnum,
         "AccountTypeEnum": AccountTypeEnum,
-        "BenefitPlanTypeEnum": BenefitPlanTypeEnum,
         "CategoriesEnum": CategoriesEnum,
         "CategoryEnum": CategoryEnum,
         "CountryEnum": CountryEnum,
+        "EarningTypeEnum": EarningTypeEnum,
         "EmploymentStatusEnum": EmploymentStatusEnum,
         "EmploymentTypeEnum": EmploymentTypeEnum,
+        "EncodingEnum": EncodingEnum,
         "EthnicityEnum": EthnicityEnum,
         "FlsaStatusEnum": FlsaStatusEnum,
         "GenderEnum": GenderEnum,
+        "GroupTypeEnum": GroupTypeEnum,
         "IssueStatusEnum": IssueStatusEnum,
         "LocationTypeEnum": LocationTypeEnum,
         "MaritalStatusEnum": MaritalStatusEnum,
@@ -222,7 +244,6 @@ let enumsMap: {[index: string]: any} = {
         "RunTypeEnum": RunTypeEnum,
         "SyncStatusStatusEnum": SyncStatusStatusEnum,
         "TimeOffStatusEnum": TimeOffStatusEnum,
-        "TypeEnum": TypeEnum,
         "UnitsEnum": UnitsEnum,
 }
 
@@ -237,19 +258,27 @@ let typeMap: {[index: string]: any} = {
     "Benefit": Benefit,
     "Company": Company,
     "DataPassthroughRequest": DataPassthroughRequest,
+    "DebugModeLog": DebugModeLog,
+    "DebugModelLogSummary": DebugModelLogSummary,
     "Deduction": Deduction,
     "Earning": Earning,
     "Employee": Employee,
+    "EmployeeEndpointRequest": EmployeeEndpointRequest,
     "EmployeePayrollRun": EmployeePayrollRun,
+    "EmployeeRequest": EmployeeRequest,
+    "EmployeeResponse": EmployeeResponse,
     "Employment": Employment,
     "EndUserDetailsRequest": EndUserDetailsRequest,
     "ErrorValidationProblem": ErrorValidationProblem,
     "GenerateRemoteKeyRequest": GenerateRemoteKeyRequest,
+    "Group": Group,
+    "IgnoreCommonModel": IgnoreCommonModel,
     "IgnoreCommonModelRequest": IgnoreCommonModelRequest,
     "Issue": Issue,
     "LinkToken": LinkToken,
     "Location": Location,
     "ModelOperation": ModelOperation,
+    "MultipartFormFieldRequest": MultipartFormFieldRequest,
     "PaginatedAccountDetailsAndActionsList": PaginatedAccountDetailsAndActionsList,
     "PaginatedBankInfoList": PaginatedBankInfoList,
     "PaginatedBenefitList": PaginatedBenefitList,
@@ -258,6 +287,7 @@ let typeMap: {[index: string]: any} = {
     "PaginatedEmployeeList": PaginatedEmployeeList,
     "PaginatedEmployeePayrollRunList": PaginatedEmployeePayrollRunList,
     "PaginatedEmploymentList": PaginatedEmploymentList,
+    "PaginatedGroupList": PaginatedGroupList,
     "PaginatedIssueList": PaginatedIssueList,
     "PaginatedLocationList": PaginatedLocationList,
     "PaginatedPayGroupList": PaginatedPayGroupList,

@@ -30,7 +30,7 @@ export class Employee {
     * The employee\'s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
     */
     'employee_number'?: string | null;
-    'company'?: string;
+    'company'?: string | null;
     /**
     * The employee\'s first name.
     */
@@ -43,6 +43,7 @@ export class Employee {
     * The employee\'s full name, to use for display purposes. If a preferred first name is available, the full name will include the preferred first name.
     */
     'display_full_name'?: string | null;
+    'groups'?: Array<string>;
     /**
     * The employee\'s work email.
     */
@@ -59,11 +60,11 @@ export class Employee {
     * Array of `Employment` IDs for this Employee.
     */
     'employments'?: Array<string>;
-    'home_location'?: string;
-    'work_location'?: string;
-    'manager'?: string;
-    'team'?: string;
-    'pay_group'?: string;
+    'home_location'?: string | null;
+    'work_location'?: string | null;
+    'manager'?: string | null;
+    'team'?: string | null;
+    'pay_group'?: string | null;
     /**
     * The employee\'s social security number.
     */
@@ -147,6 +148,11 @@ export class Employee {
             "name": "display_full_name",
             "baseName": "display_full_name",
             "type": "string"
+        },
+        {
+            "name": "groups",
+            "baseName": "groups",
+            "type": "Array<string>"
         },
         {
             "name": "work_email",

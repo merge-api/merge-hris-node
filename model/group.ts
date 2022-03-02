@@ -11,34 +11,30 @@
  */
 
 import { RequestFile } from './models';
+import { GroupTypeEnum } from './groupTypeEnum';
 import { RemoteData } from './remoteData';
 
 /**
-* # The Benefit Object ### Description The `Benefit` object is used to represent a Benefit for an employee.  ### Usage Example Fetch from the `LIST Benefits` endpoint and filter by `ID` to show all benefits.
+* # The PayGroup Object ### Description The `PayGroup` object is used to represent Group information that employees belong to. This is often referenced with an Employee object.  ### Usage Example Fetch from the `LIST Employee` endpoint and expand groups to view an employees groups.
 */
-export class Benefit {
+export class Group {
     'id'?: string;
     /**
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
-    'employee'?: string | null;
     /**
-    * The name of the benefit provider.
+    * The parent group for this group.
     */
-    'provider_name'?: string | null;
+    'parent_group'?: string | null;
     /**
-    * The type of benefit plan
+    * The group name.
     */
-    'benefit_plan_type'?: string | null;
+    'name'?: string | null;
     /**
-    * The employee\'s contribution.
+    * The group type
     */
-    'employee_contribution'?: number | null;
-    /**
-    * The company\'s contribution.
-    */
-    'company_contribution'?: number | null;
+    'type'?: GroupTypeEnum | null;
     'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
@@ -55,29 +51,19 @@ export class Benefit {
             "type": "string"
         },
         {
-            "name": "employee",
-            "baseName": "employee",
+            "name": "parent_group",
+            "baseName": "parent_group",
             "type": "string"
         },
         {
-            "name": "provider_name",
-            "baseName": "provider_name",
+            "name": "name",
+            "baseName": "name",
             "type": "string"
         },
         {
-            "name": "benefit_plan_type",
-            "baseName": "benefit_plan_type",
-            "type": "string"
-        },
-        {
-            "name": "employee_contribution",
-            "baseName": "employee_contribution",
-            "type": "number"
-        },
-        {
-            "name": "company_contribution",
-            "baseName": "company_contribution",
-            "type": "number"
+            "name": "type",
+            "baseName": "type",
+            "type": "GroupTypeEnum"
         },
         {
             "name": "remote_data",
@@ -86,7 +72,7 @@ export class Benefit {
         }    ];
 
     static getAttributeTypeMap() {
-        return Benefit.attributeTypeMap;
+        return Group.attributeTypeMap;
     }
 }
 

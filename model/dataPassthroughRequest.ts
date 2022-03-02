@@ -12,6 +12,7 @@
 
 import { RequestFile } from './models';
 import { MethodEnum } from './methodEnum';
+import { MultipartFormFieldRequest } from './multipartFormFieldRequest';
 import { RequestFormatEnum } from './requestFormatEnum';
 
 /**
@@ -22,6 +23,10 @@ export class DataPassthroughRequest {
     'path': string;
     'base_url_override'?: string | null;
     'data'?: string | null;
+    /**
+    * Pass an array of `MultipartFormField` objects in here instead of using the `data` param if `request_format` is set to `MULTIPART`.
+    */
+    'multipart_form_data'?: Array<MultipartFormFieldRequest> | null;
     'headers'?: { [key: string]: any; } | null;
     'request_format'?: RequestFormatEnum | null;
 
@@ -47,6 +52,11 @@ export class DataPassthroughRequest {
             "name": "data",
             "baseName": "data",
             "type": "string"
+        },
+        {
+            "name": "multipart_form_data",
+            "baseName": "multipart_form_data",
+            "type": "Array<MultipartFormFieldRequest>"
         },
         {
             "name": "headers",

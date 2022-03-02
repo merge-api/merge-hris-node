@@ -25,8 +25,8 @@ export class TimeOff {
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
-    'employee'?: string;
-    'approver'?: string;
+    'employee'?: string | null;
+    'approver'?: string | null;
     /**
     * The status of this time off request.
     */

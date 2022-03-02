@@ -23,7 +23,7 @@ export class BankInfo {
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
-    'employee'?: string;
+    'employee'?: string | null;
     /**
     * The account number.
     */
