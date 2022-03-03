@@ -28,9 +28,6 @@ export class EmployeeRequest {
     * The employee\'s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
     */
     'employee_number'?: string | null;
-    /**
-    * The ID of the employee\'s company.
-    */
     'company'?: string | null;
     /**
     * The employee\'s first name.
@@ -41,9 +38,10 @@ export class EmployeeRequest {
     */
     'last_name'?: string | null;
     /**
-    * The employee\'s full name, to use for display purposes.
+    * The employee\'s full name, to use for display purposes. If a preferred first name is available, the full name will include the preferred first name.
     */
     'display_full_name'?: string | null;
+    'groups'?: Array<string>;
     /**
     * The employee\'s work email.
     */
@@ -57,21 +55,14 @@ export class EmployeeRequest {
     */
     'mobile_phone_number'?: string | null;
     /**
-    * The employee\'s home address.
+    * Array of `Employment` IDs for this Employee.
     */
+    'employments'?: Array<string>;
     'home_location'?: string | null;
-    /**
-    * The employee\'s work address.
-    */
     'work_location'?: string | null;
-    /**
-    * The employee ID of the employee\'s manager.
-    */
     'manager'?: string | null;
-    /**
-    * The employee\'s team.
-    */
     'team'?: string | null;
+    'pay_group'?: string | null;
     /**
     * The employee\'s social security number.
     */
@@ -151,6 +142,11 @@ export class EmployeeRequest {
             "type": "string"
         },
         {
+            "name": "groups",
+            "baseName": "groups",
+            "type": "Array<string>"
+        },
+        {
             "name": "work_email",
             "baseName": "work_email",
             "type": "string"
@@ -164,6 +160,11 @@ export class EmployeeRequest {
             "name": "mobile_phone_number",
             "baseName": "mobile_phone_number",
             "type": "string"
+        },
+        {
+            "name": "employments",
+            "baseName": "employments",
+            "type": "Array<string>"
         },
         {
             "name": "home_location",
@@ -183,6 +184,11 @@ export class EmployeeRequest {
         {
             "name": "team",
             "baseName": "team",
+            "type": "string"
+        },
+        {
+            "name": "pay_group",
+            "baseName": "pay_group",
             "type": "string"
         },
         {

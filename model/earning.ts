@@ -11,14 +11,14 @@
  */
 
 import { RequestFile } from './models';
-import { TypeEnum } from './typeEnum';
+import { EarningTypeEnum } from './earningTypeEnum';
 
 /**
 * # The Earning Object ### Description The `Earning` object is used to represent an earning for a given employee\'s payroll run. One run could include several earnings.  ### Usage Example Fetch from the `LIST Earnings` endpoint and filter by `ID` to show all earnings.
 */
 export class Earning {
     'id'?: string;
-    'employee_payroll_run'?: string;
+    'employee_payroll_run'?: string | null;
     /**
     * The amount earned.
     */
@@ -26,8 +26,8 @@ export class Earning {
     /**
     * The type of earning.
     */
-    'type'?: TypeEnum | null;
-    'remote_data'?: Array<{ [key: string]: any; }> | null;
+    'type'?: EarningTypeEnum | null;
+    'remote_data'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -50,12 +50,12 @@ export class Earning {
         {
             "name": "type",
             "baseName": "type",
-            "type": "TypeEnum"
+            "type": "EarningTypeEnum"
         },
         {
             "name": "remote_data",
             "baseName": "remote_data",
-            "type": "Array<{ [key: string]: any; }>"
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

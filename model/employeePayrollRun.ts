@@ -25,8 +25,8 @@ export class EmployeePayrollRun {
     * The third-party API ID of the matching object.
     */
     'remote_id'?: string | null;
-    'employee'?: string;
-    'payroll_run'?: string;
+    'employee'?: string | null;
+    'payroll_run'?: string | null;
     /**
     * The gross pay from the run.
     */

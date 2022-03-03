@@ -17,7 +17,7 @@ import { RequestFile } from './models';
 */
 export class Tax {
     'id'?: string;
-    'employee_payroll_run'?: string;
+    'employee_payroll_run'?: string | null;
     /**
     * The tax\'s name.
     */
@@ -30,7 +30,7 @@ export class Tax {
     * Whether or not the employer is responsible for paying the tax.
     */
     'employer_tax'?: boolean | null;
-    'remote_data'?: Array<{ [key: string]: any; }> | null;
+    'remote_data'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -63,7 +63,7 @@ export class Tax {
         {
             "name": "remote_data",
             "baseName": "remote_data",
-            "type": "Array<{ [key: string]: any; }>"
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

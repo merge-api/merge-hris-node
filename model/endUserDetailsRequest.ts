@@ -19,6 +19,7 @@ export class EndUserDetailsRequest {
     'end_user_origin_id': string;
     'categories'?: Array<CategoriesEnum>;
     'integration'?: string | null;
+    'link_expiry_mins'?: number;
 
     static discriminator: string | undefined = undefined;
 
@@ -47,6 +48,11 @@ export class EndUserDetailsRequest {
             "name": "integration",
             "baseName": "integration",
             "type": "string"
+        },
+        {
+            "name": "link_expiry_mins",
+            "baseName": "link_expiry_mins",
+            "type": "number"
         }    ];
 
     static getAttributeTypeMap() {
