@@ -124,7 +124,7 @@ var LinkedAccountsApi = (function () {
                 }
                 localVarFormParams = {};
                 if (category !== undefined) {
-                    localVarQueryParameters['category'] = models_1.ObjectSerializer.serialize(category, "'accounting' | 'ats' | 'hris'");
+                    localVarQueryParameters['category'] = models_1.ObjectSerializer.serialize(category, "'accounting' | 'ats' | 'hris' | 'ticketing'");
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");

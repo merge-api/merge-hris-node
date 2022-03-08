@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountTypeEnum = void 0;
-var AccountTypeEnum;
-(function (AccountTypeEnum) {
-    AccountTypeEnum[AccountTypeEnum["Savings"] = 'SAVINGS'] = "Savings";
-    AccountTypeEnum[AccountTypeEnum["Checking"] = 'CHECKING'] = "Checking";
-})(AccountTypeEnum = exports.AccountTypeEnum || (exports.AccountTypeEnum = {}));
+exports.AccountTypeEnumExpected = void 0;
+var AccountTypeEnumExpected;
+(function (AccountTypeEnumExpected) {
+    AccountTypeEnumExpected[AccountTypeEnumExpected["Savings"] = 'SAVINGS'] = "Savings";
+    AccountTypeEnumExpected[AccountTypeEnumExpected["Checking"] = 'CHECKING'] = "Checking";
+})(AccountTypeEnumExpected = exports.AccountTypeEnumExpected || (exports.AccountTypeEnumExpected = {}));
 //# sourceMappingURL=accountTypeEnum.js.map

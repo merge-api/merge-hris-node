@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountDetailsAndActionsStatusEnum = void 0;
-var AccountDetailsAndActionsStatusEnum;
-(function (AccountDetailsAndActionsStatusEnum) {
-    AccountDetailsAndActionsStatusEnum[AccountDetailsAndActionsStatusEnum["Complete"] = 'COMPLETE'] = "Complete";
-    AccountDetailsAndActionsStatusEnum[AccountDetailsAndActionsStatusEnum["Incomplete"] = 'INCOMPLETE'] = "Incomplete";
-    AccountDetailsAndActionsStatusEnum[AccountDetailsAndActionsStatusEnum["RelinkNeeded"] = 'RELINK_NEEDED'] = "RelinkNeeded";
-})(AccountDetailsAndActionsStatusEnum = exports.AccountDetailsAndActionsStatusEnum || (exports.AccountDetailsAndActionsStatusEnum = {}));
+exports.AccountDetailsAndActionsStatusEnumExpected = void 0;
+var AccountDetailsAndActionsStatusEnumExpected;
+(function (AccountDetailsAndActionsStatusEnumExpected) {
+    AccountDetailsAndActionsStatusEnumExpected[AccountDetailsAndActionsStatusEnumExpected["Complete"] = 'COMPLETE'] = "Complete";
+    AccountDetailsAndActionsStatusEnumExpected[AccountDetailsAndActionsStatusEnumExpected["Incomplete"] = 'INCOMPLETE'] = "Incomplete";
+    AccountDetailsAndActionsStatusEnumExpected[AccountDetailsAndActionsStatusEnumExpected["RelinkNeeded"] = 'RELINK_NEEDED'] = "RelinkNeeded";
+})(AccountDetailsAndActionsStatusEnumExpected = exports.AccountDetailsAndActionsStatusEnumExpected || (exports.AccountDetailsAndActionsStatusEnumExpected = {}));
 //# sourceMappingURL=accountDetailsAndActionsStatusEnum.js.map

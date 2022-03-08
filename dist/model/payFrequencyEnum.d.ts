@@ -1,4 +1,4 @@
-export declare enum PayFrequencyEnum {
+export declare enum PayFrequencyEnumExpected {
     Weekly,
     Biweekly,
     Monthly,
@@ -8,3 +8,4 @@ export declare enum PayFrequencyEnum {
     ThirteenMonthly,
     ProRata
 }
+export declare type PayFrequencyEnum = PayFrequencyEnumExpected | string;

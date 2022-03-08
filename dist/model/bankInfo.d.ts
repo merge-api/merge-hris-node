@@ -3,7 +3,7 @@ import { RemoteData } from './remoteData';
 export declare class BankInfo {
     'id'?: string;
     'remote_id'?: string | null;
-    'employee'?: string;
+    'employee'?: string | null;
     'account_number'?: string | null;
     'routing_number'?: string | null;
     'bank_name'?: string | null;

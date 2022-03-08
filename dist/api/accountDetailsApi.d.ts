@@ -24,7 +24,7 @@ export declare class AccountDetailsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: AccountDetailsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    accountDetailsRetrieve(options?: {
+    accountDetailsRetrieve(xAccountToken: string, options?: {
         headers: {
             [name: string]: string;
         };

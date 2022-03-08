@@ -1,9 +1,9 @@
-import { TypeEnum } from './typeEnum';
+import { EarningTypeEnum } from './earningTypeEnum';
 export declare class Earning {
     'id'?: string;
-    'employee_payroll_run'?: string;
+    'employee_payroll_run'?: string | null;
     'amount'?: number | null;
-    'type'?: TypeEnum | null;
+    'type'?: EarningTypeEnum | null;
     'remote_data'?: Array<{
         [key: string]: any;
     }> | null;

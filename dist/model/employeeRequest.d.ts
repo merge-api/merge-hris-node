@@ -9,13 +9,16 @@ export declare class EmployeeRequest {
     'first_name'?: string | null;
     'last_name'?: string | null;
     'display_full_name'?: string | null;
+    'groups'?: Array<string>;
     'work_email'?: string | null;
     'personal_email'?: string | null;
     'mobile_phone_number'?: string | null;
+    'employments'?: Array<string>;
     'home_location'?: string | null;
     'work_location'?: string | null;
     'manager'?: string | null;
     'team'?: string | null;
+    'pay_group'?: string | null;
     'ssn'?: string | null;
     'gender'?: GenderEnum | null;
     'ethnicity'?: EthnicityEnum | null;

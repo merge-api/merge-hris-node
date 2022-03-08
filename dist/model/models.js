@@ -21,25 +21,34 @@ __exportStar(require("./accountTypeEnum"), exports);
 __exportStar(require("./availableActions"), exports);
 __exportStar(require("./bankInfo"), exports);
 __exportStar(require("./benefit"), exports);
-__exportStar(require("./benefitPlanTypeEnum"), exports);
 __exportStar(require("./categoriesEnum"), exports);
 __exportStar(require("./categoryEnum"), exports);
 __exportStar(require("./company"), exports);
 __exportStar(require("./countryEnum"), exports);
 __exportStar(require("./dataPassthroughRequest"), exports);
+__exportStar(require("./debugModeLog"), exports);
+__exportStar(require("./debugModelLogSummary"), exports);
 __exportStar(require("./deduction"), exports);
 __exportStar(require("./earning"), exports);
+__exportStar(require("./earningTypeEnum"), exports);
 __exportStar(require("./employee"), exports);
+__exportStar(require("./employeeEndpointRequest"), exports);
 __exportStar(require("./employeePayrollRun"), exports);
+__exportStar(require("./employeeRequest"), exports);
+__exportStar(require("./employeeResponse"), exports);
 __exportStar(require("./employment"), exports);
 __exportStar(require("./employmentStatusEnum"), exports);
 __exportStar(require("./employmentTypeEnum"), exports);
+__exportStar(require("./encodingEnum"), exports);
 __exportStar(require("./endUserDetailsRequest"), exports);
 __exportStar(require("./errorValidationProblem"), exports);
 __exportStar(require("./ethnicityEnum"), exports);
 __exportStar(require("./flsaStatusEnum"), exports);
 __exportStar(require("./genderEnum"), exports);
 __exportStar(require("./generateRemoteKeyRequest"), exports);
+__exportStar(require("./group"), exports);
+__exportStar(require("./groupTypeEnum"), exports);
+__exportStar(require("./ignoreCommonModel"), exports);
 __exportStar(require("./ignoreCommonModelRequest"), exports);
 __exportStar(require("./issue"), exports);
 __exportStar(require("./issueStatusEnum"), exports);
@@ -49,6 +58,7 @@ __exportStar(require("./locationTypeEnum"), exports);
 __exportStar(require("./maritalStatusEnum"), exports);
 __exportStar(require("./methodEnum"), exports);
 __exportStar(require("./modelOperation"), exports);
+__exportStar(require("./multipartFormFieldRequest"), exports);
 __exportStar(require("./paginatedAccountDetailsAndActionsList"), exports);
 __exportStar(require("./paginatedBankInfoList"), exports);
 __exportStar(require("./paginatedBenefitList"), exports);
@@ -57,6 +67,7 @@ __exportStar(require("./paginatedDeductionList"), exports);
 __exportStar(require("./paginatedEmployeeList"), exports);
 __exportStar(require("./paginatedEmployeePayrollRunList"), exports);
 __exportStar(require("./paginatedEmploymentList"), exports);
+__exportStar(require("./paginatedGroupList"), exports);
 __exportStar(require("./paginatedIssueList"), exports);
 __exportStar(require("./paginatedLocationList"), exports);
 __exportStar(require("./paginatedPayGroupList"), exports);
@@ -91,7 +102,6 @@ __exportStar(require("./timeOffEndpointRequest"), exports);
 __exportStar(require("./timeOffRequest"), exports);
 __exportStar(require("./timeOffResponse"), exports);
 __exportStar(require("./timeOffStatusEnum"), exports);
-__exportStar(require("./typeEnum"), exports);
 __exportStar(require("./unitsEnum"), exports);
 __exportStar(require("./validationProblemSource"), exports);
 __exportStar(require("./warningValidationProblem"), exports);
@@ -105,25 +115,34 @@ var accountTypeEnum_1 = require("./accountTypeEnum");
 var availableActions_1 = require("./availableActions");
 var bankInfo_1 = require("./bankInfo");
 var benefit_1 = require("./benefit");
-var benefitPlanTypeEnum_1 = require("./benefitPlanTypeEnum");
 var categoriesEnum_1 = require("./categoriesEnum");
 var categoryEnum_1 = require("./categoryEnum");
 var company_1 = require("./company");
 var countryEnum_1 = require("./countryEnum");
 var dataPassthroughRequest_1 = require("./dataPassthroughRequest");
+var debugModeLog_1 = require("./debugModeLog");
+var debugModelLogSummary_1 = require("./debugModelLogSummary");
 var deduction_1 = require("./deduction");
 var earning_1 = require("./earning");
+var earningTypeEnum_1 = require("./earningTypeEnum");
 var employee_1 = require("./employee");
+var employeeEndpointRequest_1 = require("./employeeEndpointRequest");
 var employeePayrollRun_1 = require("./employeePayrollRun");
+var employeeRequest_1 = require("./employeeRequest");
+var employeeResponse_1 = require("./employeeResponse");
 var employment_1 = require("./employment");
 var employmentStatusEnum_1 = require("./employmentStatusEnum");
 var employmentTypeEnum_1 = require("./employmentTypeEnum");
+var encodingEnum_1 = require("./encodingEnum");
 var endUserDetailsRequest_1 = require("./endUserDetailsRequest");
 var errorValidationProblem_1 = require("./errorValidationProblem");
 var ethnicityEnum_1 = require("./ethnicityEnum");
 var flsaStatusEnum_1 = require("./flsaStatusEnum");
 var genderEnum_1 = require("./genderEnum");
 var generateRemoteKeyRequest_1 = require("./generateRemoteKeyRequest");
+var group_1 = require("./group");
+var groupTypeEnum_1 = require("./groupTypeEnum");
+var ignoreCommonModel_1 = require("./ignoreCommonModel");
 var ignoreCommonModelRequest_1 = require("./ignoreCommonModelRequest");
 var issue_1 = require("./issue");
 var issueStatusEnum_1 = require("./issueStatusEnum");
@@ -133,6 +152,7 @@ var locationTypeEnum_1 = require("./locationTypeEnum");
 var maritalStatusEnum_1 = require("./maritalStatusEnum");
 var methodEnum_1 = require("./methodEnum");
 var modelOperation_1 = require("./modelOperation");
+var multipartFormFieldRequest_1 = require("./multipartFormFieldRequest");
 var paginatedAccountDetailsAndActionsList_1 = require("./paginatedAccountDetailsAndActionsList");
 var paginatedBankInfoList_1 = require("./paginatedBankInfoList");
 var paginatedBenefitList_1 = require("./paginatedBenefitList");
@@ -141,6 +161,7 @@ var paginatedDeductionList_1 = require("./paginatedDeductionList");
 var paginatedEmployeeList_1 = require("./paginatedEmployeeList");
 var paginatedEmployeePayrollRunList_1 = require("./paginatedEmployeePayrollRunList");
 var paginatedEmploymentList_1 = require("./paginatedEmploymentList");
+var paginatedGroupList_1 = require("./paginatedGroupList");
 var paginatedIssueList_1 = require("./paginatedIssueList");
 var paginatedLocationList_1 = require("./paginatedLocationList");
 var paginatedPayGroupList_1 = require("./paginatedPayGroupList");
@@ -175,7 +196,6 @@ var timeOffEndpointRequest_1 = require("./timeOffEndpointRequest");
 var timeOffRequest_1 = require("./timeOffRequest");
 var timeOffResponse_1 = require("./timeOffResponse");
 var timeOffStatusEnum_1 = require("./timeOffStatusEnum");
-var typeEnum_1 = require("./typeEnum");
 var unitsEnum_1 = require("./unitsEnum");
 var validationProblemSource_1 = require("./validationProblemSource");
 var warningValidationProblem_1 = require("./warningValidationProblem");
@@ -190,34 +210,35 @@ var primitives = [
     "any"
 ];
 var enumsMap = {
-    "AccountDetailsAndActionsStatusEnum": accountDetailsAndActionsStatusEnum_1.AccountDetailsAndActionsStatusEnum,
-    "AccountTypeEnum": accountTypeEnum_1.AccountTypeEnum,
-    "BenefitPlanTypeEnum": benefitPlanTypeEnum_1.BenefitPlanTypeEnum,
-    "CategoriesEnum": categoriesEnum_1.CategoriesEnum,
-    "CategoryEnum": categoryEnum_1.CategoryEnum,
-    "CountryEnum": countryEnum_1.CountryEnum,
-    "EmploymentStatusEnum": employmentStatusEnum_1.EmploymentStatusEnum,
-    "EmploymentTypeEnum": employmentTypeEnum_1.EmploymentTypeEnum,
-    "EthnicityEnum": ethnicityEnum_1.EthnicityEnum,
-    "FlsaStatusEnum": flsaStatusEnum_1.FlsaStatusEnum,
-    "GenderEnum": genderEnum_1.GenderEnum,
-    "IssueStatusEnum": issueStatusEnum_1.IssueStatusEnum,
-    "LocationTypeEnum": locationTypeEnum_1.LocationTypeEnum,
-    "MaritalStatusEnum": maritalStatusEnum_1.MaritalStatusEnum,
-    "MethodEnum": methodEnum_1.MethodEnum,
-    "PayCurrencyEnum": payCurrencyEnum_1.PayCurrencyEnum,
-    "PayFrequencyEnum": payFrequencyEnum_1.PayFrequencyEnum,
-    "PayPeriodEnum": payPeriodEnum_1.PayPeriodEnum,
-    "PolicyTypeEnum": policyTypeEnum_1.PolicyTypeEnum,
-    "ReasonEnum": reasonEnum_1.ReasonEnum,
-    "RequestFormatEnum": requestFormatEnum_1.RequestFormatEnum,
-    "RequestTypeEnum": requestTypeEnum_1.RequestTypeEnum,
-    "RunStateEnum": runStateEnum_1.RunStateEnum,
-    "RunTypeEnum": runTypeEnum_1.RunTypeEnum,
-    "SyncStatusStatusEnum": syncStatusStatusEnum_1.SyncStatusStatusEnum,
-    "TimeOffStatusEnum": timeOffStatusEnum_1.TimeOffStatusEnum,
-    "TypeEnum": typeEnum_1.TypeEnum,
-    "UnitsEnum": unitsEnum_1.UnitsEnum,
+    "AccountDetailsAndActionsStatusEnum": accountDetailsAndActionsStatusEnum_1.AccountDetailsAndActionsStatusEnumExpected,
+    "AccountTypeEnum": accountTypeEnum_1.AccountTypeEnumExpected,
+    "CategoriesEnum": categoriesEnum_1.CategoriesEnumExpected,
+    "CategoryEnum": categoryEnum_1.CategoryEnumExpected,
+    "CountryEnum": countryEnum_1.CountryEnumExpected,
+    "EarningTypeEnum": earningTypeEnum_1.EarningTypeEnumExpected,
+    "EmploymentStatusEnum": employmentStatusEnum_1.EmploymentStatusEnumExpected,
+    "EmploymentTypeEnum": employmentTypeEnum_1.EmploymentTypeEnumExpected,
+    "EncodingEnum": encodingEnum_1.EncodingEnumExpected,
+    "EthnicityEnum": ethnicityEnum_1.EthnicityEnumExpected,
+    "FlsaStatusEnum": flsaStatusEnum_1.FlsaStatusEnumExpected,
+    "GenderEnum": genderEnum_1.GenderEnumExpected,
+    "GroupTypeEnum": groupTypeEnum_1.GroupTypeEnumExpected,
+    "IssueStatusEnum": issueStatusEnum_1.IssueStatusEnumExpected,
+    "LocationTypeEnum": locationTypeEnum_1.LocationTypeEnumExpected,
+    "MaritalStatusEnum": maritalStatusEnum_1.MaritalStatusEnumExpected,
+    "MethodEnum": methodEnum_1.MethodEnumExpected,
+    "PayCurrencyEnum": payCurrencyEnum_1.PayCurrencyEnumExpected,
+    "PayFrequencyEnum": payFrequencyEnum_1.PayFrequencyEnumExpected,
+    "PayPeriodEnum": payPeriodEnum_1.PayPeriodEnumExpected,
+    "PolicyTypeEnum": policyTypeEnum_1.PolicyTypeEnumExpected,
+    "ReasonEnum": reasonEnum_1.ReasonEnumExpected,
+    "RequestFormatEnum": requestFormatEnum_1.RequestFormatEnumExpected,
+    "RequestTypeEnum": requestTypeEnum_1.RequestTypeEnumExpected,
+    "RunStateEnum": runStateEnum_1.RunStateEnumExpected,
+    "RunTypeEnum": runTypeEnum_1.RunTypeEnumExpected,
+    "SyncStatusStatusEnum": syncStatusStatusEnum_1.SyncStatusStatusEnumExpected,
+    "TimeOffStatusEnum": timeOffStatusEnum_1.TimeOffStatusEnumExpected,
+    "UnitsEnum": unitsEnum_1.UnitsEnumExpected,
 };
 var typeMap = {
     "AccountDetails": accountDetails_1.AccountDetails,
@@ -230,19 +251,27 @@ var typeMap = {
     "Benefit": benefit_1.Benefit,
     "Company": company_1.Company,
     "DataPassthroughRequest": dataPassthroughRequest_1.DataPassthroughRequest,
+    "DebugModeLog": debugModeLog_1.DebugModeLog,
+    "DebugModelLogSummary": debugModelLogSummary_1.DebugModelLogSummary,
     "Deduction": deduction_1.Deduction,
     "Earning": earning_1.Earning,
     "Employee": employee_1.Employee,
+    "EmployeeEndpointRequest": employeeEndpointRequest_1.EmployeeEndpointRequest,
     "EmployeePayrollRun": employeePayrollRun_1.EmployeePayrollRun,
+    "EmployeeRequest": employeeRequest_1.EmployeeRequest,
+    "EmployeeResponse": employeeResponse_1.EmployeeResponse,
     "Employment": employment_1.Employment,
     "EndUserDetailsRequest": endUserDetailsRequest_1.EndUserDetailsRequest,
     "ErrorValidationProblem": errorValidationProblem_1.ErrorValidationProblem,
     "GenerateRemoteKeyRequest": generateRemoteKeyRequest_1.GenerateRemoteKeyRequest,
+    "Group": group_1.Group,
+    "IgnoreCommonModel": ignoreCommonModel_1.IgnoreCommonModel,
     "IgnoreCommonModelRequest": ignoreCommonModelRequest_1.IgnoreCommonModelRequest,
     "Issue": issue_1.Issue,
     "LinkToken": linkToken_1.LinkToken,
     "Location": location_1.Location,
     "ModelOperation": modelOperation_1.ModelOperation,
+    "MultipartFormFieldRequest": multipartFormFieldRequest_1.MultipartFormFieldRequest,
     "PaginatedAccountDetailsAndActionsList": paginatedAccountDetailsAndActionsList_1.PaginatedAccountDetailsAndActionsList,
     "PaginatedBankInfoList": paginatedBankInfoList_1.PaginatedBankInfoList,
     "PaginatedBenefitList": paginatedBenefitList_1.PaginatedBenefitList,
@@ -251,6 +280,7 @@ var typeMap = {
     "PaginatedEmployeeList": paginatedEmployeeList_1.PaginatedEmployeeList,
     "PaginatedEmployeePayrollRunList": paginatedEmployeePayrollRunList_1.PaginatedEmployeePayrollRunList,
     "PaginatedEmploymentList": paginatedEmploymentList_1.PaginatedEmploymentList,
+    "PaginatedGroupList": paginatedGroupList_1.PaginatedGroupList,
     "PaginatedIssueList": paginatedIssueList_1.PaginatedIssueList,
     "PaginatedLocationList": paginatedLocationList_1.PaginatedLocationList,
     "PaginatedPayGroupList": paginatedPayGroupList_1.PaginatedPayGroupList,

@@ -50,6 +50,8 @@ __exportStar(require("./forceResyncApi"), exports);
 var forceResyncApi_1 = require("./forceResyncApi");
 __exportStar(require("./generateKeyApi"), exports);
 var generateKeyApi_1 = require("./generateKeyApi");
+__exportStar(require("./groupsApi"), exports);
+var groupsApi_1 = require("./groupsApi");
 __exportStar(require("./issuesApi"), exports);
 var issuesApi_1 = require("./issuesApi");
 __exportStar(require("./linkTokenApi"), exports);
@@ -60,8 +62,6 @@ __exportStar(require("./locationsApi"), exports);
 var locationsApi_1 = require("./locationsApi");
 __exportStar(require("./passthroughApi"), exports);
 var passthroughApi_1 = require("./passthroughApi");
-__exportStar(require("./payGroupApi"), exports);
-var payGroupApi_1 = require("./payGroupApi");
 __exportStar(require("./payGroupsApi"), exports);
 var payGroupsApi_1 = require("./payGroupsApi");
 __exportStar(require("./payrollRunsApi"), exports);
@@ -74,8 +74,6 @@ __exportStar(require("./teamsApi"), exports);
 var teamsApi_1 = require("./teamsApi");
 __exportStar(require("./timeOffApi"), exports);
 var timeOffApi_1 = require("./timeOffApi");
-__exportStar(require("./timeOffBalanceApi"), exports);
-var timeOffBalanceApi_1 = require("./timeOffBalanceApi");
 __exportStar(require("./timeOffBalancesApi"), exports);
 var timeOffBalancesApi_1 = require("./timeOffBalancesApi");
 var HttpError = (function (_super) {
@@ -91,5 +89,5 @@ var HttpError = (function (_super) {
     return HttpError;
 }(Error));
 exports.HttpError = HttpError;
-exports.APIS = [accountDetailsApi_1.AccountDetailsApi, accountTokenApi_1.AccountTokenApi, availableActionsApi_1.AvailableActionsApi, bankInfoApi_1.BankInfoApi, benefitsApi_1.BenefitsApi, companiesApi_1.CompaniesApi, deductionsApi_1.DeductionsApi, deleteAccountApi_1.DeleteAccountApi, employeePayrollRunsApi_1.EmployeePayrollRunsApi, employeesApi_1.EmployeesApi, employmentsApi_1.EmploymentsApi, forceResyncApi_1.ForceResyncApi, generateKeyApi_1.GenerateKeyApi, issuesApi_1.IssuesApi, linkTokenApi_1.LinkTokenApi, linkedAccountsApi_1.LinkedAccountsApi, locationsApi_1.LocationsApi, passthroughApi_1.PassthroughApi, payGroupApi_1.PayGroupApi, payGroupsApi_1.PayGroupsApi, payrollRunsApi_1.PayrollRunsApi, regenerateKeyApi_1.RegenerateKeyApi, syncStatusApi_1.SyncStatusApi, teamsApi_1.TeamsApi, timeOffApi_1.TimeOffApi, timeOffBalanceApi_1.TimeOffBalanceApi, timeOffBalancesApi_1.TimeOffBalancesApi];
+exports.APIS = [accountDetailsApi_1.AccountDetailsApi, accountTokenApi_1.AccountTokenApi, availableActionsApi_1.AvailableActionsApi, bankInfoApi_1.BankInfoApi, benefitsApi_1.BenefitsApi, companiesApi_1.CompaniesApi, deductionsApi_1.DeductionsApi, deleteAccountApi_1.DeleteAccountApi, employeePayrollRunsApi_1.EmployeePayrollRunsApi, employeesApi_1.EmployeesApi, employmentsApi_1.EmploymentsApi, forceResyncApi_1.ForceResyncApi, generateKeyApi_1.GenerateKeyApi, groupsApi_1.GroupsApi, issuesApi_1.IssuesApi, linkTokenApi_1.LinkTokenApi, linkedAccountsApi_1.LinkedAccountsApi, locationsApi_1.LocationsApi, passthroughApi_1.PassthroughApi, payGroupsApi_1.PayGroupsApi, payrollRunsApi_1.PayrollRunsApi, regenerateKeyApi_1.RegenerateKeyApi, syncStatusApi_1.SyncStatusApi, teamsApi_1.TeamsApi, timeOffApi_1.TimeOffApi, timeOffBalancesApi_1.TimeOffBalancesApi];
 //# sourceMappingURL=apis.js.map

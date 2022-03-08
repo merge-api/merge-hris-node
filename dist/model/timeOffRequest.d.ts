@@ -3,8 +3,8 @@ import { TimeOffStatusEnum } from './timeOffStatusEnum';
 import { UnitsEnum } from './unitsEnum';
 export declare class TimeOffRequest {
     'remote_id'?: string | null;
-    'employee'?: string;
-    'approver'?: string;
+    'employee'?: string | null;
+    'approver'?: string | null;
     'status'?: TimeOffStatusEnum | null;
     'employee_note'?: string | null;
     'units'?: UnitsEnum | null;

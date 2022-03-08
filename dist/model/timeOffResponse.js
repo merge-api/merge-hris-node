@@ -27,7 +27,7 @@ var TimeOffResponse = (function () {
         {
             "name": "logs",
             "baseName": "logs",
-            "type": "Array<string>"
+            "type": "Array<DebugModeLog>"
         }
     ];
     return TimeOffResponse;

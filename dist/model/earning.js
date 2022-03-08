@@ -27,7 +27,7 @@ var Earning = (function () {
         {
             "name": "type",
             "baseName": "type",
-            "type": "TypeEnum"
+            "type": "EarningTypeEnum"
         },
         {
             "name": "remote_data",
