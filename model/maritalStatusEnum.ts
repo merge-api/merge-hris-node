@@ -12,10 +12,12 @@
 
 import { RequestFile } from './models';
 
-export enum MaritalStatusEnum {
+export enum MaritalStatusEnumExpected {
     Single = <any> 'SINGLE',
     MarriedFilingJointly = <any> 'MARRIED_FILING_JOINTLY',
     MarriedFilingSeparately = <any> 'MARRIED_FILING_SEPARATELY',
     HeadOfHousehold = <any> 'HEAD_OF_HOUSEHOLD',
     QualifyingWidowOrWidowerWithDependentChild = <any> 'QUALIFYING_WIDOW_OR_WIDOWER_WITH_DEPENDENT_CHILD'
 }
+
+export type MaritalStatusEnum = MaritalStatusEnumExpected | string;

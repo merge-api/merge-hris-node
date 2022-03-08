@@ -12,9 +12,11 @@
 
 import { RequestFile } from './models';
 
-export enum SyncStatusStatusEnum {
+export enum SyncStatusStatusEnumExpected {
     Syncing = <any> 'SYNCING',
     Done = <any> 'DONE',
     Failed = <any> 'FAILED',
     Disabled = <any> 'DISABLED'
 }
+
+export type SyncStatusStatusEnum = SyncStatusStatusEnumExpected | string;

@@ -12,8 +12,11 @@
 
 import { RequestFile } from './models';
 
-export enum CategoriesEnum {
+export enum CategoriesEnumExpected {
     Hris = <any> 'hris',
     Ats = <any> 'ats',
-    Accounting = <any> 'accounting'
+    Accounting = <any> 'accounting',
+    Ticketing = <any> 'ticketing'
 }
+
+export type CategoriesEnum = CategoriesEnumExpected | string;

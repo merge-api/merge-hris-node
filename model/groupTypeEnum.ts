@@ -12,9 +12,11 @@
 
 import { RequestFile } from './models';
 
-export enum GroupTypeEnum {
+export enum GroupTypeEnumExpected {
     Team = <any> 'TEAM',
     Department = <any> 'DEPARTMENT',
     CostCenter = <any> 'COST_CENTER',
     BusinessUnit = <any> 'BUSINESS_UNIT'
 }
+
+export type GroupTypeEnum = GroupTypeEnumExpected | string;

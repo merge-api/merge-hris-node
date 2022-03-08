@@ -12,10 +12,12 @@
 
 import { RequestFile } from './models';
 
-export enum TimeOffStatusEnum {
+export enum TimeOffStatusEnumExpected {
     Requested = <any> 'REQUESTED',
     Approved = <any> 'APPROVED',
     Declined = <any> 'DECLINED',
     Cancelled = <any> 'CANCELLED',
     Deleted = <any> 'DELETED'
 }
+
+export type TimeOffStatusEnum = TimeOffStatusEnumExpected | string;

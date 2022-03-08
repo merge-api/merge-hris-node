@@ -12,10 +12,12 @@
 
 import { RequestFile } from './models';
 
-export enum RunTypeEnum {
+export enum RunTypeEnumExpected {
     Regular = <any> 'REGULAR',
     OffCycle = <any> 'OFF_CYCLE',
     Correction = <any> 'CORRECTION',
     Termination = <any> 'TERMINATION',
     SignOnBonus = <any> 'SIGN_ON_BONUS'
 }
+
+export type RunTypeEnum = RunTypeEnumExpected | string;

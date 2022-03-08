@@ -12,9 +12,11 @@
 
 import { RequestFile } from './models';
 
-export enum FlsaStatusEnum {
+export enum FlsaStatusEnumExpected {
     Exempt = <any> 'EXEMPT',
     SalariedNonexempt = <any> 'SALARIED_NONEXEMPT',
     Nonexempt = <any> 'NONEXEMPT',
     Owner = <any> 'OWNER'
 }
+
+export type FlsaStatusEnum = FlsaStatusEnumExpected | string;

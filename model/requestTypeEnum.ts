@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export enum RequestTypeEnum {
+export enum RequestTypeEnumExpected {
     Vacation = <any> 'VACATION',
     Sick = <any> 'SICK',
     Personal = <any> 'PERSONAL',
@@ -20,3 +20,5 @@ export enum RequestTypeEnum {
     Volunteer = <any> 'VOLUNTEER',
     Bereavement = <any> 'BEREAVEMENT'
 }
+
+export type RequestTypeEnum = RequestTypeEnumExpected | string;

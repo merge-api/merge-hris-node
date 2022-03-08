@@ -1,26 +1,34 @@
 {
-    "name": "@mergeapi/merge-hris-node",
-    "version": "1.2.5",
-    "description": "NodeJS client for @mergeapi/merge-hris-node",
-    "repository": "merge-api/merge-hris-node",
-    "main": "dist/api.js",
-    "types": "dist/api.d.ts",
-    "scripts": {
-        "clean": "rm -Rf node_modules/ *.js",
-        "build": "tsc",
-        "test": "npm run build && node dist/client.js"
-    },
-    "author": "OpenAPI-Generator Contributors",
-    "license": "Unlicense",
-    "dependencies": {
-        "bluebird": "^3.5.0",
-        "request": "^2.81.0",
-        "@types/bluebird": "3.5.33",
-        "@types/request": "*",
-        "rewire": "^3.0.2"
-    },
-    "devDependencies": {
-        "typescript": "^2.4.2",
-        "@types/node": "8.10.34"
-    }
+  "name": "@mergeapi/merge-hris-node",
+  "version": "1.2.6",
+  "description": "NodeJS client for @mergeapi/merge-hris-node",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/merge-api/merge-hris-node.git"
+  },
+  "main": "dist/api.js",
+  "types": "dist/api.d.ts",
+  "scripts": {
+    "clean": "rm -Rf node_modules/ *.js",
+    "build": "tsc -p ./tsconfig.json",
+    "prepublishOnly": "npm ci --ignore-scripts && npm run build",
+    "test": "npm run build && node dist/client.js"
+  },
+  "author": "OpenAPI-Generator Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "request": "^2.81.0",
+    "@types/bluebird": "*",
+    "@types/request": "*",
+    "rewire": "^3.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.3",
+    "@types/node": "^15.12.2"
+  },
+  "bugs": {
+    "url": "https://github.com/merge-api/merge-hris-node/issues"
+  },
+  "homepage": "https://github.com/merge-api/merge-hris-node#readme"
 }

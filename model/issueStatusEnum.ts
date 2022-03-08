@@ -12,7 +12,9 @@
 
 import { RequestFile } from './models';
 
-export enum IssueStatusEnum {
+export enum IssueStatusEnumExpected {
     Ongoing = <any> 'ONGOING',
     Resolved = <any> 'RESOLVED'
 }
+
+export type IssueStatusEnum = IssueStatusEnumExpected | string;

@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export enum EthnicityEnum {
+export enum EthnicityEnumExpected {
     AmericanIndianOrAlaskaNative = <any> 'AMERICAN_INDIAN_OR_ALASKA_NATIVE',
     AsianOrIndianSubcontinent = <any> 'ASIAN_OR_INDIAN_SUBCONTINENT',
     BlackOrAfricanAmerican = <any> 'BLACK_OR_AFRICAN_AMERICAN',
@@ -22,3 +22,5 @@ export enum EthnicityEnum {
     White = <any> 'WHITE',
     PreferNotToDisclose = <any> 'PREFER_NOT_TO_DISCLOSE'
 }
+
+export type EthnicityEnum = EthnicityEnumExpected | string;

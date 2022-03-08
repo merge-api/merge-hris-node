@@ -12,7 +12,9 @@
 
 import { RequestFile } from './models';
 
-export enum AccountTypeEnum {
+export enum AccountTypeEnumExpected {
     Savings = <any> 'SAVINGS',
     Checking = <any> 'CHECKING'
 }
+
+export type AccountTypeEnum = AccountTypeEnumExpected | string;

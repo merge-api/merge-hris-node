@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export enum PayFrequencyEnum {
+export enum PayFrequencyEnumExpected {
     Weekly = <any> 'WEEKLY',
     Biweekly = <any> 'BIWEEKLY',
     Monthly = <any> 'MONTHLY',
@@ -22,3 +22,5 @@ export enum PayFrequencyEnum {
     ThirteenMonthly = <any> 'THIRTEEN-MONTHLY',
     ProRata = <any> 'PRO_RATA'
 }
+
+export type PayFrequencyEnum = PayFrequencyEnumExpected | string;

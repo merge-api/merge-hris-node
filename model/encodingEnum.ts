@@ -12,7 +12,9 @@
 
 import { RequestFile } from './models';
 
-export enum EncodingEnum {
+export enum EncodingEnumExpected {
     Raw = <any> 'RAW',
     Base64 = <any> 'BASE64'
 }
+
+export type EncodingEnum = EncodingEnumExpected | string;

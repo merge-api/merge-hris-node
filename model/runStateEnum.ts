@@ -12,10 +12,12 @@
 
 import { RequestFile } from './models';
 
-export enum RunStateEnum {
+export enum RunStateEnumExpected {
     Paid = <any> 'PAID',
     Draft = <any> 'DRAFT',
     Approved = <any> 'APPROVED',
     Failed = <any> 'FAILED',
     Closed = <any> 'CLOSED'
 }
+
+export type RunStateEnum = RunStateEnumExpected | string;

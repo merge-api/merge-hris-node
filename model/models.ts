@@ -111,49 +111,49 @@ export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 import { AccountDetails } from './accountDetails';
 import { AccountDetailsAndActions } from './accountDetailsAndActions';
 import { AccountDetailsAndActionsIntegration } from './accountDetailsAndActionsIntegration';
-import { AccountDetailsAndActionsStatusEnum } from './accountDetailsAndActionsStatusEnum';
+import { AccountDetailsAndActionsStatusEnum, AccountDetailsAndActionsStatusEnumExpected } from './accountDetailsAndActionsStatusEnum';
 import { AccountIntegration } from './accountIntegration';
 import { AccountToken } from './accountToken';
-import { AccountTypeEnum } from './accountTypeEnum';
+import { AccountTypeEnum, AccountTypeEnumExpected } from './accountTypeEnum';
 import { AvailableActions } from './availableActions';
 import { BankInfo } from './bankInfo';
 import { Benefit } from './benefit';
-import { CategoriesEnum } from './categoriesEnum';
-import { CategoryEnum } from './categoryEnum';
+import { CategoriesEnum, CategoriesEnumExpected } from './categoriesEnum';
+import { CategoryEnum, CategoryEnumExpected } from './categoryEnum';
 import { Company } from './company';
-import { CountryEnum } from './countryEnum';
+import { CountryEnum, CountryEnumExpected } from './countryEnum';
 import { DataPassthroughRequest } from './dataPassthroughRequest';
 import { DebugModeLog } from './debugModeLog';
 import { DebugModelLogSummary } from './debugModelLogSummary';
 import { Deduction } from './deduction';
 import { Earning } from './earning';
-import { EarningTypeEnum } from './earningTypeEnum';
+import { EarningTypeEnum, EarningTypeEnumExpected } from './earningTypeEnum';
 import { Employee } from './employee';
 import { EmployeeEndpointRequest } from './employeeEndpointRequest';
 import { EmployeePayrollRun } from './employeePayrollRun';
 import { EmployeeRequest } from './employeeRequest';
 import { EmployeeResponse } from './employeeResponse';
 import { Employment } from './employment';
-import { EmploymentStatusEnum } from './employmentStatusEnum';
-import { EmploymentTypeEnum } from './employmentTypeEnum';
-import { EncodingEnum } from './encodingEnum';
+import { EmploymentStatusEnum, EmploymentStatusEnumExpected } from './employmentStatusEnum';
+import { EmploymentTypeEnum, EmploymentTypeEnumExpected } from './employmentTypeEnum';
+import { EncodingEnum, EncodingEnumExpected } from './encodingEnum';
 import { EndUserDetailsRequest } from './endUserDetailsRequest';
 import { ErrorValidationProblem } from './errorValidationProblem';
-import { EthnicityEnum } from './ethnicityEnum';
-import { FlsaStatusEnum } from './flsaStatusEnum';
-import { GenderEnum } from './genderEnum';
+import { EthnicityEnum, EthnicityEnumExpected } from './ethnicityEnum';
+import { FlsaStatusEnum, FlsaStatusEnumExpected } from './flsaStatusEnum';
+import { GenderEnum, GenderEnumExpected } from './genderEnum';
 import { GenerateRemoteKeyRequest } from './generateRemoteKeyRequest';
 import { Group } from './group';
-import { GroupTypeEnum } from './groupTypeEnum';
+import { GroupTypeEnum, GroupTypeEnumExpected } from './groupTypeEnum';
 import { IgnoreCommonModel } from './ignoreCommonModel';
 import { IgnoreCommonModelRequest } from './ignoreCommonModelRequest';
 import { Issue } from './issue';
-import { IssueStatusEnum } from './issueStatusEnum';
+import { IssueStatusEnum, IssueStatusEnumExpected } from './issueStatusEnum';
 import { LinkToken } from './linkToken';
 import { Location } from './location';
-import { LocationTypeEnum } from './locationTypeEnum';
-import { MaritalStatusEnum } from './maritalStatusEnum';
-import { MethodEnum } from './methodEnum';
+import { LocationTypeEnum, LocationTypeEnumExpected } from './locationTypeEnum';
+import { MaritalStatusEnum, MaritalStatusEnumExpected } from './maritalStatusEnum';
+import { MethodEnum, MethodEnumExpected } from './methodEnum';
 import { ModelOperation } from './modelOperation';
 import { MultipartFormFieldRequest } from './multipartFormFieldRequest';
 import { PaginatedAccountDetailsAndActionsList } from './paginatedAccountDetailsAndActionsList';
@@ -173,24 +173,24 @@ import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
 import { PaginatedTimeOffBalanceList } from './paginatedTimeOffBalanceList';
 import { PaginatedTimeOffList } from './paginatedTimeOffList';
-import { PayCurrencyEnum } from './payCurrencyEnum';
-import { PayFrequencyEnum } from './payFrequencyEnum';
+import { PayCurrencyEnum, PayCurrencyEnumExpected } from './payCurrencyEnum';
+import { PayFrequencyEnum, PayFrequencyEnumExpected } from './payFrequencyEnum';
 import { PayGroup } from './payGroup';
-import { PayPeriodEnum } from './payPeriodEnum';
+import { PayPeriodEnum, PayPeriodEnumExpected } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
-import { PolicyTypeEnum } from './policyTypeEnum';
-import { ReasonEnum } from './reasonEnum';
+import { PolicyTypeEnum, PolicyTypeEnumExpected } from './policyTypeEnum';
+import { ReasonEnum, ReasonEnumExpected } from './reasonEnum';
 import { RemoteData } from './remoteData';
 import { RemoteDataRequest } from './remoteDataRequest';
 import { RemoteKey } from './remoteKey';
 import { RemoteKeyForRegenerationRequest } from './remoteKeyForRegenerationRequest';
 import { RemoteResponse } from './remoteResponse';
-import { RequestFormatEnum } from './requestFormatEnum';
-import { RequestTypeEnum } from './requestTypeEnum';
-import { RunStateEnum } from './runStateEnum';
-import { RunTypeEnum } from './runTypeEnum';
+import { RequestFormatEnum, RequestFormatEnumExpected } from './requestFormatEnum';
+import { RequestTypeEnum, RequestTypeEnumExpected } from './requestTypeEnum';
+import { RunStateEnum, RunStateEnumExpected } from './runStateEnum';
+import { RunTypeEnum, RunTypeEnumExpected } from './runTypeEnum';
 import { SyncStatus } from './syncStatus';
-import { SyncStatusStatusEnum } from './syncStatusStatusEnum';
+import { SyncStatusStatusEnum, SyncStatusStatusEnumExpected } from './syncStatusStatusEnum';
 import { Tax } from './tax';
 import { Team } from './team';
 import { TimeOff } from './timeOff';
@@ -198,8 +198,8 @@ import { TimeOffBalance } from './timeOffBalance';
 import { TimeOffEndpointRequest } from './timeOffEndpointRequest';
 import { TimeOffRequest } from './timeOffRequest';
 import { TimeOffResponse } from './timeOffResponse';
-import { TimeOffStatusEnum } from './timeOffStatusEnum';
-import { UnitsEnum } from './unitsEnum';
+import { TimeOffStatusEnum, TimeOffStatusEnumExpected } from './timeOffStatusEnum';
+import { UnitsEnum, UnitsEnumExpected } from './unitsEnum';
 import { ValidationProblemSource } from './validationProblemSource';
 import { WarningValidationProblem } from './warningValidationProblem';
 
@@ -216,35 +216,35 @@ let primitives = [
                  ];
 
 let enumsMap: {[index: string]: any} = {
-        "AccountDetailsAndActionsStatusEnum": AccountDetailsAndActionsStatusEnum,
-        "AccountTypeEnum": AccountTypeEnum,
-        "CategoriesEnum": CategoriesEnum,
-        "CategoryEnum": CategoryEnum,
-        "CountryEnum": CountryEnum,
-        "EarningTypeEnum": EarningTypeEnum,
-        "EmploymentStatusEnum": EmploymentStatusEnum,
-        "EmploymentTypeEnum": EmploymentTypeEnum,
-        "EncodingEnum": EncodingEnum,
-        "EthnicityEnum": EthnicityEnum,
-        "FlsaStatusEnum": FlsaStatusEnum,
-        "GenderEnum": GenderEnum,
-        "GroupTypeEnum": GroupTypeEnum,
-        "IssueStatusEnum": IssueStatusEnum,
-        "LocationTypeEnum": LocationTypeEnum,
-        "MaritalStatusEnum": MaritalStatusEnum,
-        "MethodEnum": MethodEnum,
-        "PayCurrencyEnum": PayCurrencyEnum,
-        "PayFrequencyEnum": PayFrequencyEnum,
-        "PayPeriodEnum": PayPeriodEnum,
-        "PolicyTypeEnum": PolicyTypeEnum,
-        "ReasonEnum": ReasonEnum,
-        "RequestFormatEnum": RequestFormatEnum,
-        "RequestTypeEnum": RequestTypeEnum,
-        "RunStateEnum": RunStateEnum,
-        "RunTypeEnum": RunTypeEnum,
-        "SyncStatusStatusEnum": SyncStatusStatusEnum,
-        "TimeOffStatusEnum": TimeOffStatusEnum,
-        "UnitsEnum": UnitsEnum,
+        "AccountDetailsAndActionsStatusEnum": AccountDetailsAndActionsStatusEnumExpected,
+        "AccountTypeEnum": AccountTypeEnumExpected,
+        "CategoriesEnum": CategoriesEnumExpected,
+        "CategoryEnum": CategoryEnumExpected,
+        "CountryEnum": CountryEnumExpected,
+        "EarningTypeEnum": EarningTypeEnumExpected,
+        "EmploymentStatusEnum": EmploymentStatusEnumExpected,
+        "EmploymentTypeEnum": EmploymentTypeEnumExpected,
+        "EncodingEnum": EncodingEnumExpected,
+        "EthnicityEnum": EthnicityEnumExpected,
+        "FlsaStatusEnum": FlsaStatusEnumExpected,
+        "GenderEnum": GenderEnumExpected,
+        "GroupTypeEnum": GroupTypeEnumExpected,
+        "IssueStatusEnum": IssueStatusEnumExpected,
+        "LocationTypeEnum": LocationTypeEnumExpected,
+        "MaritalStatusEnum": MaritalStatusEnumExpected,
+        "MethodEnum": MethodEnumExpected,
+        "PayCurrencyEnum": PayCurrencyEnumExpected,
+        "PayFrequencyEnum": PayFrequencyEnumExpected,
+        "PayPeriodEnum": PayPeriodEnumExpected,
+        "PolicyTypeEnum": PolicyTypeEnumExpected,
+        "ReasonEnum": ReasonEnumExpected,
+        "RequestFormatEnum": RequestFormatEnumExpected,
+        "RequestTypeEnum": RequestTypeEnumExpected,
+        "RunStateEnum": RunStateEnumExpected,
+        "RunTypeEnum": RunTypeEnumExpected,
+        "SyncStatusStatusEnum": SyncStatusStatusEnumExpected,
+        "TimeOffStatusEnum": TimeOffStatusEnumExpected,
+        "UnitsEnum": UnitsEnumExpected,
 }
 
 let typeMap: {[index: string]: any} = {

@@ -12,8 +12,10 @@
 
 import { RequestFile } from './models';
 
-export enum AccountDetailsAndActionsStatusEnum {
+export enum AccountDetailsAndActionsStatusEnumExpected {
     Complete = <any> 'COMPLETE',
     Incomplete = <any> 'INCOMPLETE',
     RelinkNeeded = <any> 'RELINK_NEEDED'
 }
+
+export type AccountDetailsAndActionsStatusEnum = AccountDetailsAndActionsStatusEnumExpected | string;
