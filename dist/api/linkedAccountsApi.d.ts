@@ -24,7 +24,7 @@ export declare class LinkedAccountsApi {
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: LinkedAccountsApiApiKeys, value: string): void;
     addInterceptor(interceptor: Interceptor): void;
-    linkedAccountsList(category?: 'accounting' | 'ats' | 'hris', cursor?: string, endUserEmailAddress?: string, endUserOrganizationName?: string, endUserOriginId?: string, endUserOriginIds?: string, id?: string, ids?: string, integrationName?: string, isTestAccount?: string, pageSize?: number, status?: string, options?: {
+    linkedAccountsList(category?: 'accounting' | 'ats' | 'hris' | 'ticketing', cursor?: string, endUserEmailAddress?: string, endUserOrganizationName?: string, endUserOriginId?: string, endUserOriginIds?: string, id?: string, ids?: string, integrationName?: string, isTestAccount?: string, pageSize?: number, status?: string, options?: {
         headers: {
             [name: string]: string;
         };

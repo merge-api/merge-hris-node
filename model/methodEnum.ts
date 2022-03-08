@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export enum MethodEnum {
+export enum MethodEnumExpected {
     Get = <any> 'GET',
     Options = <any> 'OPTIONS',
     Head = <any> 'HEAD',
@@ -21,3 +21,5 @@ export enum MethodEnum {
     Patch = <any> 'PATCH',
     Delete = <any> 'DELETE'
 }
+
+export type MethodEnum = MethodEnumExpected | string;

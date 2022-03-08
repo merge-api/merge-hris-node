@@ -40,6 +40,11 @@ var EmployeeRequest = (function () {
             "type": "string"
         },
         {
+            "name": "groups",
+            "baseName": "groups",
+            "type": "Array<string>"
+        },
+        {
             "name": "work_email",
             "baseName": "work_email",
             "type": "string"
@@ -53,6 +58,11 @@ var EmployeeRequest = (function () {
             "name": "mobile_phone_number",
             "baseName": "mobile_phone_number",
             "type": "string"
+        },
+        {
+            "name": "employments",
+            "baseName": "employments",
+            "type": "Array<string>"
         },
         {
             "name": "home_location",
@@ -72,6 +82,11 @@ var EmployeeRequest = (function () {
         {
             "name": "team",
             "baseName": "team",
+            "type": "string"
+        },
+        {
+            "name": "pay_group",
+            "baseName": "pay_group",
             "type": "string"
         },
         {

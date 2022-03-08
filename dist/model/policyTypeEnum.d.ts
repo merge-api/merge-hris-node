@@ -1,4 +1,4 @@
-export declare enum PolicyTypeEnum {
+export declare enum PolicyTypeEnumExpected {
     Vacation,
     Sick,
     Personal,
@@ -6,3 +6,4 @@ export declare enum PolicyTypeEnum {
     Volunteer,
     Bereavement
 }
+export declare type PolicyTypeEnum = PolicyTypeEnumExpected | string;

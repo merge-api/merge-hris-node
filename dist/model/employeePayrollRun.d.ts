@@ -5,8 +5,8 @@ import { Tax } from './tax';
 export declare class EmployeePayrollRun {
     'id'?: string;
     'remote_id'?: string | null;
-    'employee'?: string;
-    'payroll_run'?: string;
+    'employee'?: string | null;
+    'payroll_run'?: string | null;
     'gross_pay'?: number | null;
     'net_pay'?: number | null;
     'start_date'?: Date | null;

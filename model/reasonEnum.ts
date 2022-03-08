@@ -12,8 +12,10 @@
 
 import { RequestFile } from './models';
 
-export enum ReasonEnum {
+export enum ReasonEnumExpected {
     GeneralCustomerRequest = <any> 'GENERAL_CUSTOMER_REQUEST',
     Gdpr = <any> 'GDPR',
     Other = <any> 'OTHER'
 }
+
+export type ReasonEnum = ReasonEnumExpected | string;

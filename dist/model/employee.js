@@ -45,6 +45,11 @@ var Employee = (function () {
             "type": "string"
         },
         {
+            "name": "groups",
+            "baseName": "groups",
+            "type": "Array<string>"
+        },
+        {
             "name": "work_email",
             "baseName": "work_email",
             "type": "string"

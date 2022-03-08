@@ -12,7 +12,9 @@
 
 import { RequestFile } from './models';
 
-export enum UnitsEnum {
+export enum UnitsEnumExpected {
     Hours = <any> 'HOURS',
     Days = <any> 'DAYS'
 }
+
+export type UnitsEnum = UnitsEnumExpected | string;

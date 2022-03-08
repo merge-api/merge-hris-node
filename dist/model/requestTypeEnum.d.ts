@@ -1,4 +1,4 @@
-export declare enum RequestTypeEnum {
+export declare enum RequestTypeEnumExpected {
     Vacation,
     Sick,
     Personal,
@@ -6,3 +6,4 @@ export declare enum RequestTypeEnum {
     Volunteer,
     Bereavement
 }
+export declare type RequestTypeEnum = RequestTypeEnumExpected | string;

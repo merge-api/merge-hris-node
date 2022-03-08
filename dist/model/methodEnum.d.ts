@@ -1,4 +1,4 @@
-export declare enum MethodEnum {
+export declare enum MethodEnumExpected {
     Get,
     Options,
     Head,
@@ -7,3 +7,4 @@ export declare enum MethodEnum {
     Patch,
     Delete
 }
+export declare type MethodEnum = MethodEnumExpected | string;

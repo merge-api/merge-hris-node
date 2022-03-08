@@ -12,7 +12,9 @@
 
 import { RequestFile } from './models';
 
-export enum LocationTypeEnum {
+export enum LocationTypeEnumExpected {
     Home = <any> 'HOME',
     Work = <any> 'WORK'
 }
+
+export type LocationTypeEnum = LocationTypeEnumExpected | string;

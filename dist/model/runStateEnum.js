@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RunStateEnum = void 0;
-var RunStateEnum;
-(function (RunStateEnum) {
-    RunStateEnum[RunStateEnum["Paid"] = 'PAID'] = "Paid";
-    RunStateEnum[RunStateEnum["Draft"] = 'DRAFT'] = "Draft";
-    RunStateEnum[RunStateEnum["Approved"] = 'APPROVED'] = "Approved";
-    RunStateEnum[RunStateEnum["Failed"] = 'FAILED'] = "Failed";
-    RunStateEnum[RunStateEnum["Closed"] = 'CLOSED'] = "Closed";
-})(RunStateEnum = exports.RunStateEnum || (exports.RunStateEnum = {}));
+exports.RunStateEnumExpected = void 0;
+var RunStateEnumExpected;
+(function (RunStateEnumExpected) {
+    RunStateEnumExpected[RunStateEnumExpected["Paid"] = 'PAID'] = "Paid";
+    RunStateEnumExpected[RunStateEnumExpected["Draft"] = 'DRAFT'] = "Draft";
+    RunStateEnumExpected[RunStateEnumExpected["Approved"] = 'APPROVED'] = "Approved";
+    RunStateEnumExpected[RunStateEnumExpected["Failed"] = 'FAILED'] = "Failed";
+    RunStateEnumExpected[RunStateEnumExpected["Closed"] = 'CLOSED'] = "Closed";
+})(RunStateEnumExpected = exports.RunStateEnumExpected || (exports.RunStateEnumExpected = {}));
 //# sourceMappingURL=runStateEnum.js.map

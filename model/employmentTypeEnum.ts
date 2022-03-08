@@ -12,10 +12,12 @@
 
 import { RequestFile } from './models';
 
-export enum EmploymentTypeEnum {
+export enum EmploymentTypeEnumExpected {
     FullTime = <any> 'FULL_TIME',
     PartTime = <any> 'PART_TIME',
     Intern = <any> 'INTERN',
     Contractor = <any> 'CONTRACTOR',
     Freelance = <any> 'FREELANCE'
 }
+
+export type EmploymentTypeEnum = EmploymentTypeEnumExpected | string;

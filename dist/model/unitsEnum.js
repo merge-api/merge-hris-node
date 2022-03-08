@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnitsEnum = void 0;
-var UnitsEnum;
-(function (UnitsEnum) {
-    UnitsEnum[UnitsEnum["Hours"] = 'HOURS'] = "Hours";
-    UnitsEnum[UnitsEnum["Days"] = 'DAYS'] = "Days";
-})(UnitsEnum = exports.UnitsEnum || (exports.UnitsEnum = {}));
+exports.UnitsEnumExpected = void 0;
+var UnitsEnumExpected;
+(function (UnitsEnumExpected) {
+    UnitsEnumExpected[UnitsEnumExpected["Hours"] = 'HOURS'] = "Hours";
+    UnitsEnumExpected[UnitsEnumExpected["Days"] = 'DAYS'] = "Days";
+})(UnitsEnumExpected = exports.UnitsEnumExpected || (exports.UnitsEnumExpected = {}));
 //# sourceMappingURL=unitsEnum.js.map

@@ -12,8 +12,10 @@
 
 import { RequestFile } from './models';
 
-export enum RequestFormatEnum {
+export enum RequestFormatEnumExpected {
     Json = <any> 'JSON',
     Xml = <any> 'XML',
     Multipart = <any> 'MULTIPART'
 }
+
+export type RequestFormatEnum = RequestFormatEnumExpected | string;

@@ -12,8 +12,10 @@
 
 import { RequestFile } from './models';
 
-export enum EmploymentStatusEnum {
+export enum EmploymentStatusEnumExpected {
     Active = <any> 'ACTIVE',
     Pending = <any> 'PENDING',
     Inactive = <any> 'INACTIVE'
 }
+
+export type EmploymentStatusEnum = EmploymentStatusEnumExpected | string;

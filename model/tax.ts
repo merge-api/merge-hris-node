@@ -30,7 +30,7 @@ export class Tax {
     * Whether or not the employer is responsible for paying the tax.
     */
     'employer_tax'?: boolean | null;
-    'remote_data'?: string;
+    'remote_data'?: Array<{ [key: string]: any; }> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -63,7 +63,7 @@ export class Tax {
         {
             "name": "remote_data",
             "baseName": "remote_data",
-            "type": "string"
+            "type": "Array<{ [key: string]: any; }>"
         }    ];
 
     static getAttributeTypeMap() {

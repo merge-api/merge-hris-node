@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PolicyTypeEnum = void 0;
-var PolicyTypeEnum;
-(function (PolicyTypeEnum) {
-    PolicyTypeEnum[PolicyTypeEnum["Vacation"] = 'VACATION'] = "Vacation";
-    PolicyTypeEnum[PolicyTypeEnum["Sick"] = 'SICK'] = "Sick";
-    PolicyTypeEnum[PolicyTypeEnum["Personal"] = 'PERSONAL'] = "Personal";
-    PolicyTypeEnum[PolicyTypeEnum["JuryDuty"] = 'JURY_DUTY'] = "JuryDuty";
-    PolicyTypeEnum[PolicyTypeEnum["Volunteer"] = 'VOLUNTEER'] = "Volunteer";
-    PolicyTypeEnum[PolicyTypeEnum["Bereavement"] = 'BEREAVEMENT'] = "Bereavement";
-})(PolicyTypeEnum = exports.PolicyTypeEnum || (exports.PolicyTypeEnum = {}));
+exports.PolicyTypeEnumExpected = void 0;
+var PolicyTypeEnumExpected;
+(function (PolicyTypeEnumExpected) {
+    PolicyTypeEnumExpected[PolicyTypeEnumExpected["Vacation"] = 'VACATION'] = "Vacation";
+    PolicyTypeEnumExpected[PolicyTypeEnumExpected["Sick"] = 'SICK'] = "Sick";
+    PolicyTypeEnumExpected[PolicyTypeEnumExpected["Personal"] = 'PERSONAL'] = "Personal";
+    PolicyTypeEnumExpected[PolicyTypeEnumExpected["JuryDuty"] = 'JURY_DUTY'] = "JuryDuty";
+    PolicyTypeEnumExpected[PolicyTypeEnumExpected["Volunteer"] = 'VOLUNTEER'] = "Volunteer";
+    PolicyTypeEnumExpected[PolicyTypeEnumExpected["Bereavement"] = 'BEREAVEMENT'] = "Bereavement";
+})(PolicyTypeEnumExpected = exports.PolicyTypeEnumExpected || (exports.PolicyTypeEnumExpected = {}));
 //# sourceMappingURL=policyTypeEnum.js.map

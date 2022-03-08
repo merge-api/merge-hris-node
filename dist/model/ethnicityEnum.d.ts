@@ -1,4 +1,4 @@
-export declare enum EthnicityEnum {
+export declare enum EthnicityEnumExpected {
     AmericanIndianOrAlaskaNative,
     AsianOrIndianSubcontinent,
     BlackOrAfricanAmerican,
@@ -8,3 +8,4 @@ export declare enum EthnicityEnum {
     White,
     PreferNotToDisclose
 }
+export declare type EthnicityEnum = EthnicityEnumExpected | string;

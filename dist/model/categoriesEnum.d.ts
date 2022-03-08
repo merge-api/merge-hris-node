@@ -1,5 +1,7 @@
-export declare enum CategoriesEnum {
+export declare enum CategoriesEnumExpected {
     Hris,
     Ats,
-    Accounting
+    Accounting,
+    Ticketing
 }
+export declare type CategoriesEnum = CategoriesEnumExpected | string;

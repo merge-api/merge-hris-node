@@ -1,4 +1,4 @@
-export declare enum CountryEnum {
+export declare enum CountryEnumExpected {
     Af,
     Ax,
     Al,
@@ -249,3 +249,4 @@ export declare enum CountryEnum {
     Zm,
     Zw
 }
+export declare type CountryEnum = CountryEnumExpected | string;

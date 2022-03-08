@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RunTypeEnum = void 0;
-var RunTypeEnum;
-(function (RunTypeEnum) {
-    RunTypeEnum[RunTypeEnum["Regular"] = 'REGULAR'] = "Regular";
-    RunTypeEnum[RunTypeEnum["OffCycle"] = 'OFF_CYCLE'] = "OffCycle";
-    RunTypeEnum[RunTypeEnum["Correction"] = 'CORRECTION'] = "Correction";
-    RunTypeEnum[RunTypeEnum["Termination"] = 'TERMINATION'] = "Termination";
-    RunTypeEnum[RunTypeEnum["SignOnBonus"] = 'SIGN_ON_BONUS'] = "SignOnBonus";
-})(RunTypeEnum = exports.RunTypeEnum || (exports.RunTypeEnum = {}));
+exports.RunTypeEnumExpected = void 0;
+var RunTypeEnumExpected;
+(function (RunTypeEnumExpected) {
+    RunTypeEnumExpected[RunTypeEnumExpected["Regular"] = 'REGULAR'] = "Regular";
+    RunTypeEnumExpected[RunTypeEnumExpected["OffCycle"] = 'OFF_CYCLE'] = "OffCycle";
+    RunTypeEnumExpected[RunTypeEnumExpected["Correction"] = 'CORRECTION'] = "Correction";
+    RunTypeEnumExpected[RunTypeEnumExpected["Termination"] = 'TERMINATION'] = "Termination";
+    RunTypeEnumExpected[RunTypeEnumExpected["SignOnBonus"] = 'SIGN_ON_BONUS'] = "SignOnBonus";
+})(RunTypeEnumExpected = exports.RunTypeEnumExpected || (exports.RunTypeEnumExpected = {}));
 //# sourceMappingURL=runTypeEnum.js.map

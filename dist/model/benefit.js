@@ -32,7 +32,7 @@ var Benefit = (function () {
         {
             "name": "benefit_plan_type",
             "baseName": "benefit_plan_type",
-            "type": "BenefitPlanTypeEnum"
+            "type": "string"
         },
         {
             "name": "employee_contribution",

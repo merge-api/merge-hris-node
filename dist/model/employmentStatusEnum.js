@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmploymentStatusEnum = void 0;
-var EmploymentStatusEnum;
-(function (EmploymentStatusEnum) {
-    EmploymentStatusEnum[EmploymentStatusEnum["Active"] = 'ACTIVE'] = "Active";
-    EmploymentStatusEnum[EmploymentStatusEnum["Pending"] = 'PENDING'] = "Pending";
-    EmploymentStatusEnum[EmploymentStatusEnum["Inactive"] = 'INACTIVE'] = "Inactive";
-})(EmploymentStatusEnum = exports.EmploymentStatusEnum || (exports.EmploymentStatusEnum = {}));
+exports.EmploymentStatusEnumExpected = void 0;
+var EmploymentStatusEnumExpected;
+(function (EmploymentStatusEnumExpected) {
+    EmploymentStatusEnumExpected[EmploymentStatusEnumExpected["Active"] = 'ACTIVE'] = "Active";
+    EmploymentStatusEnumExpected[EmploymentStatusEnumExpected["Pending"] = 'PENDING'] = "Pending";
+    EmploymentStatusEnumExpected[EmploymentStatusEnumExpected["Inactive"] = 'INACTIVE'] = "Inactive";
+})(EmploymentStatusEnumExpected = exports.EmploymentStatusEnumExpected || (exports.EmploymentStatusEnumExpected = {}));
 //# sourceMappingURL=employmentStatusEnum.js.map

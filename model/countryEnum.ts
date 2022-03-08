@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export enum CountryEnum {
+export enum CountryEnumExpected {
     Af = <any> 'AF',
     Ax = <any> 'AX',
     Al = <any> 'AL',
@@ -263,3 +263,5 @@ export enum CountryEnum {
     Zm = <any> 'ZM',
     Zw = <any> 'ZW'
 }
+
+export type CountryEnum = CountryEnumExpected | string;

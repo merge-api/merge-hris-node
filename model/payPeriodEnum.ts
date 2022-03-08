@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export enum PayPeriodEnum {
+export enum PayPeriodEnumExpected {
     Hour = <any> 'HOUR',
     Day = <any> 'DAY',
     Week = <any> 'WEEK',
@@ -22,3 +22,5 @@ export enum PayPeriodEnum {
     EverySixMonths = <any> 'EVERY_SIX_MONTHS',
     Year = <any> 'YEAR'
 }
+
+export type PayPeriodEnum = PayPeriodEnumExpected | string;

@@ -33,6 +33,11 @@ var EndUserDetailsRequest = (function () {
             "name": "integration",
             "baseName": "integration",
             "type": "string"
+        },
+        {
+            "name": "link_expiry_mins",
+            "baseName": "link_expiry_mins",
+            "type": "number"
         }
     ];
     return EndUserDetailsRequest;

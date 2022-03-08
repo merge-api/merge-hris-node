@@ -30,6 +30,11 @@ var DataPassthroughRequest = (function () {
             "type": "string"
         },
         {
+            "name": "multipart_form_data",
+            "baseName": "multipart_form_data",
+            "type": "Array<MultipartFormFieldRequest>"
+        },
+        {
             "name": "headers",
             "baseName": "headers",
             "type": "{ [key: string]: any; }"

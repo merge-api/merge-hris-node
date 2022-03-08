@@ -12,10 +12,12 @@
 
 import { RequestFile } from './models';
 
-export enum GenderEnum {
+export enum GenderEnumExpected {
     Male = <any> 'MALE',
     Female = <any> 'FEMALE',
     NonBinary = <any> 'NON-BINARY',
     Other = <any> 'OTHER',
     PreferNotToDisclose = <any> 'PREFER_NOT_TO_DISCLOSE'
 }
+
+export type GenderEnum = GenderEnumExpected | string;

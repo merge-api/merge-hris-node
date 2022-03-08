@@ -1,4 +1,4 @@
-export declare enum PayCurrencyEnum {
+export declare enum PayCurrencyEnumExpected {
     Xua,
     Afn,
     Afa,
@@ -306,3 +306,4 @@ export declare enum PayCurrencyEnum {
     Zwr,
     Zwl
 }
+export declare type PayCurrencyEnum = PayCurrencyEnumExpected | string;

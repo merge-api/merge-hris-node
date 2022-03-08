@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmploymentTypeEnum = void 0;
-var EmploymentTypeEnum;
-(function (EmploymentTypeEnum) {
-    EmploymentTypeEnum[EmploymentTypeEnum["FullTime"] = 'FULL_TIME'] = "FullTime";
-    EmploymentTypeEnum[EmploymentTypeEnum["PartTime"] = 'PART_TIME'] = "PartTime";
-    EmploymentTypeEnum[EmploymentTypeEnum["Intern"] = 'INTERN'] = "Intern";
-    EmploymentTypeEnum[EmploymentTypeEnum["Contractor"] = 'CONTRACTOR'] = "Contractor";
-    EmploymentTypeEnum[EmploymentTypeEnum["Freelance"] = 'FREELANCE'] = "Freelance";
-})(EmploymentTypeEnum = exports.EmploymentTypeEnum || (exports.EmploymentTypeEnum = {}));
+exports.EmploymentTypeEnumExpected = void 0;
+var EmploymentTypeEnumExpected;
+(function (EmploymentTypeEnumExpected) {
+    EmploymentTypeEnumExpected[EmploymentTypeEnumExpected["FullTime"] = 'FULL_TIME'] = "FullTime";
+    EmploymentTypeEnumExpected[EmploymentTypeEnumExpected["PartTime"] = 'PART_TIME'] = "PartTime";
+    EmploymentTypeEnumExpected[EmploymentTypeEnumExpected["Intern"] = 'INTERN'] = "Intern";
+    EmploymentTypeEnumExpected[EmploymentTypeEnumExpected["Contractor"] = 'CONTRACTOR'] = "Contractor";
+    EmploymentTypeEnumExpected[EmploymentTypeEnumExpected["Freelance"] = 'FREELANCE'] = "Freelance";
+})(EmploymentTypeEnumExpected = exports.EmploymentTypeEnumExpected || (exports.EmploymentTypeEnumExpected = {}));
 //# sourceMappingURL=employmentTypeEnum.js.map

@@ -106,7 +106,7 @@ var BankInfoApi = (function () {
     BankInfoApi.prototype.addInterceptor = function (interceptor) {
         this.interceptors.push(interceptor);
     };
-    BankInfoApi.prototype.bankInfoList = function (xAccountToken, accountType, bankName, createdAfter, createdBefore, cursor, employee, employeeId, expand, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, orderBy, pageSize, remoteId, options) {
+    BankInfoApi.prototype.bankInfoList = function (xAccountToken, accountType, bankName, createdAfter, createdBefore, cursor, employeeId, expand, includeDeletedData, includeRemoteData, modifiedAfter, modifiedBefore, orderBy, pageSize, remoteId, options) {
         if (options === void 0) { options = { headers: {} }; }
         return __awaiter(this, void 0, void 0, function () {
             var localVarPath, localVarQueryParameters, localVarHeaderParams, produces, localVarFormParams, localVarUseFormData, localVarRequestOptions, authenticationPromise, interceptorPromise, _loop_1, _i, _a, interceptor;
@@ -140,9 +140,6 @@ var BankInfoApi = (function () {
                 }
                 if (cursor !== undefined) {
                     localVarQueryParameters['cursor'] = models_1.ObjectSerializer.serialize(cursor, "string");
-                }
-                if (employee !== undefined) {
-                    localVarQueryParameters['employee'] = models_1.ObjectSerializer.serialize(employee, "string");
                 }
                 if (employeeId !== undefined) {
                     localVarQueryParameters['employee_id'] = models_1.ObjectSerializer.serialize(employeeId, "string");

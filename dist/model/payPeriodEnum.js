@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PayPeriodEnum = void 0;
-var PayPeriodEnum;
-(function (PayPeriodEnum) {
-    PayPeriodEnum[PayPeriodEnum["Hour"] = 'HOUR'] = "Hour";
-    PayPeriodEnum[PayPeriodEnum["Day"] = 'DAY'] = "Day";
-    PayPeriodEnum[PayPeriodEnum["Week"] = 'WEEK'] = "Week";
-    PayPeriodEnum[PayPeriodEnum["EveryTwoWeeks"] = 'EVERY_TWO_WEEKS'] = "EveryTwoWeeks";
-    PayPeriodEnum[PayPeriodEnum["Month"] = 'MONTH'] = "Month";
-    PayPeriodEnum[PayPeriodEnum["Quarter"] = 'QUARTER'] = "Quarter";
-    PayPeriodEnum[PayPeriodEnum["EverySixMonths"] = 'EVERY_SIX_MONTHS'] = "EverySixMonths";
-    PayPeriodEnum[PayPeriodEnum["Year"] = 'YEAR'] = "Year";
-})(PayPeriodEnum = exports.PayPeriodEnum || (exports.PayPeriodEnum = {}));
+exports.PayPeriodEnumExpected = void 0;
+var PayPeriodEnumExpected;
+(function (PayPeriodEnumExpected) {
+    PayPeriodEnumExpected[PayPeriodEnumExpected["Hour"] = 'HOUR'] = "Hour";
+    PayPeriodEnumExpected[PayPeriodEnumExpected["Day"] = 'DAY'] = "Day";
+    PayPeriodEnumExpected[PayPeriodEnumExpected["Week"] = 'WEEK'] = "Week";
+    PayPeriodEnumExpected[PayPeriodEnumExpected["EveryTwoWeeks"] = 'EVERY_TWO_WEEKS'] = "EveryTwoWeeks";
+    PayPeriodEnumExpected[PayPeriodEnumExpected["Month"] = 'MONTH'] = "Month";
+    PayPeriodEnumExpected[PayPeriodEnumExpected["Quarter"] = 'QUARTER'] = "Quarter";
+    PayPeriodEnumExpected[PayPeriodEnumExpected["EverySixMonths"] = 'EVERY_SIX_MONTHS'] = "EverySixMonths";
+    PayPeriodEnumExpected[PayPeriodEnumExpected["Year"] = 'YEAR'] = "Year";
+})(PayPeriodEnumExpected = exports.PayPeriodEnumExpected || (exports.PayPeriodEnumExpected = {}));
 //# sourceMappingURL=payPeriodEnum.js.map

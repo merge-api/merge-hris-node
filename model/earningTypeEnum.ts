@@ -12,9 +12,11 @@
 
 import { RequestFile } from './models';
 
-export enum EarningTypeEnum {
+export enum EarningTypeEnumExpected {
     Salary = <any> 'SALARY',
     Reimbursement = <any> 'REIMBURSEMENT',
     Overtime = <any> 'OVERTIME',
     Bonus = <any> 'BONUS'
 }
+
+export type EarningTypeEnum = EarningTypeEnumExpected | string;

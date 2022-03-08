@@ -3,7 +3,7 @@ import { RemoteData } from './remoteData';
 export declare class TimeOffBalance {
     'id'?: string;
     'remote_id'?: string | null;
-    'employee'?: string;
+    'employee'?: string | null;
     'balance'?: number | null;
     'used'?: number | null;
     'policy_type'?: PolicyTypeEnum | null;
