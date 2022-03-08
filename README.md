@@ -35,7 +35,7 @@ import { AccountDetailsApi, HttpBearerAuth } from "@mergeapi/merge-hris-node";
 const auth = new HttpBearerAuth();
 auth.accessToken = "YOUR_API_KEY";
 
-// Substitute EmployeesApi with the API you're trying to use
+// Substitute AccountDetailsApi with the API you're trying to use
 const apiInstance = new AccountDetailsApi();
 apiInstance.setDefaultAuthentication(auth);
 ```
