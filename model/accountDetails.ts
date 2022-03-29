@@ -16,11 +16,13 @@ import { CategoryEnum } from './categoryEnum';
 export class AccountDetails {
     'id'?: string;
     'integration'?: string;
+    'integration_slug'?: string;
     'category'?: CategoryEnum | null;
     'end_user_origin_id'?: string;
     'end_user_organization_name'?: string;
     'end_user_email_address'?: string;
     'status'?: string;
+    'webhook_listener_url'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -33,6 +35,11 @@ export class AccountDetails {
         {
             "name": "integration",
             "baseName": "integration",
+            "type": "string"
+        },
+        {
+            "name": "integration_slug",
+            "baseName": "integration_slug",
             "type": "string"
         },
         {
@@ -58,6 +65,11 @@ export class AccountDetails {
         {
             "name": "status",
             "baseName": "status",
+            "type": "string"
+        },
+        {
+            "name": "webhook_listener_url",
+            "baseName": "webhook_listener_url",
             "type": "string"
         }    ];
 
