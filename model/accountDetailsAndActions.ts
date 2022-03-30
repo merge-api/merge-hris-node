@@ -26,6 +26,7 @@ export class AccountDetailsAndActions {
     'end_user_origin_id'?: string;
     'end_user_organization_name': string;
     'end_user_email_address': string;
+    'webhook_listener_url': string;
     'integration'?: AccountDetailsAndActionsIntegration;
 
     static discriminator: string | undefined = undefined;
@@ -64,6 +65,11 @@ export class AccountDetailsAndActions {
         {
             "name": "end_user_email_address",
             "baseName": "end_user_email_address",
+            "type": "string"
+        },
+        {
+            "name": "webhook_listener_url",
+            "baseName": "webhook_listener_url",
             "type": "string"
         },
         {

@@ -50,6 +50,8 @@ export * from './timeOffApi';
 import { TimeOffApi } from './timeOffApi';
 export * from './timeOffBalancesApi';
 import { TimeOffBalancesApi } from './timeOffBalancesApi';
+export * from './webhookReceiversApi';
+import { WebhookReceiversApi } from './webhookReceiversApi';
 import * as http from 'http';
 
 export class HttpError extends Error {
@@ -61,4 +63,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AccountDetailsApi, AccountTokenApi, AvailableActionsApi, BankInfoApi, BenefitsApi, CompaniesApi, DeductionsApi, DeleteAccountApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, ForceResyncApi, GenerateKeyApi, GroupsApi, IssuesApi, LinkTokenApi, LinkedAccountsApi, LocationsApi, PassthroughApi, PayGroupsApi, PayrollRunsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalancesApi];
+export const APIS = [AccountDetailsApi, AccountTokenApi, AvailableActionsApi, BankInfoApi, BenefitsApi, CompaniesApi, DeductionsApi, DeleteAccountApi, EmployeePayrollRunsApi, EmployeesApi, EmploymentsApi, ForceResyncApi, GenerateKeyApi, GroupsApi, IssuesApi, LinkTokenApi, LinkedAccountsApi, LocationsApi, PassthroughApi, PayGroupsApi, PayrollRunsApi, RegenerateKeyApi, SyncStatusApi, TeamsApi, TimeOffApi, TimeOffBalancesApi, WebhookReceiversApi];
