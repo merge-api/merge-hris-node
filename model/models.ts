@@ -42,9 +42,11 @@ export * from './ignoreCommonModelRequest';
 export * from './issue';
 export * from './issueStatusEnum';
 export * from './linkToken';
+export * from './linkedAccountStatus';
 export * from './location';
 export * from './locationTypeEnum';
 export * from './maritalStatusEnum';
+export * from './metaResponse';
 export * from './methodEnum';
 export * from './modelOperation';
 export * from './multipartFormFieldRequest';
@@ -61,7 +63,6 @@ export * from './paginatedIssueList';
 export * from './paginatedLocationList';
 export * from './paginatedPayGroupList';
 export * from './paginatedPayrollRunList';
-export * from './paginatedSyncStatusList';
 export * from './paginatedTeamList';
 export * from './paginatedTimeOffBalanceList';
 export * from './paginatedTimeOffList';
@@ -94,6 +95,8 @@ export * from './timeOffStatusEnum';
 export * from './unitsEnum';
 export * from './validationProblemSource';
 export * from './warningValidationProblem';
+export * from './webhookReceiver';
+export * from './webhookReceiverRequest';
 
 import * as fs from 'fs';
 
@@ -150,9 +153,11 @@ import { IgnoreCommonModelRequest } from './ignoreCommonModelRequest';
 import { Issue } from './issue';
 import { IssueStatusEnum, IssueStatusEnumExpected } from './issueStatusEnum';
 import { LinkToken } from './linkToken';
+import { LinkedAccountStatus } from './linkedAccountStatus';
 import { Location } from './location';
 import { LocationTypeEnum, LocationTypeEnumExpected } from './locationTypeEnum';
 import { MaritalStatusEnum, MaritalStatusEnumExpected } from './maritalStatusEnum';
+import { MetaResponse } from './metaResponse';
 import { MethodEnum, MethodEnumExpected } from './methodEnum';
 import { ModelOperation } from './modelOperation';
 import { MultipartFormFieldRequest } from './multipartFormFieldRequest';
@@ -169,7 +174,6 @@ import { PaginatedIssueList } from './paginatedIssueList';
 import { PaginatedLocationList } from './paginatedLocationList';
 import { PaginatedPayGroupList } from './paginatedPayGroupList';
 import { PaginatedPayrollRunList } from './paginatedPayrollRunList';
-import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
 import { PaginatedTimeOffBalanceList } from './paginatedTimeOffBalanceList';
 import { PaginatedTimeOffList } from './paginatedTimeOffList';
@@ -202,6 +206,8 @@ import { TimeOffStatusEnum, TimeOffStatusEnumExpected } from './timeOffStatusEnu
 import { UnitsEnum, UnitsEnumExpected } from './unitsEnum';
 import { ValidationProblemSource } from './validationProblemSource';
 import { WarningValidationProblem } from './warningValidationProblem';
+import { WebhookReceiver } from './webhookReceiver';
+import { WebhookReceiverRequest } from './webhookReceiverRequest';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -276,7 +282,9 @@ let typeMap: {[index: string]: any} = {
     "IgnoreCommonModelRequest": IgnoreCommonModelRequest,
     "Issue": Issue,
     "LinkToken": LinkToken,
+    "LinkedAccountStatus": LinkedAccountStatus,
     "Location": Location,
+    "MetaResponse": MetaResponse,
     "ModelOperation": ModelOperation,
     "MultipartFormFieldRequest": MultipartFormFieldRequest,
     "PaginatedAccountDetailsAndActionsList": PaginatedAccountDetailsAndActionsList,
@@ -292,7 +300,6 @@ let typeMap: {[index: string]: any} = {
     "PaginatedLocationList": PaginatedLocationList,
     "PaginatedPayGroupList": PaginatedPayGroupList,
     "PaginatedPayrollRunList": PaginatedPayrollRunList,
-    "PaginatedSyncStatusList": PaginatedSyncStatusList,
     "PaginatedTeamList": PaginatedTeamList,
     "PaginatedTimeOffBalanceList": PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": PaginatedTimeOffList,
@@ -313,6 +320,8 @@ let typeMap: {[index: string]: any} = {
     "TimeOffResponse": TimeOffResponse,
     "ValidationProblemSource": ValidationProblemSource,
     "WarningValidationProblem": WarningValidationProblem,
+    "WebhookReceiver": WebhookReceiver,
+    "WebhookReceiverRequest": WebhookReceiverRequest,
 }
 
 export class ObjectSerializer {

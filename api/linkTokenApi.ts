@@ -30,7 +30,6 @@ let defaultBasePath = 'https://api.merge.dev/api/hris/v1';
 // ===============================================
 
 export enum LinkTokenApiApiKeys {
-    tokenAuth,
 }
 
 export class LinkTokenApi {
@@ -40,7 +39,7 @@ export class LinkTokenApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
-        'tokenAuth': new ApiKeyAuth('header', 'Authorization'),
+        'BearerTokenAuthentication': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -86,6 +85,10 @@ export class LinkTokenApi {
         (this.authentications as any)[LinkTokenApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.BearerTokenAuthentication.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
@@ -127,8 +130,8 @@ export class LinkTokenApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 

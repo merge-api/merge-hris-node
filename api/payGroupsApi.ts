@@ -30,7 +30,7 @@ let defaultBasePath = 'https://api.merge.dev/api/hris/v1';
 // ===============================================
 
 export enum PayGroupsApiApiKeys {
-    tokenAuth,
+    AccountTokenAuthentication,
 }
 
 export class PayGroupsApi {
@@ -40,7 +40,8 @@ export class PayGroupsApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
-        'tokenAuth': new ApiKeyAuth('header', 'Authorization'),
+        'AccountTokenAuthentication': new ApiKeyAuth('header', 'X-Account-Token'),
+        'BearerTokenAuthentication': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -86,13 +87,16 @@ export class PayGroupsApi {
         (this.authentications as any)[PayGroupsApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.BearerTokenAuthentication.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
 
     /**
      * Returns a list of `PayGroup` objects.
-     * @param xAccountToken Token identifying the end user.
      * @param createdAfter If provided, will only return objects created after this datetime.
      * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
@@ -103,7 +107,7 @@ export class PayGroupsApi {
      * @param pageSize Number of results to return per page.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async payGroupsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedPayGroupList;  }> {
+    public async payGroupsList (createdAfter?: Date, createdBefore?: Date, cursor?: string, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedPayGroupList;  }> {
         const localVarPath = this.basePath + '/pay-groups';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -115,11 +119,6 @@ export class PayGroupsApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
-
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling payGroupsList.');
-        }
 
         if (createdAfter !== undefined) {
             localVarQueryParameters['created_after'] = ObjectSerializer.serialize(createdAfter, "Date");
@@ -157,7 +156,6 @@ export class PayGroupsApi {
             localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -172,8 +170,11 @@ export class PayGroupsApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 
@@ -208,11 +209,10 @@ export class PayGroupsApi {
     }
     /**
      * Returns a `PayGroup` object with the given `id`.
-     * @param xAccountToken Token identifying the end user.
      * @param id 
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async payGroupsRetrieve (xAccountToken: string, id: string, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PayGroup;  }> {
+    public async payGroupsRetrieve (id: string, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PayGroup;  }> {
         const localVarPath = this.basePath + '/pay-groups/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -226,11 +226,6 @@ export class PayGroupsApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling payGroupsRetrieve.');
-        }
-
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling payGroupsRetrieve.');
@@ -240,7 +235,6 @@ export class PayGroupsApi {
             localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -255,8 +249,11 @@ export class PayGroupsApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 

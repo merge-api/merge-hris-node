@@ -30,7 +30,7 @@ let defaultBasePath = 'https://api.merge.dev/api/hris/v1';
 // ===============================================
 
 export enum EmploymentsApiApiKeys {
-    tokenAuth,
+    AccountTokenAuthentication,
 }
 
 export class EmploymentsApi {
@@ -40,7 +40,8 @@ export class EmploymentsApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
-        'tokenAuth': new ApiKeyAuth('header', 'Authorization'),
+        'AccountTokenAuthentication': new ApiKeyAuth('header', 'X-Account-Token'),
+        'BearerTokenAuthentication': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -86,13 +87,16 @@ export class EmploymentsApi {
         (this.authentications as any)[EmploymentsApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.BearerTokenAuthentication.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
 
     /**
      * Returns a list of `Employment` objects.
-     * @param xAccountToken Token identifying the end user.
      * @param createdAfter If provided, will only return objects created after this datetime.
      * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
@@ -106,7 +110,7 @@ export class EmploymentsApi {
      * @param pageSize Number of results to return per page.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async employmentsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-effective_date' | 'effective_date', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmploymentList;  }> {
+    public async employmentsList (createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-effective_date' | 'effective_date', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmploymentList;  }> {
         const localVarPath = this.basePath + '/employments';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -118,11 +122,6 @@ export class EmploymentsApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
-
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling employmentsList.');
-        }
 
         if (createdAfter !== undefined) {
             localVarQueryParameters['created_after'] = ObjectSerializer.serialize(createdAfter, "Date");
@@ -172,7 +171,6 @@ export class EmploymentsApi {
             localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -187,8 +185,11 @@ export class EmploymentsApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 
@@ -223,12 +224,11 @@ export class EmploymentsApi {
     }
     /**
      * Returns an `Employment` object with the given `id`.
-     * @param xAccountToken Token identifying the end user.
      * @param id 
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async employmentsRetrieve (xAccountToken: string, id: string, expand?: 'employee', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employment;  }> {
+    public async employmentsRetrieve (id: string, expand?: 'employee', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employment;  }> {
         const localVarPath = this.basePath + '/employments/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -241,11 +241,6 @@ export class EmploymentsApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
-
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling employmentsRetrieve.');
-        }
 
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
@@ -260,7 +255,6 @@ export class EmploymentsApi {
             localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -275,8 +269,11 @@ export class EmploymentsApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 

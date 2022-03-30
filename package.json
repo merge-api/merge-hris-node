@@ -1,15 +1,12 @@
 {
   "name": "@mergeapi/merge-hris-node",
-  "version": "1.2.7",
+  "version": "1.2.6",
   "description": "NodeJS client for @mergeapi/merge-hris-node",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/merge-api/merge-hris-node.git"
   },
   "main": "dist/api.js",
-  "files": [
-    "dist"
-  ],
   "types": "dist/api.d.ts",
   "scripts": {
     "clean": "rm -Rf node_modules/ *.js",

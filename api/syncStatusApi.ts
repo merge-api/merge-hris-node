@@ -15,7 +15,7 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { PaginatedSyncStatusList } from '../model/paginatedSyncStatusList';
+import { SyncStatus } from '../model/syncStatus';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 import { HttpBasicAuth, HttpBearerAuth, ApiKeyAuth, OAuth } from '../model/models';
@@ -29,7 +29,7 @@ let defaultBasePath = 'https://api.merge.dev/api/hris/v1';
 // ===============================================
 
 export enum SyncStatusApiApiKeys {
-    tokenAuth,
+    AccountTokenAuthentication,
 }
 
 export class SyncStatusApi {
@@ -39,7 +39,8 @@ export class SyncStatusApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
-        'tokenAuth': new ApiKeyAuth('header', 'Authorization'),
+        'AccountTokenAuthentication': new ApiKeyAuth('header', 'X-Account-Token'),
+        'BearerTokenAuthentication': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -85,17 +86,18 @@ export class SyncStatusApi {
         (this.authentications as any)[SyncStatusApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.BearerTokenAuthentication.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
 
     /**
      * Get syncing status. Possible values: `DISABLED`, `DONE`, `FAILED`, `SYNCING`
-     * @param xAccountToken Token identifying the end user.
-     * @param cursor The pagination cursor value.
-     * @param pageSize Number of results to return per page.
      */
-    public async syncStatusList (xAccountToken: string, cursor?: string, pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedSyncStatusList;  }> {
+    public async syncStatusList (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<SyncStatus>;  }> {
         const localVarPath = this.basePath + '/sync-status';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -108,20 +110,6 @@ export class SyncStatusApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling syncStatusList.');
-        }
-
-        if (cursor !== undefined) {
-            localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
-        }
-
-        if (pageSize !== undefined) {
-            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
-        }
-
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -136,8 +124,11 @@ export class SyncStatusApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 
@@ -154,12 +145,12 @@ export class SyncStatusApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: PaginatedSyncStatusList;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<SyncStatus>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
-                        body = ObjectSerializer.deserialize(body, "PaginatedSyncStatusList");
+                        body = ObjectSerializer.deserialize(body, "Array<SyncStatus>");
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         } else {

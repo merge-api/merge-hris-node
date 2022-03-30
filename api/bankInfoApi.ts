@@ -30,7 +30,7 @@ let defaultBasePath = 'https://api.merge.dev/api/hris/v1';
 // ===============================================
 
 export enum BankInfoApiApiKeys {
-    tokenAuth,
+    AccountTokenAuthentication,
 }
 
 export class BankInfoApi {
@@ -40,7 +40,8 @@ export class BankInfoApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
-        'tokenAuth': new ApiKeyAuth('header', 'Authorization'),
+        'AccountTokenAuthentication': new ApiKeyAuth('header', 'X-Account-Token'),
+        'BearerTokenAuthentication': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -86,13 +87,16 @@ export class BankInfoApi {
         (this.authentications as any)[BankInfoApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.BearerTokenAuthentication.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
 
     /**
      * Returns a list of `BankInfo` objects.
-     * @param xAccountToken Token identifying the end user.
      * @param accountType If provided, will only return BankInfo\&#39;s with this account type. Options: (\&#39;SAVINGS\&#39;, \&#39;CHECKING\&#39;)
      * @param bankName If provided, will only return BankInfo\&#39;s with this bank name.
      * @param createdAfter If provided, will only return objects created after this datetime.
@@ -108,7 +112,7 @@ export class BankInfoApi {
      * @param pageSize Number of results to return per page.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async bankInfoList (xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBankInfoList;  }> {
+    public async bankInfoList (accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBankInfoList;  }> {
         const localVarPath = this.basePath + '/bank-info';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -120,11 +124,6 @@ export class BankInfoApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
-
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling bankInfoList.');
-        }
 
         if (accountType !== undefined) {
             localVarQueryParameters['account_type'] = ObjectSerializer.serialize(accountType, "'CHECKING' | 'SAVINGS'");
@@ -182,7 +181,6 @@ export class BankInfoApi {
             localVarQueryParameters['remote_id'] = ObjectSerializer.serialize(remoteId, "string");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -197,8 +195,11 @@ export class BankInfoApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 
@@ -233,12 +234,11 @@ export class BankInfoApi {
     }
     /**
      * Returns a `BankInfo` object with the given `id`.
-     * @param xAccountToken Token identifying the end user.
      * @param id 
      * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async bankInfoRetrieve (xAccountToken: string, id: string, expand?: 'employee', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankInfo;  }> {
+    public async bankInfoRetrieve (id: string, expand?: 'employee', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankInfo;  }> {
         const localVarPath = this.basePath + '/bank-info/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -251,11 +251,6 @@ export class BankInfoApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
-
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling bankInfoRetrieve.');
-        }
 
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
@@ -270,7 +265,6 @@ export class BankInfoApi {
             localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -285,8 +279,11 @@ export class BankInfoApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 

@@ -30,7 +30,7 @@ let defaultBasePath = 'https://api.merge.dev/api/hris/v1';
 // ===============================================
 
 export enum PassthroughApiApiKeys {
-    tokenAuth,
+    AccountTokenAuthentication,
 }
 
 export class PassthroughApi {
@@ -40,7 +40,8 @@ export class PassthroughApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
-        'tokenAuth': new ApiKeyAuth('header', 'Authorization'),
+        'AccountTokenAuthentication': new ApiKeyAuth('header', 'X-Account-Token'),
+        'BearerTokenAuthentication': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -86,16 +87,19 @@ export class PassthroughApi {
         (this.authentications as any)[PassthroughApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.BearerTokenAuthentication.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
 
     /**
      * Pull data from an endpoint not currently supported by Merge.
-     * @param xAccountToken Token identifying the end user.
      * @param dataPassthroughRequest 
      */
-    public async passthroughCreate (xAccountToken: string, dataPassthroughRequest: DataPassthroughRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteResponse;  }> {
+    public async passthroughCreate (dataPassthroughRequest: DataPassthroughRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RemoteResponse;  }> {
         const localVarPath = this.basePath + '/passthrough';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -108,17 +112,11 @@ export class PassthroughApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling passthroughCreate.');
-        }
-
         // verify required parameter 'dataPassthroughRequest' is not null or undefined
         if (dataPassthroughRequest === null || dataPassthroughRequest === undefined) {
             throw new Error('Required parameter dataPassthroughRequest was null or undefined when calling passthroughCreate.');
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -134,8 +132,11 @@ export class PassthroughApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 

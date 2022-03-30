@@ -27,6 +27,9 @@ export class DataPassthroughRequest {
     * Pass an array of `MultipartFormField` objects in here instead of using the `data` param if `request_format` is set to `MULTIPART`.
     */
     'multipart_form_data'?: Array<MultipartFormFieldRequest> | null;
+    /**
+    * The headers to use for the request (Merge will handle the account\'s authorization headers). `Content-Type` header is required for passthrough. Choose content type corresponding to expected format of receiving server.
+    */
     'headers'?: { [key: string]: any; } | null;
     'request_format'?: RequestFormatEnum | null;
 

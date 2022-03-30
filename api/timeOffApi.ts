@@ -15,6 +15,7 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
+import { MetaResponse } from '../model/metaResponse';
 import { PaginatedTimeOffList } from '../model/paginatedTimeOffList';
 import { TimeOff } from '../model/timeOff';
 import { TimeOffEndpointRequest } from '../model/timeOffEndpointRequest';
@@ -32,7 +33,7 @@ let defaultBasePath = 'https://api.merge.dev/api/hris/v1';
 // ===============================================
 
 export enum TimeOffApiApiKeys {
-    tokenAuth,
+    AccountTokenAuthentication,
 }
 
 export class TimeOffApi {
@@ -42,7 +43,8 @@ export class TimeOffApi {
 
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
-        'tokenAuth': new ApiKeyAuth('header', 'Authorization'),
+        'AccountTokenAuthentication': new ApiKeyAuth('header', 'X-Account-Token'),
+        'BearerTokenAuthentication': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -88,18 +90,21 @@ export class TimeOffApi {
         (this.authentications as any)[TimeOffApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.BearerTokenAuthentication.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
 
     /**
      * Creates a `TimeOff` object with the given values.
-     * @param xAccountToken Token identifying the end user.
      * @param timeOffEndpointRequest 
      * @param isDebugMode Whether to include debug fields (such as log file links) in the response.
      * @param runAsync Whether or not third-party updates should be run asynchronously.
      */
-    public async timeOffCreate (xAccountToken: string, timeOffEndpointRequest: TimeOffEndpointRequest, isDebugMode?: boolean, runAsync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOffResponse;  }> {
+    public async timeOffCreate (timeOffEndpointRequest: TimeOffEndpointRequest, isDebugMode?: boolean, runAsync?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOffResponse;  }> {
         const localVarPath = this.basePath + '/time-off';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -111,11 +116,6 @@ export class TimeOffApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
-
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffCreate.');
-        }
 
         // verify required parameter 'timeOffEndpointRequest' is not null or undefined
         if (timeOffEndpointRequest === null || timeOffEndpointRequest === undefined) {
@@ -130,7 +130,6 @@ export class TimeOffApi {
             localVarQueryParameters['run_async'] = ObjectSerializer.serialize(runAsync, "boolean");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -146,8 +145,11 @@ export class TimeOffApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 
@@ -182,7 +184,6 @@ export class TimeOffApi {
     }
     /**
      * Returns a list of `TimeOff` objects.
-     * @param xAccountToken Token identifying the end user.
      * @param approverId If provided, will only return time off for this approver.
      * @param createdAfter If provided, will only return objects created after this datetime.
      * @param createdBefore If provided, will only return objects created before this datetime.
@@ -198,7 +199,7 @@ export class TimeOffApi {
      * @param requestType If provided, will only return TimeOff with this request type. Options: (\&#39;VACATION\&#39;, \&#39;SICK\&#39;, \&#39;PERSONAL\&#39;, \&#39;JURY_DUTY\&#39;, \&#39;VOLUNTEER\&#39;, \&#39;BEREAVEMENT\&#39;)
      * @param status If provided, will only return TimeOff with this status. Options: (\&#39;REQUESTED\&#39;, \&#39;APPROVED\&#39;, \&#39;DECLINED\&#39;, \&#39;CANCELLED\&#39;, \&#39;DELETED\&#39;)
      */
-    public async timeOffList (xAccountToken: string, approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTimeOffList;  }> {
+    public async timeOffList (approverId?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'approver' | 'employee' | 'employee,approver', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, requestType?: 'BEREAVEMENT' | 'JURY_DUTY' | 'PERSONAL' | 'SICK' | 'VACATION' | 'VOLUNTEER', status?: 'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTimeOffList;  }> {
         const localVarPath = this.basePath + '/time-off';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -210,11 +211,6 @@ export class TimeOffApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
-
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffList.');
-        }
 
         if (approverId !== undefined) {
             localVarQueryParameters['approver_id'] = ObjectSerializer.serialize(approverId, "string");
@@ -272,7 +268,6 @@ export class TimeOffApi {
             localVarQueryParameters['status'] = ObjectSerializer.serialize(status, "'APPROVED' | 'CANCELLED' | 'DECLINED' | 'DELETED' | 'REQUESTED'");
         }
 
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -287,8 +282,11 @@ export class TimeOffApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 
@@ -322,15 +320,10 @@ export class TimeOffApi {
         });
     }
     /**
-     * Returns a `TimeOff` object with the given `id`.
-     * @param xAccountToken Token identifying the end user.
-     * @param id 
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
+     * Returns metadata for `TimeOff` POSTs.
      */
-    public async timeOffRetrieve (xAccountToken: string, id: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOff;  }> {
-        const localVarPath = this.basePath + '/time-off/{id}'
-            .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
+    public async timeOffMetaPostRetrieve (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: MetaResponse;  }> {
+        const localVarPath = this.basePath + '/time-off/meta/post';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -342,25 +335,6 @@ export class TimeOffApi {
         }
         let localVarFormParams: any = {};
 
-        // verify required parameter 'xAccountToken' is not null or undefined
-        if (xAccountToken === null || xAccountToken === undefined) {
-            throw new Error('Required parameter xAccountToken was null or undefined when calling timeOffRetrieve.');
-        }
-
-        // verify required parameter 'id' is not null or undefined
-        if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling timeOffRetrieve.');
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'approver' | 'employee' | 'employee,approver'");
-        }
-
-        if (includeRemoteData !== undefined) {
-            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
-        }
-
-        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -375,8 +349,95 @@ export class TimeOffApi {
         };
 
         let authenticationPromise = Promise.resolve();
-        if (this.authentications.tokenAuth.apiKey) {
-            authenticationPromise = authenticationPromise.then(() => this.authentications.tokenAuth.applyToRequest(localVarRequestOptions));
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: MetaResponse;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        body = ObjectSerializer.deserialize(body, "MetaResponse");
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * Returns a `TimeOff` object with the given `id`.
+     * @param id 
+     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+     * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
+     */
+    public async timeOffRetrieve (id: string, expand?: 'approver' | 'employee' | 'employee,approver', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: TimeOff;  }> {
+        const localVarPath = this.basePath + '/time-off/{id}'
+            .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling timeOffRetrieve.');
+        }
+
+        if (expand !== undefined) {
+            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'approver' | 'employee' | 'employee,approver'");
+        }
+
+        if (includeRemoteData !== undefined) {
+            localVarQueryParameters['include_remote_data'] = ObjectSerializer.serialize(includeRemoteData, "boolean");
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'GET',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.AccountTokenAuthentication.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.AccountTokenAuthentication.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.BearerTokenAuthentication.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.BearerTokenAuthentication.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 
