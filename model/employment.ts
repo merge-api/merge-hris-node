@@ -16,10 +16,9 @@ import { FlsaStatusEnum } from './flsaStatusEnum';
 import { PayCurrencyEnum } from './payCurrencyEnum';
 import { PayFrequencyEnum } from './payFrequencyEnum';
 import { PayPeriodEnum } from './payPeriodEnum';
-import { RemoteData } from './remoteData';
 
 /**
-* # The Employment Object ### Description The `Employment` object is used to represent an employment position at a company. These are associated with the employee filling the role.  ### Usage Example Fetch from the `LIST Employments` endpoint and filter by `ID` to show all employees.
+* # The Employment Object ### Description The `Employment` object is used to represent an employment position at a company. These are associated with the employee filling the role.  Please note: Employment objects are constructed if the object does not exist in the remote system.  ### Usage Example Fetch from the `LIST Employments` endpoint and filter by `ID` to show all employees.
 */
 export class Employment {
     'id'?: string;
@@ -48,6 +47,7 @@ export class Employment {
     * The position\'s currency code.
     */
     'pay_currency'?: PayCurrencyEnum | null;
+    'pay_group'?: string | null;
     /**
     * The position\'s FLSA status.
     */
@@ -60,7 +60,6 @@ export class Employment {
     * The position\'s type of employment.
     */
     'employment_type'?: EmploymentTypeEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -106,6 +105,11 @@ export class Employment {
             "type": "PayCurrencyEnum"
         },
         {
+            "name": "pay_group",
+            "baseName": "pay_group",
+            "type": "string"
+        },
+        {
             "name": "flsa_status",
             "baseName": "flsa_status",
             "type": "FlsaStatusEnum"
@@ -119,11 +123,6 @@ export class Employment {
             "name": "employment_type",
             "baseName": "employment_type",
             "type": "EmploymentTypeEnum"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

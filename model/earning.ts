@@ -27,7 +27,6 @@ export class Earning {
     * The type of earning.
     */
     'type'?: EarningTypeEnum | null;
-    'remote_data'?: Array<{ [key: string]: any; }> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -51,11 +50,6 @@ export class Earning {
             "name": "type",
             "baseName": "type",
             "type": "EarningTypeEnum"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<{ [key: string]: any; }>"
         }    ];
 
     static getAttributeTypeMap() {

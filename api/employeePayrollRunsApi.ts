@@ -99,7 +99,6 @@ export class EmployeePayrollRunsApi {
      * @param employeeId If provided, will only return employee payroll runs for this employee.
      * @param endedAfter If provided, will only return employee payroll runs ended after this datetime.
      * @param endedBefore If provided, will only return employee payroll runs ended before this datetime.
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param modifiedAfter If provided, will only return objects modified after this datetime.
@@ -110,7 +109,7 @@ export class EmployeePayrollRunsApi {
      * @param startedAfter If provided, will only return employee payroll runs started after this datetime.
      * @param startedBefore If provided, will only return employee payroll runs started before this datetime.
      */
-    public async employeePayrollRunsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, endedAfter?: Date, endedBefore?: Date, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, payrollRunId?: string, remoteId?: string, startedAfter?: Date, startedBefore?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmployeePayrollRunList;  }> {
+    public async employeePayrollRunsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, endedAfter?: Date, endedBefore?: Date, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, payrollRunId?: string, remoteId?: string, startedAfter?: Date, startedBefore?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedEmployeePayrollRunList;  }> {
         const localVarPath = this.basePath + '/employee-payroll-runs';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -150,10 +149,6 @@ export class EmployeePayrollRunsApi {
 
         if (endedBefore !== undefined) {
             localVarQueryParameters['ended_before'] = ObjectSerializer.serialize(endedBefore, "Date");
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee' | 'employee,payroll_run' | 'payroll_run'");
         }
 
         if (includeDeletedData !== undefined) {
@@ -245,10 +240,9 @@ export class EmployeePayrollRunsApi {
      * Returns an `EmployeePayrollRun` object with the given `id`.
      * @param xAccountToken Token identifying the end user.
      * @param id 
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async employeePayrollRunsRetrieve (xAccountToken: string, id: string, expand?: 'employee' | 'employee,payroll_run' | 'payroll_run', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: EmployeePayrollRun;  }> {
+    public async employeePayrollRunsRetrieve (xAccountToken: string, id: string, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: EmployeePayrollRun;  }> {
         const localVarPath = this.basePath + '/employee-payroll-runs/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -270,10 +264,6 @@ export class EmployeePayrollRunsApi {
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling employeePayrollRunsRetrieve.');
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee' | 'employee,payroll_run' | 'payroll_run'");
         }
 
         if (includeRemoteData !== undefined) {

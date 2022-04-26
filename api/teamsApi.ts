@@ -96,7 +96,6 @@ export class TeamsApi {
      * @param createdAfter If provided, will only return objects created after this datetime.
      * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param modifiedAfter If provided, will only return objects modified after this datetime.
@@ -105,7 +104,7 @@ export class TeamsApi {
      * @param parentTeamId If provided, will only return teams with this parent team.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async teamsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, expand?: 'parent_team', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTeamList;  }> {
+    public async teamsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, parentTeamId?: string, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedTeamList;  }> {
         const localVarPath = this.basePath + '/teams';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -133,10 +132,6 @@ export class TeamsApi {
 
         if (cursor !== undefined) {
             localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "string");
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'parent_team'");
         }
 
         if (includeDeletedData !== undefined) {
@@ -220,10 +215,9 @@ export class TeamsApi {
      * Returns a `Team` object with the given `id`.
      * @param xAccountToken Token identifying the end user.
      * @param id 
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async teamsRetrieve (xAccountToken: string, id: string, expand?: 'parent_team', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Team;  }> {
+    public async teamsRetrieve (xAccountToken: string, id: string, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Team;  }> {
         const localVarPath = this.basePath + '/teams/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -245,10 +239,6 @@ export class TeamsApi {
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling teamsRetrieve.');
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'parent_team'");
         }
 
         if (includeRemoteData !== undefined) {

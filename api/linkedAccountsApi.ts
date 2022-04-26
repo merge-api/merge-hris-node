@@ -104,7 +104,7 @@ export class LinkedAccountsApi {
      * @param pageSize Number of results to return per page.
      * @param status Filter by status. Options: &#x60;COMPLETE&#x60;, &#x60;INCOMPLETE&#x60;, &#x60;RELINK_NEEDED&#x60;
      */
-    public async linkedAccountsList (category?: 'accounting' | 'ats' | 'hris' | 'ticketing', cursor?: string, endUserEmailAddress?: string, endUserOrganizationName?: string, endUserOriginId?: string, endUserOriginIds?: string, id?: string, ids?: string, integrationName?: string, isTestAccount?: string, pageSize?: number, status?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedAccountDetailsAndActionsList;  }> {
+    public async linkedAccountsList (category?: 'accounting' | 'ats' | 'crm' | 'hris' | 'ticketing', cursor?: string, endUserEmailAddress?: string, endUserOrganizationName?: string, endUserOriginId?: string, endUserOriginIds?: string, id?: string, ids?: string, integrationName?: string, isTestAccount?: string, pageSize?: number, status?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedAccountDetailsAndActionsList;  }> {
         const localVarPath = this.basePath + '/linked-accounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -118,7 +118,7 @@ export class LinkedAccountsApi {
         let localVarFormParams: any = {};
 
         if (category !== undefined) {
-            localVarQueryParameters['category'] = ObjectSerializer.serialize(category, "'accounting' | 'ats' | 'hris' | 'ticketing'");
+            localVarQueryParameters['category'] = ObjectSerializer.serialize(category, "'accounting' | 'ats' | 'crm' | 'hris' | 'ticketing'");
         }
 
         if (cursor !== undefined) {

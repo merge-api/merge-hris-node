@@ -99,7 +99,6 @@ export class BankInfoApi {
      * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
      * @param employeeId If provided, will only return bank accounts for this employee.
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param modifiedAfter If provided, will only return objects modified after this datetime.
@@ -108,7 +107,7 @@ export class BankInfoApi {
      * @param pageSize Number of results to return per page.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async bankInfoList (xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBankInfoList;  }> {
+    public async bankInfoList (xAccountToken: string, accountType?: 'CHECKING' | 'SAVINGS', bankName?: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, orderBy?: '-remote_created_at' | 'remote_created_at', pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBankInfoList;  }> {
         const localVarPath = this.basePath + '/bank-info';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -148,10 +147,6 @@ export class BankInfoApi {
 
         if (employeeId !== undefined) {
             localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employeeId, "string");
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee'");
         }
 
         if (includeDeletedData !== undefined) {
@@ -235,10 +230,9 @@ export class BankInfoApi {
      * Returns a `BankInfo` object with the given `id`.
      * @param xAccountToken Token identifying the end user.
      * @param id 
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async bankInfoRetrieve (xAccountToken: string, id: string, expand?: 'employee', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankInfo;  }> {
+    public async bankInfoRetrieve (xAccountToken: string, id: string, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankInfo;  }> {
         const localVarPath = this.basePath + '/bank-info/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -260,10 +254,6 @@ export class BankInfoApi {
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling bankInfoRetrieve.');
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee'");
         }
 
         if (includeRemoteData !== undefined) {

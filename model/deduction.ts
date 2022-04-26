@@ -11,7 +11,6 @@
  */
 
 import { RequestFile } from './models';
-import { RemoteData } from './remoteData';
 
 /**
 * # The Deduction Object ### Description The `Deduction` object is used to represent a deduction for a given employee\'s payroll run. One run could include several deductions.  ### Usage Example Fetch from the `LIST Deductions` endpoint and filter by `ID` to show all deductions.
@@ -31,7 +30,6 @@ export class Deduction {
     * The amount the company is deducting.
     */
     'company_deduction'?: number | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -60,11 +58,6 @@ export class Deduction {
             "name": "company_deduction",
             "baseName": "company_deduction",
             "type": "number"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

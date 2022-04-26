@@ -11,10 +11,9 @@
  */
 
 import { RequestFile } from './models';
-import { RemoteData } from './remoteData';
 
 /**
-* # The Company Object ### Description The `Company` object is used to represent a Company.  ### Usage Example Fetch from the `LIST Companies` endpoint and filter by `ID` to show all companies.
+* # The Company Object ### Description The `Company` object is used to represent a Company within the HRIS / Payroll system.  ### Usage Example Fetch from the `LIST Companies` endpoint and filter by `ID` to show all companies.
 */
 export class Company {
     'id'?: string;
@@ -34,7 +33,6 @@ export class Company {
     * The company\'s Employer Identification Numbers.
     */
     'eins'?: Array<string> | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -63,11 +61,6 @@ export class Company {
             "name": "eins",
             "baseName": "eins",
             "type": "Array<string>"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

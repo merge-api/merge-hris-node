@@ -11,7 +11,6 @@
  */
 
 import { RequestFile } from './models';
-import { RemoteData } from './remoteData';
 
 /**
 * # The Benefit Object ### Description The `Benefit` object is used to represent a Benefit for an employee.  ### Usage Example Fetch from the `LIST Benefits` endpoint and filter by `ID` to show all benefits.
@@ -39,7 +38,6 @@ export class Benefit {
     * The company\'s contribution.
     */
     'company_contribution'?: number | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -78,11 +76,6 @@ export class Benefit {
             "name": "company_contribution",
             "baseName": "company_contribution",
             "type": "number"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

@@ -12,7 +12,6 @@
 
 import { RequestFile } from './models';
 import { AccountTypeEnum } from './accountTypeEnum';
-import { RemoteData } from './remoteData';
 
 /**
 * # The BankInfo Object ### Description The `BankInfo` object is used to represent the Bank Account information for an Employee. This is often referenced with an Employee object.  ### Usage Example Fetch from the `LIST BankInfo` endpoint and filter by `ID` to show all bank information.
@@ -44,7 +43,6 @@ export class BankInfo {
     * When the matching bank object was created in the third party system.
     */
     'remote_created_at'?: Date | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -88,11 +86,6 @@ export class BankInfo {
             "name": "remote_created_at",
             "baseName": "remote_created_at",
             "type": "Date"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

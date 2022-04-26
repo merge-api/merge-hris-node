@@ -97,7 +97,6 @@ export class BenefitsApi {
      * @param createdBefore If provided, will only return objects created before this datetime.
      * @param cursor The pagination cursor value.
      * @param employeeId If provided, will only return time off for this employee.
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param modifiedAfter If provided, will only return objects modified after this datetime.
@@ -105,7 +104,7 @@ export class BenefitsApi {
      * @param pageSize Number of results to return per page.
      * @param remoteId The API provider\&#39;s ID for the given object.
      */
-    public async benefitsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, expand?: 'employee', includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBenefitList;  }> {
+    public async benefitsList (xAccountToken: string, createdAfter?: Date, createdBefore?: Date, cursor?: string, employeeId?: string, includeDeletedData?: boolean, includeRemoteData?: boolean, modifiedAfter?: Date, modifiedBefore?: Date, pageSize?: number, remoteId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedBenefitList;  }> {
         const localVarPath = this.basePath + '/benefits';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -137,10 +136,6 @@ export class BenefitsApi {
 
         if (employeeId !== undefined) {
             localVarQueryParameters['employee_id'] = ObjectSerializer.serialize(employeeId, "string");
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee'");
         }
 
         if (includeDeletedData !== undefined) {
@@ -220,10 +215,9 @@ export class BenefitsApi {
      * Returns a `Benefit` object with the given `id`.
      * @param xAccountToken Token identifying the end user.
      * @param id 
-     * @param expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      */
-    public async benefitsRetrieve (xAccountToken: string, id: string, expand?: 'employee', includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Benefit;  }> {
+    public async benefitsRetrieve (xAccountToken: string, id: string, includeRemoteData?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Benefit;  }> {
         const localVarPath = this.basePath + '/benefits/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -245,10 +239,6 @@ export class BenefitsApi {
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling benefitsRetrieve.');
-        }
-
-        if (expand !== undefined) {
-            localVarQueryParameters['expand'] = ObjectSerializer.serialize(expand, "'employee'");
         }
 
         if (includeRemoteData !== undefined) {

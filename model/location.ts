@@ -13,7 +13,6 @@
 import { RequestFile } from './models';
 import { CountryEnum } from './countryEnum';
 import { LocationTypeEnum } from './locationTypeEnum';
-import { RemoteData } from './remoteData';
 
 /**
 * # The Location Object ### Description The `Location` object is used to represent a Location for a Company or Employee address. This is shared across many models and is referenced whenever a location is stored.  ### Usage Example Fetch from the `LIST Locations` endpoint and filter by `ID` to show all office locations.
@@ -49,7 +48,7 @@ export class Location {
     */
     'state'?: string | null;
     /**
-    * The location\'s zip code.
+    * The location\'s zip code or postal code.
     */
     'zip_code'?: string | null;
     /**
@@ -60,7 +59,6 @@ export class Location {
     * The location\'s type. Can be either WORK or HOME
     */
     'location_type'?: LocationTypeEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -119,11 +117,6 @@ export class Location {
             "name": "location_type",
             "baseName": "location_type",
             "type": "LocationTypeEnum"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

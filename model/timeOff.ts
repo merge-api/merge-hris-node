@@ -11,7 +11,6 @@
  */
 
 import { RequestFile } from './models';
-import { RemoteData } from './remoteData';
 import { RequestTypeEnum } from './requestTypeEnum';
 import { TimeOffStatusEnum } from './timeOffStatusEnum';
 import { UnitsEnum } from './unitsEnum';
@@ -55,7 +54,6 @@ export class TimeOff {
     * The day and time of the end of the time requested off.
     */
     'end_time'?: Date | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -114,11 +112,6 @@ export class TimeOff {
             "name": "end_time",
             "baseName": "end_time",
             "type": "Date"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

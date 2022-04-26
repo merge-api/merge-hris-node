@@ -12,7 +12,6 @@
 
 import { RequestFile } from './models';
 import { PolicyTypeEnum } from './policyTypeEnum';
-import { RemoteData } from './remoteData';
 
 /**
 * # The TimeOffBalance Object ### Description The `TimeOffBalance` object is used to represent a Time Off Balance for an employee.  ### Usage Example Fetch from the `LIST TimeOffBalances` endpoint and filter by `ID` to show all time off balances.
@@ -25,7 +24,7 @@ export class TimeOffBalance {
     'remote_id'?: string | null;
     'employee'?: string | null;
     /**
-    * The current PTO balance in terms of hours.
+    * The current remaining PTO balance in terms of hours. This does not represent the starting PTO balance. If the API provider only provides PTO balance in terms of days, we estimate 8 hours per day.
     */
     'balance'?: number | null;
     /**
@@ -36,7 +35,6 @@ export class TimeOffBalance {
     * The policy type of this time off balance.
     */
     'policy_type'?: PolicyTypeEnum | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -70,11 +68,6 @@ export class TimeOffBalance {
             "name": "policy_type",
             "baseName": "policy_type",
             "type": "PolicyTypeEnum"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

@@ -13,7 +13,6 @@
 import { RequestFile } from './models';
 import { Deduction } from './deduction';
 import { Earning } from './earning';
-import { RemoteData } from './remoteData';
 import { Tax } from './tax';
 
 /**
@@ -50,7 +49,6 @@ export class EmployeePayrollRun {
     'earnings'?: Array<Earning>;
     'deductions'?: Array<Deduction>;
     'taxes'?: Array<Tax>;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -114,11 +112,6 @@ export class EmployeePayrollRun {
             "name": "taxes",
             "baseName": "taxes",
             "type": "Array<Tax>"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

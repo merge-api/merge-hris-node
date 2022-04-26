@@ -67,7 +67,6 @@ export * from './paginatedSyncStatusList';
 export * from './paginatedTeamList';
 export * from './paginatedTimeOffBalanceList';
 export * from './paginatedTimeOffList';
-export * from './paginatedWebhookReceiverList';
 export * from './payCurrencyEnum';
 export * from './payFrequencyEnum';
 export * from './payGroup';
@@ -75,8 +74,6 @@ export * from './payPeriodEnum';
 export * from './payrollRun';
 export * from './policyTypeEnum';
 export * from './reasonEnum';
-export * from './remoteData';
-export * from './remoteDataRequest';
 export * from './remoteKey';
 export * from './remoteKeyForRegenerationRequest';
 export * from './remoteResponse';
@@ -180,7 +177,6 @@ import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
 import { PaginatedTimeOffBalanceList } from './paginatedTimeOffBalanceList';
 import { PaginatedTimeOffList } from './paginatedTimeOffList';
-import { PaginatedWebhookReceiverList } from './paginatedWebhookReceiverList';
 import { PayCurrencyEnum, PayCurrencyEnumExpected } from './payCurrencyEnum';
 import { PayFrequencyEnum, PayFrequencyEnumExpected } from './payFrequencyEnum';
 import { PayGroup } from './payGroup';
@@ -188,8 +184,6 @@ import { PayPeriodEnum, PayPeriodEnumExpected } from './payPeriodEnum';
 import { PayrollRun } from './payrollRun';
 import { PolicyTypeEnum, PolicyTypeEnumExpected } from './policyTypeEnum';
 import { ReasonEnum, ReasonEnumExpected } from './reasonEnum';
-import { RemoteData } from './remoteData';
-import { RemoteDataRequest } from './remoteDataRequest';
 import { RemoteKey } from './remoteKey';
 import { RemoteKeyForRegenerationRequest } from './remoteKeyForRegenerationRequest';
 import { RemoteResponse } from './remoteResponse';
@@ -308,11 +302,8 @@ let typeMap: {[index: string]: any} = {
     "PaginatedTeamList": PaginatedTeamList,
     "PaginatedTimeOffBalanceList": PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": PaginatedTimeOffList,
-    "PaginatedWebhookReceiverList": PaginatedWebhookReceiverList,
     "PayGroup": PayGroup,
     "PayrollRun": PayrollRun,
-    "RemoteData": RemoteData,
-    "RemoteDataRequest": RemoteDataRequest,
     "RemoteKey": RemoteKey,
     "RemoteKeyForRegenerationRequest": RemoteKeyForRegenerationRequest,
     "RemoteResponse": RemoteResponse,

@@ -11,12 +11,11 @@
  */
 
 import { RequestFile } from './models';
-import { RemoteData } from './remoteData';
 import { RunStateEnum } from './runStateEnum';
 import { RunTypeEnum } from './runTypeEnum';
 
 /**
-* # The PayrollRun Object ### Description The `PayrollRun` object is used to represent a payroll run.  ### Usage Example Fetch from the `LIST PayrollRuns` endpoint and filter by `ID` to show all payroll runs.
+* # The PayrollRun Object ### Description The `PayrollRun` object is used to represent a payroll run. This payroll run is not specific to an employee.  ### Usage Example Fetch from the `LIST PayrollRuns` endpoint and filter by `ID` to show all payroll runs.
 */
 export class PayrollRun {
     'id'?: string;
@@ -44,7 +43,6 @@ export class PayrollRun {
     * The day and time the payroll run was checked.
     */
     'check_date'?: Date | null;
-    'remote_data'?: Array<RemoteData> | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -83,11 +81,6 @@ export class PayrollRun {
             "name": "check_date",
             "baseName": "check_date",
             "type": "Date"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         }    ];
 
     static getAttributeTypeMap() {

@@ -15,7 +15,6 @@ import { EmploymentStatusEnum } from './employmentStatusEnum';
 import { EthnicityEnum } from './ethnicityEnum';
 import { GenderEnum } from './genderEnum';
 import { MaritalStatusEnum } from './maritalStatusEnum';
-import { RemoteData } from './remoteData';
 
 /**
 * # The Employee Object ### Description The `Employee` object is used to represent an Employee for a company.  ### Usage Example Fetch from the `LIST Employee` endpoint and filter by `ID` to show all employees.
@@ -27,7 +26,7 @@ export class Employee {
     */
     'remote_id'?: string | null;
     /**
-    * The employee\'s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
+    * The employee\'s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user. This value can also change in many API providers.
     */
     'employee_number'?: string | null;
     'company'?: string | null;
@@ -105,7 +104,6 @@ export class Employee {
     * The URL of the employee\'s avatar image.
     */
     'avatar'?: string | null;
-    'remote_data'?: Array<RemoteData> | null;
     /**
     * Custom fields configured for a given model.
     */
@@ -248,11 +246,6 @@ export class Employee {
             "name": "avatar",
             "baseName": "avatar",
             "type": "string"
-        },
-        {
-            "name": "remote_data",
-            "baseName": "remote_data",
-            "type": "Array<RemoteData>"
         },
         {
             "name": "custom_fields",
