@@ -28,6 +28,10 @@ export class Earning {
     */
     'type'?: EarningTypeEnum | null;
     'remote_data'?: Array<{ [key: string]: any; }> | null;
+    /**
+    * Indicates whether or not this object has been deleted on the third-party.
+    */
+    'remote_was_deleted'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -56,6 +60,11 @@ export class Earning {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<{ [key: string]: any; }>"
+        },
+        {
+            "name": "remote_was_deleted",
+            "baseName": "remote_was_deleted",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {

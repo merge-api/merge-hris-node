@@ -27,7 +27,7 @@ export class Employee {
     */
     'remote_id'?: string | null;
     /**
-    * The employee\'s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
+    * The employee\'s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user. This value can also change in many API providers.
     */
     'employee_number'?: string | null;
     'company'?: string | null;
@@ -110,6 +110,7 @@ export class Employee {
     * Custom fields configured for a given model.
     */
     'custom_fields'?: { [key: string]: any; } | null;
+    'remote_was_deleted'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -258,6 +259,11 @@ export class Employee {
             "name": "custom_fields",
             "baseName": "custom_fields",
             "type": "{ [key: string]: any; }"
+        },
+        {
+            "name": "remote_was_deleted",
+            "baseName": "remote_was_deleted",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {

@@ -16,7 +16,7 @@ import { RunStateEnum } from './runStateEnum';
 import { RunTypeEnum } from './runTypeEnum';
 
 /**
-* # The PayrollRun Object ### Description The `PayrollRun` object is used to represent a payroll run.  ### Usage Example Fetch from the `LIST PayrollRuns` endpoint and filter by `ID` to show all payroll runs.
+* # The PayrollRun Object ### Description The `PayrollRun` object is used to represent a payroll run. This payroll run is not specific to an employee.  ### Usage Example Fetch from the `LIST PayrollRuns` endpoint and filter by `ID` to show all payroll runs.
 */
 export class PayrollRun {
     'id'?: string;
@@ -45,6 +45,10 @@ export class PayrollRun {
     */
     'check_date'?: Date | null;
     'remote_data'?: Array<RemoteData> | null;
+    /**
+    * Indicates whether or not this object has been deleted on the third-party.
+    */
+    'remote_was_deleted'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -88,6 +92,11 @@ export class PayrollRun {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
+        },
+        {
+            "name": "remote_was_deleted",
+            "baseName": "remote_was_deleted",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {

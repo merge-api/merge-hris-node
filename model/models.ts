@@ -67,7 +67,6 @@ export * from './paginatedSyncStatusList';
 export * from './paginatedTeamList';
 export * from './paginatedTimeOffBalanceList';
 export * from './paginatedTimeOffList';
-export * from './paginatedWebhookReceiverList';
 export * from './payCurrencyEnum';
 export * from './payFrequencyEnum';
 export * from './payGroup';
@@ -180,7 +179,6 @@ import { PaginatedSyncStatusList } from './paginatedSyncStatusList';
 import { PaginatedTeamList } from './paginatedTeamList';
 import { PaginatedTimeOffBalanceList } from './paginatedTimeOffBalanceList';
 import { PaginatedTimeOffList } from './paginatedTimeOffList';
-import { PaginatedWebhookReceiverList } from './paginatedWebhookReceiverList';
 import { PayCurrencyEnum, PayCurrencyEnumExpected } from './payCurrencyEnum';
 import { PayFrequencyEnum, PayFrequencyEnumExpected } from './payFrequencyEnum';
 import { PayGroup } from './payGroup';
@@ -308,7 +306,6 @@ let typeMap: {[index: string]: any} = {
     "PaginatedTeamList": PaginatedTeamList,
     "PaginatedTimeOffBalanceList": PaginatedTimeOffBalanceList,
     "PaginatedTimeOffList": PaginatedTimeOffList,
-    "PaginatedWebhookReceiverList": PaginatedWebhookReceiverList,
     "PayGroup": PayGroup,
     "PayrollRun": PayrollRun,
     "RemoteData": RemoteData,

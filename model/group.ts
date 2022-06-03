@@ -15,7 +15,7 @@ import { GroupTypeEnum } from './groupTypeEnum';
 import { RemoteData } from './remoteData';
 
 /**
-* # The Group Object ### Description The `Group` object is used to represent Group information that employees belong to. This is often referenced with an Employee object.  ### Usage Example Fetch from the `LIST Employee` endpoint and expand groups to view an employee\'s groups.
+* # The Group Object ### Description The `Group` object is used to represent Group information that employees belong to. This is often referenced with an Employee object.  Please note: The teams object will fulfill most use cases. The Groups object is for power-users that want all types of groups at a company and the optionality of pulling multiple groups for an employee.  ### Usage Example Fetch from the `LIST Employee` endpoint and expand groups to view an employee\'s groups.
 */
 export class Group {
     'id'?: string;
@@ -36,6 +36,10 @@ export class Group {
     */
     'type'?: GroupTypeEnum | null;
     'remote_data'?: Array<RemoteData> | null;
+    /**
+    * Indicates whether or not this object has been deleted on the third-party.
+    */
+    'remote_was_deleted'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -69,6 +73,11 @@ export class Group {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
+        },
+        {
+            "name": "remote_was_deleted",
+            "baseName": "remote_was_deleted",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {

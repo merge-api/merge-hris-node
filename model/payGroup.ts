@@ -27,6 +27,10 @@ export class PayGroup {
     */
     'pay_group_name'?: string | null;
     'remote_data'?: Array<RemoteData> | null;
+    /**
+    * Indicates whether or not this object has been deleted on the third-party.
+    */
+    'remote_was_deleted'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -50,6 +54,11 @@ export class PayGroup {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
+        },
+        {
+            "name": "remote_was_deleted",
+            "baseName": "remote_was_deleted",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {
