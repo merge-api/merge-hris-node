@@ -25,7 +25,7 @@ export class TimeOffBalance {
     'remote_id'?: string | null;
     'employee'?: string | null;
     /**
-    * The current PTO balance in terms of hours.
+    * The current remaining PTO balance in terms of hours. This does not represent the starting PTO balance. If the API provider only provides PTO balance in terms of days, we estimate 8 hours per day.
     */
     'balance'?: number | null;
     /**
@@ -37,6 +37,10 @@ export class TimeOffBalance {
     */
     'policy_type'?: PolicyTypeEnum | null;
     'remote_data'?: Array<RemoteData> | null;
+    /**
+    * Indicates whether or not this object has been deleted on the third-party.
+    */
+    'remote_was_deleted'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -75,6 +79,11 @@ export class TimeOffBalance {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
+        },
+        {
+            "name": "remote_was_deleted",
+            "baseName": "remote_was_deleted",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {

@@ -93,7 +93,7 @@ export class ForceResyncApi {
      * Force re-sync of all models. This is only available for organizations on Merge\'s Grow and Expand plans.
      * @param xAccountToken Token identifying the end user.
      */
-    public async syncStatusResyncCreate (xAccountToken: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SyncStatus;  }> {
+    public async syncStatusResyncCreate (xAccountToken: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<SyncStatus>;  }> {
         const localVarPath = this.basePath + '/sync-status/resync';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -144,12 +144,12 @@ export class ForceResyncApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: SyncStatus;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<SyncStatus>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
-                        body = ObjectSerializer.deserialize(body, "SyncStatus");
+                        body = ObjectSerializer.deserialize(body, "Array<SyncStatus>");
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         } else {

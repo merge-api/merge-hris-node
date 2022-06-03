@@ -15,7 +15,6 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { PaginatedWebhookReceiverList } from '../model/paginatedWebhookReceiverList';
 import { WebhookReceiver } from '../model/webhookReceiver';
 import { WebhookReceiverRequest } from '../model/webhookReceiverRequest';
 
@@ -93,9 +92,10 @@ export class WebhookReceiversApi {
 
     /**
      * Creates a `WebhookReceiver` object with the given values.
+     * @param xAccountToken Token identifying the end user.
      * @param webhookReceiverRequest 
      */
-    public async webhookReceiversCreate (webhookReceiverRequest: WebhookReceiverRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WebhookReceiver;  }> {
+    public async webhookReceiversCreate (xAccountToken: string, webhookReceiverRequest: WebhookReceiverRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WebhookReceiver;  }> {
         const localVarPath = this.basePath + '/webhook-receivers';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -108,11 +108,17 @@ export class WebhookReceiversApi {
         }
         let localVarFormParams: any = {};
 
+        // verify required parameter 'xAccountToken' is not null or undefined
+        if (xAccountToken === null || xAccountToken === undefined) {
+            throw new Error('Required parameter xAccountToken was null or undefined when calling webhookReceiversCreate.');
+        }
+
         // verify required parameter 'webhookReceiverRequest' is not null or undefined
         if (webhookReceiverRequest === null || webhookReceiverRequest === undefined) {
             throw new Error('Required parameter webhookReceiverRequest was null or undefined when calling webhookReceiversCreate.');
         }
 
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -164,10 +170,9 @@ export class WebhookReceiversApi {
     }
     /**
      * Returns a list of `WebhookReceiver` objects.
-     * @param cursor The pagination cursor value.
-     * @param pageSize Number of results to return per page.
+     * @param xAccountToken Token identifying the end user.
      */
-    public async webhookReceiversList (cursor?: number, pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaginatedWebhookReceiverList;  }> {
+    public async webhookReceiversList (xAccountToken: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<WebhookReceiver>;  }> {
         const localVarPath = this.basePath + '/webhook-receivers';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -180,14 +185,12 @@ export class WebhookReceiversApi {
         }
         let localVarFormParams: any = {};
 
-        if (cursor !== undefined) {
-            localVarQueryParameters['cursor'] = ObjectSerializer.serialize(cursor, "number");
+        // verify required parameter 'xAccountToken' is not null or undefined
+        if (xAccountToken === null || xAccountToken === undefined) {
+            throw new Error('Required parameter xAccountToken was null or undefined when calling webhookReceiversList.');
         }
 
-        if (pageSize !== undefined) {
-            localVarQueryParameters['page_size'] = ObjectSerializer.serialize(pageSize, "number");
-        }
-
+        localVarHeaderParams['X-Account-Token'] = ObjectSerializer.serialize(xAccountToken, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -220,12 +223,12 @@ export class WebhookReceiversApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: PaginatedWebhookReceiverList;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<WebhookReceiver>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
-                        body = ObjectSerializer.deserialize(body, "PaginatedWebhookReceiverList");
+                        body = ObjectSerializer.deserialize(body, "Array<WebhookReceiver>");
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         } else {

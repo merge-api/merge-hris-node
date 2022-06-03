@@ -16,7 +16,8 @@ export enum CategoryEnumExpected {
     Hris = <any> 'hris',
     Ats = <any> 'ats',
     Accounting = <any> 'accounting',
-    Ticketing = <any> 'ticketing'
+    Ticketing = <any> 'ticketing',
+    Crm = <any> 'crm'
 }
 
 export type CategoryEnum = CategoryEnumExpected | string;

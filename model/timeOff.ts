@@ -56,6 +56,7 @@ export class TimeOff {
     */
     'end_time'?: Date | null;
     'remote_data'?: Array<RemoteData> | null;
+    'remote_was_deleted'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -119,6 +120,11 @@ export class TimeOff {
             "name": "remote_data",
             "baseName": "remote_data",
             "type": "Array<RemoteData>"
+        },
+        {
+            "name": "remote_was_deleted",
+            "baseName": "remote_was_deleted",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {
