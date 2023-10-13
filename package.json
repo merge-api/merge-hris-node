@@ -23,12 +23,12 @@
     "bluebird": "^3.5.0",
     "request": "^2.81.0",
     "@types/bluebird": "*",
-    "@types/request": "*",
-    "rewire": "^3.0.2"
+    "@types/request": "*"
   },
   "devDependencies": {
     "typescript": "^4.3.3",
-    "@types/node": "^15.12.2"
+    "@types/node": "^15.12.2",
+    "rewire": "^3.0.2"
   },
   "bugs": {
     "url": "https://github.com/merge-api/merge-hris-node/issues"
